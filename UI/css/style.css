@@ -1,0 +1,770 @@
+﻿html, body{
+    background-color: #D0D0D0 !important;
+    font: 1em Arial,Helvetica, sans-serif !important;
+    height: 100%;
+}
+
+/* ------------------------------------------------------
+-------------------- .WRAPPER ----------------------------
+--------------------------------------------------------- */
+.wrapper{
+    min-height: 100%;
+    width: 100%;
+}
+
+/* ------------------------------------------------------
+-------------------- .MAIN ----------------------------
+--------------------------------------------------------- */
+.main{
+    overflow: auto;
+    padding-bottom: 40px;
+}
+
+/* ------------------------------------------------------
+-------------------- .HEADER ----------------------------
+--------------------------------------------------------- */
+header {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #808080;
+    box-shadow: 0px 4px 4px #808080;
+    opacity: 0.8;
+    position: fixed;
+    width: 100%;
+    z-index: 1002;
+}
+
+/* ------------------------------------------------------
+-------------------- .NAV ----------------------------
+--------------------------------------------------------- */
+nav{ 
+    clear: both;
+    margin: auto;
+    max-width: 1366px;
+    min-width: 320px;
+    overflow: hidden;
+    width: 90%;
+}
+
+/*------------------- .LOGO ---------------------------*/
+nav .logo{
+    border-left: 1px solid #D0D0D0;
+    border-right: 1px solid #D0D0D0;
+    float: left;
+}
+
+nav .logo img{
+    width: 130px !important;
+    height: 66px !important;
+}
+
+nav .logo:hover{
+    cursor: pointer !important;
+}
+
+ /*-------------------- .MENU -----------------------*/
+nav .menu{
+    float: left;
+    list-style-type: none;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+nav .menu > li{
+    display: inline-block;
+    line-height: 35px;
+    margin: 0 !important;
+    padding: 15px 0px 15px 0px;
+}
+
+nav .menu > li:hover {
+    background-color: #003366;
+    color: #fff;
+    cursor: pointer;
+}
+
+nav .menu > li > a{
+    color: #000000;
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 25px 30px 25px 30px;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav .menu li a:hover {
+    color: #fff;
+}
+
+ /*------------------ .HEADER-ACCESS -------------------*/ 
+nav .header-access{
+    float: right;
+    padding: 10px;
+    margin: 0px !important;
+    position: relative;
+}
+
+nav .header-access li{
+    list-style: none;
+    margin: 0px !important;
+    padding: 20px;
+}
+
+nav .header-access li,.header-access a {
+    display: inline-block;
+    padding: 10px;
+}
+
+/* ----------------- Images Sprites ------------------- */
+.login{
+    background: url('../images/page-icons/sprite-links.png') -5px 0px no-repeat;
+}
+
+.login:hover{
+    cursor: pointer;
+    background: url('../images/page-icons/sprite-links-hover.png') -5px 0px no-repeat;
+}
+
+.facebook{
+    background: url('../images/page-icons/sprite-links.png') -47px 0px no-repeat;
+}
+
+.facebook:hover{
+    cursor: pointer;
+    background: url('../images/page-icons/sprite-links-hover.png') -47px 0px no-repeat;
+}
+
+.siteMap{
+    width: 32px;
+    background: url('../images/page-icons/sprite-links.png') -88px 0px no-repeat;
+}
+
+.siteMap:hover{
+    cursor: pointer;
+    background: url('../images/page-icons/sprite-links-hover.png') -88px 0px no-repeat;
+}
+
+/* ------------------------------ menu responsive icon and position ------------------------------- */
+.nav-mobile {
+    background: url(../images/page-icons/responsiveMenu.png) no-repeat center center;
+    display: none;
+    float: right;
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    position: absolute;
+    right: 0;
+    top:0;
+}
+
+.nav-mobile:hover{
+    cursor: pointer;
+}
+
+/*-------------------------------------------------------------
+---------------------- Menu Responsive ------------------------
+------------------------------------------------------------ */
+@media screen and (max-width: 1190px){
+    nav .menu{
+        background-color: #FFFFFF;
+        border-bottom: 2px solid #003366;
+        border-left: 2px solid #003366;
+        height: 100%;
+		right:-100%;
+		margin:0;
+		position: fixed;
+        opacity: 0.9;
+        width: 60%;
+        top: 66px;
+    }
+
+    nav .menu li{
+        display: block;
+        float: none;
+        border-top: 2px solid #003366;
+    }
+
+    nav .menu li:first-child{
+        border-top: 2px solid #003366;
+    }
+
+    nav .menu li:hover{
+        opacity: 1;
+    }
+    
+    .nav-mobile{
+        display: inline-block;
+        float: none;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width:320px){
+    nav{
+        width: 100%;
+    }
+
+    nav .header-access{
+        float: left;
+    }
+
+    nav .nav-mobile{
+        float: right;
+    }
+}
+
+/* ------------------------------------------------------
+-------------------- .CONTENT ----------------------------
+--------------------------------------------------------- */
+.content{
+    margin: 20px auto;
+    max-width: 1024px;
+    padding-top: 62px;
+    width: 80%;
+}
+
+
+/* ------------------------------------------------------
+-------------------- FOOTER ----------------------------
+--------------------------------------------------------- */
+footer{
+    background-color: #003366;
+    height: 40px; /* Altura del Footer en px*/
+    margin-top: -40px; /* altura en px del footer con valor negativo */
+    position: relative;   
+    width: 100%;
+}
+
+footer p{
+    color: #FFFFFF;
+    margin: auto;
+    max-width: 1024px;
+    padding: 10px;
+    text-align: right;
+    width: 80%;
+}
+
+body:before{
+	content: ""; 
+	float: left;
+    height: 100%; 
+	margin-top: -32767px;/* Efecto Negativo para OPERA*/
+	width: 0;  
+}
+
+
+.content_2{
+    background-color: #FFFFFF;
+    border: 1px solid #999999;
+    box-shadow: 8px 8px 12px #999999;
+    padding: 10px;
+    margin: auto;
+}
+
+.title{
+    color: #003366;
+    border-bottom: 2px solid #009900;
+    font-size: 2em;
+}
+
+.subtitle{
+    color: #003366;
+    font-size: 1.4em;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+/* ------------------------------------------------------
+-------------------- .SLIDER ----------------------------
+--------------------------------------------------------- */
+.slider{
+    margin: auto;
+    width: 80%;
+}
+
+.slider > img{
+    margin: auto;
+    width: 100% !important;
+}
+
+
+/* ------------------------------------------------------
+----------------- .LOGIN_CONTAINER ----------------------
+--------------------------------------------------------- */
+.login_container{
+    border: 2px solid #003366;
+    border-radius: 4px;
+    margin: auto;
+    max-width: 700px;
+    min-width: 250px;
+}
+
+.login_header{
+    background: #003366;
+    color: #FFFFFF;
+    padding: 10px;
+    text-align: center;
+}
+
+.login_header > p{
+    font-size: 1.5em;
+}
+
+.login_content{
+    background: #FFFFFF;
+    padding: 20px;
+}
+
+.login_content input[type="text"], 
+.login_content input[type="password"],
+.login_content select {
+    border: 1px solid #D0D0D0;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 20px;
+    height: 40px;
+    padding: 0 25px 0 60px;
+    outline: none;
+    width: 100%;
+}
+
+.login_content input#ContentPlaceHolder1_txtUser{
+    background: #FFFFFF url("../images/page-icons/user-icon.png") 20px center no-repeat;
+    background-size: 24px 24px;
+}
+
+.login_content input#ContentPlaceHolder1_txtPassword {
+    background: #FFFFFF url("../images/page-icons/password-icon.png") 20px center no-repeat;
+    background-size: 24px 24px;
+}
+
+.login_content input[type="submit"]{
+    background-color: #003366;
+    border: 2px solid #003366;
+    border-radius: 3px;
+    color: #FFFFFF;
+    font-size: 20px;
+    padding: 6px;
+}
+
+.login_content a{
+    color: #337AB7;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.login_content a:hover{
+    cursor: pointer;
+    text-decoration: none;  
+}
+
+/* ------------------------------------------------------
+-------------------- .ABOUT ----------------------------
+--------------------------------------------------------- */
+.about{
+    margin: auto;
+    padding: 10px;
+    text-align: justify;
+}
+
+.about article{
+    margin: 10px;
+}
+
+.about ul{
+    padding-left: 70px !important;
+}
+
+/* -------------------------------------------------------
+------------------------ .ACCESSES  ----------------------
+------------------------------------------------------- */
+.accesses{
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 5px #999;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    max-width: 300px;
+    max-height: 228px;
+    min-height: 150px;
+    min-width: 180px;
+    text-align: center;
+    width: 30%;
+}
+
+.accesses a{
+    color: #000000;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none !important;
+}
+
+.accesses a:hover{
+    color: #000000;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.accesses img{
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 200px;
+    max-height: 200px;
+    text-align: center;
+    width: 80%;
+}
+
+/* ------------------------------------------------------
+------------------------ MAINTANCE  ---------------------
+------------------------------------------------------- */
+.maintanance{
+    margin: auto;
+    padding: 10px;
+}
+
+.button{
+    background: #003366;
+    border: 2px solid #003366;
+    border-radius: 3px;
+    color: #FFFFFF;
+    font-size: 1em;
+    padding: 10px;
+}
+
+.button:hover{
+    background: #FFFFFF;
+    border: 2px solid #003366;
+    border-radius: 3px;
+    color: #003366;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.form{
+    margin: auto;
+    padding: 10px;
+}
+
+.form fieldset{
+    margin: auto;
+    min-width: 50%;
+}
+
+.form-control{
+    border-radius: 0px !important;
+}
+
+.form-control:disabled{
+    cursor: not-allowed;
+}
+
+.form-button{
+    background-color: #003366;
+    border: 2px solid #003366;
+    border-radius: 3px;
+    color: #FFFFFF;
+    padding: 10px;
+}
+
+.form-buttons{
+    text-align: center;
+}
+
+.form-buttons .image_align{
+    height: 5%;
+    margin-right: 10px;
+    max-height: 62px;
+    max-width: 62px;
+    min-height: 30px;
+    min-width: 30px;
+    width: 5%;
+}
+
+.form-buttons input:disabled{
+    cursor: not-allowed !important;
+}
+
+.maintanance .dataExists{
+    margin: auto;
+    padding: 10px;
+}
+
+.maintanance .message{
+    color: #009900;
+    font-size: 1.5em;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.maintanance .has-error{
+    border-color: #E80000;
+}
+
+.maintanance .message-has-error{
+    color: #E80000;
+    padding: 10px;
+}
+
+/* -------------- Calendar ------------------- */
+.maintanance .calendar{
+    background-color: #FFFFFF; 
+    border: solid 1px #666666;
+    font-size: 1em !important;
+    width: 230px;
+}
+
+.maintanance .ajax__calendar_container{
+    width: 100%;
+}
+
+.calendar .ajax__calendar_title,
+.calendar .ajax__calendar_next,
+.calendar .ajax__calendar_prev{
+    color: #003366;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding-top: 3px; 
+}
+
+.calendar .ajax__calendar_body{
+    background-color: #FFFFFF;
+    color: #000000;
+    border: solid 1px #cccccc; 
+    width: 100%;
+}    
+
+.calendar .ajax__calendar_dayname {
+    text-align:center;   
+    font-weight:bold;   
+    margin-bottom: 4px;   
+    margin-top: 2px;  
+}
+
+.calendar .ajax__calendar_days thead, 
+.calendar .ajax__calendar_days tbody{
+    font-size: 1.2em;
+    margin: 15px;
+}
+
+.calendar .ajax__calendar_days thead td, 
+.calendar .ajax__calendar_days tbody td{
+    padding-left: 12px;
+}
+
+.calendar .ajax__calendar_day{
+    font-size: 1em;
+    text-align: center;
+}
+
+.calendar .ajax__calendar_today   {  
+    font-size: 1em;
+    font-weight:bold;  
+}  
+
+/* -------- combobox ------------------- */
+.maintanance .dropdown-menu{
+    width: 100%;
+}
+
+.maintanance .dropdown-menu li{
+    width: 100%;
+}
+
+.dataExists table{
+    border: 1px solid #003366;
+    text-align: center;
+    width: 100%;
+    min-width: 400px;
+}
+
+.dataExists th {
+    background-color: #003366;
+    color: #FFFFFF;
+    text-align: center !important;
+}
+
+.dataExists table tr{
+    line-height: 40px;
+}
+
+.dataExists table tbody tr{
+    border-top: 1px solid #003366;
+}
+
+.dataExists img {
+    vertical-align: central;
+}
+
+/* -------------------- Modal Styles ------------------------ */
+.modal-dialog {
+    width: 80% !important;
+}
+
+.modal-container {
+    background: #FFFFFF !important;
+    border: 2px solid #003366;
+    color: #000000;
+    margin: auto;
+    padding: 20px !important;
+    width: 100%;
+}
+
+.modal .special-label{
+    color: #003366;
+    font-size: 1.4em;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.saveModal {
+    background: #003366;
+    border: 2px solid #003366;
+    border-radius: 3px;
+    color: #FFFFFF;
+    float: right;
+    font-size: 1em;
+    padding: 10px;
+}
+
+.closePopUp{
+    background: none !important;
+    border: none;
+    color: #003366;
+    font-size: 1.2em;
+    float: right;
+    padding: 5px;
+}
+
+.closePopUp:hover{
+    text-decoration: underline;
+}
+
+/* Confirm Menssage*/
+.modal-header{
+    background-color: #003366;
+    color: #FFFFFF;
+    font-size: 1.5em;
+}
+
+.modal-body{
+    font-size: 1.2em;
+}
+
+.modal-footer button,.modal-footer input{
+    background-color: #003366;
+    border-color: #003366;
+    border-radius: 3px;
+    color: #FFFFFF;
+}
+
+.modal-footer button:hover, .modal-footer input[type="submit"]:hover{
+    color: #FFFFFF !important;
+}
+
+/*  MEDIA QUERIES */
+/* 1200px */
+@media screen and (max-width: 1200px){
+
+    /* ------- Accesses -------- */
+    .accesses{
+        width: 30% !important;
+    }
+
+}
+
+/* 800px */
+@media screen and (max-width: 800px){
+
+    /* ------- About -------- */
+    .about{
+        font-size: 14px;
+    }
+
+    .about ul{
+        padding-left: 50px !important;
+    }
+
+    /* ---------- accesses ----------------- */
+    .accesses{
+        width: 30%;
+    }
+
+    .accesses p {
+        font-size: 16px;
+    }
+
+    /* ------- Footer ----------- */
+    footer p{
+        font-size: 14px;
+        width: 100%;
+    }
+
+}
+
+/* 720px */
+@media screen and (max-width: 720px){
+
+    /* ------- Footer ----------- */
+    footer p{
+        font-size: 12px;
+        width: 100%;
+    }
+
+}
+
+/* 720px */
+@media screen and (max-width: 650px){
+
+    /* ------- Footer ----------- */
+    .accesses p {
+        font-size: 14px;
+    }
+
+    /* ------- About -------- */
+    .about .title{
+        font-size: 19px;
+    }
+}
+
+/* 600px */
+@media screen and (max-width: 600px){
+
+    /* ---------- accesses ----------------- */
+    .accesses{
+        width: 45% !important;
+    }
+
+    .accesses p {
+        font-size: 16px;
+    }
+    
+    /* ------- Footer ----------- */
+    footer p{
+        font-size: 10px;
+        width: 100%;
+    }
+
+}
+
+/* 480px */
+@media screen and (max-width: 480px){
+
+    /* ---------- accesses ----------------- */
+    .accesses{
+        width: 90% !important;
+    }
+
+    /* ------- About -------- */
+    .about .title{
+        font-size: 15px;
+    }
+
+    /* ----------- footer ------------- */
+    footer p{
+        font-size: 10px;
+        width: 100%;
+    }
+
+}

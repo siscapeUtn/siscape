@@ -1,0 +1,17 @@
+C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\DAL\bin\DAL.dll.config
+C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\DAL\bin\DAL.dll
+C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\DAL\bin\DAL.pdb
+C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\DAL\obj\Debug\DAL.dll
+C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\DAL\obj\Debug\DAL.pdb
+C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\DAL\bin\DAL.dll
+C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\DAL\bin\DAL.pdb
+C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\DAL\obj\Debug\DAL.dll
+C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\DAL\obj\Debug\DAL.pdb
+C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\DAL\bin\DAL.dll.config
+C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\DAL\bin\DAL.dll
+C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\DAL\bin\DAL.pdb
+C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\DAL\obj\Debug\DAL.dll
+C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\DAL\obj\Debug\DAL.pdb
