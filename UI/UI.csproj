@@ -77,6 +77,7 @@
     <Content Include="Academic\Functionary\InternalDesignation.aspx" />
     <Content Include="Academic\Building\location.aspx" />
     <Content Include="Academic\Functionary\teacher.aspx" />
+    <Content Include="Academic\js\menu.js" />
     <Content Include="Administration\AdministrationGroups\administration.aspx" />
     <Content Include="Administration\AdministrationGroups\gPeriod.aspx" />
     <Content Include="Administration\AdministrationGroups\gProgram.aspx" />
@@ -88,6 +89,7 @@
     <Content Include="Administration\Security\User.aspx" />
     <Content Include="contactUs.aspx" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\menu-styles.css" />
     <Content Include="images\academic\academicOffer.png" />
     <Content Include="images\academic\classRoom.png" />
     <Content Include="images\academic\course.png" />
@@ -125,6 +127,7 @@
     <Content Include="images\page-icons\user-icon.png" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-1.11.3.js" />
+    <Content Include="js\menu.js" />
     <Content Include="libraries\bootstrap-combobox-master\css\bootstrap-combobox.css" />
     <Content Include="libraries\bootstrap-combobox-master\js\bootstrap-combobox.js" />
     <Content Include="libraries\bootstrap-combobox-master\js\tests\index.html" />

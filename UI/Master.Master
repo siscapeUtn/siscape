@@ -5,13 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <!-- Page -->
-    <title></title>
+    <title>Dirección de Extensión y Acción Social</title>
     <meta charset="utf-8" />
     <meta content="Sitio web de la Dirección de Extensión y Acción Social" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/menu-styles.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
     <link rel="icon" href="images/page-icons/DEAS-favicon.ico" />
 
@@ -21,72 +22,78 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script> 
 
     <!-- ContentPlaceHolder Head -->
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
-
 </head>
 <body>
-    <section class="wrapper">
-        <form id="form1" runat="server">
-            <section class="main">
-                <header>
-                    <nav>
-                        <section class="logo">
-                            <a href="index.aspx" title="P&aacute;gina de inicio" ><img alt="Dirección de Extesión y Acción Social" src="images/page-icons/DEAS-icon.png" /></a>
-                        </section>
-                        <ul class="menu" id="menu">
-                            <li id="access"></li>
-                            <li><a href="index.aspx">Inicio</a></li>
-                            <li><a href="about.aspx">Acerca de</a></li>
-                            <li><a href="#">Servicios</a></li>
-                            <li><a href="Administration/AdministrationGroups/administration.aspx">Administraci&oacute;n</a></li>
-                            <li><a href="Academic/AcademicGroups/academic.aspx">Acad&eacute;mico</a></li>
-                            <li><a href="contactUs.aspx">Cont&aacute;ctenos</a></li>
-                        </ul> 
-                         <ul class="header-access">
-                            <li class="login"><a href="login.aspx" title="Ingresar al sistema"></a></li>
-                            <li class="facebook"><a href="http://www.facebook.com/DEAS.UTN" title="Facebook institucional" target="_blank" ></a></li>
-                            <li class="siteMap"><a href="../../login.aspx" title="Mapa del sitio"></a></li>
-                        </ul>
-                        <a class="nav-mobile" id="nav-mobile" ></a>  
-                    </nav>
-                </header>
-                <section class="content">
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
-                </section> <!-- .content END -->
-            </section> <!-- end .main -->
-        </form> <!-- end form -->   
-    </section> <!-- end .wrapper -->
-    <footer>
-        <p>&#169;2015. Dirección de Extensión y Acción Social. Todos los derechos reservados.</p>
-    </footer> <!-- end footer -->
-    <script type="text/javascript">
-        $(document).ready(main);
+    <form id="form1" runat="server">
+        <header>
+		    <a id="cd-logo" href="index.aspx"><img src="images/page-icons/DEAS-icon.png" alt="Homepage" /></a>
+		    <span class="cd-name">Dirección de Extensión y Acción Social</span>
+		    <nav id="cd-top-nav">
+			    <ul>
+				    <li><a href="login.aspx">Ingresar</a></li>
+			    </ul>
+		    </nav>
+		    <a id="cd-menu-trigger" href="#0"><span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span></a>
+	    </header>
+	    <%--<main class="cd-main-content">--%>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </div>
+	    <%--</main> <!-- cd-main-content -->--%>
 
-        var contador = 1;
+	    <nav id="cd-lateral-nav">
+            <span id="close_menu" class="close">&#10006;</span>
+		    <ul class="cd-navigation">
+			    <li><a href="index.aspx">Inicio</a></li>
+			    <li><a href="about.aspx">Acerca de</a></li>
+			    <li class="item-has-children">
+				    <a href="#0">Seguridad</a>
+				    <ul class="sub-menu">
+					    <li><a href="Administration/AdministrationGroups/gSecurity.aspx">Roles</a></li>
+					    <li><a href="Administration/AdministrationGroups/gSecurity.aspx">Usuarios</a></li>
+				    </ul>
+			    </li> <!-- item-has-children -->
 
-        function main() {
-            $('.nav-mobile').click(function () {
-                // $('nav').toggle(); 
+			    <li class="item-has-children">
+				    <a href="#0">Administración</a>
+				    <ul class="sub-menu">
+					    <li><a href="Administration/AdministrationGroups/gProgram.aspx">Programas</a></li>
+					    <li><a href="Administration/AdministrationGroups/gPeriod.aspx">Períodos</a></li>
+					    <li><a href="Academic/AcademicGroups/gBuilding.aspx">Infraestructura</a></li>
+				    </ul>
+			    </li> <!-- item-has-children -->
 
-                if (contador == 1) {
-                    $('.menu').animate({
-                        right: '0'
-                    });
-                    $('#access').html($('.header-access').html());
-                    contador = 0;
-                } else {
-                    contador = 1;
-                    $('.menu').animate({
-                        right: '-100%'
-                    });
-                }
+			    <li class="item-has-children">
+				    <a href="#0">Académico</a>
+				    <ul class="sub-menu">
+					    <li><a href="Academic/AcademicGroups/gBuilding.aspx">Infraestructura</a></li>
+					    <li><a href="Academic/AcademicGroups/gFunctionary.aspx">Funcionarios</a></li>
+					    <li><a href="Academic/AcademicGroups/gAcademicOffer.aspx">Oferta académica</a></li>
+					    <li><a href="#">Reportes</a></li>
+				    </ul>
+			    </li> <!-- item-has-children -->
+			    <li class="item-has-children">
+				    <a href="#0">Servicios</a>
+				    <ul class="sub-menu">
+					    <li><a href="#0">Cursos</a></li>
+				    </ul>
+			    </li> <!-- item-has-children -->
+			    <li><a href="contactUs.aspx">Contactenos</a></li>
+		    </ul> <!-- cd-navigation -->
 
-            });
+		    <ul class="cd-navigation">
+			    <li><a href="login.aspx">Ingresar</a></li>
+		    </ul> <!-- cd-navigation -->
 
-        };
-    </script>
+		    <div class="cd-navigation socials">
+			    <a class="cd-facebook cd-img-replace" href="#0">Facebook</a>
+		    </div> <!-- socials -->
+	    </nav>
+    </form>
+    <script src="js/menu.js"></script>
 </body>
 </html>
