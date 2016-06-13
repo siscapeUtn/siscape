@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace UI {
+namespace UI.Academic {
     
     
-    public partial class Master {
+    public partial class Academic {
         
         /// <summary>
         /// Control head.
