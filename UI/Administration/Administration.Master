@@ -32,11 +32,11 @@
         <header>
 		    <a id="cd-logo" href="../../index.aspx"><img src="../../images/page-icons/DEAS-icon.png" alt="Homepage" /></a>
 		    <span class="cd-name">Dirección de Extensión y Acción Social</span>
-		    <nav id="cd-top-nav">
+		    <%--<nav id="cd-top-nav">
 			    <ul>
 				    <li><a href="../../login.aspx">Ingresar</a></li>
 			    </ul>
-		    </nav>
+		    </nav>--%>
 		    <a id="cd-menu-trigger" href="#0"><span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span></a>
 	    </header>
 	    <%--<main class="cd-main-content">--%>
