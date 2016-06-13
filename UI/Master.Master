@@ -37,7 +37,7 @@
 				    <li><a href="login.aspx">Ingresar</a></li>
 			    </ul>
 		    </nav>--%>
-		    <a id="cd-menu-trigger" href="#0"><span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span></a>
+		    <a id="cd-menu-trigger" href="#0"><span class="cd-menu-icon"></span></a>
 	    </header>
 	    <%--<main class="cd-main-content">--%>
             <div class="content">

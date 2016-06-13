@@ -262,7 +262,7 @@ header {
 
 @media only screen and (min-width: 768px) {
     #cd-menu-trigger {
-        width: 110px;
+        width: 50px;
         padding-left: 1.25em;
     }
 
