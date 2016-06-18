@@ -68,3 +68,15 @@ C:\Users\asala\Source\Repos\SISCAPE\UI\bin\DAL.pdb
 C:\Users\asala\Source\Repos\SISCAPE\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 C:\Users\asala\Source\Repos\SISCAPE\UI\obj\Debug\UI.dll
 C:\Users\asala\Source\Repos\SISCAPE\UI\obj\Debug\UI.pdb
+C:\Users\Rud\Source\Repos\siscape\UI\bin\UI.dll.config
+C:\Users\Rud\Source\Repos\siscape\UI\bin\UI.dll
+C:\Users\Rud\Source\Repos\siscape\UI\bin\UI.pdb
+C:\Users\Rud\Source\Repos\siscape\UI\bin\BLL.dll
+C:\Users\Rud\Source\Repos\siscape\UI\bin\Entities.dll
+C:\Users\Rud\Source\Repos\siscape\UI\bin\DAL.dll
+C:\Users\Rud\Source\Repos\siscape\UI\bin\BLL.pdb
+C:\Users\Rud\Source\Repos\siscape\UI\bin\Entities.pdb
+C:\Users\Rud\Source\Repos\siscape\UI\bin\DAL.pdb
+C:\Users\Rud\Source\Repos\siscape\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\Rud\Source\Repos\siscape\UI\obj\Debug\UI.dll
+C:\Users\Rud\Source\Repos\siscape\UI\obj\Debug\UI.pdb

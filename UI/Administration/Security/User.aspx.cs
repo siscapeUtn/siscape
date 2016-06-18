@@ -10,6 +10,7 @@ namespace UI.Administration.Security
 {
     public partial class User : System.Web.UI.Page
     {
+        static Int32 resetUserSystem_id = -1;
         static Int32 userSystem_id = -1;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -43,7 +44,7 @@ namespace UI.Administration.Security
                 oUser.cellPhone = txtCellPhone.Text;
                 oUser.email = txtEmail.Text;
                 oProgram.code = Convert.ToInt16(cboProgram.SelectedValue);
-                oUser.Password = txtPassword.Text;
+                oUser.Password = txtId.Text;
                 oRole.Role_Id = Convert.ToInt16(cboRole.SelectedValue);
                 oUser.oProgram = oProgram;
                 oUser.oRole = oRole;
@@ -86,8 +87,76 @@ namespace UI.Administration.Security
 
         protected void loadData()
         {
-            //gvFunctionary.DataSource = FunctionaryBLL.getInstance().getAll();
-            //gvFunctionary.DataBind();
+            gvUserSystem.DataSource = BLL.UserSystemBLL.getInstance().getAll();
+            gvUserSystem.DataBind();
+        }
+
+        protected void gvUserSystem_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            unlockControls();
+            Int32 code = Convert.ToInt32(gvUserSystem.Rows[e.NewEditIndex].Cells[0].Text);
+            Entities.UserSystem oUser = UserSystemBLL.getInstance().getUserSystem(code);
+            getProgram();
+            getRole();
+            txtCode.Text = oUser.code.ToString();
+            txtId.Text = oUser.id.ToString();
+            txtName.Text = oUser.name.ToString();
+            txtLastName.Text = oUser.lastName.ToString();
+            txtHomePhone.Text = oUser.homePhone.ToString();
+            txtCellPhone.Text = oUser.cellPhone.ToString();
+            txtEmail.Text = oUser.email.ToString();
+            cboProgram.SelectedValue = oUser.oProgram.code.ToString();
+            cboRole.SelectedValue = oUser.oRole.Role_Id.ToString();
+            try
+            {
+                cboState.SelectedValue = oUser.state.ToString();
+            }
+            catch (Exception)
+            {
+                cboState.SelectedValue = "1";
+            }
+        }
+
+        protected void gvUserSystem_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            String UserName = gvUserSystem.Rows[e.RowIndex].Cells[1].Text;
+            userSystem_id = Convert.ToInt32(gvUserSystem.Rows[e.RowIndex].Cells[0].Text);
+            lblUserName.Text = UserName;
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "confirmMessage", "$('#confirmMessage').modal();", true);
+            confirmModal.Update();
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            Int32 records = UserSystemBLL.getInstance().delete(userSystem_id);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "closeConfirmMessage", "$('#confirmMessage').modal('toggle');", true);
+
+            if (records > 0)
+            {
+                lblMessage.Text = "Usuario eliminado correctamente.";
+            }
+            loadData();
+        }
+
+        protected void gvUserSystem_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            String UserName = gvUserSystem.Rows[e.RowIndex].Cells[1].Text;
+            resetUserSystem_id = Convert.ToInt32(gvUserSystem.Rows[e.RowIndex].Cells[0].Text);
+            lblUserName.Text = UserName;
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "ResetPassword", "$('#ResetPassword').modal();", true);
+            confirmModal.Update();
+        }
+
+        protected void btnReset_Click(object sender, EventArgs e)
+        {
+            //Int32 records = UserSystemBLL.getInstance().delete(userSystem_id);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "closeResetPassword", "$('#ResetPassword').modal('toggle');", true);
+
+            //if (records > 0)
+            //{
+            //    lblMessage.Text = "Usuario eliminado correctamente.";
+            //}
+            loadData();
         }
 
         protected Boolean validateData()
@@ -169,30 +238,7 @@ namespace UI.Administration.Security
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorEmail", "$('#ContentPlaceHolder1_txtEmail').removeClass('has-error');", true);
             }
 
-            if (txtPassword.Text.Trim() == "")
-            {
-                ind = false;
-                lblMessagePassword.Text = "Debe digitar una contraseña.";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorPassword", "$('#ContentPlaceHolder1_txtPassword').addClass('has-error');", true);
-            }
-            else
-            {
-                lblMessagePassword.Text = "";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorPassword", "$('#ContentPlaceHolder1_txtPassword').removeClass('has-error');", true);
-            }
 
-            if (txtConfirmPassword.Text.Trim() == "")
-            {
-                ind = false;
-                lblMessageConfirmPassword.Text = "Debe digitar una contraseña.";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorConfirmPassword", "$('#ContentPlaceHolder1_txtConfirmPassword').addClass('has-error');", true);
-            }
-            else
-            {
-                lblMessageConfirmPassword.Text = "";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorConfirmPassword", "$('#ContentPlaceHolder1_txtConfirmPassword').removeClass('has-error');", true);
-            
-            }
 
             return ind;
         }
@@ -240,8 +286,6 @@ namespace UI.Administration.Security
             txtHomePhone.Enabled = false;
             txtCellPhone.Enabled = false;
             txtEmail.Enabled = false;
-            txtPassword.Enabled = false;
-            txtConfirmPassword.Enabled = false;
             cboProgram.Enabled = false;
             cboRole.Enabled = false;
             cboState.Enabled = false;
@@ -260,8 +304,6 @@ namespace UI.Administration.Security
             txtHomePhone.Enabled = true;
             txtCellPhone.Enabled = true;
             txtEmail.Enabled = true;
-            txtPassword.Enabled = true;
-            txtConfirmPassword.Enabled = true;
             cboProgram.Enabled = true;
             cboRole.Enabled = true;
             cboState.Enabled = true;
@@ -292,12 +334,6 @@ namespace UI.Administration.Security
             txtEmail.Text = "";
             lblMessageEmail.Text = "";
             ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorEmail", "$('#ContentPlaceHolder1_txtEmail').removeClass('has-error');", true);
-            txtPassword.Text = "";
-            lblMessagePassword.Text = "";
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorPassword", "$('#ContentPlaceHolder1_txtPassword').removeClass('has-error');", true);
-            txtConfirmPassword.Text = "";
-            lblMessageConfirmPassword.Text = "";
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorConfirmPassword", "$('#ContentPlaceHolder1_txtConfirmPassword').removeClass('has-error');", true);            
             cboState.SelectedValue = "1";
         }
     }

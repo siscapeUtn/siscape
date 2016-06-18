@@ -30,7 +30,7 @@
                     </section>
                     <section class="col-md-4">
                         <section class="form-group">
-                            <asp:Button CssClass="pull-right" Text="Ingresar" runat="server" />
+                            <asp:Button CssClass="pull-right" Text="Ingresar" runat="server" OnClick="login_Click" />
                         </section>
                     </section>
                 </section>
