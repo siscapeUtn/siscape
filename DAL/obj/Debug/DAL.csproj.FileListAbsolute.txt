@@ -15,3 +15,9 @@ C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\DAL\bin\DAL.pdb
 C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\DAL\obj\Debug\DAL.dll
 C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\DAL\obj\Debug\DAL.pdb
+C:\Users\Rud\Source\Repos\siscape\DAL\bin\DAL.dll.config
+C:\Users\Rud\Source\Repos\siscape\DAL\bin\DAL.dll
+C:\Users\Rud\Source\Repos\siscape\DAL\bin\DAL.pdb
+C:\Users\Rud\Source\Repos\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Rud\Source\Repos\siscape\DAL\obj\Debug\DAL.dll
+C:\Users\Rud\Source\Repos\siscape\DAL\obj\Debug\DAL.pdb
