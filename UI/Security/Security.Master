@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="UI.Master" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Security.master.cs" Inherits="UI.Security.Security" %>
 
 <!DOCTYPE html>
 
@@ -11,16 +11,16 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/menu-styles.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
-    <link rel="icon" href="images/page-icons/DEAS-favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" media="screen" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/menu-styles.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
+    <link rel="icon" href="../images/page-icons/DEAS-favicon.ico" />
 
     <!-- JS --> 
-    <script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
-    <script type="text/javascript" src="js/pageFunctions.js" ></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="../../js/jquery-1.11.3.js" ></script>
+    <script type="text/javascript" src="../../../js/pageFunctions.js" ></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 
     <!-- ContentPlaceHolder Head -->
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
@@ -28,11 +28,11 @@
 <body>
     <form id="form1" runat="server">
         <header>
-		    <a id="cd-logo" href="index.aspx"><img src="images/page-icons/DEAS-icon.png" alt="Homepage" /></a>
+		    <a id="cd-logo" href="../../index.aspx"><img src="../../images/page-icons/DEAS-icon.png" alt="Homepage" /></a>
 		    <span class="cd-name">Dirección de Extensión y Acción Social</span>
 		    <%--<nav id="cd-top-nav">
 			    <ul>
-				    <li><a href="login.aspx">Ingresar</a></li>
+				    <li><a href="../../login.aspx">Ingresar</a></li>
 			    </ul>
 		    </nav>--%>
 		    <a id="cd-menu-trigger" href="#0"><span class="cd-menu-icon"></span></a>
@@ -46,31 +46,31 @@
 	    <nav id="cd-lateral-nav">
             <span id="close_menu" class="close">&#10006;</span>
 		    <ul class="cd-navigation">
-			    <li><a href="index.aspx">Inicio</a></li>
-			    <li><a href="about.aspx">Acerca de</a></li>
+			    <li><a href="../../index.aspx">Inicio</a></li>
+			    <li><a href="../../about.aspx">Acerca de</a></li>
 			    <li class="item-has-children">
 				    <a href="#0">Seguridad</a>
 				    <ul class="sub-menu">
-					    <li><a href="Administration/AdministrationGroups/gSecurity.aspx">Roles</a></li>
-					    <li><a href="Administration/AdministrationGroups/gSecurity.aspx">Usuarios</a></li>
+					    <li><a href="../AdministrationGroups/gSecurity.aspx">Roles</a></li>
+					    <li><a href="../AdministrationGroups/gSecurity.aspx">Seguridad</a></li>
 				    </ul>
 			    </li> <!-- item-has-children -->
 
 			    <li class="item-has-children">
 				    <a href="#0">Administración</a>
 				    <ul class="sub-menu">
-					    <li><a href="Administration/AdministrationGroups/gProgram.aspx">Programas</a></li>
-					    <li><a href="Administration/AdministrationGroups/gPeriod.aspx">Períodos</a></li>
-					    <li><a href="Academic/AcademicGroups/gBuilding.aspx">Infraestructura</a></li>
+					    <li><a href="../AdministrationGroups/gProgram.aspx">Programas</a></li>
+					    <li><a href="../AdministrationGroups/gPeriod.aspx">Períodos</a></li>
+					    <li><a href="../../Academic/AcademicGroups/gBuilding.aspx">Infraestructura</a></li>
 				    </ul>
 			    </li> <!-- item-has-children -->
 
 			    <li class="item-has-children">
 				    <a href="#0">Académico</a>
 				    <ul class="sub-menu">
-					    <li><a href="Academic/AcademicGroups/gBuilding.aspx">Infraestructura</a></li>
-					    <li><a href="Academic/AcademicGroups/gFunctionary.aspx">Funcionarios</a></li>
-					    <li><a href="Academic/AcademicGroups/gAcademicOffer.aspx">Oferta académica</a></li>
+					    <li><a href="../../Academic/AcademicGroups/gBuilding.aspx">Infraestructura</a></li>
+					    <li><a href="../../Academic/AcademicGroups/gFunctionary.aspx">Funcionarios</a></li>
+					    <li><a href="../../Academic/AcademicGroups/gAcademicOffer.aspx">Oferta académica</a></li>
 					    <li><a href="#">Reportes</a></li>
 				    </ul>
 			    </li> <!-- item-has-children -->
@@ -80,11 +80,11 @@
 					    <li><a href="#0">Cursos</a></li>
 				    </ul>
 			    </li> <!-- item-has-children -->
-			    <li><a href="contactUs.aspx">Contactenos</a></li>
+			    <li><a href="../../contactUs.aspx">Contactenos</a></li>
 		    </ul> <!-- cd-navigation -->
 
 		    <ul class="cd-navigation">
-			    <li><a href="login.aspx">Ingresar</a></li>
+			    <li><a href="../../login.aspx">Ingresar</a></li>
 		    </ul> <!-- cd-navigation -->
 
 		    <div class="cd-navigation socials">
@@ -92,6 +92,6 @@
 		    </div> <!-- socials -->
 	    </nav>
     </form>
-    <script src="js/menu.js"></script>
+    <script src="../../js/menu.js"></script>
 </body>
 </html>

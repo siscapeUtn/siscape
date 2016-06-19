@@ -3,13 +3,17 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="row">
-        <section class="accesses col-md-4 col-sm-4 col-xs-4">
-            <a href="../Program/program.aspx" ><img alt="Programa" src="../../images/administration/program_2.png" />
-            <p>Programa</p></a>
+        <section class="col-md-4 col-sm-4 col-xs-12">
+            <section class="accesses">
+                <a href="../Program/program.aspx" ><img alt="Programa" src="../../images/administration/program_2.svg" />
+                <p>Programa</p></a>
+            </section>
         </section>
-        <section class="accesses col-md-4 col-sm-4 col-xs-4">
-            <a href="administration.aspx" ><img alt="Regresar" src="../../images/page-icons/return.png" />
-            <p>Regresar</p></a>
+        <section class="col-md-4 col-sm-4 col-xs-12">
+            <section class="accesses">
+                <a href="administration.aspx" ><img alt="Regresar" src="../../images/page-icons/return.svg" />
+                <p>Regresar</p></a>
+            </section>
         </section>
     </section>
 </asp:Content>

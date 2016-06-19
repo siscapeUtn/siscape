@@ -7,9 +7,9 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace UI.Administration {
+namespace UI.Security.SecurityGroups {
     
     
-    public partial class gPeriod {
+    public partial class security {
     }
 }

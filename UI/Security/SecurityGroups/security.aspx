@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Seguridad - DEAS" Language="C#" MasterPageFile="~/Administration/Administration.Master" AutoEventWireup="true" CodeBehind="gSecurity.aspx.cs" Inherits="UI.Administration.gSecurity" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Security/Security.Master" AutoEventWireup="true" CodeBehind="security.aspx.cs" Inherits="UI.Security.SecurityGroups.security" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -17,7 +17,7 @@
         </section>
         <section class="col-md-4 col-sm-4 col-xs-12">
             <section class="accesses">
-                <a href="administration.aspx" ><img alt="Regresar" src="../../images/page-icons/return.svg" />
+                <a href="security.aspx" ><img alt="Regresar" src="../../images/page-icons/return.svg" />
                 <p>Regresar</p></a>
             </section>
         </section>
