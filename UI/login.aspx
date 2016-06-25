@@ -11,11 +11,11 @@
                 <section class="row">
                     <section class="col-md-12">
                         <section class="form-group">
-                            <asp:TextBox ID="txtUser" placeholder="correo electrónico" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtUser"  runat="server"></asp:TextBox>
                             <span class="help-block"></span>
                         </section>
                         <section class="form-group">
-                            <asp:TextBox ID="txtPassword" placeholder="contraseña" runat="server" TextMode="Password" ></asp:TextBox>
+                            <asp:TextBox ID="txtPassword"  runat="server" TextMode="Password" ></asp:TextBox>
                             <span class="help-block"></span>
                         </section>
                         <section>
