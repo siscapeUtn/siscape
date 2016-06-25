@@ -161,5 +161,110 @@ namespace BLL
             finally { }
         }//end Modify
 
+        public Int32 delete(Int32 pCode)
+        {
+
+            String oSql = "SP_DELETEUSER";
+
+            try
+            {
+                SqlCommand oCommand = new SqlCommand(oSql);
+                oCommand.CommandType = CommandType.StoredProcedure;
+                oCommand.Parameters.AddWithValue("@USERSYSTEM_ID", pCode);
+                oCommand.Parameters[0].Direction = ParameterDirection.Input;
+                return DAO.getInstance().executeSQL(oCommand);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { }
+        }//delete end
+
+        //get all the Users System
+        public List<UserSystem> getAll()
+        {
+            String sql = "SP_GETALLUSERSYTEM";
+
+            try
+            {
+                SqlCommand oCommand = new SqlCommand(sql);
+                oCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                DataTable oDataTable = DAO.getInstance().executeQuery(oCommand);
+                List<UserSystem> listUserSystem = new List<UserSystem>();
+                foreach (DataRow oDataRow in oDataTable.Rows)
+                {
+                    UserSystem oUserSystem = new UserSystem();
+                    Program oProgram = new Program();
+                    Role oRole = new Role();
+                    oUserSystem.code = Convert.ToInt32(oDataRow[0].ToString());
+                    oUserSystem.id = oDataRow[1].ToString();
+                    oUserSystem.name = oDataRow[2].ToString();
+                    oUserSystem.lastName = oDataRow[3].ToString();
+                    oProgram.code = Convert.ToInt32(oDataRow[4].ToString());
+                    oProgram.name = oDataRow[5].ToString();
+                    oUserSystem.homePhone = oDataRow[6].ToString();
+                    oUserSystem.cellPhone = oDataRow[7].ToString();
+                    oUserSystem.email = oDataRow[8].ToString();
+                    oRole.Role_Id = Convert.ToInt32(oDataRow[9].ToString());
+                    oRole.Description = oDataRow[10].ToString();
+                    oUserSystem.state = Convert.ToInt16(oDataRow[11].ToString());
+                    oUserSystem.oProgram = oProgram;
+                    oUserSystem.oRole = oRole;
+                    listUserSystem.Add(oUserSystem);
+                }
+                return listUserSystem;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { }
+        }//end getAll
+
+
+        //get one especific UserSytem
+        public UserSystem getUserSystem(Int32 pCode)
+        {
+            String sql = "SP_GETUSERSYSTEM";
+
+            try
+            {
+                SqlCommand oCommand = new SqlCommand(sql);
+                oCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                oCommand.Parameters.AddWithValue("@ID", pCode);
+                oCommand.Parameters[0].Direction = ParameterDirection.Input;
+                DataTable oDataTable = DAO.getInstance().executeQuery(oCommand);
+                UserSystem oUserSystem = new UserSystem();
+                Program oProgram = new Program();
+                Role oRole = new Role();
+
+                foreach (DataRow oDataRow in oDataTable.Rows)
+                {
+                    oUserSystem.code = Convert.ToInt32(oDataRow[0].ToString());
+                    oUserSystem.id = oDataRow[1].ToString();
+                    oUserSystem.name = oDataRow[2].ToString();
+                    oUserSystem.lastName = oDataRow[3].ToString();
+                    oProgram.code = Convert.ToInt32(oDataRow[4].ToString());
+                    oProgram.name = oDataRow[5].ToString();
+                    oUserSystem.homePhone = oDataRow[6].ToString();
+                    oUserSystem.cellPhone = oDataRow[7].ToString();
+                    oUserSystem.email = oDataRow[8].ToString();
+                    oRole.Role_Id = Convert.ToInt32(oDataRow[9].ToString());
+                    oRole.Description = oDataRow[10].ToString();
+                    oUserSystem.state = Convert.ToInt16(oDataRow[11].ToString());
+                    oUserSystem.oProgram = oProgram;
+                    oUserSystem.oRole = oRole;
+                }
+                return oUserSystem;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { }
+        }
+ 
+    
     }
 }
