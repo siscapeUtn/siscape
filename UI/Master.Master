@@ -29,7 +29,7 @@
     <form id="form1" runat="server">
         <header>
 		    <a id="cd-logo" href="index.aspx"><img src="images/page-icons/DEAS-icon.png" alt="Homepage" /></a>
-		    <span class="cd-name">Dirección de Extensión y Acción Social</span>
+		    <%--<span class="cd-name">Dirección de Extensión y Acción Social</span>--%>
 		    <%--<nav id="cd-top-nav">
 			    <ul>
 				    <li><a href="login.aspx">Ingresar</a></li>
@@ -42,8 +42,9 @@
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
             </div>
 	    <%--</main> <!-- cd-main-content -->--%>
-
-	    <nav id="cd-lateral-nav">
+    </form>
+    
+    <nav id="cd-lateral-nav">
             <span id="close_menu" class="close">&#10006;</span>
 		    <ul class="cd-navigation">
 			    <li><a href="index.aspx">Inicio</a></li>
@@ -91,7 +92,7 @@
 			    <a class="cd-facebook cd-img-replace" href="#0">Facebook</a>
 		    </div> <!-- socials -->
 	    </nav>
-    </form>
+
     <script src="js/menu.js"></script>
 </body>
 </html>

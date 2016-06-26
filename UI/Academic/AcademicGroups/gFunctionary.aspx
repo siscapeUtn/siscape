@@ -5,25 +5,25 @@
     <section class="row">
         <section class="col-md-4 col-sm-4 col-xs-12">
             <section class="accesses">
-                <a href="../Functionary/InternalDesignation.aspx"><img alt="Nombramineto Interno" src="../../images/academic/internalDesignation.png" />
+                <a href="../Functionary/InternalDesignation.aspx"><img alt="Nombramineto Interno" src="../../images/academic/internalDesignation.svg" />
                 <p>Nombramiento interno</p></a>
             </section>
         </section>
         <section class="col-md-4 col-sm-4 col-xs-12">
             <section class="accesses">
-                <a href="../Functionary/teacher.aspx"><img alt="Administración de Profesores" src="../../images/academic/teacher.png" />
+                <a href="../Functionary/teacher.aspx"><img alt="Administración de Profesores" src="../../images/academic/teacher.svg" />
                 <p>Profesores</p></a>
             </section>
         </section>
         <section class="col-md-4 col-sm-4 col-xs-12">
             <section class="accesses">
-                <a href="../Functionary/functionary.aspx"><img alt="Administración de Funcionario" src="../../images/academic/functionary2.png" />
+                <a href="../Functionary/functionary.aspx"><img alt="Administración de Funcionario" src="../../images/academic/functionary2.svg" />
                 <p>Funcionario</p></a>
             </section>
         </section>
         <section class="col-md-4 col-sm-4 col-xs-12">
             <section class="accesses">
-                <a href="../Functionary/externalDesignation.aspx"><img alt="Nombramineto Externo" src="../../images/academic/externalDesignation.png" />
+                <a href="../Functionary/externalDesignation.aspx"><img alt="Nombramineto Externo" src="../../images/academic/externalDesignation.svg" />
                 <p>Nombramiento externo</p></a>
             </section>
         </section>
