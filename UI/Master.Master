@@ -78,7 +78,7 @@
 			    <li class="item-has-children">
 				    <a href="#0">Servicios</a>
 				    <ul class="sub-menu">
-					    <li><a href="#0">Cursos</a></li>
+					    <li><a href="service.aspx">Cursos</a></li>
 				    </ul>
 			    </li> <!-- item-has-children -->
 			    <li><a href="contactUs.aspx">Contactenos</a></li>

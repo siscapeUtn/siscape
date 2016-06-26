@@ -203,6 +203,7 @@
     <Content Include="Security\SecurityGroups\security.aspx" />
     <Content Include="Security\Security\role.aspx" />
     <Content Include="Security\Security\user.aspx" />
+    <Content Include="service.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -453,6 +454,13 @@
     </Compile>
     <Compile Include="Security\Security\user.aspx.designer.cs">
       <DependentUpon>user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="service.aspx.cs">
+      <DependentUpon>service.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="service.aspx.designer.cs">
+      <DependentUpon>service.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

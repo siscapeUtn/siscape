@@ -717,3 +717,60 @@ input:focus ~ .highlight {
 	from { background:#5264AE; }
   to 	{ width:0; background:transparent; }
 }
+
+/* ---------------------------
+  ---------- Services ----------
+----------------------------- */
+.listCourse{
+    color: #202020;
+    overflow: hidden;
+}
+
+.course{
+    background: #ffffff;
+    float: left;
+    font-size: 1.3rem;
+    margin: 0 0 0.5rem 1.25rem;
+    padding: 1.25rem;
+    width: 45%;
+}
+
+.course .name{
+    color: #003366;
+    border-bottom: 0.125rem solid #009900;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.course .schedule, .course .price{
+    font-weight: 400;
+    padding-top: 1rem;
+}
+
+.course .btnService{
+    background: #009900;
+    border: 3px solid #009900;
+    border-radius: 0;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 0.75rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+    width: 80%;
+}
+
+.course .btnService:hover{
+    background: #ffffff;
+    border-radius: 0;
+    color: #009900;
+    
+}
+
+
+@media only screen and (max-width: 580px){
+    .course{
+        width: 100%;
+    }
+}
