@@ -16,7 +16,7 @@ namespace UI
 
         protected void Unnamed_Click(object sender, EventArgs e)
         {
-            if (Verify())
+      /*      if (Verify())
             {
                 Entities.UserSystem oUser;
                 oUser = (Entities.UserSystem)BLL.UserSystemBLL.getInstance().verify_User(txtUser.Text, txtPassword.Text);
@@ -45,7 +45,7 @@ namespace UI
             {
                 lblMessage.Text = "Debe agregar la información correctamente";
             }
-
+            */
         }
 
         protected void login_Click(object sender, EventArgs e)
