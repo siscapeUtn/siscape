@@ -12,6 +12,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="../css/reset.css" media="screen" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../css/menu-styles.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
     <link rel="icon" href="../images/page-icons/DEAS-favicon.ico" />
@@ -19,9 +20,6 @@
     <!-- JS --> 
     <script type="text/javascript" src="../../js/jquery-1.11.3.js" ></script>
     <script type="text/javascript" src="../../js/pageFunctions.js" ></script>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <script type="text/javascript" src="../../js/bootstrap.min.js"></script> 
 
     <!-- ContentPlaceHolder Head -->
@@ -79,7 +77,7 @@
 			    <li class="item-has-children">
 				    <a href="#0">Servicios</a>
 				    <ul class="sub-menu">
-					    <li><a href="#0">Cursos</a></li>
+					    <li><a href="../../service.aspx">Cursos</a></li>
 				    </ul>
 			    </li> <!-- item-has-children -->
 			    <li><a href="../../contactUs.aspx">Contactenos</a></li>

@@ -7,6 +7,40 @@
             <p class="title">Cont&aacute;ctenos</p>
             <p class="subtitle">Dejenos su mensaje</p>
             <section class="form row">
+                <%--<section class="col-md-7">
+                    <section class="form-group">
+                        <div class="group">      
+                            <asp:TextBox ID="txtName" runat="server" required="true"></asp:TextBox>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Nombre completo*</label>
+                        </div>
+                    </section>
+                    <section class="form-group">
+                        <div class="group">      
+                            <asp:TextBox ID="txtEmail" runat="server" required="true"></asp:TextBox>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Correo electrónico*</label>
+                        </div>
+                    </section>
+                    <section class="form-group">
+                        <div class="group">      
+                            <asp:TextBox ID="txtPhone" runat="server" required="true"></asp:TextBox>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Teléfono</label>
+                        </div>
+                    </section>
+                    <section class="form-group">
+                        <div class="group">      
+                            <asp:TextBox ID="txtMessage" runat="server" required="true"></asp:TextBox>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Message*</label>
+                        </div>
+                    </section>
+                </section>--%>
                 <section class="col-md-7 form-horizontal">
                     <section class="form-group">
                         <asp:Label ID="lblName" CssClass="control-label col-sm-4" Text="Nombre completo:" runat="server"></asp:Label>
