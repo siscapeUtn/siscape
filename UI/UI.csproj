@@ -143,6 +143,7 @@
     <Content Include="images\security\user_rol.svg" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-1.11.3.js" />
+    <Content Include="js\jquery.cycle2.min.js" />
     <Content Include="js\menu.js" />
     <Content Include="libraries\bootstrap-combobox-master\css\bootstrap-combobox.css" />
     <Content Include="libraries\bootstrap-combobox-master\js\bootstrap-combobox.js" />

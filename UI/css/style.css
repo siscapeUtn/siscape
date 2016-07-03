@@ -154,6 +154,7 @@ body:before{
 }
 
 .form-buttons .image_align{
+    display: inline-block;
     height: 5%;
     margin-right: 10px;
     max-height: 62px;
