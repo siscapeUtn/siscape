@@ -783,3 +783,99 @@ input:focus ~ .highlight {
         width: 100%;
     }
 }
+
+
+/* ----------------------------------------------
+    ------------------ ACCORDION ----------------
+    -------------------------------------------- */
+.accordion{
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.accordion .ui-accordion-header{
+    background: #003366;
+    border: 1px solid #003366;
+    border-radius: 0;
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.accordion .ui-accordion-icons{
+    padding: 1em;
+}
+
+.accordion .ui-icon{
+    left: 95% !important;
+}
+
+.accourdion .contact-container{
+    width: 100%;
+    overflow: hidden;
+}
+
+.contact-container .contact_info{
+    float: left;
+    font-size: 1.3rem;
+    margin-right: 4%;
+    width: 46%;
+}
+
+.contact-container .contact_info p{
+    white-space: -moz-pre-wrap !important;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    white-space: -webkit-pre-wrap;
+    word-break: break-all;
+    white-space: normal;
+    width: 100%;
+}
+
+.contact-container .contact_info .subtitle{
+    color: #009900;
+    border-bottom: 1px solid #003366;
+    margin-left: 0;
+}
+
+@media only screen and (max-width: 1000px){
+    
+    .accordion .ui-accordion-header{
+        font-size: 1.3rem;
+    }
+
+
+    .contact-container .contact_info .subtitle{
+        font-size: 1.3rem;
+    }
+    
+    .contact-container .contact_info{
+        font-size: 1rem;
+    }
+
+}
+
+@media only screen and (max-width: 620px){
+       
+    .contact-container .contact_info{
+        float: left;
+        font-size: 1.3rem;
+        margin-right: 0;
+        width: 98%;
+    }
+
+}
+
+@media only screen and (max-width: 480px){
+       
+    .contact-container .contact_info{
+        font-size: 1.1rem;
+    }
+
+    .contact-container .contact_info .subtitle{
+        font-size: 1.1rem;
+    }
+}
+

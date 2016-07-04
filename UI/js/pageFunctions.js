@@ -1,8 +1,4 @@
-﻿function menuResponsive(){
-    
-}
-
-function slideshow() {
+﻿function slideshow() {
     $(function () {
         $('.slider').cycle({
             fx: 'fade',
@@ -15,8 +11,11 @@ function slideshow() {
 
 function accordion() {
     $(function () {
-        $("#accordion").accordion({
-            collapsible: true
+        $("#contactUs-accordion").accordion({
+            heightStyle: "content",
+            collapsible : true,
+            active : 'none',
+            icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" }
         });
     });
 }

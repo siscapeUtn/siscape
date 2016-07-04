@@ -9,8 +9,7 @@
 
 
 
-
-public partial class service{
+public partial class  {
     
     /// <summary>
     /// Control lblName.

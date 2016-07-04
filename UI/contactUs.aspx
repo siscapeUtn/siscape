@@ -7,40 +7,6 @@
             <p class="title">Cont&aacute;ctenos</p>
             <p class="subtitle">Dejenos su mensaje</p>
             <section class="form row">
-                <%--<section class="col-md-7">
-                    <section class="form-group">
-                        <div class="group">      
-                            <asp:TextBox ID="txtName" runat="server" required="true"></asp:TextBox>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Nombre completo*</label>
-                        </div>
-                    </section>
-                    <section class="form-group">
-                        <div class="group">      
-                            <asp:TextBox ID="txtEmail" runat="server" required="true"></asp:TextBox>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Correo electrónico*</label>
-                        </div>
-                    </section>
-                    <section class="form-group">
-                        <div class="group">      
-                            <asp:TextBox ID="txtPhone" runat="server" required="true"></asp:TextBox>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Teléfono</label>
-                        </div>
-                    </section>
-                    <section class="form-group">
-                        <div class="group">      
-                            <asp:TextBox ID="txtMessage" runat="server" required="true"></asp:TextBox>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Message*</label>
-                        </div>
-                    </section>
-                </section>--%>
                 <section class="col-md-7 form-horizontal">
                     <section class="form-group">
                         <asp:Label ID="lblName" CssClass="control-label col-sm-4" Text="Nombre completo:" runat="server"></asp:Label>
@@ -72,6 +38,78 @@
                 </section>
             </section>
             <p class="subtitle">Números de contacto</p>
+            <section id="contactUs-accordion" class="accordion">
+                <h3>Programa de Idiomas</h3>
+                <div class="contact-container">
+                    <div class="contact_info">
+                        <p class="subtitle">Programa de Idiomas</p>
+                        <p>Télefono: 2435-5000 ext:1193 </p>
+                        <p>Correo electrónico: programaidiomas@utn.ac.cr</p>
+                    </div>
+                    <div class="contact_info">
+                        <p class="subtitle">Jefe</p>
+                        <p>Nombre: Álvaro Salas Parra</p>
+                        <p>Télefono: 2435-5000 ext:1191</p>
+                        <p>Correo electrónico: asalas@utn.ac.cr</p>
+                    </div>
+                    <div class="contact_info">
+                        <p class="subtitle">Asistente</p>
+                        <p>Nombre: Jhonatan Rojas Campos</p>
+                        <p>Télefono: 2435-5000 ext:1192</p>
+                        <p>Correo electrónico: jrojas@utn.ac.cr</p>
+                    </div>
+                    <div class="contact_info">
+                        <p class="subtitle">Secretaria</p>
+                        <p>Nombre: Erika Aguero Ledezma</p>
+                        <p>Télefono: 2435-5000 ext:1193</p>
+                        <p>Correo electrónico: eaguero@utn.ac.cr</p>
+                    </div>
+                </div>
+                <h3>Programa de Tecnología Informática y Comunicación (TIC'S)</h3>
+                <div class="contact-container">
+                    <div class="contact_info">
+                        <p class="subtitle">Programa de Tecnología Informática y Comunicación (TIC'S)</p>
+                        <p>Télefono: 2430-4050 exts:215 o 216</p>
+                        <p>Correo electrónico: cetics@utn.ac.cr</p>
+                    </div>
+                </div>
+                <h3>Programas Técnicos y de Acción Social</h3>
+                <div class="contact-container">
+                    <div class="contact_info">
+                        <p class="subtitle">Director</p>
+                        <p>Nombre: Marco Tulio López Duran</p>
+                        <p>Télefono: 2435-5000 ext:1076</p>
+                        <p>Correo electrónico: mlopez@utn.ac.cr</p>
+                    </div>
+                    <div class="contact_info">
+                        <p class="subtitle">Encargada de Cursos Libres</p>
+                        <p>Nombre: Seidy Serrano Vargas</p>
+                        <p>Télefono: 2435-5000 ext:1077</p>
+                        <p>Correo electrónico: serrano@utn.ac.cr</p>
+                    </div>
+                    <div class="contact_info">
+                        <p class="subtitle">Encargada de Programas Técnicos</p>
+                        <p>Nombre: Iriabel Madrigal Soto</p>
+                        <p>Télefono: 2435-5000 ext:1078</p>
+                        <p>Correo electrónico: imadrigal@utn.ac.cr</p>
+                    </div>
+                    <div class="contact_info">
+                        <p class="subtitle">Encargado de Asistencia Técnica</p>
+                        <p>Nombre: Marvin Torres Hernández</p>
+                        <p>Télefono: 2435-5000 ext:1079</p>
+                        <p>Correo electrónico: mtorres@utn.ac.cr</p>
+                    </div>
+                    <div class="contact_info">
+                        <p class="subtitle">Encargada de Acción Social</p>
+                        <p>Nombre: Ileana Cartín Guerrero</p>
+                        <p>Télefono: 2435-5000 ext:1080</p>
+                        <p>Correo electrónico: icartin@utn.ac.cr</p>
+                    </div>
+                </div>
+            </section>
         </section>
     </section>
+    <script type="text/javascript">
+        accordion();
+    </script>
 </asp:Content>
