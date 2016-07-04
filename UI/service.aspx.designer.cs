@@ -7,7 +7,18 @@
 //// </generado automáticamente>
 ////------------------------------------------------------------------------------
 
+namespace UI {
 
+public partial class service{
+    
+    /// <summary>|
+    /// Control btnInteresado.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Button btnInteresado;
 
 //public partial class  {
     
@@ -19,7 +30,7 @@
 //    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 //    /// </remarks>
 //    protected global::System.Web.UI.WebControls.Button btnInteresado;
-    
+   
 //    /// <summary>
 //    /// Control btnInteresado2.
 //    /// </summary>
@@ -38,6 +49,17 @@
 //    /// </remarks>
 //    protected global::System.Web.UI.WebControls.Button Button1;
     
+  /// <summary>
+    /// Control Button2.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Button Button2;
+  }
+}
+
 //    /// <summary>
 //    /// Control Button2.
 //    /// </summary>

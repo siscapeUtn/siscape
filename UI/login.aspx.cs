@@ -16,6 +16,11 @@ namespace UI
 
         protected void Unnamed_Click(object sender, EventArgs e)
         {
+                              
+       }
+
+        protected void login_Click(object sender, EventArgs e)
+        {
             if (Verify())
             {
                 Entities.UserSystem oUser;
@@ -28,29 +33,14 @@ namespace UI
                 else
                 {
                     Session["User"] = oUser;
-                    if (oUser.oUserType.code == 1)
-                    {
-                        Response.Redirect("Recorder/Recorder.aspx");
-                    }
-                    else
-                    {
-                        if (oUser.oUserType.code == 2)
-                        {
-                            Response.Redirect("Recorder/Recorder.aspx");
-                        }
-                    }
+                    Response.Redirect("index.aspx");
                 }
             }
             else
             {
                 lblMessage.Text = "Debe agregar la información correctamente";
             }
-
-        }
-
-        protected void login_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("index.aspx");
+            
         }
 
         private bool Verify()
