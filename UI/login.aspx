@@ -11,14 +11,15 @@
                 <section class="row">
                     <section class="col-md-12">
                         <section class="form-group">
-                            <asp:TextBox ID="txtUser"  runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtUser" placeholder="ejemplo@gmail.com"  runat="server"></asp:TextBox>
                             <span class="help-block"></span>
                         </section>
                         <section class="form-group">
-                            <asp:TextBox ID="txtPassword"  runat="server" TextMode="Password" ></asp:TextBox>
+                            <asp:TextBox ID="txtPassword" placeholder="Password"  runat="server" TextMode="Password" ></asp:TextBox>
                             <span class="help-block"></span>
                         </section>
-                        <section>
+                        <section class="form-group">
+                            <asp:Label ID="lblMessage" runat="server" Text="Label"></asp:Label>
                             <asp:DropDownList ID="cboPeriod" runat="server">
                                 <asp:ListItem Value="0">Seleccione el periodo</asp:ListItem>
                             </asp:DropDownList>
