@@ -10,7 +10,6 @@
 }
 
 html, body {
-    background-color: #D0D0D0;
     font-size: 0.75rem;
     height: 100%;
 }
@@ -95,7 +94,7 @@ header {
 
 #cd-logo {
     float: left;
-    max-width: 9rem;  
+    max-width: 8rem;  
 }
 
 #cd-logo img {
@@ -130,7 +129,6 @@ header {
     font-weight: 900;
     margin-left: 14rem;
     padding: 2.25rem;
-    text-transform: uppercase;
   }
 
 }
@@ -155,7 +153,6 @@ header {
   display: inline-block;
   padding: 1.5rem;
   color: #003366;
-  text-transform: uppercase;
   font-weight: 600;
   text-decoration: none;
 }
@@ -193,7 +190,6 @@ header {
 
 #cd-menu-trigger .cd-menu-text {
   height: 100%;
-  text-transform: uppercase;
   color: #FFF;
   font-weight: 600;
   display: none;
@@ -336,7 +332,6 @@ header {
   line-height: 2em;
   padding: 0 16px 0 32px;
   color: #ffffff;
-  text-transform: uppercase;
   font-weight: 600;
   font-size: 1.25rem; 
   text-decoration: none;
@@ -374,7 +369,6 @@ header {
 /* style menu items which have a submenu  */
 #cd-lateral-nav .item-has-children > a {
   position: relative;
-  text-transform: uppercase;
   font-weight: 600;
   /* this is the right arrow to show that the item has a submenu  */
 }
@@ -496,6 +490,7 @@ header {
     color: #003366;
     border-bottom: 0.125rem solid #009900;
     font-size: 3rem;
+    margin-bottom: 1.25rem;
 }
 
 .subtitle{
@@ -522,12 +517,12 @@ header {
 --------------------------------------------------------- */
 .slider{
     margin: auto;
-    width: 80%;
+    width: 90%;
 }
 
 .slider > img{
     margin: auto;
-    width: 100% !important;
+    width: 100%;
 }
 
 /* -------------------------------------------------------
@@ -561,13 +556,17 @@ header {
 /* -------------------------------------------------------
 ------------------------ .ACCESSES  ----------------------
 ------------------------------------------------------- */
+
 .accesses {
     background: #FFFFFF;
     border: 1px solid #999999;
-    float: left;
-    margin-bottom: 1rem;
-    text-align: center;
-    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    padding: 2rem;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+    text-align: center;  
+    max-width: 300px;
 }
 
 .accesses img{
@@ -614,6 +613,18 @@ header {
     }   
 }
 
+@media only screen and (max-width: 770px ) and (min-width: 580px){
+    .accesses-container{
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 770px ) and (min-width: 400px){
+    .accesses{
+        max-width: 300px;
+    }
+}
+
 /* ---------------------------
     ----------Group ----------
 ----------------------------- */
@@ -628,7 +639,6 @@ input 				{
   display:block;
   width: 100%;
   border:none;
-  border-bottom:1px solid #757575;
 }
 
 input:focus{ 
@@ -757,7 +767,6 @@ input:focus ~ .highlight {
     margin-top: 0.75rem;
     margin-left: auto;
     margin-right: auto;
-    text-transform: uppercase;
     width: 80%;
 }
 

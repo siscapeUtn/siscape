@@ -3,6 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="content_2">
+        <section class="navigation-page">
+
+        </section>
         <section class="about">
             <p class="title">Direcci&oacute;n de Extensi&oacute;n y Acci&oacute;n Social</p>
             <article>La Vicerrectoría de Extensión es el resultado de un proyecto novedoso inmerso en la moderna sociedad del conocimiento, 
