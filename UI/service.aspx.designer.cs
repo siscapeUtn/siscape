@@ -11,7 +11,7 @@ namespace UI {
 
 public partial class service{
     
-    /// <summary>
+    /// <summary>|
     /// Control btnInteresado.
     /// </summary>
     /// <remarks>
