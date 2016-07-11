@@ -1074,10 +1074,11 @@ input:focus ~ .highlight {
     width: auto;
 }
 
-.maintanance .dataExists{
+.maintanance .dataExists td{
     margin: auto;
     padding: 10px;
     font-size: 15px;
+    vertical-align: middle;
 }
 
 .maintanance .message{
