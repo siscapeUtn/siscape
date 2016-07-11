@@ -33,7 +33,7 @@
                         </div>
                     </section>
                     <section class="form-group">
-                        <asp:Button runat="server" Text="Enviar" CssClass="pull-right form-button" ToolTip="Enviar el mensaje" />
+                        <asp:Button runat="server" Text="Enviar" CssClass="pull-right form-button send" ToolTip="Enviar el mensaje" />
                     </section>
                 </section>
             </section>

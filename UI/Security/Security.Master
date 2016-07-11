@@ -28,69 +28,73 @@
 <body>
     <form id="form1" runat="server">
         <header>
-		    <a id="cd-logo" href="../../index.aspx"><img src="../../images/page-icons/DEAS-icon.png" alt="Homepage" /></a>
-		    <span class="cd-name">Dirección de Extensión y Acción Social</span>
-		    <%--<nav id="cd-top-nav">
-			    <ul>
-				    <li><a href="../../login.aspx">Ingresar</a></li>
-			    </ul>
-		    </nav>--%>
-		    <a id="cd-menu-trigger" href="#0"><span class="cd-menu-icon"></span></a>
+		    <div class="header-container">
+			    <a id="logo" href="../../index.aspx"><img src="../../images/page-icons/DEAS-icon.png" alt="Homepage" /></a>
+			    <nav>
+				    <ul class="navigation">
+					    <li>
+						    <div class="option">
+							    <div><a href="../../index.aspx" class="anchor">Inicio</a></div>
+						    </div>
+					    </li>
+					    <li>
+						    <div class="option">
+							    <div><a href="../../about.aspx" class="anchor">Acerca de</a></div>
+						    </div>
+					    </li>
+					    <li>
+						    <div class="option">
+							    <div><a href="#" class="anchor">Seguridad</a></div>
+						    </div>
+						    <ul class="sub-menu">
+							    <li><div><a href="../AdministrationGroups/gSecurity.aspx">Roles</a></div></li>
+							    <li><div><a href="../AdministrationGroups/gSecurity.aspx">Usuarios</a></div></li>
+						    </ul>
+					    </li>
+					    <li>
+						    <div class="option">
+							    <div><a href="#" class="anchor">Administraci&oacute;n</a></div>
+						    </div>
+						    <ul class="sub-menu">
+							    <li><div><a href="../AdministrationGroups/gProgram.aspx">Programas</a></div></li>
+							    <li><div><a href="../AdministrationGroups/gPeriod.aspx">Per&iacute;odo</a></div></li>
+							    <li><div><a href="../../Academic/AcademicGroups/gBuilding.aspx">Infraestructura</a></div></li>
+						    </ul>
+					    </li>
+					    <li>
+						    <div class="option">
+							    <div><a href="#" class="anchor">Acad&eacute;mico</a></div>
+						    </div>
+						    <ul class="sub-menu">
+							    <li><div><a href="../../Academic/AcademicGroups/gBuilding.aspx">Infraestructura</a></div></li>
+							    <li><div><a href="../../Academic/AcademicGroups/gFunctionary.aspx">Funcionarios</a></div></li>
+							    <li><div><a href="../../Academic/AcademicGroups/gAcademicOffer.aspx">Oferta Acad&eacute;mica</a></div></li>
+						    </ul>
+					    </li>
+					    <li>
+						    <div class="option">
+							    <div><a href="../../service.aspx" class="anchor">Servicios</a></div>
+						    </div>
+					    </li>
+					    <li>
+						    <div class="option">
+							    <div><a href="../../contactUs.aspx" class="anchor">Cont&aacute;ctenos</a></div>
+						    </div>
+					    </li>
+                        <li>
+                            <div class="option">
+                                <div><a href="../../login.aspx" class="anchor">Iniciar Sesi&oacute;n</a></div>
+                            </div>
+                        </li>
+				    </ul>
+			    </nav>
+		    </div>
 	    </header>
 	    <%--<main class="cd-main-content">--%>
             <div class="content">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
             </div>
 	    <%--</main> <!-- cd-main-content -->--%>
-
-	    <nav id="cd-lateral-nav">
-            <span id="close_menu" class="close">&#10006;</span>
-		    <ul class="cd-navigation">
-			    <li><a href="../../index.aspx">Inicio</a></li>
-			    <li><a href="../../about.aspx">Acerca de</a></li>
-			    <li class="item-has-children">
-				    <a href="#0">Seguridad</a>
-				    <ul class="sub-menu">
-					    <li><a href="../AdministrationGroups/gSecurity.aspx">Roles</a></li>
-					    <li><a href="../AdministrationGroups/gSecurity.aspx">Seguridad</a></li>
-				    </ul>
-			    </li> <!-- item-has-children -->
-
-			    <li class="item-has-children">
-				    <a href="#0">Administración</a>
-				    <ul class="sub-menu">
-					    <li><a href="../AdministrationGroups/gProgram.aspx">Programas</a></li>
-					    <li><a href="../AdministrationGroups/gPeriod.aspx">Períodos</a></li>
-					    <li><a href="../../Academic/AcademicGroups/gBuilding.aspx">Infraestructura</a></li>
-				    </ul>
-			    </li> <!-- item-has-children -->
-
-			    <li class="item-has-children">
-				    <a href="#0">Académico</a>
-				    <ul class="sub-menu">
-					    <li><a href="../../Academic/AcademicGroups/gBuilding.aspx">Infraestructura</a></li>
-					    <li><a href="../../Academic/AcademicGroups/gFunctionary.aspx">Funcionarios</a></li>
-					    <li><a href="../../Academic/AcademicGroups/gAcademicOffer.aspx">Oferta académica</a></li>
-					    <li><a href="#">Reportes</a></li>
-				    </ul>
-			    </li> <!-- item-has-children -->
-			    <li class="item-has-children">
-				    <a href="#0">Servicios</a>
-				    <ul class="sub-menu">
-					    <li><a href="../../service.aspx">Cursos</a></li>
-				    </ul>
-			    </li> <!-- item-has-children -->
-			    <li><a href="../../contactUs.aspx">Contactenos</a></li>
-		    </ul> <!-- cd-navigation -->
-
-		    <ul class="cd-navigation">
-			    <li><a href="../../login.aspx">Ingresar</a></li>
-		    </ul> <!-- cd-navigation -->
-
-		    <div class="cd-navigation socials">
-			    <a class="cd-facebook cd-img-replace" href="#0">Facebook</a>
-		    </div> <!-- socials -->
-	    </nav>
     </form>
     <script src="../../js/menu.js"></script>
 </body>
