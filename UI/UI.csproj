@@ -225,6 +225,9 @@
     <Content Include="Security\Security\role.aspx" />
     <Content Include="Security\Security\user.aspx" />
     <Content Include="service.aspx" />
+    <Content Include="Sources\llave_privada.xml" />
+    <Content Include="Sources\llave_Privada_Publica.xml" />
+    <Content Include="Sources\llave_publica.xml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

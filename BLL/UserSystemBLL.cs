@@ -82,7 +82,7 @@ namespace BLL
         //Insert
         public Int32 insert(Entities.UserSystem oUser)
         {
-
+            Encrypt en = new Encrypt();
             String oSql = "SP_INSERTUSERSYSTEM";
             try
             {
@@ -102,7 +102,7 @@ namespace BLL
                 oCommand.Parameters[5].Direction = ParameterDirection.Input;
                 oCommand.Parameters.AddWithValue("@MAIL", oUser.email);
                 oCommand.Parameters[6].Direction = ParameterDirection.Input;
-                oCommand.Parameters.AddWithValue("@PASSWORD", oUser.Password);
+                oCommand.Parameters.AddWithValue("@PASSWORD", en.Encriptar(oUser.Password));
                 oCommand.Parameters[7].Direction = ParameterDirection.Input;
                 oCommand.Parameters.AddWithValue("@ROLE_ID", oUser.oRole.Role_Id);
                 oCommand.Parameters[8].Direction = ParameterDirection.Input;
