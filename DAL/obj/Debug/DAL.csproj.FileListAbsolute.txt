@@ -21,3 +21,9 @@ C:\Users\Rud\Source\Repos\siscape\DAL\bin\DAL.pdb
 C:\Users\Rud\Source\Repos\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Rud\Source\Repos\siscape\DAL\obj\Debug\DAL.dll
 C:\Users\Rud\Source\Repos\siscape\DAL\obj\Debug\DAL.pdb
+C:\Users\Daniel\Source\Repos\siscape\DAL\bin\DAL.dll.config
+C:\Users\Daniel\Source\Repos\siscape\DAL\bin\DAL.dll
+C:\Users\Daniel\Source\Repos\siscape\DAL\bin\DAL.pdb
+C:\Users\Daniel\Source\Repos\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Source\Repos\siscape\DAL\obj\Debug\DAL.dll
+C:\Users\Daniel\Source\Repos\siscape\DAL\obj\Debug\DAL.pdb
