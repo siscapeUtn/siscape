@@ -284,6 +284,35 @@ namespace BLL
             finally { }
         } //End getCourse()
 
-
+        public List<Course> getAllActivedCourseProgram(Int32 program_id)
+        {
+            String sql = "SP_GET_ALL_ACTIVE_COURSE_BY_PROGRAM";
+            SqlCommand oCommand = new SqlCommand(sql);
+            oCommand.CommandType = CommandType.StoredProcedure;
+            oCommand.Parameters.AddWithValue("@PROGRAM_ID", program_id);
+            try
+            {
+                DataTable oDataTable = DAO.getInstance().executeQuery(oCommand);
+                List<Course> listSubject = new List<Course>();
+                foreach (DataRow oDataRow in oDataTable.Rows)
+                {
+                    Course oSubject = new Course();
+                    Program oProgram = new Program();
+                    oSubject.id = Convert.ToInt32(oDataRow[0].ToString());
+                    oSubject.description = oDataRow[1].ToString();
+                    oSubject.state = Convert.ToInt16(oDataRow[2].ToString());
+                    oProgram.code = Convert.ToInt32(oDataRow[3].ToString());
+                    oProgram.name = oDataRow[4].ToString();
+                    oSubject.oProgram = oProgram;
+                    listSubject.Add(oSubject);
+                }
+                return listSubject;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { }
+        }
     }
 }
