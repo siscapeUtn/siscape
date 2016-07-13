@@ -14,39 +14,39 @@ namespace UI
 
         }
 
-        protected void Unnamed_Click(object sender, EventArgs e)
-        {
-            if (Verify())
-            {
-                Entities.UserSystem oUser;
-                oUser = (Entities.UserSystem)BLL.UserSystemBLL.getInstance().verify_User(txtUser.Text, txtPassword.Text);
+        //protected void Unnamed_Click(object sender, EventArgs e)
+        //{
+        //    if (Verify())
+        //    {
+        //        Entities.UserSystem oUser;
+        //        oUser = (Entities.UserSystem)BLL.UserSystemBLL.getInstance().verify_User(txtUser.Text, txtPassword.Text);
 
-                if (oUser.code == 0)
-                {
-                    lblMessage.Text = "Nombre deusuario o Contraseña incorrectas";
-                }
-                else
-                {
-                    Session["User"] = oUser;
-                    if (oUser.oUserType.code == 1)
-                    {
-                        Response.Redirect("Recorder/Recorder.aspx");
-                    }
-                    else
-                    {
-                        if (oUser.oUserType.code == 2)
-                        {
-                            Response.Redirect("Recorder/Recorder.aspx");
-                        }
-                    }
-                }
-            }
-            else
-            {
-                lblMessage.Text = "Debe agregar la información correctamente";
-            }
+        //        if (oUser.code == 0)
+        //        {
+        //            lblMessage.Text = "Nombre deusuario o Contraseña incorrectas";
+        //        }
+        //        else
+        //        {
+        //            Session["User"] = oUser;
+        //            if (oUser.oUserType.code == 1)
+        //            {
+        //                Response.Redirect("Recorder/Recorder.aspx");
+        //            }
+        //            else
+        //            {
+        //                if (oUser.oUserType.code == 2)
+        //                {
+        //                    Response.Redirect("Recorder/Recorder.aspx");
+        //                }
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        lblMessage.Text = "Debe agregar la información correctamente";
+        //    }
 
-        }
+        //}
 
         protected void login_Click(object sender, EventArgs e)
         {
