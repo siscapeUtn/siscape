@@ -8,12 +8,12 @@ namespace Entities
     public class Journey
     {
         public Int32 code { get; set; }
-        public DateTime start { get; set; }
-        public DateTime finish { get; set; }
+        public String start { get; set; }
+        public String finish { get; set; }
         public Day day { get; set; }
         public Journey() { }
 
-        public Journey(Int32 code, String dayDescriptiion, DateTime start, DateTime finish)
+        public Journey(Int32 code, String dayDescriptiion, String start, String finish)
         {
             Day days = new Day();
             days.code = code;
