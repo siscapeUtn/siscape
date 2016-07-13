@@ -1,16 +1,4 @@
 ﻿/* ------------------------------------------------------
--------------------- .CONTENT ----------------------------
---------------------------------------------------------- */
-.content{
-    max-width: 1024px;
-    margin: 0 auto;
-    padding-top: 8rem;
-    padding-bottom: 2rem;
-    width: 80%;
-}
-
-
-/* ------------------------------------------------------
 -------------------- FOOTER ----------------------------
 --------------------------------------------------------- */
 footer{
@@ -37,42 +25,6 @@ body:before{
 	margin-top: -32767px;/* Efecto Negativo para OPERA*/
 	width: 0;  
 }
-
-
-.content_2{
-    background-color: #FFFFFF;
-    border: 1px solid #999999;
-    box-shadow: 8px 8px 12px #999999;
-    padding: 10px;
-    margin: auto;
-}
-
-.title{
-    color: #003366;
-    border-bottom: 2px solid #009900;
-    font-size: 2em;
-}
-
-.subtitle{
-    color: #003366;
-    font-size: 1.4em;
-    margin-left: 10px;
-    margin-top: 20px;
-}
-
-/* ------------------------------------------------------
--------------------- .SLIDER ----------------------------
---------------------------------------------------------- */
-.slider{
-    margin: auto;
-    width: 80%;
-}
-
-.slider > img{
-    margin: auto;
-    width: 100% !important;
-}
-
 
 /* ------------------------------------------------------
 ----------------- .LOGIN_CONTAINER ----------------------
@@ -145,64 +97,6 @@ body:before{
 }
 
 /* ------------------------------------------------------
--------------------- .ABOUT ----------------------------
---------------------------------------------------------- */
-.about{
-    margin: auto;
-    padding: 10px;
-    text-align: justify;
-}
-
-.about article{
-    margin: 10px;
-}
-
-.about ul{
-    padding-left: 70px !important;
-}
-
-/* -------------------------------------------------------
------------------------- .ACCESSES  ----------------------
-------------------------------------------------------- */
-.accesses{
-    background-color: #FFFFFF;
-    box-shadow: 2px 2px 5px #999;
-    float: left;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    max-width: 300px;
-    max-height: 228px;
-    min-height: 150px;
-    min-width: 180px;
-    text-align: center;
-    width: 30%;
-}
-
-.accesses a{
-    color: #000000;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-decoration: none !important;
-}
-
-.accesses a:hover{
-    color: #000000;
-    cursor: pointer;
-    text-decoration: none !important;
-}
-
-.accesses img{
-    clear: both;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 200px;
-    max-height: 200px;
-    text-align: center;
-    width: 80%;
-}
-
-/* ------------------------------------------------------
 ------------------------ MAINTANCE  ---------------------
 ------------------------------------------------------- */
 .maintanance{
@@ -260,6 +154,7 @@ body:before{
 }
 
 .form-buttons .image_align{
+    display: inline-block;
     height: 5%;
     margin-right: 10px;
     max-height: 62px;
@@ -452,37 +347,9 @@ body:before{
 }
 
 /*  MEDIA QUERIES */
-/* 1200px */
-@media screen and (max-width: 1200px){
-
-    /* ------- Accesses -------- */
-    .accesses{
-        width: 30% !important;
-    }
-
-}
-
 /* 800px */
 @media screen and (max-width: 800px){
-
-    /* ------- About -------- */
-    .about{
-        font-size: 14px;
-    }
-
-    .about ul{
-        padding-left: 50px !important;
-    }
-
-    /* ---------- accesses ----------------- */
-    .accesses{
-        width: 30%;
-    }
-
-    .accesses p {
-        font-size: 16px;
-    }
-
+    
     /* ------- Footer ----------- */
     footer p{
         font-size: 14px;
@@ -504,30 +371,12 @@ body:before{
 
 /* 720px */
 @media screen and (max-width: 650px){
-
-    /* ------- Footer ----------- */
-    .accesses p {
-        font-size: 14px;
-    }
-
-    /* ------- About -------- */
-    .about .title{
-        font-size: 19px;
-    }
+    
 }
 
 /* 600px */
 @media screen and (max-width: 600px){
-
-    /* ---------- accesses ----------------- */
-    .accesses{
-        width: 45% !important;
-    }
-
-    .accesses p {
-        font-size: 16px;
-    }
-    
+        
     /* ------- Footer ----------- */
     footer p{
         font-size: 10px;
@@ -538,17 +387,7 @@ body:before{
 
 /* 480px */
 @media screen and (max-width: 480px){
-
-    /* ---------- accesses ----------------- */
-    .accesses{
-        width: 90% !important;
-    }
-
-    /* ------- About -------- */
-    .about .title{
-        font-size: 15px;
-    }
-
+    
     /* ----------- footer ------------- */
     footer p{
         font-size: 10px;

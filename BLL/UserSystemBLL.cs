@@ -82,7 +82,7 @@ namespace BLL
         //Insert
         public Int32 insert(Entities.UserSystem oUser)
         {
-
+            Encrypt en = new Encrypt();
             String oSql = "SP_INSERTUSERSYSTEM";
             try
             {
@@ -102,7 +102,7 @@ namespace BLL
                 oCommand.Parameters[5].Direction = ParameterDirection.Input;
                 oCommand.Parameters.AddWithValue("@MAIL", oUser.email);
                 oCommand.Parameters[6].Direction = ParameterDirection.Input;
-                oCommand.Parameters.AddWithValue("@PASSWORD", oUser.Password);
+                oCommand.Parameters.AddWithValue("@PASSWORD", en.Encriptar(oUser.Password));
                 oCommand.Parameters[7].Direction = ParameterDirection.Input;
                 oCommand.Parameters.AddWithValue("@ROLE_ID", oUser.oRole.Role_Id);
                 oCommand.Parameters[8].Direction = ParameterDirection.Input;
@@ -264,7 +264,49 @@ namespace BLL
             }
             finally { }
         }
- 
-    
+
+
+
+        public UserSystem verify_User(string pMail, string pPassword)
+        {
+            String oSql = "SP_VERIFYUSERSYSTEM";
+            try
+            {
+                SqlCommand oCommand = new SqlCommand(oSql);
+                oCommand.CommandType = CommandType.StoredProcedure;
+                oCommand.Parameters.AddWithValue("@MAIL", pMail);
+                oCommand.Parameters[0].Direction = ParameterDirection.Input;
+                oCommand.Parameters.AddWithValue("@PASSWORD", pPassword);
+                oCommand.Parameters[1].Direction = ParameterDirection.Input;
+                DataTable oDataTable = DAO.getInstance().executeQuery(oCommand);
+                UserSystem oUserSystem = new UserSystem();
+                Program oProgram = new Program();
+                Role oRole = new Role();
+
+                foreach (DataRow oDataRow in oDataTable.Rows)
+                {
+                    oUserSystem.code = Convert.ToInt32(oDataRow[0].ToString());
+                    oUserSystem.id = oDataRow[1].ToString();
+                    oUserSystem.name = oDataRow[2].ToString();
+                    oUserSystem.lastName = oDataRow[3].ToString();
+                    oProgram.code = Convert.ToInt32(oDataRow[4].ToString());
+                    oProgram.name = oDataRow[5].ToString();
+                    oUserSystem.homePhone = oDataRow[6].ToString();
+                    oUserSystem.cellPhone = oDataRow[7].ToString();
+                    oUserSystem.email = oDataRow[8].ToString();
+                    oRole.Role_Id = Convert.ToInt32(oDataRow[9].ToString());
+                    oRole.Description = oDataRow[10].ToString();
+                    oUserSystem.state = Convert.ToInt16(oDataRow[11].ToString());
+                    oUserSystem.oProgram = oProgram;
+                    oUserSystem.oRole = oRole;
+                }
+                return oUserSystem;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { }
+        }
     }
 }

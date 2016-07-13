@@ -3,17 +3,24 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="row">
-        <section class="accesses col-md-4 col-sm-4 col-xs-4">
-            <a href="../Period/periodType.aspx" ><img alt="Tipo de Periodo" src="../../images/administration/period_type.png" />
-            <p>Tipo de periodo</p></a>
+        <p class="title">Período</p>
+        <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
+            <section class="accesses">
+                <a href="../Period/periodType.aspx" ><img alt="Tipo de Periodo" src="../../images/administration/period_type.svg" />
+                <p>Tipo de periodo</p></a>
+            </section>
         </section>
-        <section class="accesses col-md-4 col-sm-4 col-xs-4">
-            <a href="../Period/period.aspx" ><img alt="Periodo" src="../../images/administration/period_2.png" />
-            <p>Periodo</p></a>
+        <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
+            <section class="accesses">
+                <a href="../Period/period.aspx" ><img alt="Periodo" src="../../images/administration/period_2.svg" />
+                <p>Periodo</p></a>
+            </section>
         </section>
-        <section class="accesses col-md-4 col-sm-4 col-xs-4">
-            <a href="administration.aspx" ><img alt="Regresar" src="../../images/page-icons/return.png" />
-            <p>Regresar</p></a>
+        <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
+            <section class="accesses">
+                <a href="administration.aspx" ><img alt="Regresar" src="../../images/page-icons/return.svg" />
+                <p>Regresar</p></a>
+            </section>
         </section>
     </section>
 </asp:Content>

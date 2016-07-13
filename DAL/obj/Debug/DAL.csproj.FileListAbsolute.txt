@@ -21,9 +21,24 @@ C:\Users\Rud\Source\Repos\siscape\DAL\bin\DAL.pdb
 C:\Users\Rud\Source\Repos\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Rud\Source\Repos\siscape\DAL\obj\Debug\DAL.dll
 C:\Users\Rud\Source\Repos\siscape\DAL\obj\Debug\DAL.pdb
+<<<<<<< HEAD
 C:\Users\Daniel\Source\Repos\siscape\DAL\bin\DAL.dll.config
 C:\Users\Daniel\Source\Repos\siscape\DAL\bin\DAL.dll
 C:\Users\Daniel\Source\Repos\siscape\DAL\bin\DAL.pdb
 C:\Users\Daniel\Source\Repos\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Source\Repos\siscape\DAL\obj\Debug\DAL.dll
 C:\Users\Daniel\Source\Repos\siscape\DAL\obj\Debug\DAL.pdb
+=======
+C:\Users\asala\Source\Repos\SISCAPE\DAL\bin\DAL.dll.config
+C:\Users\asala\Source\Repos\SISCAPE\DAL\bin\DAL.dll
+C:\Users\asala\Source\Repos\SISCAPE\DAL\bin\DAL.pdb
+C:\Users\asala\Source\Repos\SISCAPE\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\asala\Source\Repos\SISCAPE\DAL\obj\Debug\DAL.dll
+C:\Users\asala\Source\Repos\SISCAPE\DAL\obj\Debug\DAL.pdb
+C:\Users\Rud\Desktop\siscape\DAL\bin\DAL.dll.config
+C:\Users\Rud\Desktop\siscape\DAL\bin\DAL.dll
+C:\Users\Rud\Desktop\siscape\DAL\bin\DAL.pdb
+C:\Users\Rud\Desktop\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Rud\Desktop\siscape\DAL\obj\Debug\DAL.dll
+C:\Users\Rud\Desktop\siscape\DAL\obj\Debug\DAL.pdb
+>>>>>>> 4a70333490eb2210730c461d83efeddea38f341f

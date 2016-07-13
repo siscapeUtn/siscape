@@ -3,17 +3,24 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="row">
-        <section class="accesses col-md-4 col-sm-4 col-xs-4">
-            <a href="gProgram.aspx" ><img alt="Programa" src="../../images/administration/program.png" />
-            <p>Programa</p></a>
+        <p class="title">Administración</p>
+        <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
+            <section class="accesses">
+                <a href="gProgram.aspx" ><img alt="Programa" src="../../images/administration/program.svg" />
+                <p>Programa</p></a>
+            </section>
         </section>
-        <section class="accesses col-md-4 col-sm-4 col-xs-4">
-            <a href="gPeriod.aspx" ><img alt="Periodo" src="../../images/administration/period.png" />
-            <p>Periodo</p></a>
+        <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
+            <section class="accesses">
+                <a href="gPeriod.aspx" ><img alt="Periodo" src="../../images/administration/period.svg" />
+                <p>Periodo</p></a>
+            </section>
         </section>
-        <section class="accesses col-md-4 col-sm-4 col-xs-4">
-            <a href="gSecurity.aspx" ><img alt="Seguridad" src="../../images/administration/security.png" />
-            <p>Seguridad</p></a>
+        <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
+            <section class="accesses">
+                <a href="gSecurity.aspx" ><img alt="Seguridad" src="../../images/administration/security.svg" />
+                <p>Seguridad</p></a>
+            </section>
         </section>
     </section>
 </asp:Content>

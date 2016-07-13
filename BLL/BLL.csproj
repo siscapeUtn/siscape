@@ -39,6 +39,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -48,6 +50,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -74,7 +78,11 @@
     <Compile Include="ClassRoomsTypeBLL.cs" />
     <Compile Include="CourseBLL.cs" />
     <Compile Include="DayBLL.cs" />
+<<<<<<< HEAD
     <Compile Include="ExternalDesignationBLL.cs" />
+=======
+    <Compile Include="Encrypt.cs" />
+>>>>>>> 4a70333490eb2210730c461d83efeddea38f341f
     <Compile Include="FunctionaryBLL.cs" />
     <Compile Include="HeadquartersBLL.cs" />
     <Compile Include="InternalDesignationBLL.cs" />

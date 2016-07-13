@@ -59,7 +59,6 @@ namespace UI.Administration.Security
                     records = BLL.UserSystemBLL.getInstance().insert(oUser);
                 }
 
-
                 blockControls();
                 loadData();
                 if (records > 0)

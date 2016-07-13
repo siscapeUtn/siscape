@@ -14,6 +14,7 @@ namespace UI
 
         }
 
+<<<<<<< HEAD
         //protected void Unnamed_Click(object sender, EventArgs e)
         //{
         //    if (Verify())
@@ -51,6 +52,35 @@ namespace UI
         protected void login_Click(object sender, EventArgs e)
         {
             Response.Redirect("index.aspx");
+=======
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+                              
+       }
+
+        protected void login_Click(object sender, EventArgs e)
+        {
+            if (Verify())
+            {
+                Entities.UserSystem oUser;
+                oUser = (Entities.UserSystem)BLL.UserSystemBLL.getInstance().verify_User(txtUser.Text, txtPassword.Text);
+
+                if (oUser.code == 0)
+                {
+                    lblMessage.Text = "Nombre deusuario o Contraseña incorrectas";
+                }
+                else
+                {
+                    Session["User"] = oUser;
+                    Response.Redirect("index.aspx");
+                }
+            }
+            else
+            {
+                lblMessage.Text = "Debe agregar la información correctamente";
+            }
+            
+>>>>>>> 4a70333490eb2210730c461d83efeddea38f341f
         }
 
         private bool Verify()
