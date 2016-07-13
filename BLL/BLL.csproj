@@ -74,9 +74,11 @@
     <Compile Include="ClassRoomsTypeBLL.cs" />
     <Compile Include="CourseBLL.cs" />
     <Compile Include="DayBLL.cs" />
+    <Compile Include="ExternalDesignationBLL.cs" />
     <Compile Include="FunctionaryBLL.cs" />
     <Compile Include="HeadquartersBLL.cs" />
     <Compile Include="InternalDesignationBLL.cs" />
+    <Compile Include="JourneyBLL.cs" />
     <Compile Include="LocationBLL.cs" />
     <Compile Include="PeriodBLL.cs" />
     <Compile Include="PeriodTypeBLL.cs" />
@@ -87,6 +89,7 @@
     <Compile Include="TeacherBLL.cs" />
     <Compile Include="TeacherScheduleBLL.cs" />
     <Compile Include="UserSystemBLL.cs" />
+    <Compile Include="WaitingListBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
