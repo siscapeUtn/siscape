@@ -107,3 +107,15 @@ C:\Users\Rud\Desktop\siscape\UI\obj\Debug\UI.csprojResolveAssemblyReference.cach
 C:\Users\Rud\Desktop\siscape\UI\obj\Debug\UI.dll
 C:\Users\Rud\Desktop\siscape\UI\obj\Debug\UI.pdb
 >>>>>>> 4a70333490eb2210730c461d83efeddea38f341f
+C:\Users\Rud\Pictures\Saved Pictures\siscape\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\Rud\Pictures\Saved Pictures\siscape\UI\obj\Debug\UI.dll
+C:\Users\Rud\Pictures\Saved Pictures\siscape\UI\obj\Debug\UI.pdb
+C:\Users\Rud\Pictures\Saved Pictures\siscape\UI\bin\UI.dll.config
+C:\Users\Rud\Pictures\Saved Pictures\siscape\UI\bin\UI.dll
+C:\Users\Rud\Pictures\Saved Pictures\siscape\UI\bin\UI.pdb
+C:\Users\Rud\Pictures\Saved Pictures\siscape\UI\bin\BLL.dll
+C:\Users\Rud\Pictures\Saved Pictures\siscape\UI\bin\Entities.dll
+C:\Users\Rud\Pictures\Saved Pictures\siscape\UI\bin\DAL.dll
+C:\Users\Rud\Pictures\Saved Pictures\siscape\UI\bin\BLL.pdb
+C:\Users\Rud\Pictures\Saved Pictures\siscape\UI\bin\Entities.pdb
+C:\Users\Rud\Pictures\Saved Pictures\siscape\UI\bin\DAL.pdb

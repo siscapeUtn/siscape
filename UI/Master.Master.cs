@@ -9,7 +9,7 @@ namespace UI
 {
     public partial class Master : System.Web.UI.MasterPage
     {
-        Entities.UserSystem oUser;
+       // Entities.UserSystem oUser;
         protected void Page_Load(object sender, EventArgs e)
         {
           

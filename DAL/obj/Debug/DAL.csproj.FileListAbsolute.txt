@@ -42,3 +42,9 @@ C:\Users\Rud\Desktop\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.ca
 C:\Users\Rud\Desktop\siscape\DAL\obj\Debug\DAL.dll
 C:\Users\Rud\Desktop\siscape\DAL\obj\Debug\DAL.pdb
 >>>>>>> 4a70333490eb2210730c461d83efeddea38f341f
+C:\Users\Rud\Pictures\Saved Pictures\siscape\DAL\bin\DAL.dll.config
+C:\Users\Rud\Pictures\Saved Pictures\siscape\DAL\bin\DAL.dll
+C:\Users\Rud\Pictures\Saved Pictures\siscape\DAL\bin\DAL.pdb
+C:\Users\Rud\Pictures\Saved Pictures\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Rud\Pictures\Saved Pictures\siscape\DAL\obj\Debug\DAL.dll
+C:\Users\Rud\Pictures\Saved Pictures\siscape\DAL\obj\Debug\DAL.pdb
