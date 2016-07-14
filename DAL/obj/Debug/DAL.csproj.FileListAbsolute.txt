@@ -1,50 +1,6 @@
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\DAL\bin\DAL.dll.config
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\DAL\bin\DAL.dll
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\DAL\bin\DAL.pdb
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\DAL\obj\Debug\DAL.dll
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\DAL\obj\Debug\DAL.pdb
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\DAL\bin\DAL.dll
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\DAL\bin\DAL.pdb
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\DAL\obj\Debug\DAL.dll
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\DAL\obj\Debug\DAL.pdb
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\DAL\bin\DAL.dll.config
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\DAL\bin\DAL.dll
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\DAL\bin\DAL.pdb
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\DAL\obj\Debug\DAL.dll
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\DAL\obj\Debug\DAL.pdb
-C:\Users\Rud\Source\Repos\siscape\DAL\bin\DAL.dll.config
-C:\Users\Rud\Source\Repos\siscape\DAL\bin\DAL.dll
-C:\Users\Rud\Source\Repos\siscape\DAL\bin\DAL.pdb
-C:\Users\Rud\Source\Repos\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\Rud\Source\Repos\siscape\DAL\obj\Debug\DAL.dll
-C:\Users\Rud\Source\Repos\siscape\DAL\obj\Debug\DAL.pdb
-<<<<<<< HEAD
-C:\Users\Daniel\Source\Repos\siscape\DAL\bin\DAL.dll.config
-C:\Users\Daniel\Source\Repos\siscape\DAL\bin\DAL.dll
-C:\Users\Daniel\Source\Repos\siscape\DAL\bin\DAL.pdb
-C:\Users\Daniel\Source\Repos\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\Daniel\Source\Repos\siscape\DAL\obj\Debug\DAL.dll
-C:\Users\Daniel\Source\Repos\siscape\DAL\obj\Debug\DAL.pdb
-=======
-C:\Users\asala\Source\Repos\SISCAPE\DAL\bin\DAL.dll.config
-C:\Users\asala\Source\Repos\SISCAPE\DAL\bin\DAL.dll
-C:\Users\asala\Source\Repos\SISCAPE\DAL\bin\DAL.pdb
-C:\Users\asala\Source\Repos\SISCAPE\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\asala\Source\Repos\SISCAPE\DAL\obj\Debug\DAL.dll
-C:\Users\asala\Source\Repos\SISCAPE\DAL\obj\Debug\DAL.pdb
 C:\Users\Rud\Desktop\siscape\DAL\bin\DAL.dll.config
 C:\Users\Rud\Desktop\siscape\DAL\bin\DAL.dll
 C:\Users\Rud\Desktop\siscape\DAL\bin\DAL.pdb
 C:\Users\Rud\Desktop\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Rud\Desktop\siscape\DAL\obj\Debug\DAL.dll
 C:\Users\Rud\Desktop\siscape\DAL\obj\Debug\DAL.pdb
->>>>>>> 4a70333490eb2210730c461d83efeddea38f341f
-C:\Users\Rud\Pictures\Saved Pictures\siscape\DAL\bin\DAL.dll.config
-C:\Users\Rud\Pictures\Saved Pictures\siscape\DAL\bin\DAL.dll
-C:\Users\Rud\Pictures\Saved Pictures\siscape\DAL\bin\DAL.pdb
-C:\Users\Rud\Pictures\Saved Pictures\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\Rud\Pictures\Saved Pictures\siscape\DAL\obj\Debug\DAL.dll
-C:\Users\Rud\Pictures\Saved Pictures\siscape\DAL\obj\Debug\DAL.pdb
