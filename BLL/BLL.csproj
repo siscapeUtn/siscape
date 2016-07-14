@@ -78,11 +78,8 @@
     <Compile Include="ClassRoomsTypeBLL.cs" />
     <Compile Include="CourseBLL.cs" />
     <Compile Include="DayBLL.cs" />
-<<<<<<< HEAD
     <Compile Include="ExternalDesignationBLL.cs" />
-=======
     <Compile Include="Encrypt.cs" />
->>>>>>> 4a70333490eb2210730c461d83efeddea38f341f
     <Compile Include="FunctionaryBLL.cs" />
     <Compile Include="HeadquartersBLL.cs" />
     <Compile Include="InternalDesignationBLL.cs" />

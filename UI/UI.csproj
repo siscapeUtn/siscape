@@ -201,12 +201,9 @@
     <Content Include="libraries\bootstrap-combobox-master\.gitignore" />
     <Content Include="libraries\bootstrap-combobox-master\less\combobox.less" />
     <Content Include="libraries\bootstrap-combobox-master\README.md" />
-<<<<<<< HEAD
     <Content Include="Services\Report_waiting_list.aspx" />
     <Content Include="Services\WaitingList.Master" />
-=======
     <Content Include="Security\Security.Master" />
->>>>>>> 4a70333490eb2210730c461d83efeddea38f341f
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -224,20 +221,11 @@
     <Content Include="images\slideshow\4.jpg" />
     <Content Include="index.aspx" />
     <Content Include="js\pageFunctions.js" />
-<<<<<<< HEAD
     <Content Include="Services\Waiting_list.aspx" />
-=======
     <Content Include="Security\SecurityGroups\security.aspx" />
     <Content Include="Security\Security\role.aspx" />
     <Content Include="Security\Security\user.aspx" />
     <Content Include="service.aspx" />
-<<<<<<< HEAD
-=======
-    <Content Include="Sources\llave_privada.xml" />
-    <Content Include="Sources\llave_Privada_Publica.xml" />
-    <Content Include="Sources\llave_publica.xml" />
->>>>>>> 4a70333490eb2210730c461d83efeddea38f341f
->>>>>>> 10d0a757eaae4c7f5cda596f5ed8b359453fb9a8
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -447,7 +435,6 @@
       <DependentUpon>Master.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
     <Compile Include="Services\Report_waiting_list.aspx.cs">
       <DependentUpon>Report_waiting_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -468,7 +455,7 @@
     </Compile>
     <Compile Include="Services\Waiting_list.aspx.designer.cs">
       <DependentUpon>Waiting_list.aspx</DependentUpon>
-=======
+    </Compile>
     <Compile Include="Security\Security.Master.cs">
       <DependentUpon>Security.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -503,7 +490,6 @@
     </Compile>
     <Compile Include="service.aspx.designer.cs">
       <DependentUpon>service.aspx</DependentUpon>
->>>>>>> 4a70333490eb2210730c461d83efeddea38f341f
     </Compile>
   </ItemGroup>
   <ItemGroup>
