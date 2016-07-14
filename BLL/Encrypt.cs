@@ -2,164 +2,62 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web.Http;
 
 namespace BLL
 {
-    public class Encrypt
+    class Encrypt 
     {
+        const string KEY = "~!@#$%^&*()_+{}:>?<`1234567890-=[]\'.,/|";
 
-        public void CrearLlaves()
-        {
-            // Variables
-            CspParameters cspParams = null;
-            RSACryptoServiceProvider rsaProvider = null;
-            StreamWriter publicKeyFile = null;
-            StreamWriter privateKeyFile = null;
-            string publicKey = "";
-            string privateKey = "";
-
-
-            // Create a new key pair on target CSP
-            cspParams = new CspParameters();
-            cspParams.ProviderType = 1; // PROV_RSA_FULL 
-            //cspParams.ProviderName; // CSP name
-            cspParams.Flags = CspProviderFlags.UseArchivableKey;
-            cspParams.KeyNumber = (int)KeyNumber.Exchange;
-            rsaProvider = new RSACryptoServiceProvider(cspParams);
-
-            // Export public key
-            publicKey = rsaProvider.ToXmlString(false);
-
-            // Write public key to file
-            publicKeyFile = File.CreateText("llave_publica.xml");
-            publicKeyFile.Write(publicKey);
-            publicKeyFile.Close();
-
-
-            // Export private/public key pair 
-            privateKey = rsaProvider.ToXmlString(true);
-
-            // Write private/public key pair to file
-            privateKeyFile = File.CreateText("llave_Privada_Publica.xml");
-            privateKeyFile.Write(privateKey);
-            privateKeyFile.Close();
-
-
-        }
-
+        /// <summary>
+        /// http://www.aspsnippets.com/Articles/AES-Encryption-Decryption-Cryptography-Tutorial-with-example-in-ASPNet-using-C-and-VBNet.aspx
+        /// </summary>
+        /// <param name="pCadena"></param>
+        /// <returns></returns>
         public string Encriptar(string pCadena)
         {
-            // Variables
-            CspParameters cspParams = null;
-            RSACryptoServiceProvider rsaProvider = null;
-            StreamReader publicKeyFile = null;
 
-            FileStream encryptedFile = null;
-            string publicKeyText = "";
-
-            byte[] plainBytes = null;
-            byte[] encryptedBytes = null;
-
-            try
+            byte[] clearBytes = Encoding.Unicode.GetBytes(pCadena);
+            using (Aes encryptor = Aes.Create())
             {
-                // Select target CSP
-                cspParams = new CspParameters();
-                cspParams.ProviderType = 1; // PROV_RSA_FULL 
-                //cspParams.ProviderName; // CSP name
-                rsaProvider = new RSACryptoServiceProvider(cspParams);
-
-                // Read public key from file
-                string appPath = AppDomain.CurrentDomain.BaseDirectory + "Sources\\llave_privada.xml";
-                publicKeyFile = File.OpenText(appPath);
-                publicKeyText = publicKeyFile.ReadToEnd();
-
-                // Import public key
-                rsaProvider.FromXmlString(publicKeyText);
-
-                // Encrypt plain text
-                plainBytes = Encoding.Unicode.GetBytes(pCadena);
-                encryptedBytes = rsaProvider.Encrypt(plainBytes, false);
-                return Convert.ToBase64String(encryptedBytes); ;
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                // Do some clean up if needed
-                if (publicKeyFile != null)
+                Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(KEY, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+                encryptor.Key = pdb.GetBytes(32);
+                encryptor.IV = pdb.GetBytes(16);
+                using (MemoryStream ms = new MemoryStream())
                 {
-                    publicKeyFile.Close();
-                }
-
-                if (encryptedFile != null)
-                {
-                    encryptedFile.Close();
+                    using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
+                    {
+                        cs.Write(clearBytes, 0, clearBytes.Length);
+                        cs.Close();
+                    }
+                    pCadena = Convert.ToBase64String(ms.ToArray());
                 }
             }
-
+            return pCadena;
         }
 
         public string Desencriptar(string pCadena)
         {
-            // Variables
-            CspParameters cspParams = null;
-            RSACryptoServiceProvider rsaProvider = null;
-            StreamReader privateKeyFile = null;
-            FileStream encryptedFile = null;
-            StreamWriter plainFile = null;
-            string privateKeyText = "";
-            byte[] plainBytes = null;
 
-            try
+            byte[] cipherBytes = Convert.FromBase64String(pCadena);
+            using (Aes encryptor = Aes.Create())
             {
-
-                // Select target CSP
-                cspParams = new CspParameters();
-                cspParams.ProviderType = 1; // PROV_RSA_FULL 
-                //cspParams.ProviderName; // CSP name
-                rsaProvider = new RSACryptoServiceProvider(cspParams);
-
-                plainBytes = Convert.FromBase64String(pCadena);
-                string appPath = AppDomain.CurrentDomain.BaseDirectory + "Sources\\llave_Privada_Publica.xml";
-
-                privateKeyFile = File.OpenText(appPath);
-                privateKeyText = privateKeyFile.ReadToEnd();
-                rsaProvider.FromXmlString(privateKeyText);
-
-                byte[] decrypt = rsaProvider.Decrypt(plainBytes, false);
-
-                return Encoding.Unicode.GetString(decrypt);
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                // Do some clean up if needed
-                if (privateKeyFile != null)
+                Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(KEY, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+                encryptor.Key = pdb.GetBytes(32);
+                encryptor.IV = pdb.GetBytes(16);
+                using (MemoryStream ms = new MemoryStream())
                 {
-                    privateKeyFile.Close();
-                }
-                if (encryptedFile != null)
-                {
-                    encryptedFile.Close();
-                }
-                if (plainFile != null)
-                {
-                    plainFile.Close();
+                    using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateDecryptor(), CryptoStreamMode.Write))
+                    {
+                        cs.Write(cipherBytes, 0, cipherBytes.Length);
+                        cs.Close();
+                    }
+                    pCadena = Encoding.Unicode.GetString(ms.ToArray());
                 }
             }
+            return pCadena;
         }
-
     }
 }

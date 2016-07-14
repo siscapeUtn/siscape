@@ -81,12 +81,9 @@
     <Content Include="Administration\AdministrationGroups\administration.aspx" />
     <Content Include="Administration\AdministrationGroups\gPeriod.aspx" />
     <Content Include="Administration\AdministrationGroups\gProgram.aspx" />
-    <Content Include="Administration\AdministrationGroups\gSecurity.aspx" />
     <Content Include="Administration\Period\period.aspx" />
     <Content Include="Administration\Period\periodType.aspx" />
     <Content Include="Administration\Program\program.aspx" />
-    <Content Include="Administration\Security\Role.aspx" />
-    <Content Include="Administration\Security\User.aspx" />
     <Content Include="contactUs.aspx" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\menu-styles.css" />
@@ -197,6 +194,7 @@
     <Content Include="libraries\jquery-ui-1.11.4.custom\jquery-ui.theme.css" />
     <Content Include="libraries\jquery-ui-1.11.4.custom\jquery-ui.theme.min.css" />
     <Content Include="login.aspx" />
+    <Content Include="logOut.aspx" />
     <Content Include="Master.Master" />
     <Content Include="Administration\Administration.Master" />
     <Content Include="Academic\Academic.Master" />
@@ -225,9 +223,6 @@
     <Content Include="Security\Security\role.aspx" />
     <Content Include="Security\Security\user.aspx" />
     <Content Include="service.aspx" />
-    <Content Include="Sources\llave_privada.xml" />
-    <Content Include="Sources\llave_Privada_Publica.xml" />
-    <Content Include="Sources\llave_publica.xml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -380,13 +375,6 @@
     <Compile Include="Administration\AdministrationGroups\gProgram.aspx.designer.cs">
       <DependentUpon>gProgram.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Administration\AdministrationGroups\gSecurity.aspx.cs">
-      <DependentUpon>gSecurity.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administration\AdministrationGroups\gSecurity.aspx.designer.cs">
-      <DependentUpon>gSecurity.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Administration\Period\period.aspx.cs">
       <DependentUpon>period.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -408,20 +396,6 @@
     <Compile Include="Administration\Program\program.aspx.designer.cs">
       <DependentUpon>program.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Administration\Security\Role.aspx.cs">
-      <DependentUpon>Role.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administration\Security\Role.aspx.designer.cs">
-      <DependentUpon>Role.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Administration\Security\User.aspx.cs">
-      <DependentUpon>User.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administration\Security\User.aspx.designer.cs">
-      <DependentUpon>User.aspx</DependentUpon>
-    </Compile>
     <Compile Include="contactUs.aspx.cs">
       <DependentUpon>contactUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -442,6 +416,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logOut.aspx.cs">
+      <DependentUpon>logOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logOut.aspx.designer.cs">
+      <DependentUpon>logOut.aspx</DependentUpon>
     </Compile>
     <Compile Include="Master.Master.cs">
       <DependentUpon>Master.Master</DependentUpon>

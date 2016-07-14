@@ -13,5 +13,38 @@ namespace UI.Administration
         {
 
         }
+
+        protected void showSecurity()
+        {
+
+            if (Session["User"] != null)
+            {
+                if (Session["Security"].Equals(true))
+                {
+                    Response.Write("<li><div class='option'><div><a href='../../Security/SecurityGroups/security.aspx' class='anchor'>Seguridad</a></div>" +
+                                   "</div><ul class='sub-menu'>" +
+                                   "<li><div><a href='../../Security/Security/role.aspx'>Roles</a></div></li>" +
+                                   "<li><div><a href='../../Security/Security/user.aspx'>Usuarios</a></div></li>" +
+                                   "</ul></li>");
+                }
+            }
+        }
+        
+        protected void showAcademic()
+        {
+            if (Session["User"] != null)
+            {
+                if (Session["Academic"].Equals(true))
+                {
+                    Response.Write("<li><div class='option'>" +
+                        "<div><a href='../Academic/AcademicGroups/academic.aspx' class='anchor'>Acad&eacute;mico</a></div>" +
+                        "</div><ul class='sub-menu'>" +
+                        "<li><div><a href='../../Academic/AcademicGroups//gBuilding.aspx'>Infraestructura</a></div></li>" +
+                        "<li><div><a href='../../Academic/AcademicGroups/gFunctionary.aspx'>Funcionarios</a></div></li>" +
+                        "<li><div><a href='../../Academic/AcademicGroups/gAcademicOffer.aspx'>Oferta Acad&eacute;mica</a></div></li>" +
+                        "</ul></li>");
+                }
+            }
+        }
     }
 }

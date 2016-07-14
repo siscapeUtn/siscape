@@ -27,7 +27,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <header>
+  <header>
 		    <div class="header-container">
 			    <a id="logo" href="../../index.aspx"><img src="../../images/page-icons/DEAS-icon.png" alt="Homepage" /></a>
 			    <nav>
@@ -44,33 +44,15 @@
 					    </li>
 					    <li>
 						    <div class="option">
-							    <div><a href="#" class="anchor">Seguridad</a></div>
+							    <div><a href="../SecurityGroups/security.aspx" class="anchor">Seguridad</a></div>
 						    </div>
 						    <ul class="sub-menu">
-							    <li><div><a href="../AdministrationGroups/gSecurity.aspx">Roles</a></div></li>
-							    <li><div><a href="../AdministrationGroups/gSecurity.aspx">Usuarios</a></div></li>
+							    <li><div><a href="../Security/role.aspx">Roles</a></div></li>
+							    <li><div><a href="../Security/user.aspx">Usuarios</a></div></li>
 						    </ul>
 					    </li>
-					    <li>
-						    <div class="option">
-							    <div><a href="#" class="anchor">Administraci&oacute;n</a></div>
-						    </div>
-						    <ul class="sub-menu">
-							    <li><div><a href="../AdministrationGroups/gProgram.aspx">Programas</a></div></li>
-							    <li><div><a href="../AdministrationGroups/gPeriod.aspx">Per&iacute;odo</a></div></li>
-							    <li><div><a href="../../Academic/AcademicGroups/gBuilding.aspx">Infraestructura</a></div></li>
-						    </ul>
-					    </li>
-					    <li>
-						    <div class="option">
-							    <div><a href="#" class="anchor">Acad&eacute;mico</a></div>
-						    </div>
-						    <ul class="sub-menu">
-							    <li><div><a href="../../Academic/AcademicGroups/gBuilding.aspx">Infraestructura</a></div></li>
-							    <li><div><a href="../../Academic/AcademicGroups/gFunctionary.aspx">Funcionarios</a></div></li>
-							    <li><div><a href="../../Academic/AcademicGroups/gAcademicOffer.aspx">Oferta Acad&eacute;mica</a></div></li>
-						    </ul>
-					    </li>
+                        <% showAdministartion();%>
+                        <% showAcademic();%>
 					    <li>
 						    <div class="option">
 							    <div><a href="../../service.aspx" class="anchor">Servicios</a></div>
@@ -83,7 +65,7 @@
 					    </li>
                         <li>
                             <div class="option">
-                                <div><a href="../../login.aspx" class="anchor">Iniciar Sesi&oacute;n</a></div>
+                                <div><a href="../../logOut.aspx" class="anchor">Cerrar Sesi&oacute;n</a></div>
                             </div>
                         </li>
 				    </ul>
