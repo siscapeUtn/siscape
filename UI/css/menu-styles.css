@@ -257,405 +257,68 @@ header .header-container{
     background-color: #003366;
 }
 
-/*header {
-    background: #ffffff;
-    border-top: 0.25rem solid #003366;
-    border-bottom: 0.15rem solid #B0B0B0;
-    height: 5rem;
-    left: 0;
-    opacity: 0.8;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 3;
-    /* Force Hardware Acceleration in WebKit 
-    -webkit-transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    -webkit-transition-property: -webkit-transform;
-    -moz-transition-property: -moz-transform;
-    transition-property: transform;
-    -webkit-transition-duration: 0.4s;
-    -moz-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-}
-
-@media only screen and (min-width: 768px) {
-    header {
-        height: 6.5rem;
-    }
-}
-
-#cd-logo {
-    float: left;
-    max-width: 8rem;  
-}
-
-#cd-logo img {
-    border-left: 0.1rem solid #D0D0D0;
-    border-right: 0.1rem solid #D0D0D0;
-    margin-left: 0;
-    width: 100%;
-}
-
-@media only screen and (min-width: 768px) {
-    
-    #cd-logo {
-        max-width: 12rem;
-    }
-
-    #cd-logo img {
-    margin-left: 3rem;
-    }
-
-}
-
-.cd-name{
-  display: none;
-}
-
-@media only screen and (min-width: 768px){
-  
-  .cd-name{
-    display: block;
-    color: #003366;
-    font-size: 1.5rem;
-    font-weight: 900;
-    margin-left: 14rem;
-    padding: 2.25rem;
-  }
-
-}
-
-#cd-top-nav {
-  position: absolute;
-  top: 0;
-  right: 5rem;
-  height: 100%;
-  display: block;
-}
-
-#cd-top-nav ul {
-  height: 100%;
-}
-
-#cd-top-nav li {
-  display: inline-block;
-}
-
-#cd-top-nav a {
-  display: inline-block;
-  padding: 1.5rem;
-  color: #003366;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-#cd-top-nav a.current {
-  background-color: #242e30;
-}
-
-.no-touch #cd-top-nav a:hover {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-@media only screen and (min-width: 768px) {
-
-  #cd-top-nav {
-    right: 11rem;
-  }
-
-  #cd-top-nav ul {}
-
-  #cd-top-nav a {
-    padding: 2.25rem 2.25rem 2rem 2.25rem;
-  }
-
-}
-
-#cd-menu-trigger {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 50px;
-  background-color: #003366;
-}
-
-#cd-menu-trigger .cd-menu-text {
-  height: 100%;
-  color: #FFF;
-  font-weight: 600;
-  display: none;
-}
-
-#cd-menu-trigger .cd-menu-icon {
-  /* this span is the central line in the menu menu 
-  display: inline-block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  bottom: auto;
-  right: auto;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  width: 18px;
-  height: 2px;
-  background-color: #FFF;
-  /* these are the upper and lower lines in the menu menu 
-}
-
-#cd-menu-trigger .cd-menu-icon::before, #cd-menu-trigger .cd-menu-icon:after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-color: inherit;
-  left: 0;
-}
-
-#cd-menu-trigger .cd-menu-icon::before {
-  bottom: 5px;
-}
-
-#cd-menu-trigger .cd-menu-icon::after {
-  top: 5px;
-}
-
-#cd-menu-trigger.is-clicked .cd-menu-icon {
-  background-color: rgba(255, 255, 255, 0);
-}
-
-#cd-menu-trigger.is-clicked .cd-menu-icon::before, #cd-menu-trigger.is-clicked .cd-menu-icon::after {
-  background-color: white;
-}
-
-#cd-menu-trigger.is-clicked .cd-menu-icon::before {
-  bottom: 0;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-#cd-menu-trigger.is-clicked .cd-menu-icon::after {
-  top: 0;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-@media only screen and (min-width: 768px) {
-    #cd-menu-trigger {
-        width: 50px;
-        padding-left: 1.25em;
-    }
-
-    #cd-menu-trigger .cd-menu-text {
-        display: inline-block;
-        line-height: 70px;
-    }
-
-    #cd-menu-trigger .cd-menu-icon {
-        left: auto;
-        right: 1.25em;
-        -webkit-transform: translateX(0);
-        -moz-transform: translateX(0);
-        -ms-transform: translateX(0);
-        -o-transform: translateX(0);
-        transform: translateX(0);
-    }
-}
-
-#cd-lateral-nav {
-  border: 0.25rem solid #003366;
-  position: fixed;
-  height: 100%;
-  right: 0;
-  top: 0;
-  visibility: hidden;
-  /* the secondary navigation is covered by the main element 
-  z-index: 1001;
-  width: 27rem;
-  background-color: #003366;
-  overflow-y: auto;
-  /* Force Hardware Acceleration in WebKit 
-  -webkit-transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  -webkit-transition: -webkit-transform .4s 0s, visibility 0s .4s;
-  -moz-transition: -moz-transform .4s 0s, visibility 0s .4s;
-  transition: transform .4s 0s, visibility 0s .4s;
-  /* this creates the subtle slide in animation of the navigation 
-  -webkit-transform: translateX(80px);
-  -moz-transform: translateX(80px);
-  -ms-transform: translateX(80px);
-  -o-transform: translateX(80px);
-  transform: translateX(80px);
-}
-
-#cd-lateral-nav .close{
-    width: 2.5rem;
-    font-size: 2.5rem;
-    margin-top: 1rem;
-    margin-right: 1rem;
+.is_close{
+    background: url('../images/page-icons/responsiveMenu.png') no-repeat center center;
+    display: none;
+    padding: 2.75rem;
     position: absolute;
-    top: 0;
     right: 0;
-    color: #ffffff;
-    opacity: 1;
     top: 0;
 }
 
-#cd-lateral-nav .cd-navigation {
-  margin: 10px 0 16px;
+.is_open {
+    background: url('../images/page-icons/closeResponsive.png') no-repeat center center;
+    display: none;
+    padding: 2.75rem;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
-#cd-lateral-nav .sub-menu {
-  padding: 0 10px 20px 15px;
-  display: none;
+/* ------------------------------
+    ------- Responsive ----------
+    ----------------------------- */
+@media only screen and (max-width: 1024px){
+    
+    header .header-container .is_close, header .header-container .is_open {
+        display: block;
+    }
+        
+    header .header-container nav{
+        background: #003366;
+        height: 100%;
+        right: -100%;
+        margin: 0;
+        position: fixed;
+        top: 68px;
+        width: 50%;
+    }
+
+    header .navigation li{
+        display: block !important;
+		float: none !important;
+		width: 100% !important;
+    }
+
+    .header-container .navigation li .option{
+	    border-bottom: 1px solid #ffffff;
+        border-left: 0;
+        border-top: 1px solid #ffffff;
+    }
+
+    .header-container .navigation li .option div a{
+	    color: #ffffff;
+    }
+
 }
 
-#cd-lateral-nav a {
-  display: block;
-  line-height: 2em;
-  padding: 0 16px 0 32px;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1.25rem; 
-  text-decoration: none;
-}
+@media only screen and (max-width: 480px){
+            
+    header .header-container nav{
+        width: 100%;
+    }
 
-#cd-lateral-nav a.current {
-  background-color: #003366;
-  color: #FFF;
 }
-
-.no-touch #cd-lateral-nav a:hover {
-  color: #FFF;
-}
-
-@media only screen and (min-width: 768px) {
-  #cd-lateral-nav .cd-navigation {
-    margin: 20px 0;
-  }
-}
-
-#cd-lateral-nav.lateral-menu-is-open {
-  -webkit-transform: translateX(0);
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -o-transform: translateX(0);
-  transform: translateX(0);
-  visibility: visible;
-  -webkit-transition: -webkit-transform .4s 0s, visibility 0s 0s;
-  -moz-transition: -moz-transform .4s 0s, visibility 0s 0s;
-  transition: transform .4s 0s, visibility 0s 0s;
-  /* smooth the scrolling on touch devices - webkit browsers 
-  -webkit-overflow-scrolling: touch;
-}
-
-/* style menu items which have a submenu  
-#cd-lateral-nav .item-has-children > a {
-  position: relative;
-  font-weight: 600;
-  /* this is the right arrow to show that the item has a submenu  
-}
-
-#cd-lateral-nav .item-has-children > a::after {
-  content: '';
-  display: block;
-  height: 11px;
-  width: 8px;
-  position: absolute;
-  top: 50%;
-  bottom: auto;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: 1em;
-  background: url("../images/page-icons/cd-arrow.svg") no-repeat center center;
-  background-size: 8px 11px;
-  -webkit-transition-property: -webkit-transform;
-  -moz-transition-property: -moz-transform;
-  transition-property: transform;
-  -webkit-transition-duration: 0.2s;
-  -moz-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-}
-
-#cd-lateral-nav .item-has-children > a.submenu-open::after {
-  -webkit-transform: translateY(-50%) rotate(90deg);
-  -moz-transform: translateY(-50%) rotate(90deg);
-  -ms-transform: translateY(-50%) rotate(90deg);
-  -o-transform: translateY(-50%) rotate(90deg);
-  transform: translateY(-50%) rotate(90deg);
-}
-
-#cd-lateral-nav .socials {
-  padding: 0 32px;
-}
-
-#cd-lateral-nav .socials:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-#cd-lateral-nav .socials a {
-  height: 32px;
-  width: 32px;
-  float: left;
-  padding: 0;
-  background-image: url("../images/page-icons/cd-socials.svg");
-  background-repeat: no-repeat;
-  background-size: 128px 64px;
-  background-color: #FFF;
-  margin-right: .5em;
-  border-radius: 0.25em;
-}
-
-#cd-lateral-nav .socials a.cd-twitter {
-  background-position: 0 0;
-}
-
-#cd-lateral-nav .socials a.cd-github {
-  background-position: -32px 0;
-}
-
-#cd-lateral-nav .socials a.cd-facebook {
-  background-position: -64px 0;
-}
-
-#cd-lateral-nav .socials a.cd-google {
-  background-position: -96px 0;
-}
-
-.no-touch #cd-lateral-nav .socials a:hover {
-  background-color: #4e6361;
-}
-
-.no-touch #cd-lateral-nav .socials a:hover.cd-twitter {
-  background-position: 0 -32px;
-}
-
-.no-touch #cd-lateral-nav .socials a:hover.cd-github {
-  background-position: -32px -32px;
-}
-
-.no-touch #cd-lateral-nav .socials a:hover.cd-facebook {
-  background-position: -64px -32px;
-}
-
-.no-touch #cd-lateral-nav .socials a:hover.cd-google {
-  background-position: -96px -32px;
-}*/
 
 /* ------------------------------------------------------
 -------------------- .CONTENT ----------------------------
@@ -668,12 +331,21 @@ header .header-container{
     width: 80%;
 }
 
+@media only screen and (max-width: 620px){
+
+    .content{
+        width: 100%;
+    }
+    
+}
+
 .content_2{
     background-color: #FFFFFF;
     border: 1px solid #999999;
     box-shadow: 0.5rem 0.5rem 0.75rem #999999;
     padding: 1rem;
     margin: auto;
+    width: 90%;
 }
 
 /* -------------------------------------------------------

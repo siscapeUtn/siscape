@@ -21,6 +21,7 @@
     <script type="text/javascript" src="../../js/jquery-1.11.3.js" ></script>
     <script type="text/javascript" src="../../../js/pageFunctions.js" ></script>
     <script type="text/javascript" src="../../js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="js/menu.js"></script>
 
     <!-- ContentPlaceHolder Head -->
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
@@ -81,6 +82,7 @@
                         </li>
 				    </ul>
 			    </nav>
+                <div id="menu-bar" class="is_close"></div>
 		    </div>
 	    </header>
 	    <%--<main class="cd-main-content">--%>

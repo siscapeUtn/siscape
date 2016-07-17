@@ -96,6 +96,13 @@ body:before{
     text-decoration: none;  
 }
 
+@media only screen and (max-width: 620px ){
+    
+    .login_container{
+        margin: 1rem;    
+    }
+}
+
 /* ------------------------------------------------------
 ------------------------ MAINTANCE  ---------------------
 ------------------------------------------------------- */
