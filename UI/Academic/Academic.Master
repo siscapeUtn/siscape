@@ -42,28 +42,13 @@
 							    <div><a href="../../about.aspx" class="anchor">Acerca de</a></div>
 						    </div>
 					    </li>
+					    
+                        <% showSecurity(); %>
+                        <% showAdministartion();%>
+					
 					    <li>
 						    <div class="option">
-							    <div><a href="#" class="anchor">Seguridad</a></div>
-						    </div>
-						    <ul class="sub-menu">
-							    <li><div><a href="../../Administration/AdministrationGroups/gSecurity.aspx">Roles</a></div></li>
-							    <li><div><a href="../../Administration/AdministrationGroups/gSecurity.aspx">Usuarios</a></div></li>
-						    </ul>
-					    </li>
-					    <li>
-						    <div class="option">
-							    <div><a href="#" class="anchor">Administraci&oacute;n</a></div>
-						    </div>
-						    <ul class="sub-menu">
-							    <li><div><a href="../../Administration/AdministrationGroups/gProgram.aspx">Programas</a></div></li>
-							    <li><div><a href="../../Administration/AdministrationGroups/gPeriod.aspx">Per&iacute;odo</a></div></li>
-							    <li><div><a href="../AcademicGroups/gBuilding.aspx">Infraestructura</a></div></li>
-						    </ul>
-					    </li>
-					    <li>
-						    <div class="option">
-							    <div><a href="#" class="anchor">Acad&eacute;mico</a></div>
+							    <div><a href="../AcademicGroups/academic.aspx" class="anchor">Acad&eacute;mico</a></div>
 						    </div>
 						    <ul class="sub-menu">
 							    <li><div><a href="../AcademicGroups/gBuilding.aspx">Infraestructura</a></div></li>
@@ -83,7 +68,7 @@
 					    </li>
                         <li>
                             <div class="option">
-                                <div><a href="../../login.aspx" class="anchor">Iniciar Sesi&oacute;n</a></div>
+                                <div><a href="../../logOut.aspx" class="anchor">Cerrar Sesi&oacute;n</a></div>
                             </div>
                         </li>
 				    </ul>

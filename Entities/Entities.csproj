@@ -87,7 +87,9 @@
     <Compile Include="Course.cs" />
     <Compile Include="SystemModule.cs" />
     <Compile Include="Teacher.cs" />
+    <Compile Include="Tentative_Schedule.cs" />
     <Compile Include="UserSystem.cs" />
+    <Compile Include="WaitingList.cs" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

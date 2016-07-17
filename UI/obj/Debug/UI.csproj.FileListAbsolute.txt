@@ -1,82 +1,12 @@
-c:\users\andrey\documents\visual studio 2013\Projects\ProUTN\UI\bin\UI.dll.config
-c:\users\andrey\documents\visual studio 2013\Projects\ProUTN\UI\bin\UI.dll
-c:\users\andrey\documents\visual studio 2013\Projects\ProUTN\UI\bin\UI.pdb
-c:\users\andrey\documents\visual studio 2013\Projects\ProUTN\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-c:\users\andrey\documents\visual studio 2013\Projects\ProUTN\UI\obj\Debug\UI.dll
-c:\users\andrey\documents\visual studio 2013\Projects\ProUTN\UI\obj\Debug\UI.pdb
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\UI\bin\BLL.dll
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\UI\bin\Entities.dll
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\UI\bin\DAL.dll
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\UI\bin\BLL.pdb
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\UI\bin\Entities.pdb
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\UI\bin\DAL.pdb
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\UI\bin\AjaxControlToolkit.dll
-C:\Users\Rud\Desktop\ProUTN\UI\bin\UI.dll
-C:\Users\Rud\Desktop\ProUTN\UI\bin\UI.pdb
-C:\Users\Rud\Desktop\ProUTN\UI\bin\BLL.dll
-C:\Users\Rud\Desktop\ProUTN\UI\bin\Entities.dll
-C:\Users\Rud\Desktop\ProUTN\UI\bin\DAL.dll
-C:\Users\Rud\Desktop\ProUTN\UI\bin\BLL.pdb
-C:\Users\Rud\Desktop\ProUTN\UI\bin\Entities.pdb
-C:\Users\Rud\Desktop\ProUTN\UI\bin\DAL.pdb
-C:\Users\Rud\Desktop\ProUTN\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-C:\Users\Rud\Desktop\ProUTN\UI\obj\Debug\UI.dll
-C:\Users\Rud\Desktop\ProUTN\UI\obj\Debug\UI.pdb
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\UI\bin\UI.dll
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\UI\bin\UI.pdb
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\UI\bin\BLL.dll
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\UI\bin\Entities.dll
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\UI\bin\DAL.dll
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\UI\bin\BLL.pdb
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\UI\bin\Entities.pdb
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\UI\bin\DAL.pdb
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\UI\obj\Debug\UI.dll
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\UI\obj\Debug\UI.pdb
-C:\Users\Rud\Desktop\ProUTN 1.9\ProUTN\UI\bin\UI.dll
-C:\Users\Rud\Desktop\ProUTN 1.9\ProUTN\UI\bin\UI.pdb
-C:\Users\Rud\Desktop\ProUTN 1.9\ProUTN\UI\bin\BLL.dll
-C:\Users\Rud\Desktop\ProUTN 1.9\ProUTN\UI\bin\Entities.dll
-C:\Users\Rud\Desktop\ProUTN 1.9\ProUTN\UI\bin\DAL.dll
-C:\Users\Rud\Desktop\ProUTN 1.9\ProUTN\UI\bin\BLL.pdb
-C:\Users\Rud\Desktop\ProUTN 1.9\ProUTN\UI\bin\Entities.pdb
-C:\Users\Rud\Desktop\ProUTN 1.9\ProUTN\UI\bin\DAL.pdb
-C:\Users\Rud\Desktop\ProUTN 1.9\ProUTN\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-C:\Users\Rud\Desktop\ProUTN 1.9\ProUTN\UI\obj\Debug\UI.dll
-C:\Users\Rud\Desktop\ProUTN 1.9\ProUTN\UI\obj\Debug\UI.pdb
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\UI\bin\UI.dll.config
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\UI\bin\UI.dll
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\UI\bin\UI.pdb
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\UI\bin\BLL.dll
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\UI\bin\Entities.dll
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\UI\bin\DAL.dll
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\UI\bin\BLL.pdb
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\UI\bin\Entities.pdb
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\UI\bin\DAL.pdb
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\UI\obj\Debug\UI.dll
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\UI\obj\Debug\UI.pdb
-C:\Users\asala\Source\Repos\SISCAPE\UI\bin\UI.dll.config
-C:\Users\asala\Source\Repos\SISCAPE\UI\bin\UI.dll
-C:\Users\asala\Source\Repos\SISCAPE\UI\bin\UI.pdb
-C:\Users\asala\Source\Repos\SISCAPE\UI\bin\BLL.dll
-C:\Users\asala\Source\Repos\SISCAPE\UI\bin\Entities.dll
-C:\Users\asala\Source\Repos\SISCAPE\UI\bin\DAL.dll
-C:\Users\asala\Source\Repos\SISCAPE\UI\bin\BLL.pdb
-C:\Users\asala\Source\Repos\SISCAPE\UI\bin\Entities.pdb
-C:\Users\asala\Source\Repos\SISCAPE\UI\bin\DAL.pdb
-C:\Users\asala\Source\Repos\SISCAPE\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-C:\Users\asala\Source\Repos\SISCAPE\UI\obj\Debug\UI.dll
-C:\Users\asala\Source\Repos\SISCAPE\UI\obj\Debug\UI.pdb
-C:\Users\Rud\Source\Repos\siscape\UI\bin\UI.dll.config
-C:\Users\Rud\Source\Repos\siscape\UI\bin\UI.dll
-C:\Users\Rud\Source\Repos\siscape\UI\bin\UI.pdb
-C:\Users\Rud\Source\Repos\siscape\UI\bin\BLL.dll
-C:\Users\Rud\Source\Repos\siscape\UI\bin\Entities.dll
-C:\Users\Rud\Source\Repos\siscape\UI\bin\DAL.dll
-C:\Users\Rud\Source\Repos\siscape\UI\bin\BLL.pdb
-C:\Users\Rud\Source\Repos\siscape\UI\bin\Entities.pdb
-C:\Users\Rud\Source\Repos\siscape\UI\bin\DAL.pdb
-C:\Users\Rud\Source\Repos\siscape\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-C:\Users\Rud\Source\Repos\siscape\UI\obj\Debug\UI.dll
-C:\Users\Rud\Source\Repos\siscape\UI\obj\Debug\UI.pdb
+C:\Users\Rud\Desktop\siscape\UI\bin\UI.dll.config
+C:\Users\Rud\Desktop\siscape\UI\bin\UI.dll
+C:\Users\Rud\Desktop\siscape\UI\bin\UI.pdb
+C:\Users\Rud\Desktop\siscape\UI\bin\BLL.dll
+C:\Users\Rud\Desktop\siscape\UI\bin\Entities.dll
+C:\Users\Rud\Desktop\siscape\UI\bin\DAL.dll
+C:\Users\Rud\Desktop\siscape\UI\bin\BLL.pdb
+C:\Users\Rud\Desktop\siscape\UI\bin\Entities.pdb
+C:\Users\Rud\Desktop\siscape\UI\bin\DAL.pdb
+C:\Users\Rud\Desktop\siscape\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\Rud\Desktop\siscape\UI\obj\Debug\UI.dll
+C:\Users\Rud\Desktop\siscape\UI\obj\Debug\UI.pdb

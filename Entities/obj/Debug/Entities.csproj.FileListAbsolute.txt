@@ -1,39 +1,6 @@
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\Entities\bin\Entities.dll.config
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\Entities\bin\Entities.dll
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\Entities\bin\Entities.pdb
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\Entities\obj\Debug\Entities.dll
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\Entities\obj\Debug\Entities.pdb
-C:\Users\Andrey\Documents\Visual Studio 2013\Projects\ProUTN\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
-C:\Users\Rud\Desktop\ProUTN\Entities\bin\Entities.dll
-C:\Users\Rud\Desktop\ProUTN\Entities\bin\Entities.pdb
-C:\Users\Rud\Desktop\ProUTN\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
-C:\Users\Rud\Desktop\ProUTN\Entities\obj\Debug\Entities.dll
-C:\Users\Rud\Desktop\ProUTN\Entities\obj\Debug\Entities.pdb
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\Entities\bin\Entities.dll
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\Entities\bin\Entities.pdb
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\Entities\obj\Debug\Entities.dll
-C:\Users\Rud\Desktop\ProUTN 1.8\ProUTN\Entities\obj\Debug\Entities.pdb
-C:\Users\Rud\Desktop\ProUTN 1.9\ProUTN\Entities\bin\Entities.dll
-C:\Users\Rud\Desktop\ProUTN 1.9\ProUTN\Entities\bin\Entities.pdb
-C:\Users\Rud\Desktop\ProUTN 1.9\ProUTN\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
-C:\Users\Rud\Desktop\ProUTN 1.9\ProUTN\Entities\obj\Debug\Entities.dll
-C:\Users\Rud\Desktop\ProUTN 1.9\ProUTN\Entities\obj\Debug\Entities.pdb
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\Entities\bin\Entities.dll.config
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\Entities\bin\Entities.dll
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\Entities\bin\Entities.pdb
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\Entities\obj\Debug\Entities.dll
-C:\Users\asala\Desktop\ProUTN 2.0\ProUTN\Entities\obj\Debug\Entities.pdb
-C:\Users\Rud\Source\Repos\siscape\Entities\bin\Entities.dll.config
-C:\Users\Rud\Source\Repos\siscape\Entities\bin\Entities.dll
-C:\Users\Rud\Source\Repos\siscape\Entities\bin\Entities.pdb
-C:\Users\Rud\Source\Repos\siscape\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
-C:\Users\Rud\Source\Repos\siscape\Entities\obj\Debug\Entities.dll
-C:\Users\Rud\Source\Repos\siscape\Entities\obj\Debug\Entities.pdb
-C:\Users\asala\Source\Repos\SISCAPE\Entities\bin\Entities.dll.config
-C:\Users\asala\Source\Repos\SISCAPE\Entities\bin\Entities.dll
-C:\Users\asala\Source\Repos\SISCAPE\Entities\bin\Entities.pdb
-C:\Users\asala\Source\Repos\SISCAPE\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
-C:\Users\asala\Source\Repos\SISCAPE\Entities\obj\Debug\Entities.dll
-C:\Users\asala\Source\Repos\SISCAPE\Entities\obj\Debug\Entities.pdb
+C:\Users\Rud\Desktop\siscape\Entities\bin\Entities.dll.config
+C:\Users\Rud\Desktop\siscape\Entities\bin\Entities.dll
+C:\Users\Rud\Desktop\siscape\Entities\bin\Entities.pdb
+C:\Users\Rud\Desktop\siscape\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+C:\Users\Rud\Desktop\siscape\Entities\obj\Debug\Entities.dll
+C:\Users\Rud\Desktop\siscape\Entities\obj\Debug\Entities.pdb

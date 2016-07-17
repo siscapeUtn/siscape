@@ -44,35 +44,9 @@
 							    <div><a href="about.aspx" class="anchor">Acerca de</a></div>
 						    </div>
 					    </li>
-					    <li>
-						    <div class="option">
-							    <div><a href="#" class="anchor">Seguridad</a></div>
-						    </div>
-						    <ul class="sub-menu">
-							    <li><div><a href="Administration/AdministrationGroups/gSecurity.aspx">Roles</a></div></li>
-							    <li><div><a href="Administration/AdministrationGroups/gSecurity.aspx">Usuarios</a></div></li>
-						    </ul>
-					    </li>
-					    <li>
-						    <div class="option">
-							    <div><a href="#" class="anchor">Administraci&oacute;n</a></div>
-						    </div>
-						    <ul class="sub-menu">
-							    <li><div><a href="Administration/AdministrationGroups/gProgram.aspx">Programas</a></div></li>
-							    <li><div><a href="Administration/AdministrationGroups/gPeriod.aspx">Per&iacute;odo</a></div></li>
-							    <li><div><a href="Academic/AcademicGroups/gBuilding.aspx">Infraestructura</a></div></li>
-						    </ul>
-					    </li>
-					    <li>
-						    <div class="option">
-							    <div><a href="#" class="anchor">Acad&eacute;mico</a></div>
-						    </div>
-						    <ul class="sub-menu">
-							    <li><div><a href="Academic/AcademicGroups/gBuilding.aspx">Infraestructura</a></div></li>
-							    <li><div><a href="Academic/AcademicGroups/gFunctionary.aspx">Funcionarios</a></div></li>
-							    <li><div><a href="Academic/AcademicGroups/gAcademicOffer.aspx">Oferta Acad&eacute;mica</a></div></li>
-						    </ul>
-					    </li>
+                        <% showSecurity(); %>
+                        <% showAdministartion();%>
+                        <% showAcademic();%>
 					    <li>
 						    <div class="option">
 							    <div><a href="service.aspx" class="anchor">Servicios</a></div>
@@ -83,11 +57,7 @@
 							    <div><a href="contactUs.aspx" class="anchor">Cont&aacute;ctenos</a></div>
 						    </div>
 					    </li>
-                        <li>
-                            <div class="option">
-                                <div><a href="login.aspx" class="anchor">Iniciar Sesi&oacute;n</a></div>
-                            </div>
-                        </li>
+                        <% showSession(); %>
 				    </ul>
 			    </nav>
 		    </div>
