@@ -23,4 +23,8 @@
             </section>
         </section>
     </section>
+    <script type="text/javascript">
+        $('li').removeClass('isSelected');
+        $('#administration').addClass('isSelected');
+    </script>
 </asp:Content>

@@ -32,4 +32,8 @@
             </section>
         </section>
     </section>
+    <script type="text/javascript">
+        $('li').removeClass('isSelected');
+        $('#service').addClass('isSelected');
+    </script>
 </asp:Content>

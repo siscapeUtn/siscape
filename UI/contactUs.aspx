@@ -112,4 +112,8 @@
     <script type="text/javascript">
         accordion();
     </script>
+    <script type="text/javascript">
+        $('li').removeClass('isSelected');
+        $('#contact').addClass('isSelected');
+    </script>
 </asp:Content>

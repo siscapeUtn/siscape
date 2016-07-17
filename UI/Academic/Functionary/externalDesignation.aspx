@@ -204,4 +204,8 @@
         </section>
     </section>--%>
     <!----------------------------- End Create modal --------------------->
+    <script type="text/javascript">
+        $('li').removeClass('isSelected');
+        $('#academic').addClass('isSelected');
+    </script>
 </asp:Content>

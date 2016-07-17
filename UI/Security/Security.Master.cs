@@ -21,7 +21,7 @@ namespace UI.Security
                 if (Session["Administration"].Equals(true))
                 {
                     Response.Write("<li><div class='option'>" +
-                                    "<div><a href='../../Administration/AdministrationGroups/administration.aspx' class='anchor'>Administraci&oacute;n</a></div>" +
+                                    "<div><a href='../../Administration/AdministrationGroups/administration.aspx' id='administration' class='anchor'>Administraci&oacute;n</a></div>" +
                                     "</div><ul class='sub-menu'>" +
                                     "<li><div><a href='../../Administration/AdministrationGroups/gProgram.aspx'>Programas</a></div></li>" +
                                     "<li><div><a href='../../Administration/AdministrationGroups/gPeriod.aspx'>Per&iacute;odo</a></div></li>" +
@@ -37,7 +37,7 @@ namespace UI.Security
                 if (Session["Academic"].Equals(true))
                 {
                     Response.Write("<li><div class='option'>" +
-                        "<div><a href='../../Academic/AcademicGroups/academic.aspx' class='anchor'>Acad&eacute;mico</a></div>" +
+                        "<div><a href='../../Academic/AcademicGroups/academic.aspx' id='academic' class='anchor'>Acad&eacute;mico</a></div>" +
                         "</div><ul class='sub-menu'>" +
                         "<li><div><a href='../../Academic/AcademicGroups/gBuilding.aspx'>Infraestructura</a></div></li>" +
                         "<li><div><a href='../../Academic/AcademicGroups/gFunctionary.aspx'>Funcionarios</a></div></li>" +

@@ -21,7 +21,7 @@ namespace UI.Academic
             {
                 if (Session["Security"].Equals(true))
                 {
-                    Response.Write("<li><div class='option'><div><a href='../../Security/SecurityGroups/security.aspx' class='anchor'>Seguridad</a></div>" +
+                    Response.Write("<li><div class='option'><div><a href='../../Security/SecurityGroups/security.aspx' id='security' class='anchor'>Seguridad</a></div>" +
                                    "</div><ul class='sub-menu'>" +
                                    "<li><div><a href='../../Security/Security/role.aspx'>Roles</a></div></li>" +
                                    "<li><div><a href='../../Security/Security/user.aspx'>Usuarios</a></div></li>" +
@@ -36,7 +36,7 @@ namespace UI.Academic
                 if (Session["Administration"].Equals(true))
                 {
                     Response.Write("<li><div class='option'>" +
-                                    "<div><a href='../../Administration/AdministrationGroups/administration.aspx' class='anchor'>Administraci&oacute;n</a></div>" +
+                                    "<div><a href='../../Administration/AdministrationGroups/administration.aspx' id='administration' class='anchor'>Administraci&oacute;n</a></div>" +
                                     "</div><ul class='sub-menu'>" +
                                     "<li><div><a href='../../Administration/AdministrationGroups/gProgram.aspx'>Programas</a></div></li>" +
                                     "<li><div><a href='../../Administration/AdministrationGroups/gPeriod.aspx'>Per&iacute;odo</a></div></li>" +

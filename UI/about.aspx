@@ -44,4 +44,8 @@
             la educación virtual y a distancia.</article>
         </section>
     </section>
+    <script type="text/javascript">
+        $('li').removeClass('isSelected');
+        $('#about').addClass('isSelected');
+    </script>
 </asp:Content>

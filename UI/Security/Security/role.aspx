@@ -118,4 +118,8 @@
             </asp:UpdatePanel>
         </section>
     </section>
+    <script type="text/javascript">
+        $('li').removeClass('isSelected');
+        $('#security').addClass('isSelected');
+    </script>
 </asp:Content>

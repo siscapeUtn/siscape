@@ -48,7 +48,7 @@
 					
 					    <li>
 						    <div class="option">
-							    <div><a href="../AcademicGroups/academic.aspx" class="anchor">Acad&eacute;mico</a></div>
+							    <div><a href="../AcademicGroups/academic.aspx" id='academic' class="anchor">Acad&eacute;mico</a></div>
 						    </div>
 						    <ul class="sub-menu">
 							    <li><div><a href="../AcademicGroups/gBuilding.aspx">Infraestructura</a></div></li>

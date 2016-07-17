@@ -167,5 +167,8 @@
             </asp:UpdatePanel>
         </section>
     </section><!--end modal reset password-->
-
+    <script type="text/javascript">
+        $('li').removeClass('isSelected');
+        $('#security').addClass('isSelected');
+    </script>
 </asp:Content>

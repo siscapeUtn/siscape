@@ -252,6 +252,11 @@ header .header-container{
     background-color: #003366;
 }
 
+.isSelected{
+    color: #ffffff !important;
+    background-color: #003366;
+}
+
 /*header {
     background: #ffffff;
     border-top: 0.25rem solid #003366;

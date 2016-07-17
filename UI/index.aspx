@@ -13,4 +13,8 @@
     <script type="text/javascript">
         slideshow();
     </script>
+    <script type="text/javascript">
+        $('li').removeClass('isSelected');
+        $('#index').addClass('isSelected');
+    </script>
 </asp:Content>
