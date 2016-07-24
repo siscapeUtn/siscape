@@ -645,7 +645,7 @@ input:focus ~ .highlight {
 
 @media only screen and (max-width: 580px){
     .course{
-        width: 100%;
+        width: 90%;
     }
 }
 

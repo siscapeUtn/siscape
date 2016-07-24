@@ -96,10 +96,16 @@ body:before{
     text-decoration: none;  
 }
 
-@media only screen and (max-width: 620px ){
+@media screen and (max-width: 620px ){
     
     .login_container{
         margin: 1rem;    
+    }
+
+    .login_content input[type="text"], 
+    .login_content input[type="password"],
+    .login_content select {
+        font-size: 16px;
     }
 }
 
@@ -168,7 +174,7 @@ body:before{
     max-width: 62px;
     min-height: 30px;
     min-width: 30px;
-    width: 5%;
+    width: 15%;
 }
 
 .form-buttons input:disabled{
@@ -195,6 +201,22 @@ body:before{
 .maintanance .message-has-error{
     color: #E80000;
     padding: 10px;
+}
+
+@media screen and (max-width: 768px){
+    
+    .form-buttons .image_align{
+        width: 10%;
+    }
+
+}
+
+@media screen and (max-width: 460px){
+    
+    .form-buttons .image_align{
+        width: 15%;
+    }
+
 }
 
 /* -------------- Calendar ------------------- */
