@@ -705,7 +705,7 @@ input:focus ~ .highlight {
     margin-left: 0;
 }
 
-@media only screen and (max-width: 1000px){
+@media screen and (max-width: 1000px){
     
     .accordion .ui-accordion-header{
         font-size: 1.3rem;
@@ -722,7 +722,7 @@ input:focus ~ .highlight {
 
 }
 
-@media only screen and (max-width: 620px){
+@media screen and (max-width: 620px){
        
     .contact-container .contact_info{
         float: left;
@@ -733,7 +733,7 @@ input:focus ~ .highlight {
 
 }
 
-@media only screen and (max-width: 480px){
+@media screen and (max-width: 480px){
        
     .contact-container .contact_info{
         font-size: 1.1rem;
@@ -758,6 +758,10 @@ input:focus ~ .highlight {
     vertical-align: middle;
 }
 
+.maintanance {
+    font-size: 1.3rem;
+}
+
 .maintanance .message{
     color: #009900;
     font-size: 1.5em;
@@ -777,4 +781,49 @@ input:focus ~ .highlight {
 
 .maintanance .send{
     width: auto;
+}
+
+
+.maintanance .fileUpload {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.maintanance .fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    display: inline-block;
+}
+
+.maintanance .listCheckbox{
+    width: 100%;
+}
+
+.maintanance .listCheckbox table{
+    border-collapse: collapse;
+}
+
+.maintanance .listCheckbox td{
+    width: 20%;
+}
+
+.maintanance .listCheckbox label{
+    font-size: 16px;
+    left: auto;
+}
+
+.maintanance .listCheckbox input{
+    display: inline-block;
+    height: 15px;
+    margin: 0;
+    vertical-align: text-bottom;
+    width: 20%;
 }
