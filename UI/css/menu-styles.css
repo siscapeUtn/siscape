@@ -783,14 +783,32 @@ input:focus ~ .highlight {
     width: auto;
 }
 
+.maintanace .uploadImage{
+    display: table-cell;
+}
+
+
+.maintanance .uploadText {
+    display: table-cell;
+    width: 74%;
+}
 
 .maintanance .fileUpload {
     position: relative;
     overflow: hidden;
     display: inline-block;
+    border-radius: 0;
+    background: #003366;
+    cursor: pointer;
+    width: 20%;
+}
+
+.maintanance .fileUpload:hover {
+    cursor: pointer;
 }
 
 .maintanance .fileUpload input.upload {
+    cursor: pointer;
     position: absolute;
     top: 0;
     right: 0;
@@ -801,6 +819,10 @@ input:focus ~ .highlight {
     opacity: 0;
     filter: alpha(opacity=0);
     display: inline-block;
+}
+
+.maintanance .fileUpload span img {
+    width: 40%;
 }
 
 .maintanance .listCheckbox{
@@ -854,4 +876,12 @@ input:focus ~ .highlight {
     .maintanance .listCheckbox label{
         position: static;
     }
+}
+
+@media screen and (max-width: 380px){
+    
+    .maintanance .fileUpload span img {
+        width: 100%;
+    }
+    
 }

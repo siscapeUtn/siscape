@@ -19,3 +19,13 @@ function accordion() {
         });
     });
 }
+
+function uploadImage() {
+        
+    $(function () {
+        $('#ContentPlaceHolder1_flLoadImage').on('change', function () {
+            document.getElementById("ContentPlaceHolder1_uploadFile").value = this.value.substring(this.value.lastIndexOf("\\") +1);
+        });
+    });
+
+}
