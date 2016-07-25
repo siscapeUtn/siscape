@@ -30,12 +30,25 @@
                                         <asp:TextBox runat="server" ID="uploadFile" CssClass="form-control uploadText" placeholder="Seleccione la imagen" disabled="disabled" ></asp:TextBox>
                                         <div class="fileUpload btn btn-primary">
                                             <span><img alt="Subir" src="../../images/page-icons/upload.svg" /></span>
-                                            <asp:FileUpload ID="flLoadImage" runat="server" enctype="multipart/form-data" CssClass="upload"  />
+                                            <asp:FileUpload ID="flLoadImage" runat="server" CssClass="upload"  />
                                         </div>
                                     </section>
                                     <span class="message-has-error"><asp:Label ID="lblImageError" Text="" runat="server"></asp:Label></span>
                                 </section>
                             </section>
+                            <section class="col-md-3"></section>
+                            <section class="form-horizontal col-md-6">
+                                <section class="form-group">
+                                    <asp:Label ID="lblState" Text="Estado:" CssClass="control-label col-sm-2" runat="server"></asp:Label>
+                                    <section class="col-sm-10">
+                                        <asp:DropDownList ID="cboState" CssClass="form-control col-sm-10" runat="server">
+                                            <asp:ListItem Value="0">Inactivo</asp:ListItem>
+                                            <asp:ListItem Value="1">Activo</asp:ListItem>
+                                        </asp:DropDownList>
+                                    </section>
+                                </section> <!-- End .form-group -->
+                            </section>
+                            <section class="col-md-3"></section>
                             <section class="col-md-12 form-buttons">
                                 <asp:ImageButton ID="btnNew" CssClass="image_align" ImageUrl="~/images/maintenance/add.png" ToolTip="Nuevo" runat="server" OnClick="btnNew_Click"  />
                                 <asp:ImageButton ID="btnSave" CssClass="image_align" ImageUrl="~/images/maintenance/save.png" ToolTip="Guardar" runat="server" OnClick="btnSave_Click" />

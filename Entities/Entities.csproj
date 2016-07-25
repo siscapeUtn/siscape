@@ -85,6 +85,7 @@
     <Compile Include="Role.cs" />
     <Compile Include="Schedule.cs" />
     <Compile Include="Course.cs" />
+    <Compile Include="Slider.cs" />
     <Compile Include="SystemModule.cs" />
     <Compile Include="Teacher.cs" />
     <Compile Include="Tentative_Schedule.cs" />

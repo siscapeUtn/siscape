@@ -348,6 +348,17 @@ header .header-container{
     width: 90%;
 }
 
+.group-container{
+    margin: 0 auto;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px){
+    .group-container{
+        width: 90%;
+    }
+}
+
 /* -------------------------------------------------------
 -------------- .PAGE GLOBAL STYLES -----------------------
 ------------------------------------------------------- */

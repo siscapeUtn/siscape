@@ -122,6 +122,7 @@
     <Content Include="images\administration\program.svg" />
     <Content Include="images\administration\program_2.svg" />
     <Content Include="images\administration\security.svg" />
+    <Content Include="images\administration\uploadImage.svg" />
     <Content Include="images\maintenance\add.png" />
     <Content Include="images\maintenance\cancel.png" />
     <Content Include="images\maintenance\check.png" />
