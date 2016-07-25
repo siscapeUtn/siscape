@@ -827,3 +827,31 @@ input:focus ~ .highlight {
     vertical-align: text-bottom;
     width: 20%;
 }
+
+@media screen and (max-width: 1024px){
+    
+    table tr {
+      display: block;
+    }
+
+    table td {
+      display: block;
+      font-size: 13px;
+    }
+
+    table td:last-child {
+      border-bottom: 0;
+    }  
+
+    .maintanance .listCheckbox td {
+        width: 100%;
+    }
+
+    .maintanance .listCheckbox input {
+        width: 10%;
+    }
+
+    .maintanance .listCheckbox label{
+        position: static;
+    }
+}

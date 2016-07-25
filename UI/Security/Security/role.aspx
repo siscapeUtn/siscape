@@ -25,7 +25,7 @@
                             </section>
                             <section class="col-md-6">
                                <section class="form-group">
-                                    <asp:Label ID="Label1" Text="Estado:" CssClass="control-label" runat="server"></asp:Label>                               
+                                    <asp:Label ID="lblState" Text="Estado:" CssClass="control-label" runat="server"></asp:Label>                               
                                         <asp:DropDownList ID="cboState" CssClass="form-control" runat="server">
                                             <asp:ListItem Value="0">Inactivo</asp:ListItem>
                                             <asp:ListItem Value="1" Selected="True">Activo</asp:ListItem>
@@ -38,7 +38,7 @@
                           <section class="col-md-12">
                              <section class="form-group">
                              <p></p>   
-                                 <asp:CheckBoxList ID="chkModules" runat="server" RepeatDirection="Horizontal" Width="621px">
+                                 <asp:CheckBoxList ID="chkModules" runat="server" CssClass="listCheckbox" RepeatDirection="Horizontal" >
                                     <asp:ListItem Value="1"> Administración</asp:ListItem>
                                     <asp:ListItem Value="2"> Seguridad</asp:ListItem>
                                     <asp:ListItem Value="3"> Servicios</asp:ListItem>
@@ -48,27 +48,27 @@
                                  <span class="message-has-error"><asp:Label ID="lblchkModulesMessage" Text="" runat="server"></asp:Label></span>  
                             </section> <!-- End .form-group -->
                            </section>
-                            <section class="col-xs-6 col-lg-4">
+                            <section class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
                               <h3>Administración</h3>
-                              <p>En la sección de Administración, los usuarios tendran acceso a la manipulación de programas y periodos</p>
-                            </section><!--/.col-xs-6.col-lg-4-->
-                            <section class="col-xs-6 col-lg-4">
+                              <span>En la sección de Administración, los usuarios tendran acceso a la manipulación de programas y periodos</span>
+                            </section>
+                            <section class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
                               <h3>Seguridad</h3>
-                              <p>En este apartado se podran crear reglas de acceso al sistema y a la creación de nuevos usuarios y sus dependencias con el sistema</p>
-                            </section><!--/.col-xs-6.col-lg-4-->
-                            <section class="col-xs-6 col-lg-4">
+                              <span>En este apartado se podran crear reglas de acceso al sistema y a la creación de nuevos usuarios y sus dependencias con el sistema</span>
+                            </section>
+                            <section class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
                               <h3>Servicios</h3>
-                              <p>Los usuarios podran acceder a las listas de esperas y revisar o contactar a los clientes interesados en matricular algun curso</p>
-                            </section><!--/.col-xs-6.col-lg-4-->
-                            <section class="col-xs-6 col-lg-4">
+                              <span>Los usuarios podran acceder a las listas de esperas y revisar o contactar a los clientes interesados en matricular algun curso</span>
+                            </section>
+                            <section class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
                               <h3>Academico</h3>
-                              <p>En esta sección se gestionan la mayoria de las actividades administrativas y o gerenciales de los diferentes programas con los que cuenta el departamento DEAS</p>
-                            </section><!--/.col-xs-6.col-lg-4-->
-                            <section class="col-xs-6 col-lg-4">
+                              <span>En esta sección se gestionan la mayoria de las actividades administrativas y o gerenciales de los diferentes programas con los que cuenta el departamento DEAS</span>
+                            </section>
+                            <section class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
                               <h3>Oferta Academica</h3>
-                              <p>En esta seccion es donde se diseñan los horarios y los cursos de cada programa y ademas se crea la oferta acadmeica</p>
-                            </section><!--/.col-xs-6.col-lg-4-->   
-                            <section class="col-md-12 form-buttons">
+                              <span>En esta seccion es donde se diseñan los horarios y los cursos de cada programa y ademas se crea la oferta acadmeica</span>
+                            </section>
+                            <section class="col-md-12 col-xs-12 col-sm-12 form-buttons">
                                 <asp:ImageButton ID="btnNew" CssClass="image_align" ImageUrl="~/images/maintenance/add.png" ToolTip="Nuevo" runat="server" OnClick="btnNew_Click" />
                                 <asp:ImageButton ID="btnSave" CssClass="image_align" ImageUrl="~/images/maintenance/save.png" ToolTip="Guardar" runat="server" OnClick="btnSave_Click" />
                                 <asp:ImageButton ID="btnCancel" CssClass="image_align" ImageUrl="~/images/maintenance/cancel.png" ToolTip="Cancelar" runat="server" OnClick="btnCancel_Click" />

@@ -206,7 +206,7 @@ body:before{
 @media screen and (max-width: 768px){
     
     .form-buttons .image_align{
-        width: 10%;
+        width: 12%;
     }
 
 }
@@ -214,7 +214,7 @@ body:before{
 @media screen and (max-width: 460px){
     
     .form-buttons .image_align{
-        width: 15%;
+        width: 18%;
     }
 
 }
