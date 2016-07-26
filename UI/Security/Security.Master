@@ -56,7 +56,7 @@
                         <% showAcademic();%>
 					    <li>
 						    <div class="option">
-							    <div><a href="../../service.aspx" class="anchor">Servicios</a></div>
+							    <div><a href="../../service.aspx" class="anchor">Oferta de Cursos</a></div>
 						    </div>
 					    </li>
 					    <li>
