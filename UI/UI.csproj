@@ -133,6 +133,7 @@
     <Content Include="images\page-icons\DEAS-favicon.ico" />
     <Content Include="images\page-icons\closeResponsive.png" />
     <Content Include="images\page-icons\exit.png" />
+    <Content Include="images\page-icons\home.svg" />
     <Content Include="images\page-icons\password-icon.png" />
     <Content Include="images\page-icons\responsiveMenu.png" />
     <Content Include="images\page-icons\return.svg" />
