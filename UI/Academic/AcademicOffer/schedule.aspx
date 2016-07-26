@@ -20,7 +20,7 @@
                         <section class="col-md-12">
                             <section class="form-group">
                                 <asp:Label runat="server" ID="lblbDays" Text="Días: "></asp:Label>
-                               <asp:CheckBoxList ID="chkld" runat="server" AutoPostBack="True" RepeatDirection="Horizontal" Width="621px" OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged">
+                               <asp:CheckBoxList ID="chkld" runat="server" AutoPostBack="True" CssClass="listDaysCheckbox" RepeatDirection="Horizontal" OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged">
                                     <asp:ListItem Value="1"> Lunes</asp:ListItem>
                                     <asp:ListItem Value="2"> Martes</asp:ListItem>
                                     <asp:ListItem Value="3"> Miercoles</asp:ListItem>
