@@ -7,8 +7,8 @@
         <section class="row">
             <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
                 <section class="accesses">
-                    <a href="../Functionary/InternalDesignation.aspx"><img alt="Nomb. Interno" src="../../images/academic/internalDesignation.svg" />
-                    <p>Nombr. interno</p></a>
+                    <a href="../Functionary/InternalDesignation.aspx"><img alt="Cat. Salariales" src="../../images/academic/internalDesignation.svg" />
+                    <p>Cat. Salariales</p></a>
                 </section>
             </section>
             <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
