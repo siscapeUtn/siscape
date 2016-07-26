@@ -33,9 +33,14 @@
 			    <a id="logo" href="../../index.aspx"><img src="../../images/page-icons/DEAS-icon.png" alt="Homepage" /></a>
 			    <nav>
 				    <ul class="navigation">
-					    <li>
+					    <%--<li>
 						    <div class="option">
 							    <div><a href="../../index.aspx" class="anchor">Inicio</a></div>
+						    </div>
+					    </li>--%>
+                        <li>
+						    <div class="option">
+							    <div><a href="../../service.aspx" class="anchor">Oferta de Cursos</a></div>
 						    </div>
 					    </li>
 					    <li>
@@ -64,11 +69,6 @@
 							    <li><div><a href="../../Academic/AcademicGroups/gFunctionary.aspx">Funcionarios</a></div></li>
 							    <li><div><a href="../../Academic/AcademicGroups/gAcademicOffer.aspx">Oferta Acad&eacute;mica</a></div></li>
 						    </ul>
-					    </li>
-					    <li>
-						    <div class="option">
-							    <div><a href="../../service.aspx" class="anchor">Oferta de Cursos</a></div>
-						    </div>
 					    </li>
 					    <li>
 						    <div class="option">
