@@ -135,78 +135,41 @@ namespace BLL
             return 0;
         }
 
-        public Int32 modify(ExternalDesignation pExternalDesignation)
+        public Int32 delete(Int32 pCode) 
         {
-
-            String oSql = "SP_MODIFY_EXTERNAL_DESIGNATION";
+            String oSql = "SP_DELETE_EXT_DESIG_JOURNEY";
             SqlCommand oCommand = new SqlCommand(oSql);
             oCommand.CommandType = CommandType.StoredProcedure;
-            oCommand.Parameters.AddWithValue("@ID", pExternalDesignation.code);
-            oCommand.Parameters.AddWithValue("@TEACHER_ID", pExternalDesignation.oTeacher.id);
-            oCommand.Parameters.AddWithValue("@LOCATION", pExternalDesignation.location);
-            oCommand.Parameters.AddWithValue("@POSITION", pExternalDesignation.position);
-            oCommand.Parameters.AddWithValue("@HOURS", pExternalDesignation.hours);
-            oCommand.Parameters.AddWithValue("@INITIAL_DATE", pExternalDesignation.initial_day);
-            oCommand.Parameters.AddWithValue("@FINAL_DATE", pExternalDesignation.final_day);
+            oCommand.Parameters.AddWithValue("@ID", pCode);
+            Int32 result = 0;
             try
             {
-                DAO.getInstance().executeSQL(oCommand);
+                result = DAO.getInstance().executeSQL(oCommand);
+                deleteExternalDesignation(pCode);
             }
             catch (Exception)
             {
                 throw;
             }
             finally { }
+            return result;
+        }
 
-            String oSql1 = "SP_DeleteJourneysById";
-            SqlCommand oCommand1 = new SqlCommand(oSql1);
-            oCommand1.CommandType = CommandType.StoredProcedure;
-            oCommand1.Parameters.AddWithValue("@ID", pExternalDesignation.code);
+        public Int32 deleteExternalDesignation(Int32 pCode)
+        {
+            String oSql = "SP_DELETE_EXTERNAL_DESIGNATION";
+            SqlCommand oCommand = new SqlCommand(oSql);
+            oCommand.CommandType = CommandType.StoredProcedure;
+            oCommand.Parameters.AddWithValue("@ID", pCode);
             try
             {
-                DAO.getInstance().executeSQL(oCommand1);
+                return DAO.getInstance().executeSQL(oCommand);
             }
             catch (Exception)
             {
                 throw;
             }
             finally { }
-
-            for (int i = 0; i < pExternalDesignation.journeys.Count; i++)
-            {
-                int Codejourney = JourneyBLL.getInstance().getNextCode();
-                String oSql2 = "SP_INSERTJOURNEY";
-                SqlCommand oCommand2 = new SqlCommand(oSql2);
-                oCommand2.CommandType = CommandType.StoredProcedure;
-                oCommand2.Parameters.AddWithValue("@ID", Codejourney);
-                oCommand2.Parameters.AddWithValue("@DAY_ID", pExternalDesignation.journeys[i].day.code);
-                oCommand2.Parameters.AddWithValue("@START", pExternalDesignation.journeys[i].start);
-                oCommand2.Parameters.AddWithValue("@FINISH", pExternalDesignation.journeys[i].finish);
-                try
-                {
-                    DAO.getInstance().executeSQL(oCommand2);
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-
-                String oSql3 = "SP_INSERTEXTERNALDESIGNATION_JOURNEY";
-                SqlCommand oCommand3 = new SqlCommand(oSql3);
-                oCommand3.CommandType = CommandType.StoredProcedure;
-                oCommand3.Parameters.AddWithValue("@IDEXTERNAL", pExternalDesignation.code);
-                oCommand3.Parameters.AddWithValue("@IDJOURNEY", Codejourney);
-                try
-                {
-                    DAO.getInstance().executeSQL(oCommand3);
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-            }
-
-            return 0;
         }
 
         public List<ExternalDesignation> getAll()
@@ -241,63 +204,7 @@ namespace BLL
             }
             finally { }
         }
-        /*
-        public List<InternalDesignation> getAllActive()
-        {
-            String sql = "SP_GETALLINTERNAL_DESIGNATIONACTIVE";
-            SqlCommand oCommand = new SqlCommand(sql);
-            oCommand.CommandType = System.Data.CommandType.StoredProcedure;
-            try
-            {
-                DataTable oDataTable = Persistencia.getInstance().EjecutarConsultaDataTable(oCommand);
-                List<InternalDesignation> listInternalDesignation = new List<InternalDesignation>();
-                foreach (DataRow oDataRow in oDataTable.Rows)
-                {
-                    InternalDesignation oInternalDesignation = new InternalDesignation();
-                    oInternalDesignation.id = Convert.ToInt32(oDataRow[0].ToString());
-                    oInternalDesignation.description = oDataRow[1].ToString();
-                    oInternalDesignation.baseSalary = Convert.ToDouble(oDataRow[2].ToString());
-                    oInternalDesignation.annuity = Convert.ToDouble(oDataRow[3].ToString());
-                    oInternalDesignation.state = Convert.ToInt16(oDataRow[4].ToString());
-                    listInternalDesignation.Add(oInternalDesignation);
-                }
-                return listInternalDesignation;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally { }
-        }
-        
-        public List<InternalDesignation> getAllDesactive()
-        {
-            String sql = "SP_GETALLINTERNAL_DESIGNATIONDESACTIVE";
-            SqlCommand oCommand = new SqlCommand(sql);
-            oCommand.CommandType = System.Data.CommandType.StoredProcedure;
-            try
-            {
-                DataTable oDataTable = Persistencia.getInstance().EjecutarConsultaDataTable(oCommand);
-                List<InternalDesignation> listInternalDesignation = new List<InternalDesignation>();
-                foreach (DataRow oDataRow in oDataTable.Rows)
-                {
-                    InternalDesignation oInternalDesignation = new InternalDesignation();
-                    oInternalDesignation.id = Convert.ToInt32(oDataRow[0].ToString());
-                    oInternalDesignation.description = oDataRow[1].ToString();
-                    oInternalDesignation.baseSalary = Convert.ToDouble(oDataRow[2].ToString());
-                    oInternalDesignation.annuity = Convert.ToDouble(oDataRow[3].ToString());
-                    oInternalDesignation.state = Convert.ToInt16(oDataRow[4].ToString());
-                    listInternalDesignation.Add(oInternalDesignation);
-                }
-                return listInternalDesignation;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally { }
-        }
-        */
+    
         public ExternalDesignation getExternalDesignation(Int32 pCode)
         {
             String oSql = "SP_GETABYCODE_EXTERNAL_DESIGNATION";
@@ -451,5 +358,25 @@ namespace BLL
             }
             finally { }
         }
+
+        /*Este metodo trae las horas restantes del profesor*/
+        public Int32 getHours(Int32 id)
+        {
+            String hours;
+            String oSql = "SP_HOURS_REMAINING";
+            SqlCommand oCommand = new SqlCommand(oSql);
+            oCommand.CommandType = System.Data.CommandType.StoredProcedure;
+            oCommand.Parameters.AddWithValue("@TEACHER", id);
+            try
+            {
+                hours = DAO.getInstance().executeQueryScalar(oCommand);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { }
+            return Convert.ToInt32(hours);
+        } 
     }
 }
