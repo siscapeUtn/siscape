@@ -348,6 +348,17 @@ header .header-container{
     width: 90%;
 }
 
+.group-container{
+    margin: 0 auto;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px){
+    .group-container{
+        width: 90%;
+    }
+}
+
 /* -------------------------------------------------------
 -------------- .PAGE GLOBAL STYLES -----------------------
 ------------------------------------------------------- */
@@ -825,11 +836,11 @@ input:focus ~ .highlight {
     width: 40%;
 }
 
-.maintanance .listCheckbox{
+.maintanance .listCheckbox, .maintanance .listDaysCheckbox{
     width: 100%;
 }
 
-.maintanance .listCheckbox table{
+.maintanance .listCheckbox table, .maintanance .listDaysCheckbox table{
     border-collapse: collapse;
 }
 
@@ -837,12 +848,23 @@ input:focus ~ .highlight {
     width: 20%;
 }
 
+.maintanance .listDaysCheckbox td{
+    width: auto;
+}
+
 .maintanance .listCheckbox label{
     font-size: 16px;
     left: auto;
 }
 
-.maintanance .listCheckbox input{
+.maintanance .listDaysCheckbox label {
+    font-size: 16px;
+    left: auto;
+    position: relative;
+    top: 0;
+}
+
+.maintanance .listCheckbox input, .maintanance .listDaysCheckbox input{
     display: inline-block;
     height: 15px;
     margin: 0;

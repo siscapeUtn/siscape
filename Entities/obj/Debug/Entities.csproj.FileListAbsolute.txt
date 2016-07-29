@@ -4,9 +4,18 @@ C:\Users\Rud\Desktop\siscape\Entities\bin\Entities.pdb
 C:\Users\Rud\Desktop\siscape\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
 C:\Users\Rud\Desktop\siscape\Entities\obj\Debug\Entities.dll
 C:\Users\Rud\Desktop\siscape\Entities\obj\Debug\Entities.pdb
+<<<<<<< HEAD
 C:\Users\Daniel\Desktop\siscape\Entities\bin\Entities.dll.config
 C:\Users\Daniel\Desktop\siscape\Entities\bin\Entities.dll
 C:\Users\Daniel\Desktop\siscape\Entities\bin\Entities.pdb
 C:\Users\Daniel\Desktop\siscape\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Desktop\siscape\Entities\obj\Debug\Entities.dll
 C:\Users\Daniel\Desktop\siscape\Entities\obj\Debug\Entities.pdb
+=======
+C:\Users\asala\Source\Repos\SISCAPE\Entities\bin\Entities.dll.config
+C:\Users\asala\Source\Repos\SISCAPE\Entities\bin\Entities.dll
+C:\Users\asala\Source\Repos\SISCAPE\Entities\bin\Entities.pdb
+C:\Users\asala\Source\Repos\SISCAPE\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+C:\Users\asala\Source\Repos\SISCAPE\Entities\obj\Debug\Entities.dll
+C:\Users\asala\Source\Repos\SISCAPE\Entities\obj\Debug\Entities.pdb
+>>>>>>> 44b9f4ce30ddebcae46d3fb58d3635c831e7ff19

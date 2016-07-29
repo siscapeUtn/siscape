@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -27,14 +28,27 @@ namespace UI.Administration.Slider
         protected void btnSave_Click(object sender, ImageClickEventArgs e)
         {
             Int32 records = 0;
-            System.IO.Stream fs = flLoadImage.PostedFile.InputStream;
-            System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
-            Byte[] bytes = br.ReadBytes((Int32)fs.Length);
-            string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
-            //Image1.ImageUrl = "data:image/png;base64," + base64String;
-            //Image1.Visible = true;
 
-            txtName.Text = "data:image/png;base64," + base64String;
+            if (this.validateData())
+            {
+                int iLen = flLoadImage.PostedFile.ContentLength;
+                byte[] btArr = new byte[iLen];
+                flLoadImage.PostedFile.InputStream.Read(btArr, 0, iLen);
+
+                Entities.Slider oSlider = new Entities.Slider();
+                oSlider.code = Convert.ToInt32(txtCode.Text);
+                oSlider.description = txtName.Text;
+                oSlider.image = Convert.ToBase64String(btArr);
+                oSlider.state = 1;
+
+                records = SliderBLL.getInstance().insert(oSlider);
+
+                if (records > 0)
+                {
+                    lblMessage.Text = "Datos almacenados correctamente.";
+                }
+
+            }            
             //blockControls();
         }
 
@@ -47,25 +61,7 @@ namespace UI.Administration.Slider
         {
             Response.Redirect("../AdministrationGroups/administration.aspx");
         }
-
-        public String ImagetoBase64(String path)
-        {
-            String base64String = "";
-            
-            using (System.Drawing.Image image = System.Drawing.Image.FromFile(path))
-            {
-                using (MemoryStream m = new MemoryStream())
-                {
-                    image.Save(m, image.RawFormat);
-                    byte[] imageBytes = m.ToArray();
-                    base64String = Convert.ToBase64String(imageBytes);
-                }
-            }
-
-            return base64String;
-        }
-
-
+        
         private Boolean validateData()
         {
             Boolean ind = true;
@@ -82,7 +78,7 @@ namespace UI.Administration.Slider
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorName", "$('#ContentPlaceHolder1_txtName').removeClass('has-error');", true);
             }
 
-            if (flLoadImage.PostedFile != null)
+            if (flLoadImage.HasFile)
             {
                 String fileExt = System.IO.Path.GetExtension(flLoadImage.FileName);
 
@@ -114,6 +110,7 @@ namespace UI.Administration.Slider
         {
             txtName.Enabled = false;
             flLoadImage.Enabled = false;
+            cboState.Enabled = false;
             btnCancel.Enabled = false;
             btnSave.Enabled = false;
             btnNew.Enabled = true;
@@ -123,6 +120,7 @@ namespace UI.Administration.Slider
         {
             txtName.Enabled = true;
             flLoadImage.Enabled = true;
+            cboState.Enabled = true;
             btnCancel.Enabled = true;
             btnSave.Enabled = true;
             btnNew.Enabled = false;

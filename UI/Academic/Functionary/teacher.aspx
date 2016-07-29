@@ -32,7 +32,7 @@
                                 <span class="message-has-error"><asp:Label runat="server" ID="lblMessageLastName"></asp:Label></span>
                             </section>
                             <section class="form-group">
-                                <asp:Label ID="lbl" Text="Modalidad:" runat="server"></asp:Label>
+                                <asp:Label ID="lbl" Text="Categoría:" runat="server"></asp:Label>
                                 <asp:DropDownList ID="cboModality" CssClass="form-control" runat="server"></asp:DropDownList>
                                 <span class="message-has-error"><asp:Label runat="server" ID="lblMessageModality"></asp:Label></span>
                             </section>
