@@ -686,7 +686,7 @@ input:focus ~ .highlight {
     left: 95% !important;
 }
 
-.accourdion .contact-container{
+.accourdion .contact-container, .accordion .rules-container{
     width: 100%;
     overflow: hidden;
 }
@@ -906,4 +906,32 @@ input:focus ~ .highlight {
         width: 100%;
     }
     
+}
+
+/* */
+.programAccordion{
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.programAccordion .ui-accordion-header{
+    background: #003366;
+    border: 5px solid #003366;
+    border-radius: 0;
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.programAccordion .ui-accordion-icons{
+    padding: 1em;
+}
+
+.programAccordion .ui-icon{
+    left: 95% !important;
+}
+
+.listCourse .ui-accordion .ui-accordion-content{
+    border: 1px solid #003366;
+    border-radius: 0;
 }

@@ -20,6 +20,28 @@ function accordion() {
     });
 }
 
+function securityAccordion() {
+    $(function () {
+        $('#securityAccordeon').accordion({
+            heightStyle: "content",
+            collapsible: true,
+            active: 'none',
+            icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" }
+        });
+    });
+}
+
+function offerAccordion() {
+    $(function () {
+        $('.programAccordion').accordion({
+            heightStyle: "content",
+            collapsible: true,
+            active: 'none',
+            icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" }
+        });
+    });
+}
+
 function uploadImage() {
         
     $(function () {

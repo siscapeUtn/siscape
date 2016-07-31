@@ -48,25 +48,39 @@
                                  <span class="message-has-error"><asp:Label ID="lblchkModulesMessage" Text="" runat="server"></asp:Label></span>  
                             </section> <!-- End .form-group -->
                            </section>
-                            <section class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-                              <h3>Administración</h3>
-                              <span>En la sección de Administración, los usuarios tendran acceso a la manipulación de programas y periodos</span>
-                            </section>
-                            <section class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-                              <h3>Seguridad</h3>
-                              <span>En este apartado se podran crear reglas de acceso al sistema y a la creación de nuevos usuarios y sus dependencias con el sistema</span>
-                            </section>
-                            <section class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-                              <h3>Servicios</h3>
-                              <span>Los usuarios podran acceder a las listas de esperas y revisar o contactar a los clientes interesados en matricular algun curso</span>
-                            </section>
-                            <section class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-                              <h3>Academico</h3>
-                              <span>En esta sección se gestionan la mayoria de las actividades administrativas y o gerenciales de los diferentes programas con los que cuenta el departamento DEAS</span>
-                            </section>
-                            <section class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-                              <h3>Oferta Academica</h3>
-                              <span>En esta seccion es donde se diseñan los horarios y los cursos de cada programa y ademas se crea la oferta acadmeica</span>
+                            <div id="securityAccordeon" class="accordion">
+                                <h3>Detalles de las reglas de Acceso</h3>
+                                <div class="rules-container">
+                                    <div class="contact_info">
+                                        <p class="subtitle">Administración</p>
+                                        <span>En este apartado se podran crear reglas de acceso al sistema y a la creación de nuevos usuarios y sus dependencias con el sistema</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <section id="contactUs-accordion" class="accordion">
+                                <h3>Detalles de las reglas de Acceso</h3>
+                                <div class="contact-container">
+                                    <div class="contact_info">
+                                        <p class="subtitle">Administración</p>
+                                        <p>En la sección de Administración, los usuarios tendran acceso a la manipulación de programas y periodos</p>
+                                    </div>
+<%--                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                                        <h3>Seguridad</h3>
+                                        <span>En este apartado se podran crear reglas de acceso al sistema y a la creación de nuevos usuarios y sus dependencias con el sistema</span>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                                        <h3>Servicios</h3>
+                                        <span>Los usuarios podran acceder a las listas de esperas y revisar o contactar a los clientes interesados en matricular algun curso</span>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                                        <h3>Academico</h3>
+                                        <span>En esta sección se gestionan la mayoria de las actividades administrativas y o gerenciales de los diferentes programas con los que cuenta el departamento DEAS</span>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                                        <h3>Oferta Academica</h3>
+                                        <span>En esta seccion es donde se diseñan los horarios y los cursos de cada programa y ademas se crea la oferta acadmeica</span>
+                                    </div>--%>
+                                </div>
                             </section>
                             <section class="col-md-12 col-xs-12 col-sm-12 form-buttons">
                                 <asp:ImageButton ID="btnNew" CssClass="image_align" ImageUrl="~/images/maintenance/add.png" ToolTip="Nuevo" runat="server" OnClick="btnNew_Click" />
@@ -118,6 +132,9 @@
             </asp:UpdatePanel>
         </section>
     </section>
+    <script type="text/javascript">
+        securityAccordion();
+    </script>
     <script type="text/javascript">
         $('li').removeClass('isSelected');
         $('#security').addClass('isSelected');
