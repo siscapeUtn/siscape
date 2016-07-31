@@ -1014,3 +1014,14 @@ input:focus ~ .highlight {
         width: 100%;
     }
 }
+
+/* ---------------------------------------
+    -------- Accordion images ------------
+    -------------------------------------- */
+.ui-icon-plus{
+    background: url("../images/page-icons/plus.png") no-repeat !important;
+}
+
+.ui-icon-minus{
+    background: url("../images/page-icons/minus.png") no-repeat !important;
+}

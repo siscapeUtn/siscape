@@ -134,7 +134,9 @@
     <Content Include="images\page-icons\closeResponsive.png" />
     <Content Include="images\page-icons\exit.png" />
     <Content Include="images\page-icons\home.svg" />
+    <Content Include="images\page-icons\minus.png" />
     <Content Include="images\page-icons\password-icon.png" />
+    <Content Include="images\page-icons\plus.png" />
     <Content Include="images\page-icons\responsiveMenu.png" />
     <Content Include="images\page-icons\return.svg" />
     <Content Include="images\page-icons\sprite-links-hover.png" />
