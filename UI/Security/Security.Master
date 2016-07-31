@@ -13,12 +13,14 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="../css/reset.css" media="screen" />
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href=".../js/jquery-ui-1.11.4.custom/jquery-ui.min.css" />
     <link rel="stylesheet" type="text/css" href="../css/menu-styles.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
     <link rel="icon" href="../images/page-icons/DEAS-favicon.ico" />
 
     <!-- JS --> 
     <script type="text/javascript" src="../../js/jquery-1.11.3.js" ></script>
+    <script type="text/javascript" src="../js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
     <script type="text/javascript" src="../../../js/pageFunctions.js" ></script>
     <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../js/menu.js"></script>
@@ -80,6 +82,5 @@
             </div>
 	    <%--</main> <!-- cd-main-content -->--%>
     </form>
-    <script src="../../js/menu.js"></script>
 </body>
 </html>

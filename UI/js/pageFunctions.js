@@ -22,7 +22,7 @@ function accordion() {
 
 function securityAccordion() {
     $(function () {
-        $('#securityAccordeon').accordion({
+        $('#rolesAccordion').accordion({
             heightStyle: "content",
             collapsible: true,
             active: 'none',

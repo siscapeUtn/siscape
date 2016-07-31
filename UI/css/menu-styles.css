@@ -679,7 +679,7 @@ input:focus ~ .highlight {
 }
 
 .accordion .ui-accordion-icons{
-    padding: 1em;
+    padding: 0.5em;
 }
 
 .accordion .ui-icon{
@@ -689,6 +689,10 @@ input:focus ~ .highlight {
 .accourdion .contact-container, .accordion .rules-container{
     width: 100%;
     overflow: hidden;
+}
+
+.contact-container{
+    padding: 1em !important;
 }
 
 .contact-container .contact_info{
@@ -908,7 +912,9 @@ input:focus ~ .highlight {
     
 }
 
-/* */
+/* --------------------------------------
+    ------- Service Accordion -----------
+    ------------------------------------- */
 .programAccordion{
     margin: 1rem 0;
     width: 100%;
@@ -924,14 +930,87 @@ input:focus ~ .highlight {
 }
 
 .programAccordion .ui-accordion-icons{
-    padding: 1em;
+    padding: 0.5em;
 }
 
 .programAccordion .ui-icon{
     left: 95% !important;
 }
 
+.listCourse{
+    padding: 1em !important;
+}
+
 .listCourse .ui-accordion .ui-accordion-content{
     border: 1px solid #003366;
     border-radius: 0;
+}
+
+/* --------------------------------------
+    ------- Roles Accordion -----------
+    ------------------------------------- */
+.rolesAccordion{
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.rolesAccordion .ui-accordion-header{
+    background: #003366;
+    border: 5px solid #003366;
+    border-radius: 0;
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.rolesAccordion .ui-accordion-icons{
+    padding: 0.5em;
+}
+
+.rolesAccordion .ui-icon{
+    left: 95% !important;
+}
+
+.listRules{
+    padding: 1em !important;
+    border: 1px solid #003366 !important;
+    border-radius: 0 !important;
+}
+
+.listRules .ui-accordion .ui-accordion-content{
+    border: 1px solid #003366;
+    border-radius: 0;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.listRules .rule {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 10px; 
+    width: 47%;
+}
+
+.listRules .rule  .name{
+    color: #003366;
+    border-bottom: 0.125rem solid #009900;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.listRules .rule .description{
+    text-align: justify;
+}
+
+@media screen and (max-width: 959px){
+    .listRules .rule {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .listRules .rule {
+        margin-right: 0px; 
+        width: 100%;
+    }
 }
