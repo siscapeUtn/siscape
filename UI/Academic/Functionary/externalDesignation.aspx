@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Nombramiento externo - DEAS" Language="C#" MasterPageFile="~/Academic/Academic.Master" AutoEventWireup="true" CodeBehind="externalDesignation.aspx.cs" Inherits="UI.Academic.Functionary.externalDesignation" %>
+﻿%@ Page Title="Nombramiento externo - DEAS" Language="C#" MasterPageFile="~/Academic/Academic.Master" AutoEventWireup="true" CodeBehind="externalDesignation.aspx.cs" Inherits="UI.Academic.Functionary.externalDesignation" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
