@@ -50,17 +50,7 @@
 							    <div><a href="../../about.aspx" class="anchor">Acerca de</a></div>
 						    </div>
 					    </li>
-					    <li>
-						    <div class="option">
-							    <div><a href="../SecurityGroups/security.aspx" id='security' class="anchor">Seguridad</a></div>
-						    </div>
-						    <ul class="sub-menu">
-							    <li><div><a href="../Security/role.aspx">Roles</a></div></li>
-							    <li><div><a href="../Security/user.aspx">Usuarios</a></div></li>
-						    </ul>
-					    </li>
-                        <% showAdministartion();%>
-                        <% showAcademic();%>
+                        <% validations();%>
 					    <li>
 						    <div class="option">
 							    <div><a href="../../contactUs.aspx" class="anchor">Cont&aacute;ctenos</a></div>

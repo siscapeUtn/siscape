@@ -21,7 +21,7 @@ namespace UI.Academic.Functionary
             if (!IsPostBack)
             {
                 
-                Session.RemoveAll();
+               // Session.RemoveAll();
                 blockControls();
             }
             fillGvDesignation();

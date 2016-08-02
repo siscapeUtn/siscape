@@ -20,3 +20,13 @@ C:\Users\asala\Source\Repos\SISCAPE\BLL\bin\Entities.pdb
 C:\Users\asala\Source\Repos\SISCAPE\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 C:\Users\asala\Source\Repos\SISCAPE\BLL\obj\Debug\BLL.dll
 C:\Users\asala\Source\Repos\SISCAPE\BLL\obj\Debug\BLL.pdb
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\BLL\bin\BLL.dll.config
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\BLL\bin\BLL.dll
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\BLL\bin\BLL.pdb
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\BLL\bin\DAL.dll
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\BLL\bin\Entities.dll
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\BLL\bin\DAL.pdb
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\BLL\bin\Entities.pdb
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\BLL\obj\Debug\BLL.dll
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\BLL\obj\Debug\BLL.pdb

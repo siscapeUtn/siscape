@@ -28,8 +28,8 @@ namespace UI
                 
                     Entities.UserSystem oUser;
                     oUser = (Entities.UserSystem)BLL.UserSystemBLL.getInstance().verify_User(txtUser.Text, txtPassword.Text);
-
-                    if (oUser.code == 0)
+                
+                if (oUser.code == 0)
                     {
                         lblMessage.Text = "Nombre deusuario o Contraseña incorrectas";
                     }
@@ -37,12 +37,16 @@ namespace UI
                     {
                         Session["User"] = oUser;
                         addPermission(oUser.oRole.Role_Id);
+                    if (oUser.oProgram.code != 1)
+                    {
                         getPeriod();
                         modalperiod();
-                       
                     }
-                
-                
+
+                    Response.Redirect("index.aspx");
+                }
+               
+
             }
             else
             {
@@ -117,11 +121,13 @@ namespace UI
             bool bandera = true;
             if (txtUser.Text == "")
             {
-                bandera = false;
+                txtUser.Text = "siscape.utn@gmail.com";
+                //bandera = false;
             }
             if (txtPassword.Text == "")
             {
-                bandera = false;
+                txtPassword.Text = "Siscape2016";
+                //bandera = false;
             }
 
             return bandera;

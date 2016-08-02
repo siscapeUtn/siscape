@@ -9,57 +9,64 @@ namespace UI
 {
     public partial class Master : System.Web.UI.MasterPage
     {
-       // Entities.UserSystem oUser;
+        public bool security { get; set; }
+        public bool administration { get; set; }
+        public bool Academic { get; set; }
+        // Entities.UserSystem oUser;
         protected void Page_Load(object sender, EventArgs e)
         {
           
         }
 
+        protected void validations()
+        {
+            if (Session["User"] != null)
+            {
+                this.security = Convert.ToBoolean(Session["Security"].ToString());
+                this.administration = Convert.ToBoolean(Session["Administration"].ToString());
+                this.Academic = Convert.ToBoolean(Session["Academic"].ToString());
+                showSecurity();
+                showAdministartion();
+                showAcademic();
+            }
+        }
+
         protected void showSecurity()
         {
-
-            if (Session["User"]!=null)
+            if (this.security == true)
             {
-                if (Session["Security"].Equals(true))
-                {
-                    Response.Write("<li><div class='option'><div><a href='Security/SecurityGroups/security.aspx' id='security' class='anchor'>Seguridad</a></div>"+
+                Response.Write("<li><div class='option'><div><a href='Security/SecurityGroups/security.aspx' id='security' class='anchor'>Seguridad</a></div>"+
 						           "</div><ul class='sub-menu'>" +
 							       "<li><div><a href='Security/Security/role.aspx'>Roles</a></div></li>"+
 							       "<li><div><a href='Security/Security/user.aspx'>Usuarios</a></div></li>"+
 						           "</ul></li>");
-                }
             }
         }
+
         protected void showAdministartion()
         {
-            if (Session["User"] != null)
+            if (this.administration == true)
             {
-                if (Session["Administration"].Equals(true))
-                {
-                    Response.Write("<li><div class='option'>" +
+                Response.Write("<li><div class='option'>" +
                                     "<div><a href='Administration/AdministrationGroups/administration.aspx' id='administration' class='anchor'>Administraci&oacute;n</a></div>" +
                                     "</div><ul class='sub-menu'>" +
                                     "<li><div><a href='Administration/AdministrationGroups/gProgram.aspx'>Programas</a></div></li>" +
                                     "<li><div><a href='Administration/AdministrationGroups/gPeriod.aspx'>Per&iacute;odo</a></div></li>" +
-                                    "</ul></li>");
-                }
+                                    "</ul></li>");               
             }
         }
 
         protected void showAcademic()
         {
-            if (Session["User"] != null)
+            if (this.Academic == true)
             {
-                if (Session["Academic"].Equals(true))
-                {
-                    Response.Write("<li><div class='option'>" +
+                Response.Write("<li><div class='option'>" +
                         "<div><a href='Academic/AcademicGroups/academic.aspx' id='academic' class='anchor'>Acad&eacute;mico</a></div>" +
                         "</div><ul class='sub-menu'>" +
                         "<li><div><a href='Academic/AcademicGroups/gBuilding.aspx'>Infraestructura</a></div></li>" +
                         "<li><div><a href='Academic/AcademicGroups/gFunctionary.aspx'>Funcionarios</a></div></li>" +
                         "<li><div><a href='Academic/AcademicGroups/gAcademicOffer.aspx'>Oferta Acad&eacute;mica</a></div></li>" +
-                        "</ul></li>");
-                }
+                        "</ul></li>");               
             }
         }
 
