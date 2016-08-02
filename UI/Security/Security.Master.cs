@@ -9,16 +9,51 @@ namespace UI.Security
 {
     public partial class Security : System.Web.UI.MasterPage
     {
+        public bool security { get; set; }
+        public bool administration { get; set; }
+        public bool Academic { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void showAdministartion()
+        protected void validations()
         {
             if (Session["User"] != null)
             {
-                if (Session["Administration"].Equals(true))
+                this.security = Convert.ToBoolean(Session["Security"].ToString());
+                this.administration = Convert.ToBoolean(Session["Administration"].ToString());
+                this.Academic = Convert.ToBoolean(Session["Academic"].ToString());
+                showSecurity();
+                showAdministartion();
+                showAcademic();
+            }
+            else
+            {
+                Response.Redirect("../../index.aspx");
+            }
+        }
+
+        protected void showSecurity()
+        {
+            if (this.security == true)
+            {
+                Response.Write("<li><div class='option'><div><a href='../SecurityGroups/security.aspx' id='security' class='anchor'>Seguridad</a></div>" +
+                                   "</div><ul class='sub-menu'>" +
+                                   "<li><div><a href='../Security/role.aspx'>Roles</a></div></li>" +
+                                   "<li><div><a href='../Security/user.aspx'>Usuarios</a></div></li>" +
+                                   "</ul></li>");
+            }
+            else
+            {
+                Response.Redirect("../../index.aspx");
+            }
+        }
+
+        protected void showAdministartion()
+        {
+                if (this.administration == true)
                 {
                     Response.Write("<li><div class='option'>" +
                                     "<div><a href='../../Administration/AdministrationGroups/administration.aspx' id='administration' class='anchor'>Administraci&oacute;n</a></div>" +
@@ -27,14 +62,11 @@ namespace UI.Security
                                     "<li><div><a href='../../Administration/AdministrationGroups/gPeriod.aspx'>Per&iacute;odo</a></div></li>" +
                                     "</ul></li>");
                 }
-            }
         }
 
         protected void showAcademic()
         {
-            if (Session["User"] != null)
-            {
-                if (Session["Academic"].Equals(true))
+                if (this.Academic == true)
                 {
                     Response.Write("<li><div class='option'>" +
                         "<div><a href='../../Academic/AcademicGroups/academic.aspx' id='academic' class='anchor'>Acad&eacute;mico</a></div>" +
@@ -44,7 +76,6 @@ namespace UI.Security
                         "<li><div><a href='../../Academic/AcademicGroups/gAcademicOffer.aspx'>Oferta Acad&eacute;mica</a></div></li>" +
                         "</ul></li>");
                 }
-            }
         }
     }
 }
