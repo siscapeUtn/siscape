@@ -87,7 +87,7 @@ namespace BLL
                 SqlCommand oCommand = new SqlCommand(oSql);
                 oCommand.CommandType = CommandType.StoredProcedure;
                 oCommand.Parameters.AddWithValue("@ID", pSlider.code);
-                oCommand.Parameters.AddWithValue("@DESCRIPTION", pSlider.description);
+                oCommand.Parameters.AddWithValue("@NAME", pSlider.description);
                 oCommand.Parameters.AddWithValue("@IMAGE", pSlider.image);
                 oCommand.Parameters.AddWithValue("@STATE", pSlider.state);
                 return DAO.getInstance().executeSQL(oCommand);
@@ -108,7 +108,7 @@ namespace BLL
                 SqlCommand oCommand = new SqlCommand(oSql);
                 oCommand.CommandType = CommandType.StoredProcedure;
                 oCommand.Parameters.AddWithValue("@ID", pSlider.code);
-                oCommand.Parameters.AddWithValue("@DESCRIPTION", pSlider.description);
+                oCommand.Parameters.AddWithValue("@NAME", pSlider.description);
                 oCommand.Parameters.AddWithValue("@IMAGE", pSlider.image);
                 oCommand.Parameters.AddWithValue("@STATE", pSlider.state);
                 return DAO.getInstance().executeSQL(oCommand);
@@ -194,5 +194,31 @@ namespace BLL
             finally { }
         }
 
+        public Slider getSider(Int32 pCode)
+        {
+            String sql = "SP_GET_SLIDER";
+
+            try
+            {
+                SqlCommand oCommand = new SqlCommand(sql);
+                oCommand.Parameters.AddWithValue("@ID", pCode);
+                oCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                DataTable oDataTable = DAO.getInstance().executeQuery(oCommand);
+                Slider oSlider = new Slider();
+                foreach (DataRow oDataRow in oDataTable.Rows)
+                {
+                    oSlider.code = Convert.ToInt32(oDataRow[0].ToString());
+                    oSlider.description = oDataRow[1].ToString();
+                    oSlider.image = oDataRow[2].ToString();
+                    oSlider.state = Convert.ToInt16(oDataRow[3].ToString());
+                }
+                return oSlider;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { }
+        }
     }
 }

@@ -11,45 +11,57 @@ namespace UI.Administration.Slider
 {
     public partial class slider : System.Web.UI.Page
     {
+        static Int32 slider_id = -1;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!IsPostBack)
-            //{
-            //    blockControls();
-            //}
-            //loadData();
+            if (!IsPostBack)
+            {
+                blockControls();
+            }
+            loadData();
         }
 
         protected void btnNew_Click(object sender, ImageClickEventArgs e)
         {
             unlockControls();
+            txtCode.Text = SliderBLL.getInstance().getNextCode().ToString();
         }
 
         protected void btnSave_Click(object sender, ImageClickEventArgs e)
         {
             Int32 records = 0;
-
+                       
             if (this.validateData())
             {
                 int iLen = flLoadImage.PostedFile.ContentLength;
                 byte[] btArr = new byte[iLen];
                 flLoadImage.PostedFile.InputStream.Read(btArr, 0, iLen);
+                String base64String = Convert.ToBase64String(btArr);
+                String imageURL = "data:image/png;base64," + base64String;
 
                 Entities.Slider oSlider = new Entities.Slider();
                 oSlider.code = Convert.ToInt32(txtCode.Text);
                 oSlider.description = txtName.Text;
-                oSlider.image = Convert.ToBase64String(btArr);
-                oSlider.state = 1;
+                oSlider.image = imageURL;
+                oSlider.state = Convert.ToInt16(cboState.SelectedValue);
 
-                records = SliderBLL.getInstance().insert(oSlider);
+                if (SliderBLL.getInstance().exists(oSlider.code)) //If the program exists in the database
+                {
+                    records = SliderBLL.getInstance().modify(oSlider);//To modify the program
+                }
+                else
+                {
+                    records = SliderBLL.getInstance().insert(oSlider);//To insert a program
+                }
 
                 if (records > 0)
                 {
                     lblMessage.Text = "Datos almacenados correctamente.";
                 }
 
-            }            
-            //blockControls();
+            }
+            loadData();
+            blockControls();
         }
 
         protected void btnCancel_Click(object sender, ImageClickEventArgs e)
@@ -106,6 +118,12 @@ namespace UI.Administration.Slider
             return ind;
         }
 
+        protected void loadData()
+        {
+            gvSlider.DataSource = SliderBLL.getInstance().getAll();
+            gvSlider.DataBind();
+        }
+
         private void blockControls()
         {
             txtName.Enabled = false;
@@ -114,6 +132,7 @@ namespace UI.Administration.Slider
             btnCancel.Enabled = false;
             btnSave.Enabled = false;
             btnNew.Enabled = true;
+            clearControls();
         }
 
         private void unlockControls()
@@ -124,6 +143,56 @@ namespace UI.Administration.Slider
             btnCancel.Enabled = true;
             btnSave.Enabled = true;
             btnNew.Enabled = false;
+            clearControls();
+        }
+
+        private void clearControls()
+        {
+            txtCode.Text = "";
+            txtName.Text = "";
+            flLoadImage.Attributes.Clear();
+            uploadFile.Text = "";
+            cboState.SelectedValue = "0";
+        }
+
+        protected void gvSlider_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            unlockControls();
+            Int32 code = Convert.ToInt32(gvSlider.Rows[e.NewEditIndex].Cells[0].Text);
+            Entities.Slider oSlider = SliderBLL.getInstance().getSider(code);
+            txtCode.Text = oSlider.code.ToString();
+            txtName.Text = oSlider.description.ToString();
+            imgUpload.ImageUrl = oSlider.image;
+           
+            try
+            {
+                cboState.SelectedValue = oSlider.state.ToString();
+            }
+            catch (Exception)
+            {
+                cboState.SelectedValue = "1";
+            }
+        }
+
+        protected void gvSlider_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            String sliderName = gvSlider.Rows[e.RowIndex].Cells[1].Text;
+            slider_id = Convert.ToInt32(gvSlider.Rows[e.RowIndex].Cells[0].Text);
+            lblSliderName.Text = sliderName;
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "confirmMessage", "$('#confirmMessage').modal();", true);
+            confirmModal.Update();
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            Int32 records = SliderBLL.getInstance().delete(slider_id);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "closeConfirmMessage", "$('#confirmMessage').modal('toggle');", true);
+
+            if (records > 0)
+            {
+                lblMessage.Text = "Imagen eliminada correctamente.";
+            }
+            loadData();
         }
     }
 }
