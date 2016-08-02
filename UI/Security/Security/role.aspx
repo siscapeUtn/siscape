@@ -35,22 +35,9 @@
                            <section class="col-md-12">
                                <p class="title">Reglas de Acceso del Sistema</p>
                            </section>
-                          <section class="col-md-12">
-                             <section class="form-group">
-                             <p></p>   
-                                 <asp:CheckBoxList ID="chkModules" runat="server" CssClass="listCheckbox" RepeatDirection="Horizontal" >
-                                    <asp:ListItem Value="1"> Administración</asp:ListItem>
-                                    <asp:ListItem Value="2"> Seguridad</asp:ListItem>
-                                    <asp:ListItem Value="3"> Servicios</asp:ListItem>
-                                    <asp:ListItem Value="4"> Academico</asp:ListItem>
-                                    <asp:ListItem Value="5"> Oferta Academica</asp:ListItem>
-                               </asp:CheckBoxList>
-                                 <span class="message-has-error"><asp:Label ID="lblchkModulesMessage" Text="" runat="server"></asp:Label></span>  
-                            </section> <!-- End .form-group -->
-                           </section>
                             <section class="col-md-12">
                                 <div id="rolesAccordion" class="rolesAccordion" >
-                                    <h3>Descripción de reglas de acceso</h3>
+                                    <h3>Reglas de acceso</h3>
                                     <div class="listRules">
                                         <div class="rule">
                                             <div class="name">Administracción</div>
@@ -75,6 +62,19 @@
                                     </div>
                                 </div>
                             </section>
+                          <section class="col-md-12">
+                             <section class="form-group">
+                             <p></p>   
+                                 <asp:CheckBoxList ID="chkModules" runat="server" CssClass="listCheckbox" RepeatDirection="Horizontal" >
+                                    <asp:ListItem Value="1"> Administración</asp:ListItem>
+                                    <asp:ListItem Value="2"> Seguridad</asp:ListItem>
+                                    <asp:ListItem Value="3"> Servicios</asp:ListItem>
+                                    <asp:ListItem Value="4"> Academico</asp:ListItem>
+                                    <asp:ListItem Value="5"> Oferta Academica</asp:ListItem>
+                               </asp:CheckBoxList>
+                                 <span class="message-has-error"><asp:Label ID="lblchkModulesMessage" Text="" runat="server"></asp:Label></span>  
+                            </section> <!-- End .form-group -->
+                           </section>
                             <section class="col-md-12 col-xs-12 col-sm-12 form-buttons">
                                 <asp:ImageButton ID="btnNew" CssClass="image_align" ImageUrl="~/images/maintenance/add.png" ToolTip="Nuevo" runat="server" OnClick="btnNew_Click" />
                                 <asp:ImageButton ID="btnSave" CssClass="image_align" ImageUrl="~/images/maintenance/save.png" ToolTip="Guardar" runat="server" OnClick="btnSave_Click" />
