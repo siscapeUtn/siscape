@@ -10,20 +10,20 @@
                     <p class="title">Administraci&oacute;n de Roles del Sistema</p>
                     <section class="form row">
                         <fieldset>
-                            <section class="col-md-12">
+                            <section class="col-lg-12 col-md-12col-sm-12 col-xs-12">
                                 <section class="form-group">
                                     <asp:Label Visible="false" ID="lblCode" Text="Código:" runat="server"></asp:Label>
                                     <asp:TextBox Visible="false" ID="txtCode" CssClass="form-control" runat="server"></asp:TextBox>
                                 </section> <!-- End .form-group -->
                             </section>
-                            <section class="col-md-6">
+                            <section class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <section class="form-group">
                                     <asp:Label ID="lblName" Text="Descripción:" runat="server"></asp:Label>
                                     <asp:TextBox ID="txtName" CssClass="form-control" MaxLength="50" runat="server"></asp:TextBox>
                                     <span class="message-has-error"><asp:Label ID="lblNameMessage" Text="" runat="server"></asp:Label></span>
                                 </section> <!-- End .form-group -->
                             </section>
-                            <section class="col-md-6">
+                            <section class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                <section class="form-group">
                                     <asp:Label ID="lblState" Text="Estado:" CssClass="control-label" runat="server"></asp:Label>                               
                                         <asp:DropDownList ID="cboState" CssClass="form-control" runat="server">
@@ -32,49 +32,47 @@
                                         </asp:DropDownList>                                                                                             
                                 </section> <!-- End .form-group -->
                             </section>
-                           <section class="col-md-12">
-                               <p class="title">Reglas de Acceso del Sistema</p>
-                           </section>
-                            <section class="col-md-12">
-                                <div id="rolesAccordion" class="rolesAccordion" >
-                                    <h3>Reglas de acceso</h3>
-                                    <div class="listRules">
-                                        <div class="rule">
-                                            <div class="name">Administracción</div>
-                                            <div class="description">En la sección de Administración, los usuarios tendran acceso a la manipulación de programas y periodos.</div>
-                                        </div>
-                                        <div class="rule">
-                                            <div class="name">Seguridad</div>
-                                            <div class="description">En este apartado se podran crear reglas de acceso al sistema y a la creación de nuevos usuarios y sus dependencias con el sistema.</div>
-                                        </div>
-                                        <div class="rule">
-                                            <div class="name">Servicios</div>
-                                            <div class="description">Los usuarios podran acceder a las listas de esperas y revisar o contactar a los clientes interesados en matricular algun curso.</div>
-                                        </div>
-                                        <div class="rule">
-                                            <div class="name">Académico</div>
-                                            <div class="description">En esta sección se gestionan la mayoria de las actividades administrativas y o gerenciales de los diferentes programas con los que cuenta el departamento DEAS.</div>
-                                        </div>
-                                        <div class="rule">
-                                            <div class="name">Oferta Academica</div>
-                                            <div class="description">En esta seccion es donde se diseñan los horarios y los cursos de cada programa y ademas se crea la oferta académica.</div>
+                            <%--<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <section class="form-group">
+                                    <div id="rolesAccordion" class="rolesAccordion" >
+                                        <h3>Reglas de acceso</h3>
+                                        <div class="listRules">
+                                            <div class="rule">
+                                                <div class="name">Administracción</div>
+                                                <div class="description">En la sección de Administración, los usuarios tendran acceso a la manipulación de programas y periodos.</div>
+                                            </div>
+                                            <div class="rule">
+                                                <div class="name">Seguridad</div>
+                                                <div class="description">En este apartado se podran crear reglas de acceso al sistema y a la creación de nuevos usuarios y sus dependencias con el sistema.</div>
+                                            </div>
+                                            <div class="rule">
+                                                <div class="name">Servicios</div>
+                                                <div class="description">Los usuarios podran acceder a las listas de esperas y revisar o contactar a los clientes interesados en matricular algun curso.</div>
+                                            </div>
+                                            <div class="rule">
+                                                <div class="name">Académico</div>
+                                                <div class="description">En esta sección se gestionan la mayoria de las actividades administrativas y o gerenciales de los diferentes programas con los que cuenta el departamento DEAS.</div>
+                                            </div>
+                                            <div class="rule">
+                                                <div class="name">Oferta Academica</div>
+                                                <div class="description">En esta seccion es donde se diseñan los horarios y los cursos de cada programa y ademas se crea la oferta académica.</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </section>
+                            </section>--%>
+                            <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <section class="form-group">
+                                    <asp:CheckBoxList ID="chkModules" runat="server" CssClass="listCheckbox" RepeatDirection="Horizontal" >
+                                        <asp:ListItem Value="1"> Administración</asp:ListItem>
+                                        <asp:ListItem Value="2"> Seguridad</asp:ListItem>
+                                        <asp:ListItem Value="3"> Servicios</asp:ListItem>
+                                        <asp:ListItem Value="4"> Academico</asp:ListItem>
+                                        <asp:ListItem Value="5"> Oferta Academica</asp:ListItem>
+                                    </asp:CheckBoxList>
+                                    <span class="message-has-error"><asp:Label ID="lblchkModulesMessage" Text="" runat="server"></asp:Label></span>  
+                                </section> <!-- End .form-group -->
                             </section>
-                          <section class="col-md-12">
-                             <section class="form-group">
-                             <p></p>   
-                                 <asp:CheckBoxList ID="chkModules" runat="server" CssClass="listCheckbox" RepeatDirection="Horizontal" >
-                                    <asp:ListItem Value="1"> Administración</asp:ListItem>
-                                    <asp:ListItem Value="2"> Seguridad</asp:ListItem>
-                                    <asp:ListItem Value="3"> Servicios</asp:ListItem>
-                                    <asp:ListItem Value="4"> Academico</asp:ListItem>
-                                    <asp:ListItem Value="5"> Oferta Academica</asp:ListItem>
-                               </asp:CheckBoxList>
-                                 <span class="message-has-error"><asp:Label ID="lblchkModulesMessage" Text="" runat="server"></asp:Label></span>  
-                            </section> <!-- End .form-group -->
-                           </section>
                             <section class="col-md-12 col-xs-12 col-sm-12 form-buttons">
                                 <asp:ImageButton ID="btnNew" CssClass="image_align" ImageUrl="~/images/maintenance/add.png" ToolTip="Nuevo" runat="server" OnClick="btnNew_Click" />
                                 <asp:ImageButton ID="btnSave" CssClass="image_align" ImageUrl="~/images/maintenance/save.png" ToolTip="Guardar" runat="server" OnClick="btnSave_Click" />
@@ -121,13 +119,13 @@
                             <button class="btn btn-confirm" data-dismiss="modal" aria-hidden="true">Cancelar</button>
                         </section>
                     </section>
+                    <script type="text/javascript">
+                        securityAccordion();
+                    </script>
                 </ContentTemplate>
             </asp:UpdatePanel>
         </section>
     </section>
-    <script type="text/javascript">
-        securityAccordion();
-    </script>
     <script type="text/javascript">
         $('li').removeClass('isSelected');
         $('#security').addClass('isSelected');
