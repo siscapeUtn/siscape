@@ -41,11 +41,12 @@ namespace UI
                     {
                         getPeriod();
                         modalperiod();
+
                     }
 
                     Response.Redirect("index.aspx");
                 }
-               
+
 
             }
             else
@@ -57,16 +58,35 @@ namespace UI
 
         private void modalperiod()
         {
+            lblMsj.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "confirmMessage", "$('#confirmMessage').modal();", true);
             confirmModal.Update();
         }
 
         protected void btnPeriod_Click(object sender, EventArgs e)
         {
-            
-            Session["period"] = cboPeriod.SelectedValue;
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "confirmMessage", "$('#confirmMessage').modal('toggle');", true);
+               Session["period"] = cboPeriod.SelectedValue;
+               if (Session["period"].ToString() == "0")
+                {
+                lblMsj.Text = "Debes seleccionar un período";
+                }
+                else
+                {
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "confirmMessage", "$('#confirmMessage').modal('toggle');", true);
+                Response.Redirect("index.aspx");
+                }
+  
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            cleanSession();
             Response.Redirect("index.aspx");
+        }
+
+        protected void cleanSession()
+        {
+            Session.RemoveAll();
         }
 
         //it's to fill in the cmbPeriod 
@@ -121,13 +141,13 @@ namespace UI
             bool bandera = true;
             if (txtUser.Text == "")
             {
-                txtUser.Text = "siscape.utn@gmail.com";
-                //bandera = false;
+               // txtUser.Text = "siscape.utn@gmail.com";
+                bandera = false;
             }
             if (txtPassword.Text == "")
             {
-                txtPassword.Text = "Siscape2016";
-                //bandera = false;
+               // txtPassword.Text = "Siscape2016";
+               bandera = false;
             }
 
             return bandera;
