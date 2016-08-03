@@ -42,12 +42,12 @@ function offerAccordion() {
     });
 }
 
-function uploadImage() {
+//function uploadImage() {
         
-    $(function () {
-        $('#ContentPlaceHolder1_flLoadImage').on('change', function () {
-            document.getElementById("ContentPlaceHolder1_uploadFile").value = this.value.substring(this.value.lastIndexOf("\\") +1);
-        });
-    });
-
-}
+//    $(function () {
+//        $('#ContentPlaceHolder1_flLoadImage').on('change', function () {
+//            document.getElementById("ContentPlaceHolder1_uploadFile").value = this.value.substring(this.value.lastIndexOf("\\") +1);
+//            console.log(this.value);
+//        });
+//    });
+//}

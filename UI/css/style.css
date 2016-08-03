@@ -311,15 +311,17 @@ body:before{
 
 /* -------------------- Modal Styles ------------------------ */
 .modal-dialog {
-    width: 80% !important;
+    border-radius: 0;
+    width: 50%;
 }
 
 .modal-container {
-    background: #FFFFFF !important;
+    background: #FFFFFF;
     border: 2px solid #003366;
+    border-radius: 0;
     color: #000000;
     margin: auto;
-    padding: 20px !important;
+    padding: 20px;
     width: 100%;
 }
 
@@ -367,13 +369,30 @@ body:before{
 .modal-footer button,.modal-footer input{
     background-color: #003366;
     border-color: #003366;
-    border-radius: 3px;
+    border-radius: 0;
     color: #FFFFFF;
+    width: 100px;
 }
 
 .modal-footer button:hover, .modal-footer input[type="submit"]:hover{
     color: #FFFFFF !important;
 }
+
+@media screen and (max-width: 768px){
+   
+    .modal-dialog {
+        border-radius: 0;
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 620px){
+    .modal-dialog {
+        border-radius: 0;
+        width: 90%;
+    }
+}
+
 
 /*  MEDIA QUERIES */
 /* 800px */
