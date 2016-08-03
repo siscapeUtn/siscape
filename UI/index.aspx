@@ -4,10 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="slider">
-        <img alt="" src="images/slideshow/1.jpg"/>
-        <img alt="" src="images/slideshow/2.jpg""/>
-        <img alt="" src="images/slideshow/3.jpg""/>
-        <img alt="" src="images/slideshow/4.jpg""/>
+        <% printSlider();  %>
     </section> <!-- end .slider -->
     <!-- Slider function -->
     <script type="text/javascript">
