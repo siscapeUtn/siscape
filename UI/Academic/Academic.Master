@@ -19,9 +19,8 @@
 
     <!-- JS --> 
     <script type="text/javascript" src="../../js/jquery-1.11.3.js" ></script>
-    <script type="text/javascript" src="../../js/pageFunctions.js" ></script>
+    <script type="text/javascript" src="../../js/pageFunctions.js" ></script>   
     <script type="text/javascript" src="../../js/bootstrap.min.js"></script> 
-    <script type="text/javascript" src="js/menu.js"></script>
 
     <!-- ContentPlaceHolder Head -->
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
@@ -48,20 +47,7 @@
 							    <div><a href="../../about.aspx" class="anchor">Acerca de</a></div>
 						    </div>
 					    </li>
-					    
-                        <% showSecurity(); %>
-                        <% showAdministartion();%>
-					
-					    <li>
-						    <div class="option">
-							    <div><a href="../AcademicGroups/academic.aspx" id='academic' class="anchor">Acad&eacute;mico</a></div>
-						    </div>
-						    <ul class="sub-menu">
-							    <li><div><a href="../AcademicGroups/gBuilding.aspx">Infraestructura</a></div></li>
-							    <li><div><a href="../AcademicGroups/gFunctionary.aspx">Funcionarios</a></div></li>
-							    <li><div><a href="../AcademicGroups/gAcademicOffer.aspx">Oferta Acad&eacute;mica</a></div></li>
-						    </ul>
-					    </li>
+                        <% validations(); %>
 					    <li>
 						    <div class="option">
 							    <div><a href="../../contactUs.aspx" class="anchor">Cont&aacute;ctenos</a></div>

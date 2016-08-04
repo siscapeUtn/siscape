@@ -50,9 +50,7 @@
 							    <div><a href="about.aspx" id="about" class="anchor menu-option">Acerca de</a></div>
 						    </div>
 					    </li>
-                        <% showSecurity(); %>
-                        <% showAdministartion();%>
-                        <% showAcademic();%>
+                        <% validations(); %>
 					    <li>
 						    <div class="option">
 							    <div><a href="contactUs.aspx" id="contact" class="anchor menu-option">Cont&aacute;ctenos</a></div>
@@ -68,6 +66,5 @@
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
             </div>
 	    </form>
-
 </body>
 </html>

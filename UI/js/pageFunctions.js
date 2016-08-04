@@ -20,12 +20,34 @@ function accordion() {
     });
 }
 
-function uploadImage() {
-        
+function securityAccordion() {
     $(function () {
-        $('#ContentPlaceHolder1_flLoadImage').on('change', function () {
-            document.getElementById("ContentPlaceHolder1_uploadFile").value = this.value.substring(this.value.lastIndexOf("\\") +1);
+        $('#rolesAccordion').accordion({
+            heightStyle: "content",
+            collapsible: true,
+            active: 'none',
+            icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" }
         });
     });
-
 }
+
+function offerAccordion() {
+    $(function () {
+        $('.programAccordion').accordion({
+            heightStyle: "content",
+            collapsible: true,
+            active: 'none',
+            icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" }
+        });
+    });
+}
+
+//function uploadImage() {
+        
+//    $(function () {
+//        $('#ContentPlaceHolder1_flLoadImage').on('change', function () {
+//            document.getElementById("ContentPlaceHolder1_uploadFile").value = this.value.substring(this.value.lastIndexOf("\\") +1);
+//            console.log(this.value);
+//        });
+//    });
+//}

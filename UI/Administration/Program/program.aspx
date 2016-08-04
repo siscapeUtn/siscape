@@ -8,7 +8,7 @@
         <section class="maintanance">
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
-                    <p class="title">Administraci&oacute;n de Programas</p>
+                    <p id="title" class="title">Administraci&oacute;n de Programas</p>
                     <section class="form row">
                         <fieldset>
                             <section class="col-md-12">

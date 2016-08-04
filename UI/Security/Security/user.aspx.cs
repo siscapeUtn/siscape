@@ -44,6 +44,10 @@ namespace UI.Administration.Security
                 oUser.cellPhone = txtCellPhone.Text;
                 oUser.email = txtEmail.Text;
                 oProgram.code = Convert.ToInt16(cboProgram.SelectedValue);
+                if(oProgram.code == 0)
+                {
+                    oProgram.code = 1;
+                }
                 oUser.Password = txtId.Text;
                 oRole.Role_Id = Convert.ToInt16(cboRole.SelectedValue);
                 oUser.oProgram = oProgram;
@@ -104,6 +108,10 @@ namespace UI.Administration.Security
             txtHomePhone.Text = oUser.homePhone.ToString();
             txtCellPhone.Text = oUser.cellPhone.ToString();
             txtEmail.Text = oUser.email.ToString();
+            if (oUser.oProgram.code == 0)
+            {
+                cboProgram.SelectedValue = "0";
+            }
             cboProgram.SelectedValue = oUser.oProgram.code.ToString();
             cboRole.SelectedValue = oUser.oRole.Role_Id.ToString();
             try

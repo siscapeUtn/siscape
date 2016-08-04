@@ -273,11 +273,12 @@ namespace BLL
                 String oSql = "SP_VERIFYUSERSYSTEM";
                     try
                     {
+                string encrypt = en.Encriptar(pPassword);
                         SqlCommand oCommand = new SqlCommand(oSql);
                         oCommand.CommandType = CommandType.StoredProcedure;
                         oCommand.Parameters.AddWithValue("@MAIL", pMail);
                         oCommand.Parameters[0].Direction = ParameterDirection.Input;
-                        oCommand.Parameters.AddWithValue("@PASSWORD",en.Encriptar(pPassword));
+                        oCommand.Parameters.AddWithValue("@PASSWORD", encrypt);
                         oCommand.Parameters[1].Direction = ParameterDirection.Input;
                         DataTable oDataTable = DAO.getInstance().executeQuery(oCommand);
                         UserSystem oUserSystem = new UserSystem();

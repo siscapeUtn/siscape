@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Rud\Desktop\siscape\UI\bin\UI.dll.config
 C:\Users\Rud\Desktop\siscape\UI\bin\UI.dll
 C:\Users\Rud\Desktop\siscape\UI\bin\UI.pdb
@@ -34,3 +35,17 @@ C:\Users\Daniel\Desktop\siscape\UI\bin\DAL.pdb
 C:\Users\Daniel\Desktop\siscape\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Desktop\siscape\UI\obj\Debug\UI.dll
 C:\Users\Daniel\Desktop\siscape\UI\obj\Debug\UI.pdb
+=======
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\UI\bin\UI.dll.config
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\UI\bin\UI.dll
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\UI\bin\UI.pdb
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\UI\bin\BLL.dll
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\UI\bin\Entities.dll
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\UI\bin\DAL.dll
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\UI\bin\BLL.pdb
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\UI\bin\Entities.pdb
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\UI\bin\DAL.pdb
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\UI\obj\Debug\UI.dll
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\UI\obj\Debug\UI.pdb
+>>>>>>> 6611f657cd23e08ec34d46da08699d84b5523d5e

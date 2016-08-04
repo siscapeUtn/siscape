@@ -504,11 +504,6 @@ header .header-container{
 /* ---------------------------
     ----------Group ----------
 ----------------------------- */
-.group 			  { 
-  position:relative; 
-  margin-bottom:45px; 
-}
-
 input 				{
   font-size:18px;
   padding:10px 10px 10px 5px;
@@ -523,48 +518,12 @@ input:focus{
 
 /* LABEL ======================================= */
 label {
-  color:#999; 
-  font-size:18px;
-  font-weight:normal;
-  position:absolute;
-  pointer-events:none;
-  left:5px;
-  top:10px;
-  transition:0.2s ease all; 
-  -moz-transition:0.2s ease all; 
-  -webkit-transition:0.2s ease all;
+    font-weight: normal;
 }
 
 /* active state */
 input:focus ~ label, input:valid ~ label {
-  top:-20px;
   font-size:14px;
-  color:#5264AE;
-}
-
-/* BOTTOM BARS ================================= */
-.bar { 
-    position:relative; 
-    display:block; 
-    width: 100%; 
-}
-
-.bar:before, .bar:after 	{
-  content:'';
-  height:2px; 
-  width:0;
-  bottom:1px; 
-  position:absolute;
-  background:#5264AE; 
-  transition:0.2s ease all; 
-  -moz-transition:0.2s ease all; 
-  -webkit-transition:0.2s ease all;
-}
-.bar:before {
-  left:50%;
-}
-.bar:after {
-  right:50%; 
 }
 
 /* active state */
@@ -679,16 +638,20 @@ input:focus ~ .highlight {
 }
 
 .accordion .ui-accordion-icons{
-    padding: 1em;
+    padding: 0.5em;
 }
 
 .accordion .ui-icon{
     left: 95% !important;
 }
 
-.accourdion .contact-container{
+.accourdion .contact-container, .accordion .rules-container{
     width: 100%;
     overflow: hidden;
+}
+
+.contact-container{
+    padding: 1em !important;
 }
 
 .contact-container .contact_info{
@@ -740,6 +703,10 @@ input:focus ~ .highlight {
         font-size: 1.3rem;
         margin-right: 0;
         width: 98%;
+    }
+
+    .accordion .ui-icon{
+        left: 90% !important;
     }
 
 }
@@ -900,10 +867,142 @@ input:focus ~ .highlight {
     }
 }
 
+@media screen and (max-width: 768px){
+    .maintanance .send{
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 380px){
     
     .maintanance .fileUpload span img {
         width: 100%;
     }
     
+}
+
+/* --------------------------------------
+    ------- Service Accordion -----------
+    ------------------------------------- */
+.programAccordion{
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.programAccordion .ui-accordion-header{
+    background: #003366;
+    border: 5px solid #003366;
+    border-radius: 0;
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.programAccordion .ui-accordion-icons{
+    padding: 0.5em;
+}
+
+.programAccordion .ui-icon{
+    left: 95% !important;
+}
+
+.listCourse{
+    padding: 1em !important;
+}
+
+.listCourse .ui-accordion .ui-accordion-content{
+    border: 1px solid #003366;
+    border-radius: 0;
+}
+
+@media screen and (max-width: 650px){
+    .programAccordion .ui-icon{
+        left: 90% !important;
+    }
+}
+
+/* --------------------------------------
+    ------- Roles Accordion -----------
+    ------------------------------------- */
+.rolesAccordion{
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.rolesAccordion .ui-accordion-header{
+    background: #003366;
+    border: 5px solid #003366;
+    border-radius: 0;
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.rolesAccordion .ui-accordion-icons{
+    padding: 0.5em;
+}
+
+.rolesAccordion .ui-icon{
+    left: 95% !important;
+}
+
+.listRules{
+    padding: 1em !important;
+    border: 1px solid #003366 !important;
+    border-radius: 0 !important;
+}
+
+.listRules .ui-accordion .ui-accordion-content{
+    border: 1px solid #003366;
+    border-radius: 0;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.listRules .rule {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 10px; 
+    width: 47%;
+}
+
+.listRules .rule  .name{
+    color: #003366;
+    border-bottom: 0.125rem solid #009900;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.listRules .rule .description{
+    text-align: justify;
+}
+
+@media screen and (max-width: 959px){
+    .listRules .rule {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .listRules .rule {
+        margin-right: 0px; 
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 660px){
+    .rolesAccordion .ui-icon{
+        left: 90% !important;
+    }
+}
+
+/* ---------------------------------------
+    -------- Accordion images ------------
+    -------------------------------------- */
+.ui-icon-plus{
+    background: url("../images/page-icons/plus.png") no-repeat !important;
+}
+
+.ui-icon-minus{
+    background: url("../images/page-icons/minus.png") no-repeat !important;
 }
