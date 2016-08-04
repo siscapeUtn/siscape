@@ -1,30 +1,6 @@
-<<<<<<< HEAD
-C:\Users\Rud\Desktop\siscape\Entities\bin\Entities.dll.config
-C:\Users\Rud\Desktop\siscape\Entities\bin\Entities.dll
-C:\Users\Rud\Desktop\siscape\Entities\bin\Entities.pdb
-C:\Users\Rud\Desktop\siscape\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
-C:\Users\Rud\Desktop\siscape\Entities\obj\Debug\Entities.dll
-C:\Users\Rud\Desktop\siscape\Entities\obj\Debug\Entities.pdb
-<<<<<<< HEAD
-C:\Users\Daniel\Desktop\siscape\Entities\bin\Entities.dll.config
-C:\Users\Daniel\Desktop\siscape\Entities\bin\Entities.dll
-C:\Users\Daniel\Desktop\siscape\Entities\bin\Entities.pdb
-C:\Users\Daniel\Desktop\siscape\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
-C:\Users\Daniel\Desktop\siscape\Entities\obj\Debug\Entities.dll
-C:\Users\Daniel\Desktop\siscape\Entities\obj\Debug\Entities.pdb
-=======
-C:\Users\asala\Source\Repos\SISCAPE\Entities\bin\Entities.dll.config
-C:\Users\asala\Source\Repos\SISCAPE\Entities\bin\Entities.dll
-C:\Users\asala\Source\Repos\SISCAPE\Entities\bin\Entities.pdb
-C:\Users\asala\Source\Repos\SISCAPE\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
-C:\Users\asala\Source\Repos\SISCAPE\Entities\obj\Debug\Entities.dll
-C:\Users\asala\Source\Repos\SISCAPE\Entities\obj\Debug\Entities.pdb
->>>>>>> 44b9f4ce30ddebcae46d3fb58d3635c831e7ff19
-=======
-C:\Users\rsanchez\Desktop\a\sis\actual\siscape\Entities\bin\Entities.dll.config
-C:\Users\rsanchez\Desktop\a\sis\actual\siscape\Entities\bin\Entities.dll
-C:\Users\rsanchez\Desktop\a\sis\actual\siscape\Entities\bin\Entities.pdb
-C:\Users\rsanchez\Desktop\a\sis\actual\siscape\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
-C:\Users\rsanchez\Desktop\a\sis\actual\siscape\Entities\obj\Debug\Entities.dll
-C:\Users\rsanchez\Desktop\a\sis\actual\siscape\Entities\obj\Debug\Entities.pdb
->>>>>>> 6611f657cd23e08ec34d46da08699d84b5523d5e
+C:\Users\rsanchez\Desktop\Conexion\siscape\Entities\bin\Entities.dll.config
+C:\Users\rsanchez\Desktop\Conexion\siscape\Entities\bin\Entities.dll
+C:\Users\rsanchez\Desktop\Conexion\siscape\Entities\bin\Entities.pdb
+C:\Users\rsanchez\Desktop\Conexion\siscape\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+C:\Users\rsanchez\Desktop\Conexion\siscape\Entities\obj\Debug\Entities.dll
+C:\Users\rsanchez\Desktop\Conexion\siscape\Entities\obj\Debug\Entities.pdb

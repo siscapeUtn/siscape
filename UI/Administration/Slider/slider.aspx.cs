@@ -29,7 +29,7 @@ namespace UI.Administration.Slider
 
         protected void btnSave_Click(object sender, ImageClickEventArgs e)
         {
-<<<<<<< HEAD
+
             //Int32 records = 0;
 
             //if (this.validateData())
@@ -45,7 +45,7 @@ namespace UI.Administration.Slider
             //    oSlider.state = 1;
 
             //    records = SliderBLL.getInstance().insert(oSlider);
-=======
+
             Int32 records = 0;
                        
             if (this.validateData())
@@ -70,21 +70,21 @@ namespace UI.Administration.Slider
                 {
                     records = SliderBLL.getInstance().insert(oSlider);//To insert a program
                 }
->>>>>>> 6611f657cd23e08ec34d46da08699d84b5523d5e
+
 
             //    if (records > 0)
             //    {
             //        lblMessage.Text = "Datos almacenados correctamente.";
             //    }
 
-<<<<<<< HEAD
+
             //}            
             //blockControls();
-=======
+
             }
             loadData();
             blockControls();
->>>>>>> 6611f657cd23e08ec34d46da08699d84b5523d5e
+
         }
 
         protected void btnCancel_Click(object sender, ImageClickEventArgs e)

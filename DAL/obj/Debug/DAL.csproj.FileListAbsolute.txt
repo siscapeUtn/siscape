@@ -1,21 +1,6 @@
-<<<<<<< HEAD
-C:\Users\Rud\Desktop\siscape\DAL\bin\DAL.dll.config
-C:\Users\Rud\Desktop\siscape\DAL\bin\DAL.dll
-C:\Users\Rud\Desktop\siscape\DAL\bin\DAL.pdb
-C:\Users\Rud\Desktop\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\Rud\Desktop\siscape\DAL\obj\Debug\DAL.dll
-C:\Users\Rud\Desktop\siscape\DAL\obj\Debug\DAL.pdb
-C:\Users\Daniel\Desktop\siscape\DAL\bin\DAL.dll.config
-C:\Users\Daniel\Desktop\siscape\DAL\bin\DAL.dll
-C:\Users\Daniel\Desktop\siscape\DAL\bin\DAL.pdb
-C:\Users\Daniel\Desktop\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\Daniel\Desktop\siscape\DAL\obj\Debug\DAL.dll
-C:\Users\Daniel\Desktop\siscape\DAL\obj\Debug\DAL.pdb
-=======
-C:\Users\rsanchez\Desktop\a\sis\actual\siscape\DAL\bin\DAL.dll.config
-C:\Users\rsanchez\Desktop\a\sis\actual\siscape\DAL\bin\DAL.dll
-C:\Users\rsanchez\Desktop\a\sis\actual\siscape\DAL\bin\DAL.pdb
-C:\Users\rsanchez\Desktop\a\sis\actual\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\rsanchez\Desktop\a\sis\actual\siscape\DAL\obj\Debug\DAL.dll
-C:\Users\rsanchez\Desktop\a\sis\actual\siscape\DAL\obj\Debug\DAL.pdb
->>>>>>> 6611f657cd23e08ec34d46da08699d84b5523d5e
+C:\Users\rsanchez\Desktop\Conexion\siscape\DAL\bin\DAL.dll.config
+C:\Users\rsanchez\Desktop\Conexion\siscape\DAL\bin\DAL.dll
+C:\Users\rsanchez\Desktop\Conexion\siscape\DAL\bin\DAL.pdb
+C:\Users\rsanchez\Desktop\Conexion\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\rsanchez\Desktop\Conexion\siscape\DAL\obj\Debug\DAL.dll
+C:\Users\rsanchez\Desktop\Conexion\siscape\DAL\obj\Debug\DAL.pdb
