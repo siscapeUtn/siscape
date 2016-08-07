@@ -29,6 +29,23 @@ namespace UI.Administration.Slider
 
         protected void btnSave_Click(object sender, ImageClickEventArgs e)
         {
+
+            //Int32 records = 0;
+
+            //if (this.validateData())
+            //{
+            //    int iLen = flLoadImage.PostedFile.ContentLength;
+            //    byte[] btArr = new byte[iLen];
+            //    flLoadImage.PostedFile.InputStream.Read(btArr, 0, iLen);
+
+            //    Entities.Slider oSlider = new Entities.Slider();
+            //    oSlider.code = Convert.ToInt32(txtCode.Text);
+            //    oSlider.description = txtName.Text;
+            //    oSlider.image = Convert.ToBase64String(btArr);
+            //    oSlider.state = 1;
+
+            //    records = SliderBLL.getInstance().insert(oSlider);
+
             Int32 records = 0;
                        
             if (this.validateData())
@@ -54,14 +71,20 @@ namespace UI.Administration.Slider
                     records = SliderBLL.getInstance().insert(oSlider);//To insert a program
                 }
 
-                if (records > 0)
-                {
-                    lblMessage.Text = "Datos almacenados correctamente.";
-                }
+
+            //    if (records > 0)
+            //    {
+            //        lblMessage.Text = "Datos almacenados correctamente.";
+            //    }
+
+
+            //}            
+            //blockControls();
 
             }
             loadData();
             blockControls();
+
         }
 
         protected void btnCancel_Click(object sender, ImageClickEventArgs e)

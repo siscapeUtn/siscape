@@ -57,28 +57,28 @@
                             </section>
                         </section>
                         <section>
-                            <section class="col-md-6">
+                           
                                 <%-- dropdownlist program--%>
 
-                                <section class="form-group">
+                                <%--<section class="form-group">
                                     <asp:Label ID="lblProgram" CssClass="control-label col-sm-2" Text="Programa:" runat="server"></asp:Label>
                                     <section class="col-sm-10">
                                         <asp:DropDownList ID="cboProgram" CssClass="form-control col-sm-4" runat="server" OnSelectedIndexChanged="cboProgram_SelectedIndexChanged" AutoPostBack="true">
                                         </asp:DropDownList>
                                     </section>
                                 </section>
-                                <span class="message-has-error"></span>
+                                <span class="message-has-error"></span>--%>
                                 <%-- dropdownlist course--%>
-                                <section class="form-group">
+                                <%--<section class="form-group">
                                     <asp:Label ID="lblCourse" CssClass="control-label col-sm-2" Text="Curso:" runat="server"></asp:Label>
                                     <section class="col-sm-10">
                                         <asp:DropDownList ID="cboCourse" CssClass="form-control col-sm-4" runat="server">
                                         </asp:DropDownList>
                                     </section>
                                 </section>
-                                <span class="message-has-error"></span>
+                                <span class="message-has-error"></span>--%>
                                 <%-- dropdownlist schedule--%>
-                                <section class="form-group">
+                                <%--<section class="form-group">
                                     <asp:Label ID="lblSchedule" CssClass="control-label col-sm-2" Text="Horario:" runat="server"></asp:Label>
                                     <section class="col-sm-10">
                                         <asp:DropDownList ID="cboSchedule" CssClass="form-control col-sm-4" runat="server">
@@ -89,8 +89,8 @@
                                 <section>
                                     <asp:TextBox ID="txtDays" runat="server" Visible="false"></asp:TextBox>
                                 </section>
-                            </section>
-                            <section>
+                            </section>--%>
+                            <%--<section>
                                 <section class="form-group">
                                     <asp:CheckBoxList CssClass="list-group-item " ID="chkDays" runat="server" RepeatDirection="Horizontal" Width="370px" RepeatLayout="Flow" CellPadding="5" CellSpacing="5" AutoPostBack="true" OnSelectedIndexChanged="chkDays_SelectedIndexChanged">
                                         <asp:ListItem  Value="Lunes">Lunes&nbsp;&nbsp;&nbsp;&nbsp;</asp:ListItem>
@@ -102,14 +102,14 @@
                                         <asp:ListItem Value="Domingo">Domingo</asp:ListItem>
                                     </asp:CheckBoxList>
                                 </section>
-                            </section>
-                        </section>
+                            </section>--%>
+                       <%-- </section>
                         <br />
                         <section>
                             <asp:ImageButton CssClass="image_align" ImageUrl="~/images/maintenance/add.png" runat="server" ID="btnAdd" ToolTip="Agregar" OnClick="btnAdd_Click1" /></td>
-                        </section>
+                        </section>--%>
 
-                        <section class="form row">
+                      <%--  <section class="form row">
                             <section class="dataExists">
                                 <section class="table-responsive">
                                     <asp:GridView ID="grvCourse" runat="server" AutoGenerateColumns="False" OnRowDeleting="grvCourse_RowDeleting">
@@ -124,20 +124,22 @@
                                     </asp:GridView>
                                 </section>
                             </section>
+                        </section>--%>
+
+                        <section class="col-md-6 form-buttons">
+                            <asp:Button Text="Enviar" ToolTip="Agregar a lista de espera" ID="Save" runat="server" OnClick="btnSave" CssClass="btn btn-group" BorderColor="Blue"/>
+                        </section>
+                        <section class="col-md-6 form-buttons">
+                             <asp:Button  ToolTip="Cancelar" ID="Cancel" runat="server" Text="Cancelar" OnClick="btn_Cancel" CssClass="btn btn-group" BorderColor="Blue"/>
                         </section>
 
-                        <section class="col-md-3"></section>
-                        <section class="col-md-12 form-buttons">
-                            <asp:Button Text="Guardar" ToolTip="Agregar a lista de espera" ID="Save" runat="server" OnClick="btnSave" CssClass="btn btn-group" BorderColor="Blue"/>
-                            <asp:Button  ToolTip="Cancelar" ID="Cancel" runat="server" Text="Cancelar" OnClick="btn_Cancel" CssClass="btn btn-group" BorderColor="Blue"/>
-                            
-                        </section>
+                               
                         <!-- End .form-buttons -->
                         <section class="col-md-12 message">
                             <asp:Label ID="lblMessage" runat="server"></asp:Label>
                         </section>
                         <!-- End .message -->
-                    </section>
+                    
 
                 </ContentTemplate>
             </asp:UpdatePanel>

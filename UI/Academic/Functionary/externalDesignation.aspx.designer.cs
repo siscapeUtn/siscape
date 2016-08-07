@@ -175,13 +175,13 @@ namespace UI.Academic.Functionary {
         protected global::System.Web.UI.WebControls.Label lblHoursDisignation;
         
         /// <summary>
-        /// Control txtHoursDisignation.
+        /// Control cboHoursDisignation.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHoursDisignation;
+        protected global::System.Web.UI.WebControls.DropDownList cboHoursDisignation;
         
         /// <summary>
         /// Control lblDay.
@@ -326,5 +326,41 @@ namespace UI.Academic.Functionary {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvExternalDesignation;
+        
+        /// <summary>
+        /// Control confirmModal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel confirmModal;
+        
+        /// <summary>
+        /// Control modalHeader.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label modalHeader;
+        
+        /// <summary>
+        /// Control lblExternalDesignationDescription.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblExternalDesignationDescription;
+        
+        /// <summary>
+        /// Control btnDelete.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDelete;
     }
 }

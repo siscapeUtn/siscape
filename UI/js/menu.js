@@ -19,7 +19,7 @@
 
     $('.content').click(function () {
         $('#menu-bar').removeClass('is_open');
-        $('#menu-bar').addClass('is_close');
+        $('#menu-bar').addClasxs('is_close');
         $('header .header-container nav').animate({
             right: '-100%'
         });

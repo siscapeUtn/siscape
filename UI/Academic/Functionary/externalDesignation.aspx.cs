@@ -13,7 +13,7 @@ namespace UI.Academic.Functionary
 {
     public partial class externalDesignation : System.Web.UI.Page
     {
-
+        static Int32 externalDesignation_id = -1;
         DataTable oDataTable = new DataTable();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace UI.Academic.Functionary
         {
             List<Entities.Day> listDays = new List<Entities.Day>();
             listDays = DayBLL.getInstance().getAll();
-            ListItem oItemS = new ListItem("Seleccione", "0");
+            ListItem oItemS = new ListItem("---Seleccione---", "0");
             cboDay.Items.Add(oItemS);
             foreach (Entities.Day oDay in listDays)
             {
@@ -49,15 +49,36 @@ namespace UI.Academic.Functionary
         /*Trae los profesores*/
         public void getFunctionary()
         {
-
             List<Entities.Teacher> listTeacher = new List<Entities.Teacher>();
             listTeacher = TeacherBLL.getInstance().getAllActive();
-            ListItem oItemS = new ListItem("Seleccione", "0");
+            ListItem oItemS = new ListItem("---Seleccione---", "0");
             cboFunctionary.Items.Add(oItemS);
             foreach (Entities.Teacher oTeacher in listTeacher)
             {
                 ListItem oItem = new ListItem(oTeacher.name, oTeacher.code.ToString());
                 cboFunctionary.Items.Add(oItem);
+            }
+            ListItem oItemS2 = new ListItem("---Seleccione---", "0");
+            cboHoursDisignation.Items.Add(oItemS2);
+        }
+        /*Metodo que llama al obtener horas en external designation bll, llena el combo de dias con las horas restanes*/
+        public void getHoursTeacher()
+        {
+           
+        }
+
+        /*Este metodo simplemente llama al obtener horas del profesor*/
+        protected void cboFunctionary_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Int32 hours;
+            cboHoursDisignation.Items.Clear();
+            hours = ExternalDesignationBLL.getInstance().getHours(Int32.Parse(cboFunctionary.SelectedValue));
+            ListItem oItemS = new ListItem("---Seleccione---", "0");
+            cboHoursDisignation.Items.Add(oItemS);
+            int i = hours/5;
+            for(int j = 5; j<=hours; j=j+5){
+                 ListItem oItem = new ListItem(j.ToString()+ " horas",j.ToString());
+                 cboHoursDisignation.Items.Add(oItem);
             }
         }
 
@@ -95,12 +116,13 @@ namespace UI.Academic.Functionary
                     oExternalDesignation.final_day = final;
                 }
 
-                oExternalDesignation.hours = Int32.Parse(txtHoursDisignation.Text);
+                oExternalDesignation.hours = Int32.Parse(cboHoursDisignation.SelectedValue);
                 oExternalDesignation.journeys = (List<Entities.Journey>)Session["listDesignation"];
 
                 if (ExternalDesignationBLL.getInstance().exists(oExternalDesignation.code))
                 {
-                    records = ExternalDesignationBLL.getInstance().modify(oExternalDesignation);
+                    //if we want implement modify
+                    //records = ExternalDesignationBLL.getInstance().modify(oExternalDesignation);
                 }
                 else
                 {
@@ -108,8 +130,9 @@ namespace UI.Academic.Functionary
                 }
 
                 blockControls();
-                //loadData();
-
+                fillGvDesignation();
+                Session.RemoveAll();
+                Response.Redirect("externalDesignation.aspx");
                 if (records > 0)
                 {
                     lblMessage.Text = "Datos almacenados correctamente.";
@@ -133,64 +156,7 @@ namespace UI.Academic.Functionary
         protected void btnReturn_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("../AcademicGroups/gFunctionary.aspx");
-        }
-
-        public void blockControls()
-        {
-            txtCode.Enabled = false;
-            cboFunctionary.Enabled = false;
-            txtPosition.Enabled = false;
-            txtWorkPlace.Enabled = false;
-            txtStartDesignation.Enabled = false;
-            txtEndDesignation.Enabled = false;
-            txtHoursDisignation.Enabled = false;
-            cboDay.Enabled = false;
-            txtStart.Enabled = false;
-            txtEnd.Enabled = false;
-
-            btnAdd.Enabled = false;
-
-            btnNew.Enabled = true;
-            btnSave.Enabled = false;
-            btnCancel.Enabled = false;
-            clearControls();
-        }
-
-        public void unlockControls()
-        {
-            txtCode.Enabled = false;
-            cboFunctionary.Enabled = true;
-            txtPosition.Enabled = true;
-            txtWorkPlace.Enabled = true;
-            txtStartDesignation.Enabled = true;
-            txtEndDesignation.Enabled = true;
-            txtHoursDisignation.Enabled = true;
-            cboDay.Enabled = true;
-            txtStart.Enabled = true;
-            txtEnd.Enabled = true;
-
-            btnAdd.Enabled = true;
-
-            btnNew.Enabled = false;
-            btnSave.Enabled = true;
-            btnCancel.Enabled = true;
-            
-            clearControls();
-        }
-
-        protected void clearControls()
-        {
-            txtCode.Text = "";
-            cboDay.Items.Clear();
-            cboFunctionary.Items.Clear();
-            txtPosition.Text = "";
-            txtWorkPlace.Text = "";
-            txtStartDesignation.Text = "";
-            txtEndDesignation.Text = "";
-            txtEnd.Text = "";
-            txtStart.Text = "";
-            txtHoursDisignation.Text = "";
-        }
+        } 
 
         /*Obtiene los datos de los campos y crea o agrega el dato al list en la session*/
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -308,7 +274,11 @@ namespace UI.Academic.Functionary
         {
             Boolean ind = true;
             /*************************************/
-
+            string[] formats = {"M/d/yyyy h:mm:ss tt", "M/d/yyyy h:mm tt", 
+                         "MM/dd/yyyy hh:mm:ss", "M/d/yyyy h:mm:ss", 
+                         "M/d/yyyy hh:mm tt", "M/d/yyyy hh tt", 
+                         "M/d/yyyy h:mm", "M/d/yyyy h:mm", 
+                         "MM/dd/yyyy hh:mm", "M/dd/yyyy hh:mm"};
             if (txtPosition.Text.Trim() == "")
             {
                 ind = false;
@@ -333,7 +303,11 @@ namespace UI.Academic.Functionary
             /*************************************/
             try
             {
-                DateTime inicio = Convert.ToDateTime(txtStartDesignation.Text);
+               
+                DateTime initial;
+                if (DateTime.TryParseExact(txtStartDesignation.Text + " 00:00:00", formats, new CultureInfo("es-ES"),
+                                   DateTimeStyles.None, out initial))
+                {}
                 //lblMessageSalary.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorStartDesignation", "$('#ContentPlaceHolder1_txtStartDesignation').removeClass('has-error');", true);
             }
@@ -346,7 +320,10 @@ namespace UI.Academic.Functionary
             /*************************************/
             try
             {
-                DateTime final = Convert.ToDateTime(txtEndDesignation.Text);
+                DateTime final;
+                if (DateTime.TryParseExact(txtEndDesignation.Text + " 00:00:00", formats, new CultureInfo("es-ES"),
+                                  DateTimeStyles.None, out final))
+                {}
                 //lblMessageSalary.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorEndDesignation", "$('#ContentPlaceHolder1_txtEndDesignation').removeClass('has-error');", true);
             }
@@ -359,7 +336,7 @@ namespace UI.Academic.Functionary
             /*************************************/
             try
             {
-                Convert.ToInt32(txtHoursDisignation.Text);
+                Convert.ToInt32(cboHoursDisignation.SelectedValue);
                 //lblMessageAnnuality.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorHoursDisignation", "$('#ContentPlaceHolder1_txtHoursDisignation').removeClass('has-error');", true);
             }
@@ -378,6 +355,84 @@ namespace UI.Academic.Functionary
             return ind;
         }
 
+        protected void gvExternalDesignation_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            String externalDesignationDescription = gvExternalDesignation.Rows[e.RowIndex].Cells[1].Text;
+            externalDesignation_id = Convert.ToInt32(gvExternalDesignation.Rows[e.RowIndex].Cells[0].Text);
+            lblExternalDesignationDescription.Text = externalDesignationDescription;
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "confirmMessage", "$('#confirmMessage').modal();", true);
+            confirmModal.Update();
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            Int32 records = ExternalDesignationBLL.getInstance().delete(externalDesignation_id);
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "confirmMessage", "$('#confirmMessage').modal('toggle');", true);
+
+            if (records > 0)
+            {
+                lblMessage.Text = "Nombramiento externo eliminado correctamente.";
+            }
+            Response.Redirect("externalDesignation.aspx");
+            fillGvDesignation();
+        }
+
+        public void blockControls()
+        {
+            txtCode.Enabled = false;
+            cboFunctionary.Enabled = false;
+            txtPosition.Enabled = false;
+            txtWorkPlace.Enabled = false;
+            txtStartDesignation.Enabled = false;
+            txtEndDesignation.Enabled = false;
+            cboHoursDisignation.Enabled = false;
+            cboDay.Enabled = false;
+            txtStart.Enabled = false;
+            txtEnd.Enabled = false;
+
+            btnAdd.Enabled = false;
+
+            btnNew.Enabled = true;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+            clearControls();
+        }
+
+        public void unlockControls()
+        {
+            txtCode.Enabled = false;
+            cboFunctionary.Enabled = true;
+            txtPosition.Enabled = true;
+            txtWorkPlace.Enabled = true;
+            txtStartDesignation.Enabled = true;
+            txtEndDesignation.Enabled = true;
+            cboHoursDisignation.Enabled = true;
+            cboDay.Enabled = true;
+            txtStart.Enabled = true;
+            txtEnd.Enabled = true;
+
+            btnAdd.Enabled = true;
+
+            btnNew.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+
+            clearControls();
+        }
+
+        protected void clearControls()
+        {
+            txtCode.Text = "";
+            cboDay.Items.Clear();
+            cboFunctionary.Items.Clear();
+            txtPosition.Text = "";
+            txtWorkPlace.Text = "";
+            txtStartDesignation.Text = "";
+            txtEndDesignation.Text = "";
+            txtEnd.Text = "";
+            txtStart.Text = "";
+            cboHoursDisignation.SelectedIndex = -1;
+        }
         
     }
 }

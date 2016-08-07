@@ -38,7 +38,7 @@ namespace UI.Administration
                 oPeriod.name = txtDescription.Text;
                 oPeriod.startDate = DateTime.Parse(txtStartDate.Text);
                 oPeriod.finalDate = DateTime.Parse(txtFinishDate.Text);
-                oPeriodType.state = Convert.ToInt16(cboState.SelectedValue);
+                oPeriod.state = Convert.ToInt16(cboState.SelectedValue);
                 oPeriodType.code = Convert.ToInt32(cboModality.SelectedValue);
                 oPeriod.oPeriodType = oPeriodType;
 

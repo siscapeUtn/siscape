@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Rud\Desktop\siscape\DAL\bin\DAL.dll.config
 C:\Users\Rud\Desktop\siscape\DAL\bin\DAL.dll
 C:\Users\Rud\Desktop\siscape\DAL\bin\DAL.pdb
@@ -10,3 +11,11 @@ C:\Users\asala\Source\Repos\SISCAPE\DAL\bin\DAL.pdb
 C:\Users\asala\Source\Repos\SISCAPE\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\asala\Source\Repos\SISCAPE\DAL\obj\Debug\DAL.dll
 C:\Users\asala\Source\Repos\SISCAPE\DAL\obj\Debug\DAL.pdb
+=======
+C:\Users\rsanchez\Desktop\Conexion\siscape\DAL\bin\DAL.dll.config
+C:\Users\rsanchez\Desktop\Conexion\siscape\DAL\bin\DAL.dll
+C:\Users\rsanchez\Desktop\Conexion\siscape\DAL\bin\DAL.pdb
+C:\Users\rsanchez\Desktop\Conexion\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\rsanchez\Desktop\Conexion\siscape\DAL\obj\Debug\DAL.dll
+C:\Users\rsanchez\Desktop\Conexion\siscape\DAL\obj\Debug\DAL.pdb
+>>>>>>> 057439c6eaabf8c16aeb63d396a3bbcc0ecc8754
