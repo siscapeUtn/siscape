@@ -864,16 +864,16 @@ input:focus ~ .highlight {
 
 @media screen and (max-width: 1024px){
     
-    table tr {
+    .listCheckbox tr, .listDaysCheckbox  tr {
       display: block;
     }
 
-    table td {
+    .listCheckbox  td, .listDaysCheckbox  td{
       display: block;
       font-size: 13px;
     }
 
-    table td:last-child {
+    .listCheckbox  td:last-child {
       border-bottom: 0;
     }  
 

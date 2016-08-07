@@ -186,6 +186,10 @@ body:before{
     padding: 10px;
 }
 
+@-moz-document url-prefix() {
+  .maintanance .dataExists fieldset { display: table-cell; }
+}
+
 .maintanance .message{
     color: #009900;
     font-size: 1.5em;

@@ -7,7 +7,7 @@
         <section class="maintanance">
             <%--<asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>--%>
-                    <p class="title">Administraci&oacute;n de Images</p>
+                    <p class="title">Administraci&oacute;n de Banner</p>
                     <section class="form row">
                         <fieldset>
                             <section class="col-md-12">
