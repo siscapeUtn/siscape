@@ -1,4 +1,4 @@
-﻿%@ Page Title="Nombramiento externo - DEAS" Language="C#" MasterPageFile="~/Academic/Academic.Master" AutoEventWireup="true" CodeBehind="externalDesignation.aspx.cs" Inherits="UI.Academic.Functionary.externalDesignation" %>
+﻿<%@ Page Title="Nombramiento externo - DEAS" Language="C#" MasterPageFile="~/Academic/Academic.Master" AutoEventWireup="true" CodeBehind="externalDesignation.aspx.cs" Inherits="UI.Academic.Functionary.externalDesignation" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -76,7 +76,7 @@
                             <section class="form-group" style="text-align:left;">
                                 
                                 <%--<asp:ImageButton CssClass="image_align_2" ImageUrl="~/images/maintenance/add.png" runat="server" ID="btnAdd" ToolTip="Agregar" OnClick="btnAdd_Click1" /></td>--%>
-                                <asp:Button CssClass="btn btn-group" runat="server" ID="btnAdd" ToolTip="Agregar" OnClick="btnAdd_Click" Text="Agregar" BorderColor="Blue"/>
+                                <asp:Button CssClass="" runat="server" ID="btnAdd" ToolTip="Agregar" OnClick="btnAdd_Click" Text="Agregar" />
                             </section>
                         </section>
                        <section class="col-md-6 dataExists">
