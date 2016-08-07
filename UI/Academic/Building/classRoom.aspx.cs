@@ -114,6 +114,7 @@ namespace UI.Academic
             {
                 cboProgram.SelectedValue = "0";
             }
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "$('html, body').animate({ scrollTop: $('body').offset().top });", true);
         }
 
         protected void gvClassRoom_RowDeleting(object sender, GridViewDeleteEventArgs e)

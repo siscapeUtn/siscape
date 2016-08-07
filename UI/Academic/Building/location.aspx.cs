@@ -140,6 +140,7 @@ namespace UI.Academic
             txtBuilding.Text = oLocation.building;
             txtModule.Text = oLocation.module;
             cboState.SelectedValue = oLocation.State.ToString();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "$('html, body').animate({ scrollTop: $('body').offset().top });", true);
         }
 
         protected void gvLocation_RowDeleting(object sender, GridViewDeleteEventArgs e)

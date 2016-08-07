@@ -160,6 +160,7 @@ namespace UI.Academic.AcademicOffer
             txtEndHour.Text = String.Format("{0:t}", oSchedule.endTime);
             cboState.SelectedValue = oSchedule.state.ToString();
             SelectchkDays(oSchedule.codday);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "$('html, body').animate({ scrollTop: $('body').offset().top });", true);
         }
 
         protected void gvSchedule_RowDeleting(object sender, GridViewDeleteEventArgs e)

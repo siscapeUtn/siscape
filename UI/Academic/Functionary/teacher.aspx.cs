@@ -94,7 +94,7 @@ namespace UI.Academic
             txtEmail.Text = oTeacher.email.ToString();
             cboModality.SelectedValue = oTeacher.Position.code.ToString();
             cboState.SelectedValue = oTeacher.state.ToString();
-
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "$('html, body').animate({ scrollTop: $('body').offset().top });", true);
         }
 
         protected void gvTeacher_RowDeleting(object sender, GridViewDeleteEventArgs e)

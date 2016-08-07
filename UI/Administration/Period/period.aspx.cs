@@ -178,6 +178,7 @@ namespace UI.Administration
             txtStartDate.Text = oPeriod.startDate.ToShortDateString();
             txtFinishDate.Text = oPeriod.finalDate.ToShortDateString();
             cboState.SelectedValue = oPeriod.state.ToString();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "$('html, body').animate({ scrollTop: $('body').offset().top });", true);
         }
 
         protected void gvPeriod_RowDeleting(object sender, GridViewDeleteEventArgs e)

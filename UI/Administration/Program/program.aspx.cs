@@ -92,8 +92,7 @@ namespace UI.Administration
                 cboState.SelectedValue = "1";
             }
 
-            //Response.Redirect("#title");
-            ScriptManager.RegisterStartupScript(this, this.GetType(),"redirect", "window.location='title' ", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(),"redirect", "$('html, body').animate({ scrollTop: $('body').offset().top });", true);
         }
 
         protected void gvProgram_RowDeleting(object sender, GridViewDeleteEventArgs e)

@@ -78,6 +78,7 @@ namespace UI.Academic
             txtSalary.Text = oInternalDesignation.baseSalary.ToString();
             txtAnnuality.Text = oInternalDesignation.annuity.ToString();
             cboState.SelectedValue = oInternalDesignation.state.ToString();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "$('html, body').animate({ scrollTop: $('body').offset().top });", true);
         }
 
         protected void gvInternalDesignation_RowDeleting(object sender, GridViewDeleteEventArgs e)

@@ -89,6 +89,7 @@ namespace UI.Academic
             txtCellPhone.Text = oFunctionary.cellPhone.ToString();
             txtEmail.Text = oFunctionary.email.ToString();
             cboState.SelectedValue = oFunctionary.state.ToString();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "$('html, body').animate({ scrollTop: $('body').offset().top });", true);
         }
 
         protected void gvFunctionary_RowDeleting(object sender, GridViewDeleteEventArgs e)

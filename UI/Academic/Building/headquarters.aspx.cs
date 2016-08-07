@@ -119,6 +119,7 @@ namespace UI.Academic
             txtCode.Text = oHeadquarters.code.ToString();
             txtDescription.Text = oHeadquarters.description;
             cboState.SelectedValue = oHeadquarters.state.ToString();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "$('html, body').animate({ scrollTop: $('body').offset().top });", true);
         }
 
         protected void blockControls()

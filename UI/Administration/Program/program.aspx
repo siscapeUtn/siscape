@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="up"></div>
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <section class="content_2">
         <section class="maintanance">

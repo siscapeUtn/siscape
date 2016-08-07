@@ -78,6 +78,7 @@ namespace UI.Administration
             {
                 cboState.SelectedValue = "1";
             }
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "$('html, body').animate({ scrollTop: $('body').offset().top });", true);
         }
 
         protected void gvPeriodType_RowDeleting(object sender, GridViewDeleteEventArgs e)
