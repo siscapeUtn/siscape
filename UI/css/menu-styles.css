@@ -284,7 +284,7 @@ header .header-container{
         display: block;
     }
 
-    .header-container .navigation > li ul li {
+    header .header-container nav .sub-menu{
         display: none;
     }
         

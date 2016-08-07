@@ -72,7 +72,7 @@ namespace UI.Academic.Functionary
         {
             Int32 hours = 0;
             cboHoursDisignation.Items.Clear();
-            //hours = ExternalDesignationBLL.getInstance().getHours(Int32.Parse(cboFunctionary.SelectedValue));
+            hours = ExternalDesignationBLL.getInstance().getHours(Int32.Parse(cboFunctionary.SelectedValue));
             ListItem oItemS = new ListItem("---Seleccione---", "0");
             cboHoursDisignation.Items.Add(oItemS);
             int i = hours/5;
@@ -366,15 +366,15 @@ namespace UI.Academic.Functionary
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-            //Int32 records = ExternalDesignationBLL.getInstance().delete(externalDesignation_id);
-            //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "confirmMessage", "$('#confirmMessage').modal('toggle');", true);
+            Int32 records = ExternalDesignationBLL.getInstance().delete(externalDesignation_id);
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "confirmMessage", "$('#confirmMessage').modal('toggle');", true);
 
-            //if (records > 0)
-            //{
-            //    lblMessage.Text = "Nombramiento externo eliminado correctamente.";
-            //}
-            //Response.Redirect("externalDesignation.aspx");
-            //fillGvDesignation();
+            if (records > 0)
+            {
+                lblMessage.Text = "Nombramiento externo eliminado correctamente.";
+            }
+            Response.Redirect("externalDesignation.aspx");
+            fillGvDesignation();
         }
 
         public void blockControls()
