@@ -283,6 +283,10 @@ header .header-container{
     header .header-container .is_close, header .header-container .is_open {
         display: block;
     }
+
+    .header-container .navigation > li ul li {
+        display: none;
+    }
         
     header .header-container nav{
         background: #003366;
