@@ -38,14 +38,37 @@
                                     <span class="message-has-error"><asp:Label runat="server" ID="lblMessageSalary"></asp:Label></span>
                                 </section>
                                 <section class="form-group">
-                                    <asp:Label runat="server" ID="lblAnuality" Text="Anualidad:"></asp:Label>
+                                    <asp:Label runat="server" ID="lblAnuality" Text="Anualidades:"></asp:Label>
                                     <asp:TextBox ID="txtAnnuality" CssClass="form-control" runat="server"></asp:TextBox>
                                     <span class="message-has-error"><asp:Label runat="server" ID="lblMessageAnnuality"></asp:Label></span>
+                                </section>
+                                <section class="form-group">
+                                    <asp:Label runat="server" ID="lblFifty" Text="Cuales 50%:"></asp:Label>
+                                    <asp:TextBox ID="txtFifty" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <span class="message-has-error"><asp:Label runat="server" ID="Label2"></asp:Label></span>
+                                </section>
+                                <section class="form-group">
+                                    <asp:Label runat="server" ID="lblOther" Text="Otros:"></asp:Label>
+                                    <asp:TextBox ID="txtOther" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <span class="message-has-error"><asp:Label runat="server" ID="Label4"></asp:Label></span>
                                 </section>
                             </section>
                             <section class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <section class="form-group">
-                                    <asp:Label runat="server" ID="lblValue" Text="Anualidad:"></asp:Label>
+                                    <asp:Label runat="server" ID="lblTotalIncomeMouth" Text="Total ingresos mensuales:"></asp:Label>
+                                    <asp:TextBox ID="txtTotalIncomeMonth" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <span class="message-has-error"><asp:Label runat="server" ID="Label5"></asp:Label></span>
+                                </section>
+                                <section class="form-group">
+                                    <asp:Label runat="server" ID="lblTotalIncome" Text="Total ingresos:"></asp:Label>
+                                    <asp:TextBox ID="txtTotalIncome" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <span class="message-has-error"><asp:Label runat="server" ID="Label7"></asp:Label></span>
+                                </section>
+                                <section class="form-group subtitle-income">
+                                    <asp:Label runat="server" ID="lblSubIncomes" Text="Ingresos"></asp:Label>
+                                </section>
+                                <section class="form-group">
+                                    <asp:Label runat="server" ID="lblValue" Text="Valor:"></asp:Label>
                                     <asp:TextBox ID="txtValue" CssClass="form-control" runat="server"></asp:TextBox>
                                     <span class="message-has-error"><asp:Label runat="server" ID="lblMessageValue"></asp:Label></span>
                                 </section>
@@ -66,10 +89,10 @@
                                 </section>
                             </section>
                             <section class="col-md-12 form-buttons">
-                                <asp:ImageButton ID="btnNew" CssClass="image_align" ImageUrl="~/images/maintenance/add.png" ToolTip="Nuevo" runat="server" />
-                                <asp:ImageButton ID="btnSave" CssClass="image_align" ImageUrl="~/images/maintenance/save.png" ToolTip="Guardar" runat="server" />
-                                <asp:ImageButton ID="btnCancel" CssClass="image_align" ImageUrl="~/images/maintenance/cancel.png" ToolTip="Cancelar" runat="server" />
-                                <asp:ImageButton ID="btnReturn" CssClass="image_align" ImageUrl="~/images/maintenance/return.png" ToolTip="Regresar" runat="server" />
+                                <asp:ImageButton ID="btnNew" CssClass="image_align" ImageUrl="~/images/maintenance/add.png" ToolTip="Nuevo" runat="server" OnClick="btnNew_Click" />
+                                <asp:ImageButton ID="btnSave" CssClass="image_align" ImageUrl="~/images/maintenance/save.png" ToolTip="Guardar" runat="server" OnClick="btnSave_Click" />
+                                <asp:ImageButton ID="btnCancel" CssClass="image_align" ImageUrl="~/images/maintenance/cancel.png" ToolTip="Cancelar" runat="server" OnClick="btnCancel_Click" />
+                                <asp:ImageButton ID="btnReturn" CssClass="image_align" ImageUrl="~/images/maintenance/return.png" ToolTip="Regresar" runat="server" OnClick="btnReturn_Click" />
                             </section> <!-- End .form-buttons -->
                             <section class="col-md-12 message">
                                 <asp:Label ID="lblMessage" runat="server" ></asp:Label>

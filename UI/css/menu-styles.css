@@ -748,6 +748,10 @@ input:focus ~ .highlight {
     text-align: center;
 }
 
+.maintanance .subtitle-income{
+    margin-bottom: 70px;
+}
+
 .maintanance .has-error{
     border-color: #E80000;
 }
@@ -864,6 +868,12 @@ input:focus ~ .highlight {
 
     .maintanance .listCheckbox label{
         position: static;
+    }
+}
+
+@media screen and (max-width: 991px){
+    .maintanance .subtitle-income{
+        margin-bottom: 15px ;
     }
 }
 

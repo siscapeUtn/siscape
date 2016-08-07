@@ -101,6 +101,9 @@
         </section>
     </section>
     <script type="text/javascript">
+        uploadImage();
+    </script>
+    <script type="text/javascript">
         $('li').removeClass('isSelected');
         $('#administration').addClass('isSelected');
     </script>
