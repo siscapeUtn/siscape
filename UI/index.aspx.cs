@@ -18,7 +18,7 @@ namespace UI
 
         public void printSlider()
         {
-            List<Slider> listSlider = SliderBLL.getInstance().getAllActive();
+            List<Slider> listSlider = SliderBLL.getInstance().getAll();
 
             if (listSlider.Count > 0)
             {

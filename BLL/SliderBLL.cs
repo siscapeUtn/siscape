@@ -89,7 +89,6 @@ namespace BLL
                 oCommand.Parameters.AddWithValue("@ID", pSlider.code);
                 oCommand.Parameters.AddWithValue("@NAME", pSlider.description);
                 oCommand.Parameters.AddWithValue("@IMAGE", pSlider.image);
-                oCommand.Parameters.AddWithValue("@STATE", pSlider.state);
                 return DAO.getInstance().executeSQL(oCommand);
             }
             catch (Exception ex)
@@ -110,7 +109,7 @@ namespace BLL
                 oCommand.Parameters.AddWithValue("@ID", pSlider.code);
                 oCommand.Parameters.AddWithValue("@NAME", pSlider.description);
                 oCommand.Parameters.AddWithValue("@IMAGE", pSlider.image);
-                oCommand.Parameters.AddWithValue("@STATE", pSlider.state);
+                //oCommand.Parameters.AddWithValue("@STATE", pSlider.state);
                 return DAO.getInstance().executeSQL(oCommand);
             }
             catch (Exception ex)
@@ -154,7 +153,6 @@ namespace BLL
                     oSlider.code = Convert.ToInt32(oDataRow[0].ToString());
                     oSlider.description = oDataRow[1].ToString();
                     oSlider.image = oDataRow[2].ToString();
-                    oSlider.state = Convert.ToInt16(oDataRow[3].ToString());
                     listSlider.Add(oSlider);
                 }
                 return listSlider;
@@ -182,7 +180,6 @@ namespace BLL
                     oSlider.code = Convert.ToInt32(oDataRow[0].ToString());
                     oSlider.description = oDataRow[1].ToString();
                     oSlider.image = oDataRow[2].ToString();
-                    oSlider.state = Convert.ToInt16(oDataRow[3].ToString());
                     listSlider.Add(oSlider);
                 }
                 return listSlider;
@@ -210,7 +207,6 @@ namespace BLL
                     oSlider.code = Convert.ToInt32(oDataRow[0].ToString());
                     oSlider.description = oDataRow[1].ToString();
                     oSlider.image = oDataRow[2].ToString();
-                    oSlider.state = Convert.ToInt16(oDataRow[3].ToString());
                 }
                 return oSlider;
             }

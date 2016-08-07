@@ -44,6 +44,7 @@ namespace UI.Administration
                                 "</div><ul class='sub-menu'>" +
                                 "<li><div><a href='../AdministrationGroups/gProgram.aspx'>Programas</a></div></li>" +
                                 "<li><div><a href='../AdministrationGroups/gPeriod.aspx'>Per&iacute;odo</a></div></li>" +
+                                "<li><div><a href='../Slider/slider.aspx'>Banner</a></div></li>" +
                                 "</ul></li>");
             }
             else

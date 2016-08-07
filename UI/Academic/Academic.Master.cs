@@ -74,6 +74,7 @@ namespace UI.Academic
                                     "</div><ul class='sub-menu'>" +
                                     "<li><div><a href='../../Administration/AdministrationGroups/gProgram.aspx'>Programas</a></div></li>" +
                                     "<li><div><a href='../../Administration/AdministrationGroups/gPeriod.aspx'>Per&iacute;odo</a></div></li>" +
+                                    "<li><div><a href='../../Administration/Slider/slider.aspx'>Banner</a></div></li>" +
                                     "</ul></li>");
                 }
         }

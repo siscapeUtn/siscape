@@ -5,8 +5,8 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <section class="content_2">
         <section class="maintanance">
-            <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
-                <ContentTemplate>
+            <%--<asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>--%>
                     <p class="title">Administraci&oacute;n de Images</p>
                     <section class="form row">
                         <fieldset>
@@ -22,13 +22,6 @@
                                     <asp:TextBox ID="txtName" CssClass="form-control" MaxLength="50" runat="server"></asp:TextBox>
                                     <span class="message-has-error"><asp:Label ID="lblNameMessage" Text="" runat="server"></asp:Label></span>
                                 </section> <!-- End .form-group -->
-                                <section class="form-group">
-                                    <asp:Label ID="lblState" Text="Estado:" CssClass="control-label" runat="server"></asp:Label>
-                                    <asp:DropDownList ID="cboState" CssClass="form-control" runat="server">
-                                        <asp:ListItem Value="0">Inactivo</asp:ListItem>
-                                        <asp:ListItem Value="1">Activo</asp:ListItem>
-                                    </asp:DropDownList>
-                                </section> <!-- End .form-group -->
                             </section>
                             <section class="col-md-6">
                                 <section class="form-group">
@@ -37,7 +30,7 @@
                                         <asp:TextBox runat="server" ID="uploadFile" CssClass="form-control uploadText" placeholder="Seleccione la imagen" disabled="disabled" ></asp:TextBox>
                                         <div class="fileUpload btn btn-primary">
                                             <span><img alt="Subir" src="../../images/page-icons/upload.svg" /></span>   
-                                            <asp:FileUpload ID="flLoadImage" runat="server" CssClass="upload"  />
+                                            <asp:FileUpload  ID="flLoadImage" runat="server" CssClass="upload"  />
                                         </div>
                                     </section>
                                     <span class="message-has-error"><asp:Label ID="lblImageError" Text="" runat="server"></asp:Label></span>
@@ -62,22 +55,21 @@
                     </section>
                     <section class="dataExists">
                         <section class="table-responsive">
-                            <asp:GridView ID="gvSlider" CssClass="table" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="12" OnRowEditing="gvSlider_RowEditing" OnRowDeleting="gvSlider_RowDeleting">
+                            <asp:GridView ID="gvSlider" CssClass="table" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="12" OnRowDeleting="gvSlider_RowDeleting">
 
                                 <Columns>
                                     <asp:BoundField DataField="code" HeaderText="C&#243;digo" ReadOnly="True"></asp:BoundField>
                                     <asp:BoundField DataField="description" HeaderText="Descripi&#243;n" ReadOnly="True"></asp:BoundField>
-                                    <asp:ButtonField CommandName="Edit" ImageUrl="~/images/maintenance/edit.png" Text="Editar" ButtonType="Image" HeaderText="Editar"></asp:ButtonField>
                                     <asp:ButtonField CommandName="Delete" ImageUrl="~/images/maintenance/delete.png" Text="Eliminar" ButtonType="Image" HeaderText="Eliminar"></asp:ButtonField>
                                 </Columns>
                             </asp:GridView>
                         </section>
                     </section>
-                </ContentTemplate>
+               <%-- </ContentTemplate>
                 <Triggers>
                     <asp:PostBackTrigger ControlID="btnSave" />
                 </Triggers>
-            </asp:UpdatePanel>
+            </asp:UpdatePanel>--%>
         </section>
     </section>
     <section class="modal fade" id="confirmMessage" role="dialog" aria-labelledby="confirmMessageLabel" aria-hidden="true">
@@ -101,7 +93,14 @@
         </section>
     </section>
     <script type="text/javascript">
-        uploadImage();
+        $(function () {
+            $('#ContentPlaceHolder1_flLoadImage').on('change', function () {
+                //document.getElementById("").value = this.value;
+                document.getElementById("ContentPlaceHolder1_uploadFile").value = this.value.substring(this.value.lastIndexOf("\\") + 1);
+                console.log(this.value);
+            });
+        });
+
     </script>
     <script type="text/javascript">
         $('li').removeClass('isSelected');

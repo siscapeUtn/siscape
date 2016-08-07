@@ -749,7 +749,10 @@ input:focus ~ .highlight {
 }
 
 .maintanance .subtitle-income{
-    margin-bottom: 70px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    padding: 17px;
 }
 
 .maintanance .has-error{
@@ -873,7 +876,8 @@ input:focus ~ .highlight {
 
 @media screen and (max-width: 991px){
     .maintanance .subtitle-income{
-        margin-bottom: 15px ;
+        margin-bottom: 15px;
+        padding: 0;
     }
 }
 

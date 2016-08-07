@@ -111,6 +111,7 @@
     <Content Include="images\academic\building.png" />
     <Content Include="images\academic\functionary.png" />
     <Content Include="images\academic\offerAcedemic.svg" />
+    <Content Include="images\academic\opening.svg" />
     <Content Include="images\academic\schedule.png" />
     <Content Include="images\academic\schedule.svg" />
     <Content Include="images\academic\teacher.png" />
