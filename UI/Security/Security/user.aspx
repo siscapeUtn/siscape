@@ -144,16 +144,18 @@
                         <section class="modal-header">
                             <asp:Label ID="Label1" Text="Restablecer la Contraseña" runat="server"></asp:Label>
                         </section>
-                        <section class="modal-body">
+                        <section  class="modal-body">
                                 <section class="col-md-6">
                                     <section class="form-group">
-                                        <asp:TextBox ID="txtUser" placeholder="correo electrónico" runat="server"></asp:TextBox>
+                                        <asp:Label runat="server" ID="lblModalEmail" Text="Email:"></asp:Label>
+                                        <asp:TextBox ID="txtModalUser" placeholder="correo electrónico" runat="server"></asp:TextBox>
                                         <span class="help-block"></span>
                                     </section>
                                 </section>
                                 <section class="col-md-6">
                                     <section class="form-group">
-                                        <asp:TextBox ID="txtPassword" placeholder="contraseña" runat="server" TextMode="Password" ></asp:TextBox>
+                                        <asp:Label runat="server" ID="lblModalPassword" Text="Password:"></asp:Label>
+                                        <asp:TextBox ID="txtModalPassword" placeholder="contraseña" runat="server" TextMode="Password" ></asp:TextBox>
                                         <span class="help-block"></span>
                                     </section>
                                 </section>

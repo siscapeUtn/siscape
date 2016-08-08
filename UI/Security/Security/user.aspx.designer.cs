@@ -391,22 +391,40 @@ namespace UI.Administration.Security {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// txtUser control.
+        /// lblModalEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUser;
+        protected global::System.Web.UI.WebControls.Label lblModalEmail;
         
         /// <summary>
-        /// txtPassword control.
+        /// txtModalUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        protected global::System.Web.UI.WebControls.TextBox txtModalUser;
+        
+        /// <summary>
+        /// lblModalPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblModalPassword;
+        
+        /// <summary>
+        /// txtModalPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtModalPassword;
         
         /// <summary>
         /// Button1 control.

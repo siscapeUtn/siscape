@@ -71,7 +71,6 @@
         </section>
     </section>
 
-
     <script type="text/javascript">
         $('li').removeClass('isSelected');
         $('#login').addClass('isSelected');
