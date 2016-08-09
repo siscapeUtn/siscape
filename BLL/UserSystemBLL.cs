@@ -124,7 +124,7 @@ namespace BLL
         public Int32 modify(UserSystem oUser)
         {
 
-            String oSql = "SP_MODIFYFUNCTIONARY";
+            String oSql = "SP_MODIFYUSERSYSTEM";
 
             try
             {
@@ -144,14 +144,33 @@ namespace BLL
                 oCommand.Parameters[5].Direction = ParameterDirection.Input;
                 oCommand.Parameters.AddWithValue("@MAIL", oUser.email);
                 oCommand.Parameters[6].Direction = ParameterDirection.Input;
-                oCommand.Parameters.AddWithValue("@PASSWORD", oUser.Password);
-                oCommand.Parameters[7].Direction = ParameterDirection.Input;
                 oCommand.Parameters.AddWithValue("@ROLE_ID", oUser.oRole.Role_Id);
-                oCommand.Parameters[8].Direction = ParameterDirection.Input;
+                oCommand.Parameters[7].Direction = ParameterDirection.Input;
                 oCommand.Parameters.AddWithValue("@PROGRAM_ID", oUser.oProgram.code);
-                oCommand.Parameters[9].Direction = ParameterDirection.Input;
+                oCommand.Parameters[8].Direction = ParameterDirection.Input;
                 oCommand.Parameters.AddWithValue("@STATE", oUser.state);
-                oCommand.Parameters[10].Direction = ParameterDirection.Input;
+                oCommand.Parameters[9].Direction = ParameterDirection.Input;
+                return DAO.getInstance().executeSQL(oCommand);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { }
+        }//end Modify
+
+
+        public Int32 resetPasswordSecurity(int code)
+        {
+
+            String oSql = "RESETPASSWORDSECURITY";
+
+            try
+            {
+                SqlCommand oCommand = new SqlCommand(oSql);
+                oCommand.CommandType = CommandType.StoredProcedure;
+                oCommand.Parameters.AddWithValue("@USERSYSTEM_ID", code);
+                oCommand.Parameters[0].Direction = ParameterDirection.Input;
                 return DAO.getInstance().executeSQL(oCommand);
             }
             catch (Exception ex)
