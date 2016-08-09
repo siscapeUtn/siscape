@@ -1,4 +1,35 @@
-﻿html * {
+﻿* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -180px; 
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+footer, .page-wrap:after {
+  height: 180px; 
+}
+
+@font-face {
+  font-family: "fontawesome";
+  src: url("../fonts/fontawesome-webfont1.eot?") format("eot"),
+  url("../fonts/fontawesome-webfont1.woff2") format("woff2"),
+  url("../fonts/fontawesome-webfont1.woff") format("woff"),
+  url("../fonts/fontawesome-webfont1.ttf") format("truetype"),
+  url("../fonts/fontawesome-webfont1.svg#fontawesome-webfont1") format("svg");
+}
+
+html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -18,7 +49,7 @@ body {
   font-size: 100%;
   font-family: "Titillium Web", sans-serif;
   color: #4e6361;
-  background-color: #D0D0D0;
+  background-color: #DADADA;
 }
 
 a {
@@ -360,6 +391,129 @@ header .header-container{
 @media screen and (max-width: 768px){
     .group-container{
         width: 90%;
+    }
+}
+
+/* ------------------------------------------------------
+--------------------- FOOTER  -------------------------
+------------------------------------------------------- */
+footer{
+    background: #003366;
+    box-shadow: 0px 5px 5px #888, 0px -3px 5px #888;
+}
+
+footer .footer-container{
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 920px;
+    width: 80%;
+}
+
+footer .footer-container .title-footer{
+    color: #ffffff;
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+footer .footer-container .catalog-col{
+    padding-top: 20px;
+    float: left;
+    width: 33%;
+}
+
+footer .footer-container .contact-col{
+    padding-top: 20px;
+    float: left;
+    width: 33%;
+}
+
+footer .footer-container .contact-col .info{
+    color: #ffffff;
+    display: block;
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+footer .footer-container .catalog-col ul{
+    width: 100%;
+}
+
+footer .footer-container .catalog-col ul li{
+    list-style: none;
+    margin: 5px 0;
+}
+
+footer .footer-container .catalog-col ul li a{
+    color: #ffffff;
+    font-size: 15px;
+}
+
+
+footer .footer-container .footer-bottom{
+    padding-top: 20px;
+    float: left;
+    overflow: hidden;
+    width: 33%;
+}
+
+footer .footer-container .copyright-col{
+    display: block;
+    float: left;
+    margin-top: 10px;
+    width: 100%;
+}
+
+footer .footer-container .copyright-col .info{
+    color: #ffffff;
+    display: block;
+    font-size: 15px;
+    margin: 5px 0;
+    width: 100%;
+}
+
+footer .footer-container .social-col{
+    display: block;
+    float: left;
+    width: auto;
+}
+
+footer .footer-container .social-col img{
+    padding: 5px;
+}
+
+span.facebook_icon:after{
+content: '\E849';
+    font-family: 'fontello';
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 660px){
+    
+
+    footer .footer-container .catalog-col{
+        width: 100%;
+    }
+
+    footer .footer-container .contact-col{
+        width: 100%;
+    }
+
+    footer .footer-container .footer-bottom{
+        width: 100%;
+    }
+    
+    .page-wrap {
+      margin-bottom: -450px; 
+    }
+
+    footer, .page-wrap:after {
+        height: 450px; 
+    }
+
+    footer .footer-container .social-col .facebook_icon{
+        width: 100%;
     }
 }
 

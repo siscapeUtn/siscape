@@ -135,6 +135,7 @@
     <Content Include="images\page-icons\DEAS-favicon.ico" />
     <Content Include="images\page-icons\closeResponsive.png" />
     <Content Include="images\page-icons\exit.png" />
+    <Content Include="images\page-icons\facebook.png" />
     <Content Include="images\page-icons\home.svg" />
     <Content Include="images\page-icons\minus.png" />
     <Content Include="images\page-icons\password-icon.png" />
@@ -212,6 +213,11 @@
     <Content Include="Services\Report_waiting_list.aspx" />
     <Content Include="Services\WaitingList.Master" />
     <Content Include="Security\Security.Master" />
+    <Content Include="fonts\fontawesome-webfont1.eot" />
+    <Content Include="fonts\fontawesome-webfont1.ttf" />
+    <Content Include="fonts\fontawesome-webfont1.woff" />
+    <Content Include="fonts\fontawesome-webfont1.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -29,48 +29,78 @@
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-  <header>
-		    <div class="header-container">
-			    <a id="logo" href="../../index.aspx"><img src="../../images/page-icons/DEAS-icon.png" alt="Homepage" /></a>
-			    <nav>
-				    <ul class="navigation">
-					    <%--<li>
-						    <div class="option">
-							    <div><a href="../../index.aspx" class="anchor">Inicio</a></div>
-						    </div>
-					    </li>--%>
-                        <li>
-						    <div class="option">
-							    <div><a href="../../service.aspx" class="anchor">Oferta de Cursos</a></div>
-						    </div>
-					    </li>
-					    <li>
-						    <div class="option">
-							    <div><a href="../../about.aspx" class="anchor">Acerca de</a></div>
-						    </div>
-					    </li>
-                        <% validations();%>
-					    <li>
-						    <div class="option">
-							    <div><a href="../../contactUs.aspx" class="anchor">Cont&aacute;ctenos</a></div>
-						    </div>
-					    </li>
-                        <li>
-                            <div class="option">
-                                <div><a href="../../logOut.aspx" class="anchor">Cerrar Sesi&oacute;n</a></div>
-                            </div>
-                        </li>
-				    </ul>
-			    </nav>
-                <div id="menu-bar" class="is_close"></div>
-		    </div>
-	    </header>
-	    <%--<main class="cd-main-content">--%>
-            <div class="content">
+    <section class="page-wrap">
+        <form id="form1" runat="server">
+          <header>
+		        <div class="header-container">
+			        <a id="logo" href="../../index.aspx"><img src="../../images/page-icons/DEAS-icon.png" alt="Homepage" /></a>
+			        <nav>
+				        <ul class="navigation">
+					        <%--<li>
+						        <div class="option">
+							        <div><a href="../../index.aspx" class="anchor">Inicio</a></div>
+						        </div>
+					        </li>--%>
+                            <li>
+						        <div class="option">
+							        <div><a href="../../service.aspx" class="anchor">Oferta de Cursos</a></div>
+						        </div>
+					        </li>
+					        <li>
+						        <div class="option">
+							        <div><a href="../../about.aspx" class="anchor">Acerca de</a></div>
+						        </div>
+					        </li>
+                            <% validations();%>
+					        <li>
+						        <div class="option">
+							        <div><a href="../../contactUs.aspx" class="anchor">Cont&aacute;ctenos</a></div>
+						        </div>
+					        </li>
+                            <li>
+                                <div class="option">
+                                    <div><a href="../../logOut.aspx" class="anchor">Cerrar Sesi&oacute;n</a></div>
+                                </div>
+                            </li>
+				        </ul>
+			        </nav>
+                    <div id="menu-bar" class="is_close"></div>
+		        </div>
+	        </header>
+	        <div class="content">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
             </div>
-	    <%--</main> <!-- cd-main-content -->--%>
-    </form>
+        </form>
+    </section>
+    <footer>
+        <section class="footer-container">
+            <section class="catalog-col">
+                <span class="title-footer">Cat&aacute;logo</span>
+                <ul>
+                    <li><a href="../../index.aspx">Inicio</a></li>
+                    <li><a href="../../service.aspx">Oferta de Cursos</a></li>
+                    <li><a href="../../about.aspx">Acerca de</a></li>
+                    <li><a href="../../contactUs.aspx">Cont&aacute;ctenos</a></li>
+                </ul>
+            </section>
+            <section class="contact-col">
+                <span class="title-footer">Cont&aacute;ctenos</span>
+                <span class="info">Tel. 2435-5000</span>
+                <span class="info">Ext. 1077 - 1081 - 1084</span>
+                <span class="info">deas@utn.ac.cr</span>    
+                <span class="info">serrano@utn.ac.cr</span>
+            </section>
+            <section class="footer-bottom">
+                <section class="social-col">
+                    <span><img src="../../images/page-icons/facebook.png" alt="Facebook" /></span>
+                    <%--<span class="facebook_icon"></span>--%>
+                </section>
+                <section class="copyright-col">
+                    <span class="info">Copyright &#169; 2016.</span>
+                    <span class="info">Direcci&oacute;n de Extensi&oacute;n y Acci&oacute;n Social</span>
+                </section>
+            </section>
+        </section>
+    </footer>
 </body>
 </html>
