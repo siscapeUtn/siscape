@@ -93,7 +93,7 @@
             </section>
             <section class="footer-bottom">
                 <section class="social-col">
-                    <span><img src="../../images/page-icons/facebook.png" alt="Facebook" /></span>
+                    <span><a href="https://www.facebook.com/deasutn/" target="_blank"><img src="../../images/page-icons/facebook.png" alt="Facebook" /></a></span>
                     <%--<span class="facebook_icon"></span>--%>
                 </section>
                 <section class="copyright-col">
