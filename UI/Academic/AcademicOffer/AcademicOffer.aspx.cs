@@ -10,9 +10,9 @@ namespace UI.Academic.AcademicOffer
 {
     public partial class AcademicOffer : System.Web.UI.Page
     {
-
+        public bool offerAcademic { get; set; } 
         static Int32 AcademicOffer_id = -1;
-
+      
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -20,6 +20,15 @@ namespace UI.Academic.AcademicOffer
                 blockControls();
             }
             loadData();
+        }
+
+        protected void showOfferAcademic()
+        {
+            this.offerAcademic = Convert.ToBoolean(Session["OfferAcademic"].ToString());
+            if (this.offerAcademic == false)
+            {
+                Response.Redirect("../../index.aspx");
+            }
         }
 
         protected void btnNew_Click(object sender, ImageClickEventArgs e)

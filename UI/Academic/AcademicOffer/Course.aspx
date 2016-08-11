@@ -5,6 +5,7 @@
 
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <section class="content_2">
+        <% showOfferAcademic(); %>
         <section class="maintanance">
             <p class="title">Administraci&oacute;n de Cursos</p>
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">

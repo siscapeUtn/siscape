@@ -12,6 +12,7 @@ namespace UI.Academic
         public bool security { get; set; }
         public bool administration { get; set; }
         public bool Academics { get; set; }
+        public bool offerAcademic { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,7 +25,8 @@ namespace UI.Academic
             {
                 this.security = Convert.ToBoolean(Session["Security"].ToString());
                 this.administration = Convert.ToBoolean(Session["Administration"].ToString());
-                this.Academics = Convert.ToBoolean(Session["Academic"].ToString());               
+                this.Academics = Convert.ToBoolean(Session["Academic"].ToString());
+                this.offerAcademic = Convert.ToBoolean(Session["OfferAcademic"].ToString());
                 showSecurity();
                 showAdministartion();
                 showAcademic();
@@ -37,15 +39,26 @@ namespace UI.Academic
 
         protected void showAcademic()
         {
-            if (this.Academics == true)
-            {
-                Response.Write("<li><div class='option'>" +
+            string head = "<li><div class='option'>" +
                         "<div><a href='../AcademicGroups/academic.aspx' id='academic' class='anchor'>Acad&eacute;mico</a></div>" +
-                        "</div><ul class='sub-menu'>" +
-                        "<li><div><a href='../AcademicGroups/gBuilding.aspx'>Infraestructura</a></div></li>" +
-                        "<li><div><a href='../AcademicGroups/gFunctionary.aspx'>Funcionarios</a></div></li>" +
-                        "<li><div><a href='../AcademicGroups/gAcademicOffer.aspx'>Oferta Acad&eacute;mica</a></div></li>" +
-                        "</ul></li>");
+                        "</div><ul class='sub-menu'>";
+            string administartionBody = "<li><div><a href='../AcademicGroups/gBuilding.aspx'>Infraestructura</a></div></li>" +
+                        "<li><div><a href='../AcademicGroups/gFunctionary.aspx'>Funcionarios</a></div></li>";
+            string offerBody = "<li><div><a href='../AcademicGroups/gAcademicOffer.aspx'>Oferta Acad&eacute;mica</a></div></li>";
+            string footer = "</ul></li>";
+
+
+            if (this.Academics == true && this.offerAcademic == true)
+            {
+                Response.Write(head + administartionBody + offerBody + footer);
+            }
+            else if (this.Academics == true)
+            {
+                Response.Write(head + administartionBody + footer);
+            }
+            else if (this.offerAcademic == true)
+            {
+                Response.Write(head + offerBody + footer);
             }
             else
             {

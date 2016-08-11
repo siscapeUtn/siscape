@@ -3,6 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="content_2">
+        <% showOfferAcademic(); %>
         <section class="maintanance">
             <p class="title">Justificaci&oacute;n de Apertura</p>
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>

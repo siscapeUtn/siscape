@@ -10,6 +10,7 @@ namespace UI.Academic.AcademicOffer
 {
     public partial class OpeningJustification : System.Web.UI.Page
     {
+        public bool offerAcademic { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -17,6 +18,15 @@ namespace UI.Academic.AcademicOffer
                 blockControls();
             }
 
+        }
+
+        protected void showOfferAcademic()
+        {
+            this.offerAcademic = Convert.ToBoolean(Session["OfferAcademic"].ToString());
+            if (this.offerAcademic == false)
+            {
+                Response.Redirect("../../index.aspx");
+            }
         }
 
         public void getFunctionary()

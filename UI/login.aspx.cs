@@ -60,18 +60,17 @@ namespace UI
         }
 
         protected void btnPeriod_Click(object sender, EventArgs e)
-        {
-               Session["period"] = cboPeriod.SelectedValue;
-               if (Session["period"].ToString() == "0")
+        {              
+               if (cboPeriod.SelectedValue == "0")
                 {
-                lblMsj.Text = "Debes seleccionar un período";
+                lblMsj.Text = "Debe seleccionar un período";
                 }
                 else
                 {
+                Session["period"] = cboPeriod.SelectedValue;
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "confirmMessage", "$('#confirmMessage').modal('toggle');", true);
                 Response.Redirect("index.aspx");
-                }
-  
+                } 
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

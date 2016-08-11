@@ -3,6 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="group-container">
+        <% showOfferAcademic(); %>
         <p class="title">Oferta Académica</p>
         <section class="row">
             <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
