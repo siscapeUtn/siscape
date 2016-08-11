@@ -40,7 +40,9 @@ namespace UI
                         getPeriod();
                         modalperiod();
                     }
+                    else { 
                     Response.Redirect("index.aspx");
+                    }
                 }
             }
             else
