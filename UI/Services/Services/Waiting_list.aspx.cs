@@ -13,12 +13,28 @@ namespace UI.Services
     public partial class Waiting_list : System.Web.UI.Page
     {
         DataTable oDataTable = new DataTable();
+        public bool service { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 
+            }
+        }
+
+        protected void showOService()
+        {
+            try { 
+            this.service = Convert.ToBoolean(Session["Service"].ToString());
+            }
+            catch
+            {
+                this.service = false;
+            }
+           if (this.service == false)
+            {
+                Response.Redirect("../../index.aspx");
             }
         }
 
@@ -111,7 +127,7 @@ namespace UI.Services
 
         protected void btn_Cancel(object sender, EventArgs e)
         {
-            Response.Redirect("../index.aspx");
+            Response.Redirect("../../index.aspx");
         }
 
         protected void btnSave(object sender, EventArgs e)

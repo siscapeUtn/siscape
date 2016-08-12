@@ -25,7 +25,7 @@ namespace UI.Academic
             {
                 Response.Write("<section class='col-md-4 col-sm-4 col-xs-12 accesses-container'>"+
                                  "<section class='accesses'>" +
-                                 "<a href = 'gAcademicOffer.aspx'>< img alt='Oferta acad&eacute;mica' src='../../images/academic/offerAcedemic.svg' />" +
+                                 "<a href ='gAcademicOffer.aspx'><img alt='Oferta acad&eacute;mica' src='../../images/academic/offerAcedemic.svg' />" +
                                  "<p>Oferta acad&eacute;mica</p></a>" +
                                  "</section></section>");
             }

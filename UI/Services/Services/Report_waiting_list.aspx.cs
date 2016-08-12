@@ -12,6 +12,8 @@ namespace UI.Services
 {
     public partial class Report_waiting_list : System.Web.UI.Page
     {
+        public bool service { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -19,6 +21,22 @@ namespace UI.Services
                 fillGridView();
                 fillFilter();
 
+            }
+        }
+
+        protected void showOService()
+        {
+            try
+            {
+                this.service = Convert.ToBoolean(Session["Service"].ToString());
+            }
+            catch
+            {
+                this.service = false;
+            }
+            if (this.service == false)
+            {
+                Response.Redirect("../../index.aspx");
             }
         }
 

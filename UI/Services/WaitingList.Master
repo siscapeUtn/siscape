@@ -3,61 +3,96 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
+<head runat="server">
     <!-- Page -->
-    <title></title>
+    <title>Dirección de Extensión y Acción Social</title>
     <meta charset="utf-8" />
     <meta content="Sitio web de la Dirección de Extensión y Acción Social" />
-       
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="../css/reset.css" media="screen" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../js/jquery-ui-1.11.4.custom/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/menu-styles.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
     <link rel="icon" href="../images/page-icons/DEAS-favicon.ico" />
 
     <!-- JS --> 
     <script type="text/javascript" src="../../js/jquery-1.11.3.js" ></script>
+    <script type="text/javascript" src="../../js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
     <script type="text/javascript" src="../../js/pageFunctions.js" ></script>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/menu.js"></script>
 
     <!-- ContentPlaceHolder Head -->
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
-    <section class="wrapper">
+    <section class="page-wrap">
         <form id="form1" runat="server">
-            <section class="main">
-                <header>
-                    <nav>
-                        <section class="logo">
-                            <a href="../../index.aspx" title="P&aacute;gina de inicio" ><img alt="Dirección de Extesión y Acción Social" src="../../images/page-icons/DEAS-icon.png" /></a>
-                        </section>
-                        <ul class="menu">
-                            <li><a href="../../index.aspx">Inicio</a></li>
-                            <li><a href="../../about.aspx">Acerca de</a></li>
-                            <li><a href="#">Servicios</a></li>
-                            <li><a href="../../Administration/AdministrationGroups/administration.aspx">Administraci&oacute;n</a></li>
-                            <li><a href="../AcademicGroups/academic.aspx">Acad&eacute;mico</a></li>
-                            <li><a href="../../contactUs.aspx">Cont&aacute;ctenos</a></li>
-                        </ul> 
-                         <ul class="header-access">
-                            <li class="login"><a href="#" title="Ingresar al sistema"></a></li>
-                            <li class="facebook"><a href="http://www.facebook.com/DEAS.UTN" title="Facebook institucional" target="_blank" ></a></li>
-                            <li class="siteMap"><a href="#" title="Mapa del sitio"></a></li>
-                        </ul>  
-                    </nav>
-                </header>
-                <section class="content_1">
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
-                </section> <!-- .content END -->
-            </section> <!-- end .main -->
-        </form> <!-- end form -->   
-    </section> <!-- end .wrapper -->
+          <header>
+		        <div class="header-container">
+			        <a id="logo" href="../../index.aspx"><img src="../../images/page-icons/DEAS-icon.png" alt="Homepage" /></a>
+			        <nav>
+				        <ul class="navigation">
+					        <%--<li>
+						        <div class="option">
+							        <div><a href="../../index.aspx" class="anchor">Inicio</a></div>
+						        </div>
+					        </li>--%>
+                            <% validationUserExternal();%>
+					        <li>
+						        <div class="option">
+							        <div><a href="../../about.aspx" class="anchor">Acerca de</a></div>
+						        </div>
+					        </li>
+                            <% validations();%>
+					        <li>
+						        <div class="option">
+							        <div><a href="../../contactUs.aspx" class="anchor">Cont&aacute;ctenos</a></div>
+						        </div>
+					        </li>
+                             <% showSession(); %>
+				        </ul>
+			        </nav>
+                    <div id="menu-bar" class="is_close"></div>
+		        </div>
+	        </header>
+	        <div class="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </div>
+        </form>
+    </section>
     <footer>
-        <p>&#169;2015. Dirección de Extensión y Acción Social. Todos los derechos reservados.</p>
-    </footer> <!-- end footer -->
+        <section class="footer-container">
+            <section class="catalog-col">
+                <span class="title-footer">Cat&aacute;logo</span>
+                <ul>
+                    <li><a href="../../index.aspx">Inicio</a></li>
+                    <li><a href="../../service.aspx">Oferta de Cursos</a></li>
+                    <li><a href="../../about.aspx">Acerca de</a></li>
+                    <li><a href="../../contactUs.aspx">Cont&aacute;ctenos</a></li>
+                </ul>
+            </section>
+            <section class="contact-col">
+                <span class="title-footer">Cont&aacute;ctenos</span>
+                <span class="info">Tel. 2435-5000</span>
+                <span class="info">Ext. 1077 - 1081 - 1084</span>
+                <span class="info">deas@utn.ac.cr</span>    
+                <span class="info">serrano@utn.ac.cr</span>
+            </section>
+            <section class="footer-bottom">
+                <section class="social-col">
+                    <span><a href="https://www.facebook.com/deasutn/" target="_blank"><img src="../../images/page-icons/facebook.png" alt="Facebook" /></a></span>
+                    <%--<span class="facebook_icon"></span>--%>
+                </section>
+                <section class="copyright-col">
+                    <span class="info">Copyright &#169; 2016.</span>
+                    <span class="info">Direcci&oacute;n de Extensi&oacute;n y Acci&oacute;n Social</span>
+                </section>
+            </section>
+        </section>
+    </footer>
 </body>
 </html>
-

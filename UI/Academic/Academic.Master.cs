@@ -13,10 +13,39 @@ namespace UI.Academic
         public bool administration { get; set; }
         public bool Academics { get; set; }
         public bool offerAcademic { get; set; }
+        public bool services { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+        protected void validationUserExternal()
+        {
+            string header = "<li><div class='option'>";
+            string offer = "<div><a href = '../../Services/Services/service.aspx' class='anchor'>Oferta de Cursos</a></div>";
+            string footer = "</div></li>";
+            try
+            {
+                this.services = Convert.ToBoolean(Session["Service"].ToString());
+            }
+            catch
+            {
+                this.services = false;
+            }
+
+            if (this.services == false)
+            {
+                Response.Write(header + offer + footer);
+            }
+            else if (this.services == true)
+            {
+                Response.Write("<li><div class='option'><div><a href='../../Services/ServicesGroups/ServicesGroups.aspx' class='anchor'>Servicios</a></div>" +
+                   "</div><ul class='sub-menu'>" +
+                   "<li><div><a href='../../Services/Services/service.aspx'>Oferta de Cursos</a></div></li>" +
+                   "<li><div><a href='../../Services/Services/Waiting_list.aspx'>Lista de espera</a></div></li>" +
+                   "<li><div><a href='../../Services/Services/Report_waiting_list.aspx'>Reporte</a></div></li>" +
+                   "</ul></li>");
+            }
         }
 
         protected void validations()

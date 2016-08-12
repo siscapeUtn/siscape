@@ -1,8 +1,9 @@
-﻿<%@ Page Title="Lista de espera - SISCAPE" Language="C#" MasterPageFile="~/Academic/Academic.Master" AutoEventWireup="true" CodeBehind="Waiting_list.aspx.cs" Inherits="UI.Services.Waiting_list" %>
+﻿<%@ Page Title="Lista de espera - SISCAPE" Language="C#" MasterPageFile="~/Services/WaitingList.Master" AutoEventWireup="true" CodeBehind="Waiting_list.aspx.cs" Inherits="UI.Services.Waiting_list" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <% showOService(); %>
     <section class="content_2">
         <section class="maintanance">
             <p class="title">Administraci&oacute;n de listas de espera</p>

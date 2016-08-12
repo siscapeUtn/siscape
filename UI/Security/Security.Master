@@ -41,11 +41,7 @@
 							        <div><a href="../../index.aspx" class="anchor">Inicio</a></div>
 						        </div>
 					        </li>--%>
-                            <li>
-						        <div class="option">
-							        <div><a href="../../service.aspx" class="anchor">Oferta de Cursos</a></div>
-						        </div>
-					        </li>
+                            <% validationUserExternal();%>
 					        <li>
 						        <div class="option">
 							        <div><a href="../../about.aspx" class="anchor">Acerca de</a></div>
