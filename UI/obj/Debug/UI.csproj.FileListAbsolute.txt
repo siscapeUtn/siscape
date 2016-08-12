@@ -23,3 +23,4 @@ C:\Users\rsanchez\Desktop\a\sis\actual\malo\siscape\UI\obj\Debug\UI.csprojResolv
 C:\Users\rsanchez\Desktop\a\sis\actual\malo\siscape\UI\obj\Debug\UI.dll
 C:\Users\rsanchez\Desktop\a\sis\actual\malo\siscape\UI\obj\Debug\UI.pdb
 C:\Users\rsanchez\Desktop\a\sis\actual\malo\siscape\UI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\rsanchez\Desktop\a\sis\actual\siscape\UI\bin\Microsoft.Web.Infrastructure.dll
