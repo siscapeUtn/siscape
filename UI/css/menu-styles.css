@@ -1199,12 +1199,12 @@ input:focus ~ .highlight {
     border: 1px solid #888;
 }
 
-.reset-password .modal-body{
+.modal-body{
     font-size: 18px;
     overflow: hidden;   
 }
 
-.reset-password input{
+.modal-body input{
     padding: 5px;
     border: 1px solid #b3b3b3;
 }

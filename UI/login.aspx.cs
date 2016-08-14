@@ -155,6 +155,47 @@ namespace UI
             //cboPeriod.SelectedValue = "0";
         }
 
+        protected void btnChange_Click1(object sender, EventArgs e)
+        {
+            String newPassword = txtNewPassword.Text;
+            String confirmPassword = txtConfirmPassword.Text;
+            String lastPassword = txtLastPassword.Text;
+        }
 
+        private Boolean validatePassword()
+        {
+            var ind = true;
+
+            if (txtNewPassword.Text.Trim() == "")
+            {
+                ind = false;
+            }
+            else
+            {
+
+            }
+
+            if (txtConfirmPassword.Text.Trim() == "")
+            {
+                ind = false;
+            }
+            else
+            {
+
+            }
+
+            if (txtLastPassword.Text.Trim() == "")
+            {
+                ind = false;
+            }
+            else
+            {
+
+            }
+
+            return ind;
+        }
+
+        
     }
 }
