@@ -50,7 +50,7 @@
                             <% validations();%>
 					        <li>
 						        <div class="option">
-							        <div><a href="../../contactUs.aspx" class="anchor">Cont&aacute;ctenos</a></div>
+							        <div><a href="../../contact.aspx" class="anchor">Cont&aacute;ctenos</a></div>
 						        </div>
 					        </li>
                              <% showSession(); %>

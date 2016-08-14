@@ -91,7 +91,7 @@
     <Content Include="Administration\Period\periodType.aspx" />
     <Content Include="Administration\Program\program.aspx" />
     <Content Include="Administration\Slider\slider.aspx" />
-    <Content Include="contactUs.aspx" />
+    <Content Include="contact.aspx" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\menu-styles.css" />
     <Content Include="images\academic\academicOffer.png" />
@@ -434,12 +434,12 @@
     <Compile Include="Administration\Slider\slider.aspx.designer.cs">
       <DependentUpon>slider.aspx</DependentUpon>
     </Compile>
-    <Compile Include="contactUs.aspx.cs">
-      <DependentUpon>contactUs.aspx</DependentUpon>
+    <Compile Include="contact.aspx.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="contactUs.aspx.designer.cs">
-      <DependentUpon>contactUs.aspx</DependentUpon>
+    <Compile Include="contact.aspx.designer.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

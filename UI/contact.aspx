@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Contáctenos | DEAS" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="contactUs.aspx.cs"  %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="contact.aspx.cs" Inherits="UI.contact" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -33,7 +33,7 @@
                         </div>
                     </section>
                     <section class="form-group">
-                        <asp:Button runat="server" Text="Enviar" CssClass="pull-right form-button send" ToolTip="Enviar el mensaje" />
+                        <asp:Button runat="server" ID="btnSend" Text="Enviar" CssClass="pull-right form-button send" ToolTip="Enviar el mensaje" OnClick="btnSend_Click"  />
                     </section>
                 </section>
             </section>

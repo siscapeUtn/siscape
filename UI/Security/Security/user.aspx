@@ -137,7 +137,7 @@
     </section><!--end section modal delete-->
 
          <section class="modal fade" id="ResetPassword" role="dialog" aria-labelledby="ResetPasswordLabel" aria-hidden="true">
-        <section class="modal-dialog">
+        <section class="modal-dialog reset-password">
             <asp:UpdatePanel ID="UpdatePanel2" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
                 <ContentTemplate>
                     <section class="modal-content">
