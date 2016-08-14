@@ -517,11 +517,11 @@ content: '\E849';
     }
     
     .page-wrap {
-      margin-bottom: -450px; 
+      margin-bottom: -500px; 
     }
 
     footer, .page-wrap:after {
-        height: 450px; 
+        height: 500px; 
     }
 
     footer .footer-container .social-col .facebook_icon{
