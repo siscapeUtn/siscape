@@ -192,7 +192,10 @@ namespace UI.Administration.Security
                 loadData();
                 if (records > 0)
                 {
-                    lblMessage.Text = "se ha restablecido el password correctamente.";
+                    Entities.Email oEmail = new Entities.Email();
+                    String body = messageDesignReset(oUser.email);
+                    oEmail.correoContacto(oUser.email, "", "Restablecer contraseña");
+                    lblMessage.Text = "Se ha restablecido la contraseña correctamente.";
                 }
             }
             else
@@ -205,6 +208,14 @@ namespace UI.Administration.Security
                     Response.Redirect("../../logOut.aspx");
                 }
             }            
+        }
+
+        protected String messageDesignReset(String email)
+        {
+            String body = "Su cuenta se ha restablecido su contraseña. \n";
+            body += "Se ha restablecido su contraseña en el sistema SISCAPE. \n";
+            body += "Su correo electrónico para accessar: " + email + "\n";
+            return body;
         }
 
         protected Boolean validateData()
