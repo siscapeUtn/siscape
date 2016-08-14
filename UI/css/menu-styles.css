@@ -906,6 +906,24 @@ input:focus ~ .highlight {
     vertical-align: middle;
 }
 
+.maintanance .dataExists table table{
+    border: 0;
+}
+
+.maintanance .dataExists table table tr{
+    border: 0;
+}
+
+.maintanance .dataExists table table tr a{
+    color: #000000;
+}
+
+.maintanance .dataExists table table tr span{
+    color: #000000;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
 .maintanance {
     font-size: 1.3rem;
 }
