@@ -399,5 +399,11 @@ namespace UI.Administration.Security
             ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorEmail", "$('#ContentPlaceHolder1_cboRole').removeClass('has-error');", true);
             cboState.SelectedValue = "1";
         }
+
+        protected void gvUserSystem_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvUserSystem.PageIndex = e.NewPageIndex;
+            loadData();
+        }
     }
 }

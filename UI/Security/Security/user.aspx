@@ -86,7 +86,7 @@
                     </section> <!--end section form row-->
                     <section class="dataExists">
                         <section class="table-responsive">
-                            <asp:GridView ID="gvUserSystem" CssClass="table" runat="server" AutoGenerateColumns="False"  AllowPaging="True" PageSize="12" OnRowEditing="gvUserSystem_RowEditing" OnRowDeleting="gvUserSystem_RowDeleting" OnRowUpdating="gvUserSystem_RowUpdating">
+                            <asp:GridView ID="gvUserSystem" CssClass="table" runat="server" AutoGenerateColumns="False"  AllowPaging="True" OnPageIndexChanging="gvUserSystem_PageIndexChanging" PageSize="12" OnRowEditing="gvUserSystem_RowEditing" OnRowDeleting="gvUserSystem_RowDeleting" OnRowUpdating="gvUserSystem_RowUpdating">
                                 <Columns>
                                     <asp:BoundField HeaderText="Código" ReadOnly="true" DataField="code" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" >
                                     <ItemStyle CssClass="visible-lg visible-md visible-sm visible-xs" />

@@ -216,14 +216,13 @@ namespace UI.Administration.Security
                         itemActual.Selected = true;
                     }
                 }
-
-
             }
-
-
         }
 
-
-
+        protected void gvRole_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvRole.PageIndex = e.NewPageIndex;
+            loadData();
+        }
     }
 }
