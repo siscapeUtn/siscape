@@ -302,5 +302,11 @@ namespace UI.Academic
             lblMessageSize.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorSize", "$('#ContentPlaceHolder1_txtSize').removeClass('has-error');", true);
         }
+
+        protected void gvClassRoom_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvClassRoom.PageIndex = e.NewPageIndex;
+            loadData();
+        }
     }
 }

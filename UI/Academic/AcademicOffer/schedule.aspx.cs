@@ -293,5 +293,11 @@ namespace UI.Academic.AcademicOffer
             return save;
         }
 
+        protected void gvSchedule_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvSchedule.PageIndex = e.NewPageIndex;
+            loadData();
+        }
+
     }
 }

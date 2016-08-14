@@ -179,6 +179,12 @@ namespace UI.Academic.AcademicOffer
             lblMessage.Text = "";
             lblNameMessage.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorName", "$('#ContentPlaceHolder1_txtName').removeClass('has-error');", true);
+        }
+
+        protected void gvCourse_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvCourse.PageIndex = e.NewPageIndex;
+            loadData();
         }//End clearControls()
     } //End periodType
     }

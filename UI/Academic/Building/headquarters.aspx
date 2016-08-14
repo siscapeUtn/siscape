@@ -43,7 +43,7 @@
                     </section> <!-- End .form -->
                     <section class="dataExists">
                         <section class="table-responsive">
-                            <asp:GridView ID="gvHeadquarters" runat="server" AutoGenerateColumns="False" OnRowEditing="gvHeadquarters_RowEditing" OnRowDeleting="gvHeadquarters_RowDeleting">
+                            <asp:GridView ID="gvHeadquarters" runat="server" AutoGenerateColumns="False" AllowPaging="true" OnPageIndexChanging="gvHeadquarters_PageIndexChanging" PageSize="12" OnRowEditing="gvHeadquarters_RowEditing" OnRowDeleting="gvHeadquarters_RowDeleting">
                                 <Columns>
                                     <asp:BoundField HeaderText="Código" DataField="code" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                     <asp:BoundField HeaderText="Sede" DataField="description" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />

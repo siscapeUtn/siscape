@@ -105,7 +105,7 @@
                     </section>
                     <section class="dataExists">
                         <section class="table-responsive">
-                            <asp:GridView ID="gvExternalDesignation" runat="server" AutoGenerateColumns="False" OnRowDeleting="gvExternalDesignation_RowDeleting">
+                            <asp:GridView ID="gvExternalDesignation" runat="server" AutoGenerateColumns="False" AllowPaging="true" OnPageIndexChanging="gvExternalDesignation_PageIndexChanging" PageSize="12" OnRowDeleting="gvExternalDesignation_RowDeleting">
                                 <Columns>
                                     <asp:BoundField HeaderText="Código" ReadOnly="true" DataField="code" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                     <asp:BoundField HeaderText="Profesor" ReadOnly="true" DataField="oTeacher.name" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />

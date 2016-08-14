@@ -153,5 +153,11 @@ namespace UI.Academic
             lblMessageDescription.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorName", "$('#ContentPlaceHolder1_txtDescription').removeClass('has-error');", true);
         }
+
+        protected void gvHeadquarters_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvHeadquarters.PageIndex = e.NewPageIndex;
+            loadData();
+        }
     }
 }

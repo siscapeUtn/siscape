@@ -153,5 +153,11 @@ namespace UI.Academic
             }
             loadData();
         }
+
+        protected void gvClassRoomType_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvClassRoomType.PageIndex = e.NewPageIndex;
+            loadData();
+        }
     }
 }

@@ -43,7 +43,7 @@
                     </section>
                     <section class="dataExists">
                         <section class="table-responsive">
-                            <asp:GridView ID="gvClassRoomType" runat="server" AutoGenerateColumns="False" OnRowEditing="gvClassRoomType_RowEditing" OnRowDeleting="gvClassRoomType_RowDeleting">
+                            <asp:GridView ID="gvClassRoomType" runat="server" AutoGenerateColumns="False" AllowPaging="true" OnPageIndexChanging="gvClassRoomType_PageIndexChanging" PageSize="12" OnRowEditing="gvClassRoomType_RowEditing" OnRowDeleting="gvClassRoomType_RowDeleting">
                                 <Columns>
                                     <asp:BoundField HeaderText="Código" DataField="code" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                     <asp:BoundField HeaderText="Descripción" DataField="description" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />

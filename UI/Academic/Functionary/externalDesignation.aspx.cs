@@ -433,6 +433,12 @@ namespace UI.Academic.Functionary
             txtStart.Text = "";
             cboHoursDisignation.SelectedIndex = -1;
         }
+
+        protected void gvExternalDesignation_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvExternalDesignation.PageIndex = e.NewPageIndex;
+            fillGvDesignation();
+        }
         
     }
 }

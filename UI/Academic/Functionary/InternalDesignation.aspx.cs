@@ -192,5 +192,11 @@ namespace UI.Academic
             cboState.SelectedValue = "1";
             lblMessage.Text = "";
         }
+
+        protected void gvInternalDesignation_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvInternalDesignation.PageIndex = e.NewPageIndex;
+            loadData();
+        }
     }
 }

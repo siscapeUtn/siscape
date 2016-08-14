@@ -87,7 +87,7 @@
                     </section> <!-- End .form -->
                     <section class="dataExists">
                         <section class="table-responsive">
-                            <asp:GridView ID="gvSchedule" runat="server" AutoGenerateColumns="False" OnRowEditing="gvSchedule_RowEditing" OnRowDeleting="gvSchedule_RowDeleting">
+                            <asp:GridView ID="gvSchedule" runat="server" AutoGenerateColumns="False" AllowPaging="true" OnPageIndexChanging="gvSchedule_PageIndexChanging" PageSize="12" OnRowEditing="gvSchedule_RowEditing" OnRowDeleting="gvSchedule_RowDeleting">
                                 <Columns>
                                     <asp:BoundField DataField="code" HeaderText="Código" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs"  />
                                     <asp:BoundField DataField="name" HeaderText="Descripción" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs"  />

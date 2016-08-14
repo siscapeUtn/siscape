@@ -53,7 +53,7 @@
                     </section>
                     <section class="dataExists">
                         <section class="table-responsive">
-                            <asp:GridView ID="gvInternalDesignation" runat="server" AutoGenerateColumns="False" OnRowDeleting="gvInternalDesignation_RowDeleting" OnRowEditing="gvInternalDesignation_RowEditing">
+                            <asp:GridView ID="gvInternalDesignation" runat="server" AutoGenerateColumns="False" AllowPaging="true" OnPageIndexChanging="gvInternalDesignation_PageIndexChanging" PageSize="12" OnRowDeleting="gvInternalDesignation_RowDeleting" OnRowEditing="gvInternalDesignation_RowEditing">
                                 <Columns>
                                     <asp:BoundField HeaderText="Código" ReadOnly="true" DataField="code" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                     <asp:BoundField HeaderText="Descripción" ReadOnly="true" DataField="description" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />

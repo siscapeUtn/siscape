@@ -256,5 +256,11 @@ namespace UI.Academic
             ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorEmail", "$('#ContentPlaceHolder1_txtEmail').removeClass('has-error');", true);
             cboState.SelectedValue = "1";
         }
+
+        protected void gvFunctionary_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvFunctionary.PageIndex = e.NewPageIndex;
+            loadData();
+        }
     }
 }

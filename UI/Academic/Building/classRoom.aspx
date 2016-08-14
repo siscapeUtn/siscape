@@ -63,7 +63,7 @@
                     </section>
                     <section class="dataExists">
                         <section class="table-responsive">
-                            <asp:GridView ID="gvClassRoom" runat="server" AutoGenerateColumns="False" OnRowEditing="gvClassRoom_RowEditing" OnRowDeleting="gvClassRoom_RowDeleting" >
+                            <asp:GridView ID="gvClassRoom" runat="server" AutoGenerateColumns="False" AllowPaging="true" OnPageIndexChanging="gvClassRoom_PageIndexChanging" PageSize="12" OnRowEditing="gvClassRoom_RowEditing" OnRowDeleting="gvClassRoom_RowDeleting" >
                                 <Columns>
                                     <asp:BoundField HeaderText="C&#243;digo" DataField="code" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" ></asp:BoundField>
                                     <asp:BoundField HeaderText="N&#176; Aula" DataField="num_room" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs"></asp:BoundField>

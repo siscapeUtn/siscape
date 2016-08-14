@@ -75,7 +75,7 @@
                     </section>
                     <section class="dataExists">
                         <section class="table-responsive">
-                            <asp:GridView ID="gvTeacher" runat="server" AutoGenerateColumns="False" OnRowEditing="gvTeacher_RowEditing" OnRowDeleting="gvTeacher_RowDeleting">
+                            <asp:GridView ID="gvTeacher" runat="server" AutoGenerateColumns="False" AllowPaging="true" OnPageIndexChanging="gvTeacher_PageIndexChanging" PageSize="12" OnRowEditing="gvTeacher_RowEditing" OnRowDeleting="gvTeacher_RowDeleting">
                                 <Columns>
                                     <asp:BoundField HeaderText="Código" DataField="code" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                     <asp:BoundField HeaderText="Nombre" DataField="name" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />

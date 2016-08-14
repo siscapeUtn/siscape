@@ -208,5 +208,11 @@ namespace UI.Academic
             lblMessageModule.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorName", "$('#ContentPlaceHolder1_txtModule').removeClass('has-error');", true);
         }
+
+        protected void gvLocation_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvLocation.PageIndex = e.NewPageIndex;
+            loadData();
+        }
     }
 }
