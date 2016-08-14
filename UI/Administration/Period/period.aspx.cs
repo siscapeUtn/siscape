@@ -249,5 +249,11 @@ namespace UI.Administration
             lblMessageFinalDate.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorFinishDate", "$('#ContentPlaceHolder1_txtFinishDate').removeClass('has-error');", true);
         }
+
+        protected void gvPeriod_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvPeriod.PageIndex = e.NewPageIndex;
+            loadData();
+        }
     }
 }

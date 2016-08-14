@@ -45,7 +45,7 @@
                     </section> <!-- End .form -->
                     <section class="dataExists">
                         <section class="table-responsive">
-                            <asp:GridView ID="gvPeriodType" runat="server" AutoGenerateColumns="False" OnRowEditing="gvPeriodType_RowEditing" AllowPaging="True" OnRowDeleting="gvPeriodType_RowDeleting">
+                            <asp:GridView ID="gvPeriodType" runat="server" AutoGenerateColumns="False" OnRowEditing="gvPeriodType_RowEditing" AllowPaging="True" OnPageIndexChanging="gvPeriodType_PageIndexChanging" PageSize="12" OnRowDeleting="gvPeriodType_RowDeleting">
                                 <Columns>
                                     <asp:BoundField DataField="code" HeaderText="Código" ReadOnly="True" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                     <asp:BoundField DataField="description" HeaderText="Descripción" ReadOnly="True" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />

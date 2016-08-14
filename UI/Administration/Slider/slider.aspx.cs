@@ -198,5 +198,11 @@ namespace UI.Administration.Slider
             Response.Redirect(Request.RawUrl);
         }
 
+        protected void gvSlider_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvSlider.PageIndex = e.NewPageIndex;
+            loadData();
+        }
+
     }
 }

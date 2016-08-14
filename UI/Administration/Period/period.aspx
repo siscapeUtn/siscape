@@ -71,7 +71,7 @@
                     </section> <!-- End .form -->
                     <section class="dataExists">
                         <section class="table-responsive">
-                            <asp:GridView ID="gvPeriod" runat="server" AutoGenerateColumns="False" OnRowEditing="gvPeriod_RowEditing" OnRowDeleting="gvPeriod_RowDeleting">
+                            <asp:GridView ID="gvPeriod" runat="server" AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="gvPeriod_PageIndexChanging" PageSize="12" OnRowEditing="gvPeriod_RowEditing" OnRowDeleting="gvPeriod_RowDeleting">
                                 <Columns>
                                     <asp:BoundField HeaderText="Código" DataField="code" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                     <asp:BoundField HeaderText="Descripción" DataField="name" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />

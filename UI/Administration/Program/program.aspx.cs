@@ -198,5 +198,11 @@ namespace UI.Administration
             lblUnitMessage.Text = "";
             ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorUnit", "$('#ContentPlaceHolder1_txtName').removeClass('has-error');", true);
         }//End clearControls()
+
+        protected void gvProgram_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvProgram.PageIndex = e.NewPageIndex;
+            loadData();
+        }
     }//End program
 }

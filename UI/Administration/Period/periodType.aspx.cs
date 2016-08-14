@@ -167,6 +167,12 @@ namespace UI.Administration
             lblMessage.Text = "";
             lblNameMessage.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorName", "$('#ContentPlaceHolder1_txtName').removeClass('has-error');", true);
+        }
+
+        protected void gvPeriodType_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvPeriodType.PageIndex = e.NewPageIndex;
+            loadData();
         }//End clearControls()
     } //End periodType
 }

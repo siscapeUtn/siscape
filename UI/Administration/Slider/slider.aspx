@@ -55,7 +55,7 @@
                     </section>
                     <section class="dataExists">
                         <section class="table-responsive">
-                            <asp:GridView ID="gvSlider" CssClass="table" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="12" OnRowDeleting="gvSlider_RowDeleting">
+                            <asp:GridView ID="gvSlider" CssClass="table" runat="server" AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="gvSlider_PageIndexChanging" PageSize="12" OnRowDeleting="gvSlider_RowDeleting">
 
                                 <Columns>
                                     <asp:BoundField DataField="code" HeaderText="C&#243;digo" ReadOnly="True"></asp:BoundField>
