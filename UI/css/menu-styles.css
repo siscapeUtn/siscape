@@ -8,7 +8,7 @@ html, body {
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -180px; 
+  margin-bottom: -200px; 
 }
 
 .page-wrap:after {
@@ -17,7 +17,7 @@ html, body {
 }
 
 footer, .page-wrap:after {
-  height: 180px; 
+  height: 200px; 
 }
 
 @font-face {
@@ -464,6 +464,10 @@ footer .footer-container .copyright-col{
     width: 100%;
 }
 
+footer .footer-container .copyright-col a{
+    color: #ffffff;
+}
+
 footer .footer-container .copyright-col .info{
     color: #ffffff;
     display: block;
@@ -480,6 +484,14 @@ footer .footer-container .social-col{
 
 footer .footer-container .social-col img{
     padding: 5px;
+}
+
+footer .bottom{
+    color: #ffffff;
+    float: left;
+    font-size: 15px;
+    padding: 10px 0;
+    width: 100%;
 }
 
 span.facebook_icon:after{

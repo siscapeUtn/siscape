@@ -93,9 +93,12 @@
                     <%--<span class="facebook_icon"></span>--%>
                 </section>
                 <section class="copyright-col">
-                    <span class="info">Copyright &#169; 2016.</span>
-                    <span class="info">Direcci&oacute;n de Extensi&oacute;n y Acci&oacute;n Social</span>
+                    <span class="info">Ayuda</span>
+                    <span class="info"><% showSessionFooter(); %></span>
                 </section>
+            </section>
+            <section class="bottom">
+                <span class="info">Copyright &#169; 2016. Direcci&oacute;n de Extensi&oacute;n y Acci&oacute;n Social</span>
             </section>
         </section>
     </footer>

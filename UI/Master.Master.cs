@@ -120,10 +120,21 @@ namespace UI
             }
             else
             {
-                Response.Write("<li><div class='option'>" +
-                "<div><a href='login.aspx' id='login' class='anchor'>Iniciar Sesi&oacute;n</a></div>" +
-                "</div></li>");
+                Response.Write("");
                
+            }
+        }
+
+        protected void showSessionFooter()
+        {
+            if (Session["User"] != null)
+            {
+                Response.Write("<a href='logOut.aspx'>Cerrar Sesión</a>");
+            }
+            else
+            {
+                Response.Write("<a href='login.aspx'>Ingreso Interno</a>");
+
             }
         }
     }

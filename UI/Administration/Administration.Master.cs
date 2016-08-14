@@ -120,5 +120,18 @@ namespace UI.Administration
                 Response.Write(head + offerBody + footer);
             }
         }
+
+        protected void showSessionFooter()
+        {
+            if (Session["User"] != null)
+            {
+                Response.Write("<a href='../../logOut.aspx'>Cerrar Sesión</a>");
+            }
+            else
+            {
+                Response.Write("<a href='../../login.aspx'>Ingreso Interno</a>");
+
+            }
+        }
     }
 }
