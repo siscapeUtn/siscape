@@ -57,7 +57,7 @@
                                     <asp:Label runat="server" ID="lblMessageEmail" ToolTip="Debe digitar una dirección de correo valida"></asp:Label></span>
                             </section>
                         </section>
-                        <section>
+                        
                            
                                 <%-- dropdownlist program--%>
 
@@ -126,15 +126,12 @@
                                 </section>
                             </section>
                         </section>--%>
-
-                        <section class="col-md-6 form-buttons">
-                            <asp:Button Text="Enviar" ToolTip="Agregar a lista de espera" ID="Save" runat="server" OnClick="btnSave" CssClass="btn btn-group" BorderColor="Blue"/>
+                        <section class="col-md-3"></section>
+                        <section class="col-md-9 form-buttons buttonsWaiting">
+                                <asp:Button Text="Enviar" ToolTip="Agregar a lista de espera" ID="Save" runat="server" OnClick="btnSave" CssClass="btnWaitingList"  />
+                                <asp:Button  ToolTip="Cancelar" ID="Cancel" runat="server" Text="Cancelar" OnClick="btn_Cancel" CssClass="btnWaitingList" />    
                         </section>
-                        <section class="col-md-6 form-buttons">
-                             <asp:Button  ToolTip="Cancelar" ID="Cancel" runat="server" Text="Cancelar" OnClick="btn_Cancel" CssClass="btn btn-group" BorderColor="Blue"/>
-                        </section>
-
-                               
+                       
                         <!-- End .form-buttons -->
                         <section class="col-md-12 message">
                             <asp:Label ID="lblMessage" runat="server"></asp:Label>
