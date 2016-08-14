@@ -62,6 +62,13 @@ namespace UI.Administration.Security
                 else
                 {
                     records = BLL.UserSystemBLL.getInstance().insert(oUser);
+
+                    if (records > 0)
+                    {
+                        Entities.Email oEmail = new Entities.Email();
+                        String body = messageDesign(oUser.email);
+                        oEmail.correoContacto(oUser.email, body, "Bienvenido a Siscape");
+                    }
                 }
 
                 blockControls();
@@ -77,6 +84,14 @@ namespace UI.Administration.Security
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "comboBox", "comboBox();", true);
                 }
             }
+        }
+
+        protected String messageDesign(String email)
+        {
+            String body = "Bienvenido a SISCAPE. \n";
+            body += "Se ha creado una cuenta en el sistema SISCAPE. \n";
+            body += "Su correo electrónico para accessar: " + email;
+            return body;
         }
 
         protected void btnCancel_Click(object sender, ImageClickEventArgs e)
