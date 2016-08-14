@@ -194,7 +194,7 @@ namespace UI.Administration.Security
                 {
                     Entities.Email oEmail = new Entities.Email();
                     String body = messageDesignReset(oUser.email);
-                    oEmail.correoContacto(oUser.email, "", "Restablecer contraseña");
+                    oEmail.correoContacto(oUser.email, body, "Restablecer contraseña");
                     lblMessage.Text = "Se ha restablecido la contraseña correctamente.";
                 }
             }
