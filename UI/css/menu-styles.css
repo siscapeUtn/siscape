@@ -534,6 +534,18 @@ content: '\E849';
     margin-top: 1.125rem;
 }
 
+.successEmail{
+    color: #009900;
+    font-size: 16px;
+    text-align: center;
+}
+
+.errorEmail{
+    color: #E80000;
+    font-size: 13px;
+    text-align: center;
+}
+
 @media only screen and (max-width: 850px){
     .title{
         font-size: 2rem;

@@ -12,12 +12,14 @@
                         <asp:Label ID="lblName" CssClass="control-label col-sm-4" Text="Nombre completo:" runat="server"></asp:Label>
                         <div class="col-sm-8">
                             <asp:TextBox ID="txtName" CssClass="form-control col-sm-8" runat="server"></asp:TextBox>
+                            <span class="message-has-error"><asp:Label runat="server" ID="lblMessageName" ></asp:Label></span>
                         </div>
                     </section>
                     <section class="form-group">
                         <asp:Label ID="lblEmail" CssClass="control-label col-sm-4" Text="Correo Electrónico:" runat="server"></asp:Label>
                         <div class="col-sm-8">
                             <asp:TextBox ID="txtEmail" CssClass="form-control col-sm-8" runat="server"></asp:TextBox>
+                            <span class="message-has-error"><asp:Label runat="server" ID="lblMessageEmail" ></asp:Label></span>
                         </div>
                     </section>
                     <section class="form-group">
@@ -30,7 +32,11 @@
                         <asp:Label ID="lblMessage" CssClass="control-label col-sm-4" Text="Mensaje:" runat="server"></asp:Label>
                         <div class="col-sm-8">
                             <asp:TextBox ID="txtMessage" CssClass="form-control col-sm-8" TextMode="MultiLine" Rows="5" Columns="10"  runat="server"></asp:TextBox>
+                            <span class="message-has-error"><asp:Label runat="server" ID="lblMessageMessage" ></asp:Label></span>
                         </div>
+                    </section>
+                    <section class="form-group">
+                        <asp:Label ID="lblMessageSuccess" CssClass="successEmail" runat="server"></asp:Label>
                     </section>
                     <section class="form-group">
                         <asp:Button runat="server" ID="btnSend" Text="Enviar" CssClass="pull-right form-button send" ToolTip="Enviar el mensaje" OnClick="btnSend_Click"  />

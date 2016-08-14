@@ -72,6 +72,7 @@
     <Compile Include="ClassRoom.cs" />
     <Compile Include="ClassRoomsType.cs" />
     <Compile Include="Day.cs" />
+    <Compile Include="Email.cs" />
     <Compile Include="ExternalDesignation.cs" />
     <Compile Include="Functionary.cs" />
     <Compile Include="Headquarters.cs" />
