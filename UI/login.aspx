@@ -24,7 +24,7 @@
                         <asp:Label ID="lblMessage" runat="server"></asp:Label>
                     </section>
                     <section class="col-md-4">
-                        <a id="forgotPassword">
+                        <a id="forgotPassword" onclick="showResetPassword();">
                             <asp:Label Text="¿Has olvidado tu contraseña?" runat="server"></asp:Label></a>
                     </section>
                     <section class="col-md-4">
@@ -116,9 +116,34 @@
         </section>
     </section><!--end modal reset password-->
 
+    <section class="modal fade" id="resetPasswordModal" role="dialog" aria-labelledby="resetPasswordLabel" aria-hidden="true">
+        <section class="modal-dialog changePassword">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <section class="modal-content">
+                        <section class="modal-header">
+                            <asp:Label ID="Label1" Text="Cambiar la Contraseña" runat="server"></asp:Label>
+                        </section>
+                        <section  class="modal-body">
+                                <span>Para restablecer su contraseña contactese con <strong>siscape.utn@gmail.com</strong></span>
+                         </section>
+                        <section class="modal-footer">
+                            <button class="btn btn-confirm" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                        </section>
+                    </section>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </section>
+    </section>
+
     <script type="text/javascript">
         $('li').removeClass('isSelected');
         $('#login').addClass('isSelected');
+    </script>
+    <script type="text/javascript">
+        function showResetPassword() {
+            $('#resetPasswordModal').modal();
+        }
     </script>
     <script type="text/javascript">
         function showChangePassword() {
