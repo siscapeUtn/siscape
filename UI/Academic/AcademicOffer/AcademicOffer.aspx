@@ -24,8 +24,7 @@
                                 <span class="message-has-error"><asp:Label runat="server" ID="lblMessagePeriod"></asp:Label></span>
                             </section>
                             <section class="form-group">
-                                <asp:Label runat="server" ID="lblCourse" Text="Curso:"></asp:Label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:CheckBox ID="chkEspecial" Text=" &nbsp;&nbsp;Especial" runat="server" AutoPostBack="true" OnCheckedChanged="chkEspecial_CheckedChanged" />
+                                <asp:Label runat="server" ID="lblCourse" Text="Curso:"></asp:Label> 
                                 <asp:DropDownList ID="cboCourse" CssClass="form-control" runat="server"></asp:DropDownList>
                                 <span class="message-has-error"><asp:Label runat="server" ID="lblMessageCourse"></asp:Label></span>
                             </section>
@@ -52,7 +51,9 @@
                                 <span class="message-has-error"><asp:Label runat="server" ID="lblMessagePrice"></asp:Label></span>  
                             </section>
                             <section class="form-group">
+
                             <asp:Label runat="server" ID="lblRoom" Text="Aula:"></asp:Label>
+                                <asp:CheckBox ID="chkEspecial" Text=" &nbsp;&nbsp;Especial" runat="server" AutoPostBack="true" OnCheckedChanged="chkEspecial_CheckedChanged" />
                                 <asp:DropDownList ID="cboRoom" CssClass="form-control" runat="server"></asp:DropDownList>
                                 <span class="message-has-error"><asp:Label runat="server" ID="lblMessageRoom"></asp:Label></span>
                             </section>
