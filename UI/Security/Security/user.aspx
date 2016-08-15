@@ -82,6 +82,9 @@
                         <section class="col-md-12 message">
                             <asp:Label ID="lblMessage" runat="server" ></asp:Label>
                         </section> <!-- End .message -->
+                        <section class="col-md-12 col-sm-12 col-xs-12">
+                            <asp:Button runat="server" ID="btnReport" Text="Reporte de usuarios" CssClass="pull-right reportButton" OnClick="btnReport_Click" />
+                        </section>
                        </fieldset> <!--end fieldset-->
                     </section> <!--end section form row-->
                     <section class="dataExists">
@@ -111,6 +114,9 @@
                         </section>
                     </section><!-- End .dataExists -->
                 </ContentTemplate>
+                <Triggers>
+                    <asp:PostBackTrigger  ControlID="btnReport"/>
+                </Triggers>
             </asp:UpdatePanel>
         </section> <!-- End .maintance -->
     </section><!-- End .content_2 -->
