@@ -12,16 +12,23 @@ namespace UI.Academic
     public partial class classRoom : System.Web.UI.Page
     {
         static Int32 classRoom_id = -1;
+        static UserSystem oUser=null;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 blockControls();
                 loadClassroomType();
-                loadLocation();
+                loadUser();
                 loadPrograms();
+                loadLocation();
             }
             loadData();
+        }
+
+        private void loadUser()
+        {
+            oUser =(UserSystem)Session["User"];
         }
 
         protected void btnNew_Click(object sender, ImageClickEventArgs e)
@@ -44,7 +51,7 @@ namespace UI.Academic
                 oClassRoomsType.code = Convert.ToInt32(cboClassRoomType.SelectedValue);
                 oLocation.code = Convert.ToInt32(cboLocation.SelectedValue);
                 oClassRoom.size = Convert.ToInt32(txtSize.Text);
-                oProgram.code = Convert.ToInt32(cboProgram.SelectedValue);
+                oProgram.code = Convert.ToInt32(cboprogram.SelectedValue);
                 oClassRoom.state = Convert.ToInt16(cboState.SelectedValue);
                 oClassRoom.oClassRoomsType = oClassRoomsType;
                 oClassRoom.oLocation = oLocation;
@@ -108,11 +115,11 @@ namespace UI.Academic
 
             try
             {
-                cboProgram.SelectedValue = oClassRoom.oProgram.code.ToString();
+                cboprogram.SelectedValue = oClassRoom.oProgram.code.ToString();
             }
             catch (Exception )
             {
-                cboProgram.SelectedValue = "0";
+                cboprogram.SelectedValue = "0";
             }
             ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "$('html, body').animate({ scrollTop: $('body').offset().top });", true);
         }
@@ -197,15 +204,15 @@ namespace UI.Academic
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorSize", "$('#ContentPlaceHolder1_txtSize').addClass('has-error');", true);
             }
 
-            if (Convert.ToInt32(cboProgram.SelectedValue) == 0)
+            if (Convert.ToInt32(cboprogram.SelectedValue) == 0 || Convert.ToInt32(cboprogram.SelectedValue) == 1)
             {
                 ind = false;
-                lblMessageProgram.Text = "Debe seleccionar el programa.";
+                lblmessageprogram.Text = "Debe seleccionar el programa.";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorProgram", "$('#ContentPlaceHolder1_cboProgram').addClass('has-error');", true);
             }
             else
             {
-                lblMessageProgram.Text = "";
+                lblmessageprogram.Text = "";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorProgram", "$('#ContentPlaceHolder1_cboProgram').removeClass('has-error');", true);
             }
 
@@ -243,11 +250,15 @@ namespace UI.Academic
             List<Entities.Program> listPrograms = new List<Entities.Program>();
             listPrograms = ProgramBLL.getInstance().getAllActived();
             ListItem oItemS = new ListItem("---- Seleccione ----", "0");
-            cboProgram.Items.Add(oItemS);
+            cboprogram.Items.Add(oItemS);
             foreach (Entities.Program oProgram in listPrograms)
             {
                 ListItem oItem = new ListItem(oProgram.name, oProgram.code.ToString());
-                cboProgram.Items.Add(oItem);
+                cboprogram.Items.Add(oItem);
+            }
+            if (oUser.oProgram.code != 1)
+            {
+                cboprogram.SelectedValue = oUser.oProgram.code.ToString();
             }
         }
 
@@ -258,7 +269,7 @@ namespace UI.Academic
             cboClassRoomType.Enabled = false;
             cboLocation.Enabled = false;
             txtSize.Enabled = false;
-            cboProgram.Enabled = false;
+            cboprogram.Enabled = false;
             cboState.Enabled = false;
             btnNew.Enabled = true;
             btnSave.Enabled = false;
@@ -273,7 +284,9 @@ namespace UI.Academic
             cboClassRoomType.Enabled = true;
             cboLocation.Enabled = true;
             txtSize.Enabled = true;
-            cboProgram.Enabled = true;
+            if (oUser.oProgram.code == 1) {
+                cboprogram.Enabled = true;
+            }
             cboState.Enabled = true;
             btnNew.Enabled = false;
             btnSave.Enabled = true;
@@ -289,7 +302,7 @@ namespace UI.Academic
             cboState.SelectedValue = "1";
             lblMessage.Text = "";
             cboLocation.SelectedValue = "0";
-            cboProgram.SelectedValue = "0";
+            cboprogram.SelectedValue = "0";
             cboClassRoomType.SelectedValue = "0";
             lblMesageLocation.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorLocation", "$('#ContentPlaceHolder1_cboLocation').removeClass('has-error');", true);
@@ -297,7 +310,7 @@ namespace UI.Academic
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorClassRoomType", "$('#ContentPlaceHolder1_cboClassRoomType').removeClass('has-error');", true);
             lblMessageDescription.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorDescription", "$('#ContentPlaceHolder1_txtDescription').removeClass('has-error');", true);
-            lblMessageProgram.Text = "";
+            lblmessageprogram.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorProgram", "$('#ContentPlaceHolder1_cboProgram').removeClass('has-error');", true);
             lblMessageSize.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorSize", "$('#ContentPlaceHolder1_txtSize').removeClass('has-error');", true);
