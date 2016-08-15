@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +13,26 @@ namespace UI.Academic.AcademicOffer
     {
         public bool offerAcademic { get; set; }
         static Int32 Course_id = -1;
+        static UserSystem oUser = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
            if (!IsPostBack)
             {
                 blockControls();
+                loadUser();
+                loadPrograms();
             }
             loadData();
+        }
+
+        private void loadUser()
+        {
+            oUser = (UserSystem)Session["User"];
+            if(oUser == null)
+            {
+                Response.Redirect("../../index.aspx");
+            }
         }
 
         protected void showOfferAcademic()
@@ -45,7 +59,7 @@ namespace UI.Academic.AcademicOffer
                 oSubject.id = Convert.ToInt32(txtCode.Text);
                 oSubject.description = txtName.Text;
                 oSubject.state = Convert.ToInt16(cboState.SelectedValue);
-                oSubject.oProgram.code = 1;
+                oSubject.oProgram.code = Convert.ToInt32(cboprogram.SelectedValue); 
                     if (CourseBLL.getInstance().exists(oSubject.id))
                     {
                         records = CourseBLL.getInstance().modify(oSubject);
@@ -129,7 +143,17 @@ namespace UI.Academic.AcademicOffer
                  lblNameMessage.Text = "";
                  ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorName", "$('#ContentPlaceHolder1_txtName').removeClass('has-error');", true);
              }
-
+            if (Convert.ToInt32(cboprogram.SelectedValue) == 0 || Convert.ToInt32(cboprogram.SelectedValue) == 1)
+            {
+                ind = false;
+                lblmessageprogram.Text = "Debe seleccionar el programa.";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorProgram", "$('#ContentPlaceHolder1_cboProgram').addClass('has-error');", true);
+            }
+            else
+            {
+                lblmessageprogram.Text = "";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorProgram", "$('#ContentPlaceHolder1_cboProgram').removeClass('has-error');", true);
+            }
             return ind;
         }
 
@@ -141,6 +165,22 @@ namespace UI.Academic.AcademicOffer
            gvCourse.DataSource = CourseBLL.getInstance().getAll();
            gvCourse.DataBind();
         } //End loadData()
+        protected void loadPrograms()
+        {
+            List<Entities.Program> listPrograms = new List<Entities.Program>();
+            listPrograms = ProgramBLL.getInstance().getAllActived();
+            ListItem oItemS = new ListItem("---- Seleccione ----", "0");
+            cboprogram.Items.Add(oItemS);
+            foreach (Entities.Program oProgram in listPrograms)
+            {
+                ListItem oItem = new ListItem(oProgram.name, oProgram.code.ToString());
+                cboprogram.Items.Add(oItem);
+            }
+            if (oUser.oProgram.code != 1)
+            {
+                cboprogram.SelectedValue = oUser.oProgram.code.ToString();
+            }
+        }
 
         /** 
          * Method to block the fields
@@ -150,6 +190,7 @@ namespace UI.Academic.AcademicOffer
             clearControls();
             txtName.Enabled = false;
             cboState.Enabled = false;
+            cboprogram.Enabled = false;
             btnNew.Enabled = true;
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
@@ -162,6 +203,10 @@ namespace UI.Academic.AcademicOffer
         {
             clearControls();
             txtName.Enabled = true;
+            if (oUser.oProgram.code == 1)
+            {
+                cboprogram.Enabled = true;
+            }
             cboState.Enabled = true;
             btnNew.Enabled = false;
             btnSave.Enabled = true;
@@ -175,6 +220,9 @@ namespace UI.Academic.AcademicOffer
         {
             txtCode.Text = "";
             txtName.Text = "";
+            cboprogram.SelectedValue = "0";
+            lblmessageprogram.Text = "";
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorProgram", "$('#ContentPlaceHolder1_cboProgram').removeClass('has-error');", true);
             cboState.SelectedValue = "1";
             lblMessage.Text = "";
             lblNameMessage.Text = "";
