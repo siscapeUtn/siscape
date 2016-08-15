@@ -5,6 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BLL;
+using text = iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using System.IO;
 
 namespace UI.Administration
 {
@@ -254,6 +258,83 @@ namespace UI.Administration
         {
             gvPeriod.PageIndex = e.NewPageIndex;
             loadData();
+        }
+
+        protected void btnReport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Entities.Period> listPeriod = PeriodBLL.getInstance().getAll();
+                System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
+                text::Document pdfDoc = new text::Document(text::PageSize.A4, 10, 10, 10, 10);
+                pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());
+                PdfWriter.GetInstance(pdfDoc, memoryStream);
+                pdfDoc.Open();
+
+                String imagepath = Server.MapPath("../../images/page-icons");
+                iTextSharp.text.Image deas = iTextSharp.text.Image.GetInstance(imagepath + "/DEAS-logo.jpg");
+                deas.ScaleToFit(140f, 120f);
+                //Give space before image
+                deas.SpacingBefore = 10f;
+                //Give some space after the image
+                deas.SpacingAfter = 1f;
+                deas.Alignment = text::Element.ALIGN_LEFT;
+                pdfDoc.Add(deas);
+
+                text::Paragraph title = new text::Paragraph();
+                title.Font = text::FontFactory.GetFont("dax-black", 32, new text::BaseColor(0, 51, 102));
+                title.Alignment = text::Element.ALIGN_CENTER;
+                title.Add("\n\n Reporte de Períodos\n\n");
+                pdfDoc.Add(title);
+                
+                PdfPTable oPTable = new PdfPTable(5);
+                oPTable.TotalWidth = 100;
+                oPTable.SpacingBefore = 20f;
+                oPTable.SpacingAfter = 30f;
+                oPTable.AddCell("Descripción");
+                oPTable.AddCell("Modalidad");
+                oPTable.AddCell("Inicio");
+                oPTable.AddCell("Fin");
+                oPTable.AddCell("Estado");
+
+                if (listPeriod.Count > 0)
+                {
+                    foreach (Entities.Period pPeriod in listPeriod)
+                    {
+                        oPTable.AddCell(pPeriod.name);
+                        oPTable.AddCell(pPeriod.oPeriodType.description);
+                        oPTable.AddCell(pPeriod.startDate.ToShortDateString());
+                        oPTable.AddCell(pPeriod.finalDate.ToShortDateString());
+                        oPTable.AddCell((pPeriod.state == 1 ? "Activo" : "Inactivo"));
+                    }
+                }
+                else
+                {
+                    PdfPCell cell = new PdfPCell(new text::Phrase("No existen períodos registrados."));
+                    cell.Colspan = 5;
+                    cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+                    oPTable.AddCell(cell);
+                }
+
+                pdfDoc.Add(oPTable);
+                pdfDoc.Close();
+                
+                byte[] bytes = memoryStream.ToArray();
+                memoryStream.Close();
+                Response.Clear();
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("Content-Disposition", "attachment; filename=Periodo.pdf");
+                Response.ContentType = "application/pdf";
+                Response.Buffer = true;
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                Response.BinaryWrite(bytes);
+                Response.End();
+                Response.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.ToString());
+            }
         }
     }
 }
