@@ -166,7 +166,7 @@ namespace UI.Academic.AcademicOffer {
         protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
-<<<<<<< HEAD
+
         /// Control btnReport.
         /// </summary>
         /// <remarks>
@@ -177,9 +177,9 @@ namespace UI.Academic.AcademicOffer {
         
         /// <summary>
         /// Control gvCourse.
-=======
+
         /// gvCourse control.
->>>>>>> dcaa710a8a017a4d3efb104d71f7bc140abd9ae9
+
         /// </summary>
         /// <remarks>
         /// Auto-generated field.

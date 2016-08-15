@@ -573,6 +573,13 @@ content: '\E849';
     }
 }
 
+@media screen and (max-width: 768px){
+    
+    .reportButton{
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 400px){
     .title{
         font-size: 1.6rem;
