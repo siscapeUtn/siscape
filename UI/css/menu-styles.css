@@ -911,6 +911,10 @@ input:focus ~ .highlight {
     width: auto;
 }
 
+.maintanance .filterUser{
+    margin: 5px;
+}
+
 .maintanance .dataExists td{
     margin: auto;
     padding: 10px;
@@ -955,7 +959,7 @@ input:focus ~ .highlight {
     padding: 17px;
 }
 
-.maintanance #ContentPlaceHolder1_btnAdd{
+.maintanance #ContentPlaceHolder1_btnAdd {
     display: block;
     border-radius: 0;
     border: 1px solid #003366;
@@ -964,6 +968,41 @@ input:focus ~ .highlight {
     font-size: 16px;
     margin-left: auto;
     margin-right: auto;
+    width: 200px;
+}
+
+.maintanance .buttonsWaiting{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.controls-report-list{
+    margin-bottom: 50px;
+}
+
+.reportList{
+    display: block;
+    border-radius: 0;
+    border: 1px solid #003366;
+    background: #003366;
+    color: #ffffff;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+.maintanance .buttonsWaiting .btnWaitingList{
+    border-radius: 0;
+    border: 1px solid #003366;
+    background: #003366;
+    color: #ffffff;
+    font-size: 16px;
+    float: left;
+    margin: 0 10px 10px 0;
     width: 200px;
 }
 

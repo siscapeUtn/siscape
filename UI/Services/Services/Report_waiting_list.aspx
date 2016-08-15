@@ -4,20 +4,19 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <% showOService(); %>
-    <section class="content_3">
+    <section class="content_2">
         <section class="maintanance">
             <p class="title">Clientes en lista de espera</p>
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
                     <span class="span-report-waiting-list">
-                        <section class="col-md-12">
+                        <section class="col-md-12 controls-report-list">
                             <section class="form-group">
-                                <asp:Label ID="lblFilter" CssClass="control-label col-sm-1" Text="Filtrar estudientes:" runat="server"></asp:Label>
-                                <section class="col-sm-2">
-                                    <asp:DropDownList ID="cboFilter" CssClass="form-control col-sm-4" runat="server" OnSelectedIndexChanged="cboFilter_SelectedIndexChanged" AutoPostBack="true">
-                                    </asp:DropDownList>
-                                </section>
+                                <asp:Label ID="lblFilter" CssClass="control-label col-sm-4 filterUser" Text="Filtrar estudientes:" runat="server"></asp:Label>
+                                <div class="col-sm-6">
+                                    <asp:DropDownList ID="cboFilter" CssClass="form-control col-sm-6" runat="server" OnSelectedIndexChanged="cboFilter_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                                </div>
                             </section>
                         </section>
                     </span>
@@ -46,7 +45,7 @@
                             
                         </section>
                         <section class="btn-group-lg">
-                                <asp:Button ID="Button1" Text="Actualizar" runat="server" OnClick="Btn_Update"/>
+                                <asp:Button ID="Button1" CssClass="reportList" Text="Actualizar" runat="server" OnClick="Btn_Update"/>
                         </section>
                     </span>
                 </ContentTemplate>
