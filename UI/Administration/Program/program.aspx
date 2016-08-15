@@ -86,8 +86,8 @@
                             <p>¿Esta seguro de eliminar el programa <strong><asp:Label ID="lblProgramName" Text="" runat="server"></asp:Label></strong>?</p>
                         </section>
                         <section class="modal-footer">
-                            <asp:Button CssClass="btn btn-confirm" OnClick="btnDelete_Click" ID="btnDelete" Text="Eliminar" runat="server"></asp:Button>
                             <button class="btn btn-confirm" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+                            <asp:Button CssClass="btn btn-confirm" OnClick="btnDelete_Click" ID="btnDelete" Text="Eliminar" runat="server"></asp:Button>
                         </section>
                     </section>
                 </ContentTemplate>

@@ -47,27 +47,24 @@
                 <ContentTemplate>
                     <section class="modal-content">
                         <section class="modal-header">
-                            <asp:Label ID="modalHeader" Text="Mensaje de confirmación" runat="server"></asp:Label>
+                            <asp:Label ID="modalHeader" Text="Seleccione el período" runat="server"></asp:Label>
                         </section>
                         <section class="modal-body">
                             <section class="col-md-12">
                                 <section class="form-group">
-                                    <asp:DropDownList ID="cboPeriod" runat="server"></asp:DropDownList>
+                                    <asp:Label runat="server" ID="lblSelectPeriod" Text="Seleccione el período:"></asp:Label>
+                                    <asp:DropDownList ID="cboPeriod" CssClass="form-control" runat="server"></asp:DropDownList>
                                     <span class="help-block"></span>
                                 </section>
                                 <section class="form-group">
-                                    <asp:Label ID="lblMsj" Text="hola" runat="server"></asp:Label>
+                                    <asp:Label ID="lblMsj" runat="server"></asp:Label>
                                     <span class="help-block"></span>
                                 </section>
                             </section>
                         </section>
                         <section class="modal-footer">
-                            <section class="col-md-2">
-                                <asp:Button CssClass="btn btn-confirm pull-right" OnClick="btnPeriod_Click" ID="btnDelete" Text="Aceptar" runat="server"></asp:Button>
-                            </section>
-                            <section class="col-md-2">
-                                <asp:Button CssClass="btn btn-confirm pull-right" OnClick="btnCancel_Click" ID="btnCancel" Text="Cancelar" runat="server"></asp:Button>
-                            </section>
+                            <asp:Button CssClass="btn btn-confirm pull-right" OnClick="btnPeriod_Click" ID="btnDelete" Text="Aceptar" runat="server"></asp:Button>
+                            <asp:Button CssClass="btn btn-confirm pull-right" OnClick="btnCancel_Click" ID="btnCancel" Text="Cancelar" runat="server"></asp:Button>
                         </section>
                     </section>
                 </ContentTemplate>
