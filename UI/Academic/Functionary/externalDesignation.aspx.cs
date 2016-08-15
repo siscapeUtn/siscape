@@ -8,6 +8,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using text = iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using System.IO;
 
 namespace UI.Academic.Functionary
 {
@@ -438,6 +442,83 @@ namespace UI.Academic.Functionary
         {
             gvExternalDesignation.PageIndex = e.NewPageIndex;
             fillGvDesignation();
+        }
+
+        protected void btnReport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Entities.ExternalDesignation> listExternalDesignation = ExternalDesignationBLL.getInstance().getAll();
+                System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
+                text::Document pdfDoc = new text::Document(text::PageSize.A4, 10, 10, 10, 10);
+                pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());
+                PdfWriter.GetInstance(pdfDoc, memoryStream);
+                pdfDoc.Open();
+
+                String imagepath = Server.MapPath("../../images/page-icons");
+                iTextSharp.text.Image deas = iTextSharp.text.Image.GetInstance(imagepath + "/DEAS-logo.jpg");
+                deas.ScaleToFit(140f, 120f);
+                //Give space before image
+                deas.SpacingBefore = 10f;
+                //Give some space after the image
+                deas.SpacingAfter = 1f;
+                deas.Alignment = text::Element.ALIGN_LEFT;
+                pdfDoc.Add(deas);
+
+                text::Paragraph title = new text::Paragraph();
+                title.Font = text::FontFactory.GetFont("dax-black", 32, new text::BaseColor(0, 51, 102));
+                title.Alignment = text::Element.ALIGN_CENTER;
+                title.Add("\n\n Reporte de Nombramientos Externos\n\n");
+                pdfDoc.Add(title);
+                
+                PdfPTable oPTable = new PdfPTable(5);
+                oPTable.TotalWidth = 100;
+                oPTable.SpacingBefore = 20f;
+                oPTable.SpacingAfter = 30f;
+                oPTable.AddCell("Funcionario");
+                oPTable.AddCell("Cargo");
+                oPTable.AddCell("Lugar de Trabajo");
+                oPTable.AddCell("Inicio - Fin");
+                oPTable.AddCell("Horas");
+
+                if (listExternalDesignation.Count > 0)
+                {
+                    foreach (Entities.ExternalDesignation pExternalDesignation in listExternalDesignation)
+                    {
+                        oPTable.AddCell(pExternalDesignation.oTeacher.name + " " + pExternalDesignation.oTeacher.lastName );
+                        oPTable.AddCell(pExternalDesignation.journeys.ToString());
+                        oPTable.AddCell(pExternalDesignation.location);
+                        oPTable.AddCell(pExternalDesignation.initial_day.ToShortDateString() + " " + pExternalDesignation.final_day.ToShortDateString());
+                        oPTable.AddCell(pExternalDesignation.hours.ToString());
+                    }
+                }
+                else
+                {
+                    PdfPCell cell = new PdfPCell(new text::Phrase("No existen nombramientos externos registrados."));
+                    cell.Colspan = 5;
+                    cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+                    oPTable.AddCell(cell);
+                }
+
+                pdfDoc.Add(oPTable);
+                pdfDoc.Close();
+                
+                byte[] bytes = memoryStream.ToArray();
+                memoryStream.Close();
+                Response.Clear();
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("Content-Disposition", "attachment; filename=Nombramiento_Externo.pdf");
+                Response.ContentType = "application/pdf";
+                Response.Buffer = true;
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                Response.BinaryWrite(bytes);
+                Response.End();
+                Response.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.ToString());
+            }
         }
         
     }

@@ -319,6 +319,15 @@ namespace UI.Academic.Functionary {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
+        /// Control btnReport.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnReport;
+        
+        /// <summary>
         /// Control gvExternalDesignation.
         /// </summary>
         /// <remarks>
