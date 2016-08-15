@@ -124,5 +124,52 @@ namespace BLL
         }
 
 
+
+        public List<ClassRoom> getAllActiveByScheduleEspecial(int periodId, Schedule oSchedule, int[] days)
+        {
+            String sql = "SP_GETALLCLASSROOMBYSCHEDULE";
+
+            try
+            {
+                SqlCommand oCommand = new SqlCommand(sql);
+                oCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                oCommand.Parameters.AddWithValue("@period", periodId);
+                oCommand.Parameters.AddWithValue("@inicialHour", oSchedule.startTime);
+                oCommand.Parameters.AddWithValue("@finalhour", oSchedule.endTime);
+                oCommand.Parameters.AddWithValue("@day1", Convert.ToInt32(days[0]));
+                oCommand.Parameters.AddWithValue("@day2", Convert.ToInt32(days[1]));
+                oCommand.Parameters.AddWithValue("@day3", Convert.ToInt32(days[2]));
+                oCommand.Parameters.AddWithValue("@day4", Convert.ToInt32(days[3]));
+                oCommand.Parameters.AddWithValue("@day5", Convert.ToInt32(days[4]));
+                oCommand.Parameters.AddWithValue("@day6", Convert.ToInt32(days[5]));
+                oCommand.Parameters.AddWithValue("@day7", Convert.ToInt32(days[6]));
+                DataTable oDataTable = DAO.getInstance().executeQuery(oCommand);
+                List<ClassRoom> listClassRoom = new List<ClassRoom>();
+                foreach (DataRow oDataRow in oDataTable.Rows)
+                {
+                    ClassRoom oClassRoom = new ClassRoom();
+                    Location oLocation = new Location();
+                    Headquarters oHeadquarters = new Headquarters();
+                    ClassRoomsType oClassRoomsType = new ClassRoomsType();
+                    oClassRoom.code = Convert.ToInt32(oDataRow[0].ToString());
+                    oClassRoom.num_room = oDataRow[1].ToString();
+                    oClassRoomsType.description = oDataRow[2].ToString();
+                    oLocation.code = Convert.ToInt32(oDataRow[3].ToString());
+                    oLocation.building = oDataRow[4].ToString();
+                    oLocation.module = oDataRow[5].ToString();
+                    oHeadquarters.description = oDataRow[6].ToString();
+                    oLocation.oHeadquarters = oHeadquarters;
+                    oClassRoom.oClassRoomsType = oClassRoomsType;
+                    oClassRoom.oLocation = oLocation;
+                    listClassRoom.Add(oClassRoom);
+                }
+                return listClassRoom;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { }
+        }
     }
 }

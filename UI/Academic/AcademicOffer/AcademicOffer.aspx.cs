@@ -155,26 +155,24 @@ namespace UI.Academic.AcademicOffer
         protected void chkEspecial_CheckedChanged(object sender, EventArgs e)
         {
             //selecciona el valor del combo para utilizarlo si desactiva el chekbox
-            int combo = 0;
+            int idSchedule = 0;
             try
             {
-                combo = Convert.ToInt32(cboProgram.SelectedValue);
+                idSchedule = Convert.ToInt32(cboSchedule.SelectedValue);
             }
-            catch (Exception)
-            {
+            catch (Exception){ }
 
-            }
+            cboRoom.Items.Clear();
 
-            cboCourse.Items.Clear();
             if (chkEspecial.Checked)
             {
-                getCourseEspecial();
+                getRoomEspecial(idSchedule);
             }
             else
             {
-                if (combo > 0)
+                if (idSchedule > 0)
                 {
-                    getCourseProgram(combo);
+                    getRoombySchedule(idSchedule);
                 }
             }
         }
@@ -210,6 +208,7 @@ namespace UI.Academic.AcademicOffer
             int idSchedule = Convert.ToInt32(cboSchedule.SelectedValue);
             if (idSchedule != 0)
             {
+                chkEspecial.Enabled = true;
                 cboRoom.Items.Clear();
                 cboTeacher.Items.Clear();
                 getRoombySchedule(idSchedule);
@@ -217,7 +216,7 @@ namespace UI.Academic.AcademicOffer
             }
             else
             {
-
+                chkEspecial.Enabled = false;
             }
         }
 
@@ -265,17 +264,21 @@ namespace UI.Academic.AcademicOffer
         }
 
         //when the chkEspecial is selected the cmbCourse is going to fill in with the  courses of the all programs
-        public void getCourseEspecial()
+        public void getRoomEspecial(Int32 cod)
         {
-            List<Entities.Course> listSubject = new List<Entities.Course>();
-            listSubject = BLL.CourseBLL.getInstance().getAllActived();
+            Entities.Schedule oSchedule = BLL.ScheduleBLL.getInstance().getSchedulebyCodeActive(cod);
+            int[] days = selectDays(oSchedule.codday);
+            int periodId = Convert.ToInt32(cboPeriod.SelectedValue);
+            List<Entities.ClassRoom> listClassRoom = new List<Entities.ClassRoom>();
+            listClassRoom = BLL.ClassRoomScheduleBLL.getInstance().getAllActiveByScheduleEspecial(periodId,oSchedule, days);
             ListItem oItemS = new ListItem("---- Seleccione ----", "0");
-            cboCourse.Items.Add(oItemS);
-            foreach (Entities.Course olistSubject in listSubject)
+            cboRoom.Items.Add(oItemS);
+            foreach (Entities.ClassRoom olistClassRoom in listClassRoom)
             {
-                ListItem oItem = new ListItem(olistSubject.description, olistSubject.id.ToString());
-                cboCourse.Items.Add(oItem);
+                ListItem oItem = new ListItem(olistClassRoom.num_room + " Sede " + olistClassRoom.oLocation.oHeadquarters.description + " " + olistClassRoom.oLocation.module + " " + olistClassRoom.oClassRoomsType.description, olistClassRoom.code.ToString());
+                cboRoom.Items.Add(oItem);
             }
+
         }
 
         //thit method will select the schedule of the program selected
@@ -364,7 +367,120 @@ namespace UI.Academic.AcademicOffer
         //in this method, the all controls are verify, to avoid errors
         private bool validateData()
         {
-            return true;
+            Boolean ind = true;
+            //validate price
+            if (txtPrice.Text.Trim() == "")
+            {
+                ind = false;
+                lblMessagePrice.Text = "Debe digitar el precio del curso";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorPrice", "$('#ContentPlaceHolder1_txtPrice').addClass('has-error');", true);
+            }
+            else
+            {
+                lblMessagePrice.Text = "";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorPrice", "$('#ContentPlaceHolder1_txtPrice').removeClass('has-error');", true);
+            }
+            //validate period 
+            if (Convert.ToInt32(cboPeriod.SelectedValue) == 0)
+            {
+                ind = false;
+                lblMessagePeriod.Text = "Debe seleccionar un periodo";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorPeriod", "$('#ContentPlaceHolder1_cboPeriod').addClass('has-error');", true);
+            }
+            else
+            {
+                lblMessagePeriod.Text = "";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorPeriod", "$('#ContentPlaceHolder1_cboPeriod').removeClass('has-error');", true);
+            }
+            //validate program
+            if (Convert.ToInt32(cboProgram.SelectedValue) == 0)
+            {
+                ind = false;
+                lblMessageProgram.Text = "Debe seleccionar un programa";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorProgram", "$('#ContentPlaceHolder1_cboProgram').addClass('has-error');", true);
+            }
+            else
+            {
+                lblMessageProgram.Text = "";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorProgram", "$('#ContentPlaceHolder1_cboProgram').removeClass('has-error');", true);
+            }
+            //validate course
+            if (Convert.ToInt32(cboCourse.SelectedValue) == 0)
+            {
+                ind = false;
+                lblMessageCourse.Text = "Debe seleccionar un curso";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorCourse", "$('#ContentPlaceHolder1_cboCourse').addClass('has-error');", true);
+            }
+            else
+            {
+                lblMessageCourse.Text = "";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorCourse", "$('#ContentPlaceHolder1_cboCourse').removeClass('has-error');", true);
+            }
+            //validate ClassRoom
+            try
+            {
+                if (Convert.ToInt32(cboRoom.SelectedValue) != 0)
+                {
+                    lblMessageRoom.Text = "";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorRoom", "$('#ContentPlaceHolder1_cboRoom').removeClass('has-error');", true);
+                }
+                else
+                {
+                    ind = false;
+                    lblMessageRoom.Text = "Debe seleccionar un aula";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorRoom", "$('#ContentPlaceHolder1_cboRoom').addClass('has-error');", true);
+                }
+
+            }
+            catch (Exception)
+            {
+                ind = false;
+                lblMessageRoom.Text = "Debe seleccionar un aula";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorRoom", "$('#ContentPlaceHolder1_cboRoom').addClass('has-error');", true);
+            }
+            //validate teacher
+            try
+            {
+                if (Convert.ToInt32(cboTeacher.SelectedValue) != 0)
+                {
+                    lblMessageTeacher.Text = "";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorTeacher", "$('#ContentPlaceHolder1_cboTeacher').removeClass('has-error');", true);
+                }
+                else
+                {
+                    ind = false;
+                    lblMessageTeacher.Text = "Debe seleccionar un profesor";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorTeacher", "$('#ContentPlaceHolder1_cboTeacher').addClass('has-error');", true);
+                }
+            }
+            catch (Exception)
+            {
+                ind = false;
+                lblMessageTeacher.Text = "Debe seleccionar un profesor";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorTeacher", "$('#ContentPlaceHolder1_cboTeacher').addClass('has-error');", true);
+            }
+            //validate schedule
+            try
+            {
+                if (Convert.ToInt32(cboSchedule.SelectedValue) != 0)
+                {
+                    lblMesageSchedule.Text = "";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorSchedule", "$('#ContentPlaceHolder1_cboSchedule').removeClass('has-error');", true);
+                }
+                else
+                {
+                    ind = false;
+                    lblMesageSchedule.Text = "Debe seleccionar un horario";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorSchedule", "$('#ContentPlaceHolder1_cboSchedule').addClass('has-error');", true);
+                }
+            }
+            catch (Exception)
+            {
+                ind = false;
+                lblMesageSchedule.Text = "Debe seleccionar un horario";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorSchedule", "$('#ContentPlaceHolder1_cboSchedule').addClass('has-error');", true);
+            }
+            return ind;
         }
 
         /** 
@@ -403,7 +519,6 @@ namespace UI.Academic.AcademicOffer
             cboRoom.Enabled = true;
             cboSchedule.Enabled = true;
             cboTeacher.Enabled = true;
-            chkEspecial.Enabled = true;
             btnNew.Enabled = false;
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
