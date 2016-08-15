@@ -50,6 +50,9 @@
                         <section class="col-md-12 message">
                             <asp:Label ID="lblMessage" runat="server" ></asp:Label>
                         </section> <!-- End .message -->
+                        <section class="col-md-12 col-sm-12 col-xs-12">
+                            <asp:Button runat="server" ID="btnReport" Text="Reporte de locaciones" CssClass="pull-right reportButton" OnClick="btnReport_Click" />
+                        </section>
                     </section> <!-- End .form -->
                     <section class="dataExists">
                         <section class="table-responsive">
@@ -66,6 +69,9 @@
                         </section>
                     </section>
                 </ContentTemplate>
+                <Triggers>
+                    <asp:PostBackTrigger  ControlID="btnReport"/>
+                </Triggers>
             </asp:UpdatePanel>
         </section>
     </section>
