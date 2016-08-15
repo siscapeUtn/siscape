@@ -17,6 +17,11 @@
                         </section>
                         <section class="col-md-6">
                             <section class="form-group">
+                                <asp:label runat="server" id="lblprogram" text="programa:"></asp:label>
+                                <asp:dropdownlist id="cboprogram" cssclass="form-control"  runat="server"></asp:dropdownlist>
+                                <span class="message-has-error"><asp:label runat="server" id="lblmessageprogram" ></asp:label></span>
+                            </section>
+                            <section class="form-group">
                                 <asp:Label runat="server" ID="lblDescription" Text="Descripción:"></asp:Label>
                                 <asp:TextBox runat="server" ID="txtDescription" CssClass="form-control"></asp:TextBox>
                                 <span class="message-has-error"><asp:Label runat="server" ID="lblMessageDescription"></asp:Label></span>
@@ -26,22 +31,18 @@
                                 <asp:DropDownList ID="cboClassRoomType" CssClass="form-control" runat="server"></asp:DropDownList>
                                 <span class="message-has-error"><asp:Label runat="server" ID="lblMessageClassRoomType"></asp:Label></span>
                             </section>
+                        </section>
+                        <section class="col-md-6">
+                            
                             <section class="form-group">
                                 <asp:Label runat="server" ID="lblLocation" Text="Localización:"></asp:Label>
                                 <asp:DropDownList ID="cboLocation" CssClass="form-control" runat="server"></asp:DropDownList>
                                 <span class="message-has-error"><asp:Label runat="server" ID="lblMesageLocation"></asp:Label></span>
                             </section> 
-                        </section>
-                        <section class="col-md-6">
                             <section class="form-group">
                                 <asp:Label runat="server" ID="lblSize" Text="Capacidad:"></asp:Label>
                                 <asp:TextBox runat="server" ID="txtSize" CssClass="form-control"></asp:TextBox>
                                 <span class="message-has-error"><asp:Label runat="server" ID="lblMessageSize"></asp:Label></span>
-                            </section>
-                            <section class="form-group">
-                                <asp:Label runat="server" ID="lblProgram" Text="Programa:"></asp:Label>
-                                <asp:DropDownList ID="cboProgram" CssClass="form-control" runat="server"></asp:DropDownList>
-                                <span class="message-has-error"><asp:Label runat="server" ID="lblMessageProgram"></asp:Label></span>
                             </section>
                             <section class="form-group">
                                 <asp:Label runat="server" ID="lblState" Text="Estado:"></asp:Label>
@@ -51,6 +52,7 @@
                                 </asp:DropDownList>
                             </section> <!-- End .form-group -->
                         </section>
+
                         <section class="col-md-12 form-buttons">
                             <asp:ImageButton ID="btnNew" CssClass="image_align" ImageUrl="~/images/maintenance/add.png" ToolTip="Nuevo" runat="server" OnClick="btnNew_Click" />
                             <asp:ImageButton ID="btnSave" CssClass="image_align" ImageUrl="~/images/maintenance/save.png" ToolTip="Guardar" runat="server" OnClick="btnSave_Click" />
