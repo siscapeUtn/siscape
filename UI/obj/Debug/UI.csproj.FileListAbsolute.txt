@@ -50,3 +50,6 @@ C:\Users\Rud\Desktop\siscape\UI\bin\DAL.pdb
 C:\Users\Rud\Desktop\siscape\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 C:\Users\Rud\Desktop\siscape\UI\obj\Debug\UI.dll
 C:\Users\Rud\Desktop\siscape\UI\obj\Debug\UI.pdb
+C:\Users\asala\Source\Repos\SISCAPE\UI\bin\itextsharp.dll
+C:\Users\asala\Source\Repos\SISCAPE\UI\bin\itextsharp.xml
+C:\Users\asala\Source\Repos\SISCAPE\UI\bin\itextsharp.xmlworker.dll

@@ -30,3 +30,5 @@ C:\Users\Rud\Desktop\siscape\BLL\bin\Entities.pdb
 C:\Users\Rud\Desktop\siscape\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 C:\Users\Rud\Desktop\siscape\BLL\obj\Debug\BLL.dll
 C:\Users\Rud\Desktop\siscape\BLL\obj\Debug\BLL.pdb
+C:\Users\asala\Source\Repos\SISCAPE\BLL\bin\itextsharp.dll
+C:\Users\asala\Source\Repos\SISCAPE\BLL\bin\itextsharp.xml
