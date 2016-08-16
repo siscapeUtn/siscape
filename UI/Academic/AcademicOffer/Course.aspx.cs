@@ -169,6 +169,7 @@ namespace UI.Academic.AcademicOffer
            gvCourse.DataSource = CourseBLL.getInstance().getAll();
            gvCourse.DataBind();
         } //End loadData()
+
         protected void loadPrograms()
         {
             List<Entities.Program> listPrograms = new List<Entities.Program>();

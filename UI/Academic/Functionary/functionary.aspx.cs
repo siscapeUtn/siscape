@@ -9,19 +9,33 @@ using text = iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
 using System.IO;
+using Entities;
 
 namespace UI.Academic
 {
     public partial class functionary : System.Web.UI.Page
     {
         static Int32 functionary_id = -1;
+        static UserSystem oUser = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 blockControls();
+                loadUser();
+                loadPrograms();
             }
             loadData();
+        }
+
+        private void loadUser()
+        {
+            oUser = (UserSystem)Session["User"];
+            if (oUser == null)
+            {
+                Response.Redirect("../../index.aspx");
+            }
         }
 
         protected void btnNew_Click(object sender, ImageClickEventArgs e)
@@ -36,6 +50,7 @@ namespace UI.Academic
             if (validateData())
             {
                 Entities.Functionary oFunctionary = new Entities.Functionary();
+                Entities.Program oProgram = new Program(); 
                 oFunctionary.code = Convert.ToInt32(txtCode.Text);
                 oFunctionary.id = txtId.Text;
                 oFunctionary.name = txtName.Text;
@@ -43,6 +58,8 @@ namespace UI.Academic
                 oFunctionary.homePhone = txtHomePhone.Text;
                 oFunctionary.cellPhone = txtCellPhone.Text;
                 oFunctionary.email = txtEmail.Text;
+                oProgram.code= Convert.ToInt32(cboprogram.SelectedValue);
+                oFunctionary.oProgram = oProgram;
                 oFunctionary.state = Convert.ToInt16(cboState.SelectedValue);
 
                 if (FunctionaryBLL.getInstance().exists(oFunctionary.code))
@@ -119,8 +136,33 @@ namespace UI.Academic
 
         protected void loadData()
         {
-            gvFunctionary.DataSource = FunctionaryBLL.getInstance().getAll();
+            int code = oUser.oProgram.code;
+            if (code == 1)
+            {
+             gvFunctionary.DataSource = FunctionaryBLL.getInstance().getAll();
+            }
+            else { 
+            gvFunctionary.DataSource = FunctionaryBLL.getInstance().getAllByProgram(code);
+            }
+
             gvFunctionary.DataBind();
+        }
+
+        protected void loadPrograms()
+        {
+            List<Entities.Program> listPrograms = new List<Entities.Program>();
+            listPrograms = ProgramBLL.getInstance().getAllActived();
+            ListItem oItemS = new ListItem("---- Seleccione ----", "0");
+            cboprogram.Items.Add(oItemS);
+            foreach (Entities.Program oProgram in listPrograms)
+            {
+                ListItem oItem = new ListItem(oProgram.name, oProgram.code.ToString());
+                cboprogram.Items.Add(oItem);
+            }
+            if (oUser.oProgram.code != 1)
+            {
+                cboprogram.SelectedValue = oUser.oProgram.code.ToString();
+            }
         }
 
         protected Boolean validateData()
@@ -208,6 +250,7 @@ namespace UI.Academic
         protected void blockControls()
         {
             txtCode.Enabled = false;
+            cboprogram.Enabled = false;
             txtId.Enabled = false;
             txtName.Enabled = false;
             txtLastName.Enabled = false;
@@ -224,6 +267,10 @@ namespace UI.Academic
         protected void unlockControls()
         {
             txtCode.Enabled = true;
+            if (oUser.oProgram.code == 1)
+            {
+                cboprogram.Enabled = true;
+            }
             txtId.Enabled = true;
             txtName.Enabled = true;
             txtLastName.Enabled = true;
@@ -259,6 +306,9 @@ namespace UI.Academic
             lblMessageEmail.Text = "";
             ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorEmail", "$('#ContentPlaceHolder1_txtEmail').removeClass('has-error');", true);
             cboState.SelectedValue = "1";
+            cboprogram.SelectedValue = "0";
+            lblmessageprogram.Text = "";
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorProgram", "$('#ContentPlaceHolder1_cboProgram').removeClass('has-error');", true);
         }
 
         protected void gvFunctionary_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -271,7 +321,16 @@ namespace UI.Academic
         {
             try
             {
-                List<Entities.Functionary> listFunctionary = FunctionaryBLL.getInstance().getAll();
+                int code = oUser.oProgram.code;
+                List<Entities.Functionary> listFunctionary;
+                if (code == 1)
+                {
+                     listFunctionary = FunctionaryBLL.getInstance().getAll();
+                }
+                else
+                {
+                     listFunctionary = FunctionaryBLL.getInstance().getAllByProgram(code);
+                }
                 System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
                 text::Document pdfDoc = new text::Document(text::PageSize.A4, 10, 10, 10, 10);
                 pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());
@@ -302,6 +361,7 @@ namespace UI.Academic
                 oPTable.AddCell("Nombre completo");
                 oPTable.AddCell("Teléfono");
                 oPTable.AddCell("Correo electrónico");
+                oPTable.AddCell("Programa");
                 oPTable.AddCell("Estado");
 
                 if (listFunctionary.Count > 0)
@@ -312,6 +372,7 @@ namespace UI.Academic
                         oPTable.AddCell(pFunctionary.name + " " + pFunctionary.lastName);
                         oPTable.AddCell(pFunctionary.cellPhone);
                         oPTable.AddCell(pFunctionary.email);
+                        oPTable.AddCell(pFunctionary.oProgram.name);
                         oPTable.AddCell((pFunctionary.state == 1 ? "Activo" : "Inactivo"));
                     }
                 }
