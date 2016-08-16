@@ -67,7 +67,7 @@ namespace UI.Administration
 
         protected void btnReturn_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("../AdministrationGroups/gProgram.aspx");
+            Response.Redirect("../AdministrationGroups/administration.aspx");
         }
 
         /**

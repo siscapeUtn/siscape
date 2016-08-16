@@ -141,6 +141,7 @@
     <Content Include="images\maintenance\check.png" />
     <Content Include="images\maintenance\delete.png" />
     <Content Include="images\maintenance\edit.png" />
+    <Content Include="images\maintenance\report.png" />
     <Content Include="images\maintenance\return.png" />
     <Content Include="images\maintenance\save.png" />
     <Content Include="images\page-icons\DEAS-favicon.ico" />

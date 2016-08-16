@@ -74,7 +74,7 @@ namespace UI.Administration
                 Response.Write("<li><div class='option'>" +
                                 "<div><a href='../AdministrationGroups/administration.aspx' id='administration' class='anchor'>Administraci&oacute;n</a></div>" +
                                 "</div><ul class='sub-menu'>" +
-                                "<li><div><a href='../AdministrationGroups/gProgram.aspx'>Programas</a></div></li>" +
+                                "<li><div><a href='../Program/program.aspx'>Programas</a></div></li>" +
                                 "<li><div><a href='../AdministrationGroups/gPeriod.aspx'>Per&iacute;odo</a></div></li>" +
                                 "<li><div><a href='../Slider/slider.aspx'>Banner</a></div></li>" +
                                 "</ul></li>");

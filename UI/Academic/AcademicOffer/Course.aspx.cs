@@ -266,7 +266,7 @@ namespace UI.Academic.AcademicOffer
                 title.Add("\n\n Reporte de Cursos\n\n");
                 pdfDoc.Add(title);
                 
-                PdfPTable oPTable = new PdfPTable(5);
+                PdfPTable oPTable = new PdfPTable(2);
                 oPTable.TotalWidth = 100;
                 oPTable.SpacingBefore = 20f;
                 oPTable.SpacingAfter = 30f;
@@ -284,7 +284,7 @@ namespace UI.Academic.AcademicOffer
                 else
                 {
                     PdfPCell cell = new PdfPCell(new text::Phrase("No existen cursos registrados."));
-                    cell.Colspan = 5;
+                    cell.Colspan = 2;
                     cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
                     oPTable.AddCell(cell);
                 }

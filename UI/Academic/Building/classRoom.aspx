@@ -57,13 +57,11 @@
                             <asp:ImageButton ID="btnNew" CssClass="image_align" ImageUrl="~/images/maintenance/add.png" ToolTip="Nuevo" runat="server" OnClick="btnNew_Click" />
                             <asp:ImageButton ID="btnSave" CssClass="image_align" ImageUrl="~/images/maintenance/save.png" ToolTip="Guardar" runat="server" OnClick="btnSave_Click" />
                             <asp:ImageButton ID="btnCancel" CssClass="image_align" ImageUrl="~/images/maintenance/cancel.png" ToolTip="Cancelar" runat="server" OnClick="btnCancel_Click" />
+                            <asp:ImageButton ID="btnReport" CssClass="image_align" ImageUrl="~/images/maintenance/report.png" ToolTip="Reporte" runat="server" OnClick="btnReport_Click" />
                             <asp:ImageButton ID="btnReturn" CssClass="image_align" ImageUrl="~/images/maintenance/return.png" ToolTip="Regresar" runat="server" OnClick="btnReturn_Click" />
                         </section> <!-- End .form-buttons -->
                         <section class="col-md-12 message">
                             <asp:Label ID="lblMessage" runat="server" ></asp:Label>
-                        </section>
-                        <section class="col-md-12 col-sm-12 col-xs-12">
-                            <asp:Button runat="server" ID="btnReport" Text="Reporte de aulas" CssClass="pull-right reportButton" OnClick="btnReport_Click" />
                         </section>
                     </section>
                     <section class="dataExists">

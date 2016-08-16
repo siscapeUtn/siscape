@@ -220,6 +220,15 @@ namespace UI.Administration {
         protected global::System.Web.UI.WebControls.ImageButton btnCancel;
         
         /// <summary>
+        /// Control btnReport.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnReport;
+        
+        /// <summary>
         /// Control btnReturn.
         /// </summary>
         /// <remarks>
@@ -236,15 +245,6 @@ namespace UI.Administration {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMessage;
-        
-        /// <summary>
-        /// Control btnReport.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReport;
         
         /// <summary>
         /// Control gvPeriod.
