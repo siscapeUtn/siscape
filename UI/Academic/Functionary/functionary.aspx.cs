@@ -353,7 +353,7 @@ namespace UI.Academic
                 title.Add("\n\n Reporte de Funcionarios\n\n");
                 pdfDoc.Add(title);
                 
-                PdfPTable oPTable = new PdfPTable(5);
+                PdfPTable oPTable = new PdfPTable(6);
                 oPTable.TotalWidth = 100;
                 oPTable.SpacingBefore = 20f;
                 oPTable.SpacingAfter = 30f;
