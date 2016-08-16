@@ -75,6 +75,7 @@
     <Content Include="about.aspx" />
     <Content Include="Academic\AcademicGroups\academic.aspx" />
     <Content Include="Academic\AcademicGroups\gAcademicOffer.aspx" />
+    <Content Include="Academic\AcademicGroups\gReport.aspx" />
     <Content Include="Academic\AcademicOffer\AcademicOffer.aspx" />
     <Content Include="Academic\AcademicOffer\Course.aspx" />
     <Content Include="Academic\AcademicOffer\OpeningJustification.aspx" />
@@ -123,6 +124,7 @@
     <Content Include="images\academic\functionary.png" />
     <Content Include="images\academic\offerAcedemic.svg" />
     <Content Include="images\academic\opening.svg" />
+    <Content Include="images\academic\report-academic.svg" />
     <Content Include="images\academic\schedule.png" />
     <Content Include="images\academic\schedule.svg" />
     <Content Include="images\academic\teacher.png" />
@@ -287,6 +289,13 @@
     </Compile>
     <Compile Include="Academic\AcademicGroups\gAcademicOffer.aspx.designer.cs">
       <DependentUpon>gAcademicOffer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academic\AcademicGroups\gReport.aspx.cs">
+      <DependentUpon>gReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academic\AcademicGroups\gReport.aspx.designer.cs">
+      <DependentUpon>gReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Academic\AcademicOffer\AcademicOffer.aspx.cs">
       <DependentUpon>AcademicOffer.aspx</DependentUpon>
@@ -552,7 +561,9 @@
       <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Academic\Report\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
