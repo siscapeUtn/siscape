@@ -217,6 +217,7 @@
     <Content Include="libraries\bootstrap-combobox-master\README.md" />
     <Content Include="Services\Services\Report_waiting_list.aspx" />
     <Content Include="Services\ServicesGroups\ServicesGroups.aspx" />
+    <Content Include="Services\Services\Services.aspx" />
     <Content Include="Services\WaitingList.Master" />
     <Content Include="Security\Security.Master" />
     <Content Include="fonts\fontawesome-webfont1.eot" />
@@ -246,7 +247,6 @@
     <Content Include="Security\SecurityGroups\security.aspx" />
     <Content Include="Security\Security\role.aspx" />
     <Content Include="Security\Security\user.aspx" />
-    <Content Include="Services\Services\service.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -484,6 +484,13 @@
     <Compile Include="Services\ServicesGroups\ServicesGroups.aspx.designer.cs">
       <DependentUpon>ServicesGroups.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Services\Services\Services.aspx.cs">
+      <DependentUpon>Services.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Services\Services\Services.aspx.designer.cs">
+      <DependentUpon>Services.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Services\WaitingList.Master.cs">
       <DependentUpon>WaitingList.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -525,13 +532,6 @@
     </Compile>
     <Compile Include="Security\Security\user.aspx.designer.cs">
       <DependentUpon>user.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Services\Services\service.aspx.cs">
-      <DependentUpon>service.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Services\Services\service.aspx.designer.cs">
-      <DependentUpon>service.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

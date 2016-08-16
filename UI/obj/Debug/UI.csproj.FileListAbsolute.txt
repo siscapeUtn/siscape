@@ -50,3 +50,16 @@ C:\Users\Rud\Desktop\siscape\UI\bin\DAL.pdb
 C:\Users\Rud\Desktop\siscape\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 C:\Users\Rud\Desktop\siscape\UI\obj\Debug\UI.dll
 C:\Users\Rud\Desktop\siscape\UI\obj\Debug\UI.pdb
+C:\Users\Daniel\Desktop\siscape\UI\bin\UI.dll.config
+C:\Users\Daniel\Desktop\siscape\UI\bin\UI.dll
+C:\Users\Daniel\Desktop\siscape\UI\bin\UI.pdb
+C:\Users\Daniel\Desktop\siscape\UI\bin\BLL.dll
+C:\Users\Daniel\Desktop\siscape\UI\bin\Entities.dll
+C:\Users\Daniel\Desktop\siscape\UI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Daniel\Desktop\siscape\UI\bin\DAL.dll
+C:\Users\Daniel\Desktop\siscape\UI\bin\BLL.pdb
+C:\Users\Daniel\Desktop\siscape\UI\bin\Entities.pdb
+C:\Users\Daniel\Desktop\siscape\UI\bin\DAL.pdb
+C:\Users\Daniel\Desktop\siscape\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\siscape\UI\obj\Debug\UI.dll
+C:\Users\Daniel\Desktop\siscape\UI\obj\Debug\UI.pdb
