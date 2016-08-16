@@ -960,6 +960,18 @@ input:focus ~ .highlight {
     font-size: 1.3rem;
 }
 
+.maintanance .specialCheckbox{
+    font-size: 15px;
+}
+
+.maintanance .specialCheckbox input{
+    display: inline-block;
+    height: 16px;
+    margin: 0 5px 0 0;
+    vertical-align: text-bottom;
+    width: 20%;
+}
+
 .maintanance .message{
     color: #009900;
     font-size: 1.5em;

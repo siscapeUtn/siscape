@@ -51,9 +51,14 @@
                                 <span class="message-has-error"><asp:Label runat="server" ID="lblMessagePrice"></asp:Label></span>  
                             </section>
                             <section class="form-group">
+                                
+                                <asp:Label runat="server" ID="lblRoom" Text="Aula:" CssClass="control-label col-sm-2"></asp:Label>
+                                <section class="col-sm-8 specialCheckbox">
+                                    <asp:CheckBox ID="chkEspecial" Text="Especial" runat="server" AutoPostBack="true" OnCheckedChanged="chkEspecial_CheckedChanged" />
+                                </section>
+                                <section class="col-sm-4">
 
-                            <asp:Label runat="server" ID="lblRoom" Text="Aula:"></asp:Label>
-                                <asp:CheckBox ID="chkEspecial" Text=" &nbsp;&nbsp;Especial" runat="server" AutoPostBack="true" OnCheckedChanged="chkEspecial_CheckedChanged" />
+                                </section>
                                 <asp:DropDownList ID="cboRoom" CssClass="form-control" runat="server"></asp:DropDownList>
                                 <span class="message-has-error"><asp:Label runat="server" ID="lblMessageRoom"></asp:Label></span>
                             </section>
