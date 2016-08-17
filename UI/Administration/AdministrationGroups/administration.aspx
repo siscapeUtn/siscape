@@ -7,7 +7,7 @@
             <p class="title">Administración</p>
             <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
                 <section class="accesses">
-                    <a href="gProgram.aspx" ><img alt="Programa" src="../../images/administration/program.svg" />
+                    <a href="../Program/program.aspx" ><img alt="Programa" src="../../images/administration/program.svg" />
                     <p>Programa</p></a>
                 </section>
             </section>
@@ -20,7 +20,7 @@
             <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
                 <section class="accesses">
                     <a href="../Slider/slider.aspx" ><img alt="Slider" src="../../images/administration/uploadImage.svg" />
-                    <p>Slideshow</p></a>
+                    <p>Banner</p></a>
                 </section>
             </section>
             <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">

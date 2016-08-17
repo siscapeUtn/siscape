@@ -5,6 +5,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using text = iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using System.IO;
 
 namespace UI.Administration.Security
 {
@@ -404,6 +408,83 @@ namespace UI.Administration.Security
         {
             gvUserSystem.PageIndex = e.NewPageIndex;
             loadData();
+        }
+
+        protected void btnReport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Entities.UserSystem> listUserSystem = UserSystemBLL.getInstance().getAll();
+                System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
+                text::Document pdfDoc = new text::Document(text::PageSize.A4, 10, 10, 10, 10);
+                pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());
+                PdfWriter.GetInstance(pdfDoc, memoryStream);
+                pdfDoc.Open();
+
+                String imagepath = Server.MapPath("../../images/page-icons");
+                iTextSharp.text.Image deas = iTextSharp.text.Image.GetInstance(imagepath + "/DEAS-logo.jpg");
+                deas.ScaleToFit(140f, 120f);
+                //Give space before image
+                deas.SpacingBefore = 10f;
+                //Give some space after the image
+                deas.SpacingAfter = 1f;
+                deas.Alignment = text::Element.ALIGN_LEFT;
+                pdfDoc.Add(deas);
+
+                text::Paragraph title = new text::Paragraph();
+                title.Font = text::FontFactory.GetFont("dax-black", 32, new text::BaseColor(0, 51, 102));
+                title.Alignment = text::Element.ALIGN_CENTER;
+                title.Add("\n\n Reporte de Usuarios\n\n");
+                pdfDoc.Add(title);
+                
+                PdfPTable oPTable = new PdfPTable(5);
+                oPTable.TotalWidth = 100;
+                oPTable.SpacingBefore = 20f;
+                oPTable.SpacingAfter = 30f;
+                oPTable.AddCell("Nombre completo");
+                oPTable.AddCell("Rol");
+                oPTable.AddCell("Programa");
+                oPTable.AddCell("Coreo electrónico");
+                oPTable.AddCell("Estado");
+
+                if (listUserSystem.Count > 0)
+                {
+                    foreach (Entities.UserSystem pUserSystem in listUserSystem)
+                    {
+                        oPTable.AddCell(pUserSystem.name + " " + pUserSystem.lastName);
+                        oPTable.AddCell(pUserSystem.oRole.Description);
+                        oPTable.AddCell(pUserSystem.oProgram.name);
+                        oPTable.AddCell(pUserSystem.email);
+                        oPTable.AddCell((pUserSystem.state == 1 ? "Activo" : "Inactivo"));
+                    }
+                }
+                else
+                {
+                    PdfPCell cell = new PdfPCell(new text::Phrase("No existen usuarios registrados."));
+                    cell.Colspan = 5;
+                    cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+                    oPTable.AddCell(cell);
+                }
+
+                pdfDoc.Add(oPTable);
+                pdfDoc.Close();
+                
+                byte[] bytes = memoryStream.ToArray();
+                memoryStream.Close();
+                Response.Clear();
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("Content-Disposition", "attachment; filename=Usuarios.pdf");
+                Response.ContentType = "application/pdf";
+                Response.Buffer = true;
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                Response.BinaryWrite(bytes);
+                Response.End();
+                Response.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.ToString());
+            }
         }
     }
 }

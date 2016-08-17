@@ -15,5 +15,6 @@ namespace Entities
         public String cellPhone { get; set; }
         public String email { get; set; }
         public Int16 state { set; get; }
+        public Program oProgram { get; set; }
     }
 }

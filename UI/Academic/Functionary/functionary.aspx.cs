@@ -5,19 +5,37 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using text = iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using System.IO;
+using Entities;
 
 namespace UI.Academic
 {
     public partial class functionary : System.Web.UI.Page
     {
         static Int32 functionary_id = -1;
+        static UserSystem oUser = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 blockControls();
+                loadUser();
+                loadPrograms();
             }
             loadData();
+        }
+
+        private void loadUser()
+        {
+            oUser = (UserSystem)Session["User"];
+            if (oUser == null)
+            {
+                Response.Redirect("../../index.aspx");
+            }
         }
 
         protected void btnNew_Click(object sender, ImageClickEventArgs e)
@@ -32,6 +50,7 @@ namespace UI.Academic
             if (validateData())
             {
                 Entities.Functionary oFunctionary = new Entities.Functionary();
+                Entities.Program oProgram = new Program(); 
                 oFunctionary.code = Convert.ToInt32(txtCode.Text);
                 oFunctionary.id = txtId.Text;
                 oFunctionary.name = txtName.Text;
@@ -39,6 +58,8 @@ namespace UI.Academic
                 oFunctionary.homePhone = txtHomePhone.Text;
                 oFunctionary.cellPhone = txtCellPhone.Text;
                 oFunctionary.email = txtEmail.Text;
+                oProgram.code= Convert.ToInt32(cboprogram.SelectedValue);
+                oFunctionary.oProgram = oProgram;
                 oFunctionary.state = Convert.ToInt16(cboState.SelectedValue);
 
                 if (FunctionaryBLL.getInstance().exists(oFunctionary.code))
@@ -115,8 +136,38 @@ namespace UI.Academic
 
         protected void loadData()
         {
-            gvFunctionary.DataSource = FunctionaryBLL.getInstance().getAll();
+            int code = oUser.oProgram.code;
+            if (code == 1)
+            {
+             gvFunctionary.DataSource = FunctionaryBLL.getInstance().getAll();
+            }
+            else { 
+            gvFunctionary.DataSource = FunctionaryBLL.getInstance().getAllByProgram(code);
+            }
+
             gvFunctionary.DataBind();
+        }
+
+        protected void loadPrograms()
+        {
+            List<Entities.Program> listPrograms = new List<Entities.Program>();
+            listPrograms = ProgramBLL.getInstance().getAllActived();
+            ListItem oItemS = new ListItem("---- Seleccione ----", "0");
+            cboprogram.Items.Add(oItemS);
+            foreach (Entities.Program oProgram in listPrograms)
+            {
+                ListItem oItem = new ListItem(oProgram.name, oProgram.code.ToString());
+                cboprogram.Items.Add(oItem);
+            }
+            cboProgramValue();
+        }
+
+        protected void cboProgramValue()
+        {
+            if (oUser.oProgram.code != 1)
+            {
+                cboprogram.SelectedValue = oUser.oProgram.code.ToString();
+            }
         }
 
         protected Boolean validateData()
@@ -204,6 +255,7 @@ namespace UI.Academic
         protected void blockControls()
         {
             txtCode.Enabled = false;
+            cboprogram.Enabled = false;
             txtId.Enabled = false;
             txtName.Enabled = false;
             txtLastName.Enabled = false;
@@ -220,6 +272,14 @@ namespace UI.Academic
         protected void unlockControls()
         {
             txtCode.Enabled = true;
+            if (oUser.oProgram.code == 1)
+            {
+                cboprogram.Enabled = true;
+            }
+            else
+            {
+                cboProgramValue();
+            }
             txtId.Enabled = true;
             txtName.Enabled = true;
             txtLastName.Enabled = true;
@@ -255,12 +315,103 @@ namespace UI.Academic
             lblMessageEmail.Text = "";
             ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorEmail", "$('#ContentPlaceHolder1_txtEmail').removeClass('has-error');", true);
             cboState.SelectedValue = "1";
+            cboprogram.SelectedValue = "0";
+            lblmessageprogram.Text = "";
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorProgram", "$('#ContentPlaceHolder1_cboProgram').removeClass('has-error');", true);
         }
 
         protected void gvFunctionary_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvFunctionary.PageIndex = e.NewPageIndex;
             loadData();
+        }
+
+        protected void btnReport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int code = oUser.oProgram.code;
+                List<Entities.Functionary> listFunctionary;
+                if (code == 1)
+                {
+                     listFunctionary = FunctionaryBLL.getInstance().getAll();
+                }
+                else
+                {
+                     listFunctionary = FunctionaryBLL.getInstance().getAllByProgram(code);
+                }
+                System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
+                text::Document pdfDoc = new text::Document(text::PageSize.A4, 10, 10, 10, 10);
+                pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());
+                PdfWriter.GetInstance(pdfDoc, memoryStream);
+                pdfDoc.Open();
+
+                String imagepath = Server.MapPath("../../images/page-icons");
+                iTextSharp.text.Image deas = iTextSharp.text.Image.GetInstance(imagepath + "/DEAS-logo.jpg");
+                deas.ScaleToFit(140f, 120f);
+                //Give space before image
+                deas.SpacingBefore = 10f;
+                //Give some space after the image
+                deas.SpacingAfter = 1f;
+                deas.Alignment = text::Element.ALIGN_LEFT;
+                pdfDoc.Add(deas);
+
+                text::Paragraph title = new text::Paragraph();
+                title.Font = text::FontFactory.GetFont("dax-black", 32, new text::BaseColor(0, 51, 102));
+                title.Alignment = text::Element.ALIGN_CENTER;
+                title.Add("\n\n Reporte de Funcionarios\n\n");
+                pdfDoc.Add(title);
+                
+                PdfPTable oPTable = new PdfPTable(6);
+                oPTable.TotalWidth = 100;
+                oPTable.SpacingBefore = 20f;
+                oPTable.SpacingAfter = 30f;
+                oPTable.AddCell("Identificación");
+                oPTable.AddCell("Nombre completo");
+                oPTable.AddCell("Teléfono");
+                oPTable.AddCell("Correo electrónico");
+                oPTable.AddCell("Programa");
+                oPTable.AddCell("Estado");
+
+                if (listFunctionary.Count > 0)
+                {
+                    foreach (Entities.Functionary pFunctionary in listFunctionary)
+                    {
+                        oPTable.AddCell(pFunctionary.id);
+                        oPTable.AddCell(pFunctionary.name + " " + pFunctionary.lastName);
+                        oPTable.AddCell(pFunctionary.cellPhone);
+                        oPTable.AddCell(pFunctionary.email);
+                        oPTable.AddCell(pFunctionary.oProgram.name);
+                        oPTable.AddCell((pFunctionary.state == 1 ? "Activo" : "Inactivo"));
+                    }
+                }
+                else
+                {
+                    PdfPCell cell = new PdfPCell(new text::Phrase("No existen funcionarios registrados."));
+                    cell.Colspan = 5;
+                    cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+                    oPTable.AddCell(cell);
+                }
+
+                pdfDoc.Add(oPTable);
+                pdfDoc.Close();
+                
+                byte[] bytes = memoryStream.ToArray();
+                memoryStream.Close();
+                Response.Clear();
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("Content-Disposition", "attachment; filename=Funcionarios.pdf");
+                Response.ContentType = "application/pdf";
+                Response.Buffer = true;
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                Response.BinaryWrite(bytes);
+                Response.End();
+                Response.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.ToString());
+            }
         }
     }
 }

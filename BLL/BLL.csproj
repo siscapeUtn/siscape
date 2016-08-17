@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\iTextSharp.5.5.9\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -61,6 +64,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -85,6 +89,7 @@
     <Compile Include="InternalDesignationBLL.cs" />
     <Compile Include="JourneyBLL.cs" />
     <Compile Include="LocationBLL.cs" />
+    <Compile Include="PDF.cs" />
     <Compile Include="PeriodBLL.cs" />
     <Compile Include="PeriodTypeBLL.cs" />
     <Compile Include="ProgramBLL.cs" />

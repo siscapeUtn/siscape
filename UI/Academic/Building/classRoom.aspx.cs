@@ -6,22 +6,37 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using text = iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using System.IO;
 
 namespace UI.Academic
 {
     public partial class classRoom : System.Web.UI.Page
     {
         static Int32 classRoom_id = -1;
+        static UserSystem oUser=null;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 blockControls();
                 loadClassroomType();
-                loadLocation();
+                loadUser();
                 loadPrograms();
+                loadLocation();
             }
             loadData();
+        }
+
+        private void loadUser()
+        {
+            oUser =(UserSystem)Session["User"];
+            if (oUser == null)
+            {
+                Response.Redirect("../../login.aspx");
+            }
         }
 
         protected void btnNew_Click(object sender, ImageClickEventArgs e)
@@ -44,7 +59,7 @@ namespace UI.Academic
                 oClassRoomsType.code = Convert.ToInt32(cboClassRoomType.SelectedValue);
                 oLocation.code = Convert.ToInt32(cboLocation.SelectedValue);
                 oClassRoom.size = Convert.ToInt32(txtSize.Text);
-                oProgram.code = Convert.ToInt32(cboProgram.SelectedValue);
+                oProgram.code = Convert.ToInt32(cboprogram.SelectedValue);
                 oClassRoom.state = Convert.ToInt16(cboState.SelectedValue);
                 oClassRoom.oClassRoomsType = oClassRoomsType;
                 oClassRoom.oLocation = oLocation;
@@ -108,11 +123,11 @@ namespace UI.Academic
 
             try
             {
-                cboProgram.SelectedValue = oClassRoom.oProgram.code.ToString();
+                cboprogram.SelectedValue = oClassRoom.oProgram.code.ToString();
             }
             catch (Exception )
             {
-                cboProgram.SelectedValue = "0";
+                cboprogram.SelectedValue = "0";
             }
             ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "$('html, body').animate({ scrollTop: $('body').offset().top });", true);
         }
@@ -197,15 +212,15 @@ namespace UI.Academic
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorSize", "$('#ContentPlaceHolder1_txtSize').addClass('has-error');", true);
             }
 
-            if (Convert.ToInt32(cboProgram.SelectedValue) == 0)
+            if (Convert.ToInt32(cboprogram.SelectedValue) == 0 || Convert.ToInt32(cboprogram.SelectedValue) == 1)
             {
                 ind = false;
-                lblMessageProgram.Text = "Debe seleccionar el programa.";
+                lblmessageprogram.Text = "Debe seleccionar el programa.";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorProgram", "$('#ContentPlaceHolder1_cboProgram').addClass('has-error');", true);
             }
             else
             {
-                lblMessageProgram.Text = "";
+                lblmessageprogram.Text = "";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorProgram", "$('#ContentPlaceHolder1_cboProgram').removeClass('has-error');", true);
             }
 
@@ -243,14 +258,22 @@ namespace UI.Academic
             List<Entities.Program> listPrograms = new List<Entities.Program>();
             listPrograms = ProgramBLL.getInstance().getAllActived();
             ListItem oItemS = new ListItem("---- Seleccione ----", "0");
-            cboProgram.Items.Add(oItemS);
+            cboprogram.Items.Add(oItemS);
             foreach (Entities.Program oProgram in listPrograms)
             {
                 ListItem oItem = new ListItem(oProgram.name, oProgram.code.ToString());
-                cboProgram.Items.Add(oItem);
+                cboprogram.Items.Add(oItem);
             }
+            cboProgramValue();
         }
 
+        protected void cboProgramValue()
+        {
+            if (oUser.oProgram.code != 1)
+            {
+                cboprogram.SelectedValue = oUser.oProgram.code.ToString();
+            }
+        }
         protected void blockControls()
         {
             txtCode.Enabled = false;
@@ -258,7 +281,7 @@ namespace UI.Academic
             cboClassRoomType.Enabled = false;
             cboLocation.Enabled = false;
             txtSize.Enabled = false;
-            cboProgram.Enabled = false;
+            cboprogram.Enabled = false;
             cboState.Enabled = false;
             btnNew.Enabled = true;
             btnSave.Enabled = false;
@@ -273,7 +296,13 @@ namespace UI.Academic
             cboClassRoomType.Enabled = true;
             cboLocation.Enabled = true;
             txtSize.Enabled = true;
-            cboProgram.Enabled = true;
+            if (oUser.oProgram.code == 1) {
+                cboprogram.Enabled = true;
+            }
+            else
+            {
+                cboProgramValue();
+            }
             cboState.Enabled = true;
             btnNew.Enabled = false;
             btnSave.Enabled = true;
@@ -289,7 +318,7 @@ namespace UI.Academic
             cboState.SelectedValue = "1";
             lblMessage.Text = "";
             cboLocation.SelectedValue = "0";
-            cboProgram.SelectedValue = "0";
+            cboprogram.SelectedValue = "0";
             cboClassRoomType.SelectedValue = "0";
             lblMesageLocation.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorLocation", "$('#ContentPlaceHolder1_cboLocation').removeClass('has-error');", true);
@@ -297,7 +326,7 @@ namespace UI.Academic
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorClassRoomType", "$('#ContentPlaceHolder1_cboClassRoomType').removeClass('has-error');", true);
             lblMessageDescription.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorDescription", "$('#ContentPlaceHolder1_txtDescription').removeClass('has-error');", true);
-            lblMessageProgram.Text = "";
+            lblmessageprogram.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorProgram", "$('#ContentPlaceHolder1_cboProgram').removeClass('has-error');", true);
             lblMessageSize.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorSize", "$('#ContentPlaceHolder1_txtSize').removeClass('has-error');", true);
@@ -307,6 +336,85 @@ namespace UI.Academic
         {
             gvClassRoom.PageIndex = e.NewPageIndex;
             loadData();
+        }
+
+        protected void btnReport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Entities.ClassRoom> listRoom = ClassRoomBLL.getInstance().getAll();
+                System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
+                text::Document pdfDoc = new text::Document(text::PageSize.A4, 10, 10, 10, 10);
+                pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());
+                PdfWriter.GetInstance(pdfDoc, memoryStream);
+                pdfDoc.Open();
+
+                String imagepath = Server.MapPath("../../images/page-icons");
+                iTextSharp.text.Image deas = iTextSharp.text.Image.GetInstance(imagepath + "/DEAS-logo.jpg");
+                deas.ScaleToFit(140f, 120f);
+                //Give space before image
+                deas.SpacingBefore = 10f;
+                //Give some space after the image
+                deas.SpacingAfter = 1f;
+                deas.Alignment = text::Element.ALIGN_LEFT;
+                pdfDoc.Add(deas);
+
+                text::Paragraph title = new text::Paragraph();
+                title.Font = text::FontFactory.GetFont("dax-black", 32, new text::BaseColor(0, 51, 102));
+                title.Alignment = text::Element.ALIGN_CENTER;
+                title.Add("\n\n Reporte de Aulas\n\n\n\n");
+                pdfDoc.Add(title);
+                
+                PdfPTable oPTable = new PdfPTable(6);
+                oPTable.TotalWidth = 100;
+                oPTable.SpacingBefore = 20f;
+                oPTable.SpacingAfter = 30f;
+                oPTable.AddCell("Descripción");
+                oPTable.AddCell("Capacidad");
+                oPTable.AddCell("Programa");
+                oPTable.AddCell("Tipo de Aula");
+                oPTable.AddCell("Localizacion");
+                oPTable.AddCell("Estado");
+
+                if (listRoom.Count > 0)
+                {
+                    foreach (Entities.ClassRoom pRoom in listRoom)
+                    {
+                        oPTable.AddCell(pRoom.num_room);
+                        oPTable.AddCell(pRoom.size.ToString());
+                        oPTable.AddCell(pRoom.oProgram.name);
+                        oPTable.AddCell(pRoom.oClassRoomsType.description);
+                        oPTable.AddCell(pRoom.oLocation.oHeadquarters.description + " - " + pRoom.oLocation.building + " - " + pRoom.oLocation.module);
+                        oPTable.AddCell((pRoom.state == 1 ? "Activo" : "Inactivo"));
+                    }
+                }
+                else
+                {
+                    PdfPCell cell = new PdfPCell(new text::Phrase("No existen aulas registrados."));
+                    cell.Colspan = 5;
+                    cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+                    oPTable.AddCell(cell);
+                }
+
+                pdfDoc.Add(oPTable);
+                pdfDoc.Close();
+                
+                byte[] bytes = memoryStream.ToArray();
+                memoryStream.Close();
+                Response.Clear();
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("Content-Disposition", "attachment; filename=Aulas.pdf");
+                Response.ContentType = "application/pdf";
+                Response.Buffer = true;
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                Response.BinaryWrite(bytes);
+                Response.End();
+                Response.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.ToString());
+            }
         }
     }
 }

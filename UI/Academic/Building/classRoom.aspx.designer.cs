@@ -49,6 +49,33 @@ namespace UI.Academic {
         protected global::System.Web.UI.WebControls.TextBox txtCode;
         
         /// <summary>
+        /// Control lblprogram.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblprogram;
+        
+        /// <summary>
+        /// Control cboprogram.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cboprogram;
+        
+        /// <summary>
+        /// Control lblmessageprogram.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblmessageprogram;
+        
+        /// <summary>
         /// Control lblDescription.
         /// </summary>
         /// <remarks>
@@ -157,33 +184,6 @@ namespace UI.Academic {
         protected global::System.Web.UI.WebControls.Label lblMessageSize;
         
         /// <summary>
-        /// Control lblProgram.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProgram;
-        
-        /// <summary>
-        /// Control cboProgram.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cboProgram;
-        
-        /// <summary>
-        /// Control lblMessageProgram.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessageProgram;
-        
-        /// <summary>
         /// Control lblState.
         /// </summary>
         /// <remarks>
@@ -227,6 +227,15 @@ namespace UI.Academic {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton btnCancel;
+        
+        /// <summary>
+        /// Control btnReport.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnReport;
         
         /// <summary>
         /// Control btnReturn.

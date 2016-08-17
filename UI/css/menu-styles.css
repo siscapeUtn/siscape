@@ -558,9 +558,25 @@ content: '\E849';
     text-align: center;
 }
 
+.reportButton{
+    border-radius: 0;
+    border: 1px solid #003366;
+    background: #003366;
+    color: #ffffff;
+    font-size: 16px;
+    width: auto;
+}
+
 @media only screen and (max-width: 850px){
     .title{
         font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    
+    .reportButton{
+        width: 100%;
     }
 }
 
@@ -942,6 +958,18 @@ input:focus ~ .highlight {
 
 .maintanance {
     font-size: 1.3rem;
+}
+
+.maintanance .specialCheckbox{
+    font-size: 15px;
+}
+
+.maintanance .specialCheckbox input{
+    display: inline-block;
+    height: 16px;
+    margin: 0 5px 0 0;
+    vertical-align: text-bottom;
+    width: 20%;
 }
 
 .maintanance .message{

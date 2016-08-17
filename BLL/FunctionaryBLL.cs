@@ -105,6 +105,8 @@ namespace BLL
                 oCommand.Parameters[6].Direction = ParameterDirection.Input;
                 oCommand.Parameters.AddWithValue("@STATE", oFunctionary.state);
                 oCommand.Parameters[7].Direction = ParameterDirection.Input;
+                oCommand.Parameters.AddWithValue("@PROGRAM_ID", oFunctionary.oProgram.code);
+                oCommand.Parameters[8].Direction = ParameterDirection.Input;
 
                 return DAO.getInstance().executeSQL(oCommand);
             }
@@ -141,6 +143,8 @@ namespace BLL
                 oCommand.Parameters[6].Direction = ParameterDirection.Input;
                 oCommand.Parameters.AddWithValue("@STATE", oFunctionary.state);
                 oCommand.Parameters[7].Direction = ParameterDirection.Input;
+                oCommand.Parameters.AddWithValue("@PROGRAM_ID", oFunctionary.oProgram.code);
+                oCommand.Parameters[8].Direction = ParameterDirection.Input;
                 return DAO.getInstance().executeSQL(oCommand);
             }
             catch (Exception ex)
@@ -185,6 +189,7 @@ namespace BLL
                 foreach (DataRow oDataRow in oDataTable.Rows)
                 {
                     Functionary oFunctionary = new Functionary();
+                    Program oProgram = new Program();
                     oFunctionary.code = Convert.ToInt32(oDataRow[0].ToString());
                     oFunctionary.id = oDataRow[1].ToString();
                     oFunctionary.name = oDataRow[2].ToString();
@@ -193,6 +198,48 @@ namespace BLL
                     oFunctionary.cellPhone = oDataRow[5].ToString();
                     oFunctionary.email = oDataRow[6].ToString();
                     oFunctionary.state = Convert.ToInt16(oDataRow[7].ToString());
+                    oProgram.code = Convert.ToInt32(oDataRow[8].ToString());
+                    oProgram.name = oDataRow[9].ToString();
+                    oFunctionary.oProgram = oProgram;
+                    listFunctionary.Add(oFunctionary);
+                }
+                return listFunctionary;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { }
+        }//end getAll
+
+
+        public List<Functionary> getAllByProgram(int code)
+        {
+            String sql = "SP_GETALLFUNCTIONARYBYPROGRAM";
+
+            try
+            {
+                SqlCommand oCommand = new SqlCommand(sql);
+                oCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                oCommand.Parameters.AddWithValue("@PROGRAM_ID", code);
+                oCommand.Parameters[0].Direction = ParameterDirection.Input;
+                DataTable oDataTable = DAO.getInstance().executeQuery(oCommand);
+                List<Functionary> listFunctionary = new List<Functionary>();
+                foreach (DataRow oDataRow in oDataTable.Rows)
+                {
+                    Functionary oFunctionary = new Functionary();
+                    Program oProgram = new Program();    
+                    oFunctionary.code = Convert.ToInt32(oDataRow[0].ToString());
+                    oFunctionary.id = oDataRow[1].ToString();
+                    oFunctionary.name = oDataRow[2].ToString();
+                    oFunctionary.lastName = oDataRow[3].ToString();
+                    oFunctionary.homePhone = oDataRow[4].ToString();
+                    oFunctionary.cellPhone = oDataRow[5].ToString();
+                    oFunctionary.email = oDataRow[6].ToString();
+                    oFunctionary.state = Convert.ToInt16(oDataRow[7].ToString());
+                    oProgram.code = Convert.ToInt32(oDataRow[8].ToString());
+                    oProgram.name = oDataRow[9].ToString();
+                    oFunctionary.oProgram = oProgram;
                     listFunctionary.Add(oFunctionary);
                 }
                 return listFunctionary;

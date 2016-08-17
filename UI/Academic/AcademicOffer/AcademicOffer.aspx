@@ -51,9 +51,14 @@
                                 <span class="message-has-error"><asp:Label runat="server" ID="lblMessagePrice"></asp:Label></span>  
                             </section>
                             <section class="form-group">
+                                
+                                <asp:Label runat="server" ID="lblRoom" Text="Aula:" CssClass="control-label col-sm-2"></asp:Label>
+                                <section class="col-sm-8 specialCheckbox">
+                                    <asp:CheckBox ID="chkEspecial" Text="Especial" runat="server" AutoPostBack="true" OnCheckedChanged="chkEspecial_CheckedChanged" />
+                                </section>
+                                <section class="col-sm-4">
 
-                            <asp:Label runat="server" ID="lblRoom" Text="Aula:"></asp:Label>
-                                <asp:CheckBox ID="chkEspecial" Text=" &nbsp;&nbsp;Especial" runat="server" AutoPostBack="true" OnCheckedChanged="chkEspecial_CheckedChanged" />
+                                </section>
                                 <asp:DropDownList ID="cboRoom" CssClass="form-control" runat="server"></asp:DropDownList>
                                 <span class="message-has-error"><asp:Label runat="server" ID="lblMessageRoom"></asp:Label></span>
                             </section>
@@ -68,6 +73,7 @@
                             <asp:ImageButton ID="btnNew" CssClass="image_align" ImageUrl="~/images/maintenance/add.png" ToolTip="Nuevo" runat="server" OnClick="btnNew_Click" />
                             <asp:ImageButton ID="btnSave" CssClass="image_align" ImageUrl="~/images/maintenance/save.png" ToolTip="Guardar" runat="server" OnClick="btnSave_Click" />
                             <asp:ImageButton ID="btnCancel" CssClass="image_align" ImageUrl="~/images/maintenance/cancel.png" ToolTip="Cancelar" runat="server" OnClick="btnCancel_Click" />
+                            <asp:ImageButton ID="btnReport" CssClass="image_align" ImageUrl="~/images/maintenance/report.png" ToolTip="Reporte" runat="server" OnClick="btnReport_Click" />
                             <asp:ImageButton ID="btnReturn" CssClass="image_align" ImageUrl="~/images/maintenance/return.png" ToolTip="Regresar" runat="server" OnClick="btnReturn_Click" />
                         </section> <!-- End .form-buttons -->
                         <section class="col-md-12 message">
@@ -98,6 +104,9 @@
                         </section>
                     </section>
                 </ContentTemplate>
+                <Triggers>
+                    <asp:PostBackTrigger  ControlID="btnReport"/>
+                </Triggers>
             </asp:UpdatePanel>
         </section>
     </section>

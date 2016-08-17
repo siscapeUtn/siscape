@@ -5,6 +5,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using text = iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using System.IO;
 
 namespace UI.Academic.AcademicOffer
 {
@@ -556,6 +560,11 @@ namespace UI.Academic.AcademicOffer
             lblMessageRoom.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorName", "$('#ContentPlaceHolder1_cboHours').removeClass('has-error');", true);
             lblMessageHours.Text = "";
+        }
+
+        protected void btnReport_Click(object sender, EventArgs e)
+        {
+            
         }//End clearControls()
 
 

@@ -16,6 +16,11 @@
                             </section>
                         </section>
                         <section class="col-md-6">
+                           <section class="form-group">
+                                <asp:label runat="server" id="lblprogram" text="Programa:"></asp:label>
+                                <asp:dropdownlist id="cboprogram" cssclass="form-control"  runat="server"></asp:dropdownlist>
+                                <span class="message-has-error"><asp:label runat="server" id="lblmessageprogram" ></asp:label></span>
+                            </section>
                             <section class="form-group">
                                 <asp:Label ID="lblId"  Text="Identificación:" runat="server"></asp:Label>
                                 <asp:TextBox ID="txtId" CssClass="form-control" runat="server"></asp:TextBox>
@@ -48,24 +53,20 @@
                                 <asp:TextBox ID="txtEmail" CssClass="form-control" runat="server"></asp:TextBox>
                                 <span class="message-has-error"><asp:Label runat="server" ID="lblMessageEmail"></asp:Label></span>
                             </section>
-                        </section>
-                        <section class="col-md-3"></section>
-                        <section class="form-horizontal col-md-6">
                             <section class="form-group">
-                                <asp:Label ID="lblState" CssClass="control-label col-sm-2" Text="Estado:" runat="server"></asp:Label>
-                                <section class="col-sm-10">
-                                    <asp:DropDownList ID="cboState" CssClass="form-control col-sm-4" runat="server">
+                                <asp:Label ID="lblState" CssClass="control-label" Text="Estado:" runat="server"></asp:Label>                                
+                                   <asp:DropDownList ID="cboState" CssClass="form-control col-sm-4" runat="server">
                                         <asp:ListItem Value="0">Inactivo</asp:ListItem>
                                         <asp:ListItem Selected="True" Value="1">Activo</asp:ListItem>
                                     </asp:DropDownList>
-                                </section>
-                            </section>
+                             </section>
                         </section>
-                        <section class="col-md-3"></section>
+                            
                         <section class="col-md-12 form-buttons">
                                 <asp:ImageButton ID="btnNew" CssClass="image_align" ImageUrl="~/images/maintenance/add.png" ToolTip="Nuevo" runat="server" OnClick="btnNew_Click" />
                                 <asp:ImageButton ID="btnSave" CssClass="image_align" ImageUrl="~/images/maintenance/save.png" ToolTip="Guardar" runat="server" OnClick="btnSave_Click" />
                                 <asp:ImageButton ID="btnCancel" CssClass="image_align" ImageUrl="~/images/maintenance/cancel.png" ToolTip="Cancelar" runat="server" OnClick="btnCancel_Click" />
+                                <asp:ImageButton ID="btnReport" CssClass="image_align" ImageUrl="~/images/maintenance/report.png" ToolTip="Reporte" runat="server" OnClick="btnReport_Click" />
                                 <asp:ImageButton ID="btnReturn" CssClass="image_align" ImageUrl="~/images/maintenance/return.png" ToolTip="Regresar" runat="server" OnClick="btnReturn_Click" />
                         </section> <!-- End .form-buttons -->
                         <section class="col-md-12 message">
@@ -88,6 +89,9 @@
                         </section>
                     </section>
                 </ContentTemplate>
+                <Triggers>
+                    <asp:PostBackTrigger  ControlID="btnReport"/>
+                </Triggers>
             </asp:UpdatePanel>
         </section>
     </section>

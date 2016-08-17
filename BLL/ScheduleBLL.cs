@@ -194,6 +194,7 @@ namespace BLL
                     oSchedule.startTime = Convert.ToDateTime(oDataRow[5].ToString());
                     oSchedule.endTime = Convert.ToDateTime(oDataRow[6].ToString());
                     oSchedule.state = Convert.ToInt32(oDataRow[7].ToString());
+                    oProgram.name = oDataRow[8].ToString();
                     oSchedule.oProgram = oProgram;
                     listSchedule.Add(oSchedule);
                 }
@@ -245,6 +246,41 @@ namespace BLL
         public List<Schedule> getAllActiveByPrgram(Int32 id)
         {
             String sql = "SP_GETALLSCHEDULEACTIVEBYPROGRAM";
+            try
+            {
+                SqlCommand oCommand = new SqlCommand(sql);
+                oCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                oCommand.Parameters.AddWithValue("@PROGRAM_ID", id);
+                DataTable oDataTable = DAO.getInstance().executeQuery(oCommand);
+                List<Schedule> listSchedule = new List<Schedule>();
+                foreach (DataRow oDataRow in oDataTable.Rows)
+                {
+                    Schedule oSchedule = new Schedule();
+                    Program oProgram = new Program();
+                    oSchedule.code = Convert.ToInt32(oDataRow[0].ToString());
+                    oProgram.code = Convert.ToInt32(oDataRow[1].ToString());
+                    oSchedule.name = oDataRow[2].ToString();
+                    oSchedule.codday = oDataRow[3].ToString();
+                    oSchedule.typeSchedule = oDataRow[4].ToString();
+                    oSchedule.startTime = Convert.ToDateTime(oDataRow[5].ToString());
+                    oSchedule.endTime = Convert.ToDateTime(oDataRow[6].ToString());
+                    oSchedule.state = Convert.ToInt32(oDataRow[7].ToString());
+                    oProgram.name = oDataRow[8].ToString();
+                    oSchedule.oProgram = oProgram;
+                    listSchedule.Add(oSchedule);
+                }
+                return listSchedule;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { }
+        }
+
+        public List<Schedule> getAllByPrgrams(Int32 id)
+        {
+            String sql = "SP_GETALLSCHEDULEBYPROGRAM";
             try
             {
                 SqlCommand oCommand = new SqlCommand(sql);

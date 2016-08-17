@@ -30,6 +30,7 @@ C:\Users\Rud\Desktop\siscape\BLL\bin\Entities.pdb
 C:\Users\Rud\Desktop\siscape\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 C:\Users\Rud\Desktop\siscape\BLL\obj\Debug\BLL.dll
 C:\Users\Rud\Desktop\siscape\BLL\obj\Debug\BLL.pdb
+<<<<<<< HEAD
 C:\Users\Daniel\Desktop\siscape\BLL\bin\BLL.dll.config
 C:\Users\Daniel\Desktop\siscape\BLL\bin\BLL.dll
 C:\Users\Daniel\Desktop\siscape\BLL\bin\BLL.pdb
@@ -49,3 +50,7 @@ C:\Users\Daniel\Desktop\siscape\BLL\bin\es\System.Web.Http.WebHost.resources.dll
 C:\Users\Daniel\Desktop\siscape\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Desktop\siscape\BLL\obj\Debug\BLL.dll
 C:\Users\Daniel\Desktop\siscape\BLL\obj\Debug\BLL.pdb
+=======
+C:\Users\asala\Source\Repos\SISCAPE\BLL\bin\itextsharp.dll
+C:\Users\asala\Source\Repos\SISCAPE\BLL\bin\itextsharp.xml
+>>>>>>> 053a64f5d0047e47b1eb1e967de4052cd9bc0ed4
