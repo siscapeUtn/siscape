@@ -49,8 +49,9 @@ namespace UI.Academic.AcademicOffer
         }
 
         protected void btnNew_Click(object sender, ImageClickEventArgs e)
-        {         
+        {          
             unlockControls();
+            fillhours();
             txtCode.Text = BLL.AcademicOfferBLL.getInstance().getNextCode().ToString();
         }
 
@@ -202,6 +203,15 @@ namespace UI.Academic.AcademicOffer
             cboProgramValue();
         }
 
+        protected void cboProgramValue()
+        {
+            if (oUser.oProgram.code != 1)
+            {
+                cboProgram.SelectedValue = oUser.oProgram.code.ToString();
+                cboPeriod.SelectedValue = Session["period"].ToString();
+                cboProgramAction(oUser.oProgram.code);
+            }
+        }
 
 
         //its when the cmboProgram Changed, the course have to changed
@@ -215,11 +225,8 @@ namespace UI.Academic.AcademicOffer
         {
             cboRoom.Items.Clear();
             cboSchedule.Items.Clear();
-            if (chkEspecial.Checked == false)
-            {
-                cboCourse.Items.Clear();
-                getCourseProgram(cod);
-            }
+            cboCourse.Items.Clear();
+            getCourseProgram(cod);
             getScheduleProgram(cod);
         }
 
@@ -229,7 +236,9 @@ namespace UI.Academic.AcademicOffer
             int idSchedule = Convert.ToInt32(cboSchedule.SelectedValue);
             if (idSchedule != 0)
             {
+                cboRoom.Enabled = true;
                 chkEspecial.Enabled = true;
+                cboTeacher.Enabled = true;
                 cboRoom.Items.Clear();
                 cboTeacher.Items.Clear();
                 getRoombySchedule(idSchedule);
@@ -267,16 +276,6 @@ namespace UI.Academic.AcademicOffer
             {
                 ListItem oItem = new ListItem(olistProgram.name, olistProgram.code.ToString());
                 cboProgram.Items.Add(oItem);
-            }
-        }
-
-        protected void cboProgramValue()
-        {
-            if (oUser.oProgram.code != 1)
-            {
-                cboProgram.SelectedValue = oUser.oProgram.code.ToString();
-                cboPeriod.SelectedValue = Session["period"].ToString();
-                cboProgramAction(oUser.oProgram.code);
             }
         }
 
@@ -528,9 +527,6 @@ namespace UI.Academic.AcademicOffer
             {
                 cboProgramValue();
             }
-            cboRoom.Enabled = true;
-            cboSchedule.Enabled = true;
-            cboTeacher.Enabled = true;
             btnNew.Enabled = false;
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
