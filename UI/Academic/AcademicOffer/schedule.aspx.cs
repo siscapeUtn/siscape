@@ -242,6 +242,7 @@ namespace UI.Academic.AcademicOffer
 
         protected void blockControls()
         {
+            clearControls();
             chkld.Enabled = false;
             cboprogram.Enabled = false;
             txtCode.Enabled = false;
@@ -253,7 +254,6 @@ namespace UI.Academic.AcademicOffer
             btnNew.Enabled = true;
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
-            clearControls();
         }
 
         protected void unlockControls()

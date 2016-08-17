@@ -277,9 +277,9 @@ namespace BLL
         }
 
 
-        public List<ClassRoom> getAllActiveByProgram(Int32 pCode)
+        public List<ClassRoom> getAllByProgram(Int32 pCode)
         {
-            String sql = "SP_GETALLCLASSROOMDESACTIVEBYPROGRAM";
+            String sql = "SP_GETALLCLASSROOMBYPROGRAM";
             
             try
             {

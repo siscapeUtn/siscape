@@ -14,6 +14,7 @@ C:\Users\Rud\Desktop\siscape\UI\bin\itextsharp.xml
 C:\Users\Rud\Desktop\siscape\UI\bin\DAL.pdb
 C:\Users\Rud\Desktop\siscape\UI\obj\Debug\UI.dll
 C:\Users\Rud\Desktop\siscape\UI\obj\Debug\UI.pdb
+<<<<<<< HEAD
 C:\Users\Daniel\Desktop\siscape\UI\bin\UI.dll.config
 C:\Users\Daniel\Desktop\siscape\UI\bin\UI.dll
 C:\Users\Daniel\Desktop\siscape\UI\bin\UI.pdb
@@ -27,3 +28,21 @@ C:\Users\Daniel\Desktop\siscape\UI\bin\DAL.pdb
 C:\Users\Daniel\Desktop\siscape\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Desktop\siscape\UI\obj\Debug\UI.dll
 C:\Users\Daniel\Desktop\siscape\UI\obj\Debug\UI.pdb
+=======
+C:\Users\rsanchez\Desktop\a\sis\new\siscape\UI\bin\UI.dll.config
+C:\Users\rsanchez\Desktop\a\sis\new\siscape\UI\bin\UI.dll
+C:\Users\rsanchez\Desktop\a\sis\new\siscape\UI\bin\UI.pdb
+C:\Users\rsanchez\Desktop\a\sis\new\siscape\UI\bin\BLL.dll
+C:\Users\rsanchez\Desktop\a\sis\new\siscape\UI\bin\Entities.dll
+C:\Users\rsanchez\Desktop\a\sis\new\siscape\UI\bin\itextsharp.dll
+C:\Users\rsanchez\Desktop\a\sis\new\siscape\UI\bin\itextsharp.xmlworker.dll
+C:\Users\rsanchez\Desktop\a\sis\new\siscape\UI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\rsanchez\Desktop\a\sis\new\siscape\UI\bin\DAL.dll
+C:\Users\rsanchez\Desktop\a\sis\new\siscape\UI\bin\BLL.pdb
+C:\Users\rsanchez\Desktop\a\sis\new\siscape\UI\bin\Entities.pdb
+C:\Users\rsanchez\Desktop\a\sis\new\siscape\UI\bin\itextsharp.xml
+C:\Users\rsanchez\Desktop\a\sis\new\siscape\UI\bin\DAL.pdb
+C:\Users\rsanchez\Desktop\a\sis\new\siscape\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\rsanchez\Desktop\a\sis\new\siscape\UI\obj\Debug\UI.dll
+C:\Users\rsanchez\Desktop\a\sis\new\siscape\UI\obj\Debug\UI.pdb
+>>>>>>> 393392e1d05532476fa816df61bbadd0cb42a4d3
