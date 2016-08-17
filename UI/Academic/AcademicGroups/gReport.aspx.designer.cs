@@ -7,9 +7,9 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace UI.Academic {
+namespace UI.Academic.AcademicGroups {
     
     
-    public partial class academic {
+    public partial class gReport {
     }
 }

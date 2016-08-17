@@ -17,6 +17,12 @@
                     <p>Funcionarios</p></a>
                 </section>
             </section>
+            <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
+                <section class="accesses">
+                    <a href="gReport.aspx"><img alt="Reportws" src="../../images/academic/report-academic.svg" />
+                    <p>Reportes</p></a>
+                </section>
+            </section>
              <% showOfferAcademic(); %>
             <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
                 <section class="accesses">
