@@ -315,7 +315,7 @@ namespace UI.Academic.Functionary
                 //lblMessageSalary.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorStartDesignation", "$('#ContentPlaceHolder1_txtStartDesignation').removeClass('has-error');", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ind = false;
                 //lblMessageSalary.Text = "Debe digitar un salario correcto.";
@@ -331,7 +331,7 @@ namespace UI.Academic.Functionary
                 //lblMessageSalary.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorEndDesignation", "$('#ContentPlaceHolder1_txtEndDesignation').removeClass('has-error');", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ind = false;
                 //lblMessageSalary.Text = "Debe digitar un salario correcto.";
@@ -344,7 +344,7 @@ namespace UI.Academic.Functionary
                 //lblMessageAnnuality.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorHoursDisignation", "$('#ContentPlaceHolder1_txtHoursDisignation').removeClass('has-error');", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ind = false;
                 //lblMessageAnnuality.Text = "Debe digitar una anualidad correcta.";

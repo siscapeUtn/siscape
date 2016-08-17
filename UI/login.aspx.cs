@@ -97,6 +97,7 @@ namespace UI
                 cboPeriod.Items.Add(oItem);
             }
         }
+
         private void addPermission(int roleId)
         {
             Session["Administration"] = false;

@@ -133,7 +133,7 @@ namespace UI.Academic
                 Convert.ToDouble(txtSalary.Text);
                 lblMessageSalary.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorSalary", "$('#ContentPlaceHolder1_txtSalary').removeClass('has-error');", true);
-            }catch (Exception ex){
+            }catch (Exception){
                 ind = false;
                 lblMessageSalary.Text = "Debe digitar un salario correcto.";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorSalary", "$('#ContentPlaceHolder1_txtSalary').addClass('has-error');", true);
@@ -145,14 +145,14 @@ namespace UI.Academic
                 lblMessageAnnuality.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorAnnuality", "$('#ContentPlaceHolder1_txtAnnuality').removeClass('has-error');", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ind = false;
                 lblMessageAnnuality.Text = "Debe digitar una anualidad correcta.";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorAnnuality", "$('#ContentPlaceHolder1_txtAnnuality').addClass('has-error');", true);
             }
 
-            return true;
+            return ind;
         }
 
         protected void blockControls()
