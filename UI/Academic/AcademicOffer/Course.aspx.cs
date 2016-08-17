@@ -166,7 +166,16 @@ namespace UI.Academic.AcademicOffer
         */ 
         protected void loadData()
         {
-           gvCourse.DataSource = CourseBLL.getInstance().getAll();
+            int code = oUser.oProgram.code;
+            if (code == 1)
+            {
+                gvCourse.DataSource = CourseBLL.getInstance().getAll();
+            }
+            else
+            {
+                gvCourse.DataSource = CourseBLL.getInstance().getAllCourseProgram(code);
+            }
+           
            gvCourse.DataBind();
         } //End loadData()
 
@@ -253,7 +262,16 @@ namespace UI.Academic.AcademicOffer
         {
             try
             {
-                List<Entities.Course> listCourse = CourseBLL.getInstance().getAll();
+                int code = oUser.oProgram.code;
+                List<Entities.Course> listCourse;
+                if (code == 1)
+                {
+                  listCourse = CourseBLL.getInstance().getAll();
+                }
+                else
+                {
+                   listCourse = CourseBLL.getInstance().getAllCourseProgram(code);
+                }
                 System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
                 text::Document pdfDoc = new text::Document(text::PageSize.A4, 10, 10, 10, 10);
                 pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());
@@ -276,11 +294,12 @@ namespace UI.Academic.AcademicOffer
                 title.Add("\n\n Reporte de Cursos\n\n");
                 pdfDoc.Add(title);
                 
-                PdfPTable oPTable = new PdfPTable(2);
+                PdfPTable oPTable = new PdfPTable(3);
                 oPTable.TotalWidth = 100;
                 oPTable.SpacingBefore = 20f;
                 oPTable.SpacingAfter = 30f;
                 oPTable.AddCell("Descripción");
+                oPTable.AddCell("Programa");
                 oPTable.AddCell("Estado");
 
                 if (listCourse.Count > 0)
@@ -288,6 +307,7 @@ namespace UI.Academic.AcademicOffer
                     foreach (Entities.Course pCourse in listCourse)
                     {
                         oPTable.AddCell(pCourse.description);
+                        oPTable.AddCell(pCourse.oProgram.name);
                         oPTable.AddCell((pCourse.state == 1 ? "Activo" : "Inactivo"));
                     }
                 }

@@ -300,6 +300,7 @@ namespace BLL
                     oSchedule.startTime = Convert.ToDateTime(oDataRow[5].ToString());
                     oSchedule.endTime = Convert.ToDateTime(oDataRow[6].ToString());
                     oSchedule.state = Convert.ToInt32(oDataRow[7].ToString());
+                    oProgram.name = oDataRow[8].ToString();
                     oSchedule.oProgram = oProgram;
                     listSchedule.Add(oSchedule);
                 }

@@ -271,6 +271,7 @@ namespace UI.Academic
 
         protected void unlockControls()
         {
+            clearControls();
             txtCode.Enabled = true;
             if (oUser.oProgram.code == 1)
             {
@@ -290,7 +291,6 @@ namespace UI.Academic
             btnNew.Enabled = false;
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
-            clearControls();
         }
 
         protected void clearControls()
