@@ -159,6 +159,11 @@ namespace UI.Academic
                 ListItem oItem = new ListItem(oProgram.name, oProgram.code.ToString());
                 cboprogram.Items.Add(oItem);
             }
+            cboProgramValue();
+        }
+
+        protected void cboProgramValue()
+        {
             if (oUser.oProgram.code != 1)
             {
                 cboprogram.SelectedValue = oUser.oProgram.code.ToString();
@@ -270,6 +275,10 @@ namespace UI.Academic
             if (oUser.oProgram.code == 1)
             {
                 cboprogram.Enabled = true;
+            }
+            else
+            {
+                cboProgramValue();
             }
             txtId.Enabled = true;
             txtName.Enabled = true;

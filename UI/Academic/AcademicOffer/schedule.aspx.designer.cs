@@ -67,6 +67,33 @@ namespace UI.Academic.AcademicOffer {
         protected global::System.Web.UI.WebControls.CheckBoxList chkld;
         
         /// <summary>
+        /// Control lblprogram.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblprogram;
+        
+        /// <summary>
+        /// Control cboprogram.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cboprogram;
+        
+        /// <summary>
+        /// Control lblmessageprogram.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblmessageprogram;
+        
+        /// <summary>
         /// Control lblDescription.
         /// </summary>
         /// <remarks>

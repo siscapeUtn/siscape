@@ -9,6 +9,7 @@ using text = iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
 using System.IO;
+using Entities;
 
 namespace UI.Academic.AcademicOffer
 {
@@ -17,16 +18,27 @@ namespace UI.Academic.AcademicOffer
         public bool offerAcademic { get; set; }
         static Int32 schedule_id = -1;
         private static string codDays = "";
+        static UserSystem oUser = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 blockControls();
+                loadUser();
+                loadPrograms();
             }
             loadData();
         }
 
+        private void loadUser()
+        {
+            oUser = (UserSystem)Session["User"];
+            if (oUser == null)
+            {
+                Response.Redirect("../../index.aspx");
+            }
+        }
         protected void showOfferAcademic()
         {
             this.offerAcademic = Convert.ToBoolean(Session["OfferAcademic"].ToString());
@@ -54,7 +66,7 @@ namespace UI.Academic.AcademicOffer
                 oSchedule.startTime = Convert.ToDateTime(txtStart.Text);
                 oSchedule.endTime = Convert.ToDateTime(txtEndHour.Text);
                 oSchedule.state = Convert.ToInt32(cboState.SelectedValue);
-                oSchedule.oProgram.code = 1;
+                oSchedule.oProgram.code = Convert.ToInt32(cboprogram.SelectedValue);
                 oSchedule.codday = codDays;
 
                 if (ScheduleBLL.getInstance().exists(oSchedule.code))
@@ -93,10 +105,40 @@ namespace UI.Academic.AcademicOffer
 
         protected void loadData()
         {
-            gvSchedule.DataSource = ScheduleBLL.getInstance().getAll();
+            int code = oUser.oProgram.code;
+            if (code == 1)
+            {
+                gvSchedule.DataSource = ScheduleBLL.getInstance().getAll();
+            }
+            else
+            {
+                gvSchedule.DataSource = ScheduleBLL.getInstance().getAllByPrgram(code);
+            }
+            
             gvSchedule.DataBind();
         }
 
+        protected void loadPrograms()
+        {
+            List<Entities.Program> listPrograms = new List<Entities.Program>();
+            listPrograms = ProgramBLL.getInstance().getAllActived();
+            ListItem oItemS = new ListItem("---- Seleccione ----", "0");
+            cboprogram.Items.Add(oItemS);
+            foreach (Entities.Program oProgram in listPrograms)
+            {
+                ListItem oItem = new ListItem(oProgram.name, oProgram.code.ToString());
+                cboprogram.Items.Add(oItem);
+            }
+            cboProgramValue();
+        }
+
+        protected void cboProgramValue()
+        {
+            if (oUser.oProgram.code != 1)
+            {
+                cboprogram.SelectedValue = oUser.oProgram.code.ToString();
+            }
+        }
         protected Boolean validateData()
         {
            Boolean ind = true;
@@ -201,6 +243,7 @@ namespace UI.Academic.AcademicOffer
         protected void blockControls()
         {
             chkld.Enabled = false;
+            cboprogram.Enabled = false;
             txtCode.Enabled = false;
             txtDescription.Enabled = false;
             cboTypeSchedule.Enabled = false;
@@ -217,6 +260,14 @@ namespace UI.Academic.AcademicOffer
         {
             txtCode.Enabled = false;
             chkld.Enabled = true;
+            if (oUser.oProgram.code == 1)
+            {
+                cboprogram.Enabled = true;
+            }
+            else
+            {
+                cboProgramValue();
+            }
             txtDescription.Enabled = false;
             txtStart.Enabled = true;
             txtEndHour.Enabled = true;
@@ -247,6 +298,9 @@ namespace UI.Academic.AcademicOffer
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorName", "$('#ContentPlaceHolder1_txtStart').removeClass('has-error');", true);
             lblMessageEndHour.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorName", "$('#ContentPlaceHolder1_txtEndHour').removeClass('has-error');", true);
+            cboprogram.SelectedValue = "0";
+            lblmessageprogram.Text = "";
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorProgram", "$('#ContentPlaceHolder1_cboProgram').removeClass('has-error');", true);
         }
 
         //This method work for clean up the list of checkbox
@@ -307,7 +361,17 @@ namespace UI.Academic.AcademicOffer
         {
             try
             {
-                List<Entities.Schedule> listSchedule = ScheduleBLL.getInstance().getAll();
+                int code = oUser.oProgram.code;
+                List<Entities.Schedule> listSchedule;
+                if (code == 1)
+                {
+                    listSchedule = ScheduleBLL.getInstance().getAll();
+                }
+                else
+                {
+                    listSchedule = ScheduleBLL.getInstance().getAllByPrgram(code);
+                }
+                 
                 System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
                 text::Document pdfDoc = new text::Document(text::PageSize.A4, 10, 10, 10, 10);
                 pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());
@@ -338,6 +402,7 @@ namespace UI.Academic.AcademicOffer
                 oPTable.AddCell("Horarios");
                 oPTable.AddCell("Hora de Inicio");
                 oPTable.AddCell("Hora de Fin");
+                oPTable.AddCell("Programa");
                 oPTable.AddCell("Estado");
 
                 if (listSchedule.Count > 0)
@@ -348,6 +413,7 @@ namespace UI.Academic.AcademicOffer
                         oPTable.AddCell(pSchedule.typeSchedule);
                         oPTable.AddCell(pSchedule.startTime.ToShortTimeString());
                         oPTable.AddCell(pSchedule.endTime.ToShortTimeString());
+                        oPTable.AddCell(pSchedule.oProgram.name);
                         oPTable.AddCell((pSchedule.state == 1 ? "Activo" : "Inactivo"));
                     }
                 }

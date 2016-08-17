@@ -181,6 +181,11 @@ namespace UI.Academic.AcademicOffer
                 ListItem oItem = new ListItem(oProgram.name, oProgram.code.ToString());
                 cboprogram.Items.Add(oItem);
             }
+            cboProgramValue();
+        }
+
+        protected void cboProgramValue()
+        {
             if (oUser.oProgram.code != 1)
             {
                 cboprogram.SelectedValue = oUser.oProgram.code.ToString();
@@ -211,6 +216,10 @@ namespace UI.Academic.AcademicOffer
             if (oUser.oProgram.code == 1)
             {
                 cboprogram.Enabled = true;
+            }
+            else
+            {
+                cboProgramValue();
             }
             cboState.Enabled = true;
             btnNew.Enabled = false;

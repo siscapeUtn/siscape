@@ -33,6 +33,10 @@ namespace UI.Academic
         private void loadUser()
         {
             oUser =(UserSystem)Session["User"];
+            if (oUser == null)
+            {
+                Response.Redirect("../../login.aspx");
+            }
         }
 
         protected void btnNew_Click(object sender, ImageClickEventArgs e)
