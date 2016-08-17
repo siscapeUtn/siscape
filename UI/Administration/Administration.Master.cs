@@ -117,7 +117,9 @@ namespace UI.Administration
             }
             else if (this.offerAcademic == true)
             {
-                Response.Write(head + offerBody + footer);
+                Response.Write("<li><div class='option'>" +
+                 "<div><a href='../../Academic/AcademicGroups/gAcademicOffer.aspx' id='academic' class='anchor'>Oferta Acad&eacute;mica</a></div>" +
+                 "</div><ul class='sub-menu'>" + footer);
             }
         }
 
