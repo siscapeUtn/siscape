@@ -112,7 +112,7 @@ namespace UI.Academic.AcademicOffer
             }
             else
             {
-                gvSchedule.DataSource = ScheduleBLL.getInstance().getAllByPrgram(code);
+                gvSchedule.DataSource = ScheduleBLL.getInstance().getAllByPrgrams(code);
             }
             
             gvSchedule.DataBind();
@@ -369,7 +369,7 @@ namespace UI.Academic.AcademicOffer
                 }
                 else
                 {
-                    listSchedule = ScheduleBLL.getInstance().getAllByPrgram(code);
+                    listSchedule = ScheduleBLL.getInstance().getAllByPrgrams(code);
                 }
                  
                 System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();

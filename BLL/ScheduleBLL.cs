@@ -278,7 +278,7 @@ namespace BLL
             finally { }
         }
 
-        public List<Schedule> getAllByPrgram(Int32 id)
+        public List<Schedule> getAllByPrgrams(Int32 id)
         {
             String sql = "SP_GETALLSCHEDULEBYPROGRAM";
             try
