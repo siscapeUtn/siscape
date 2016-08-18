@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <% showOService(); %>
+    <%--<% showOService(); %>--%>
     <section class="content_2">
         <section class="maintanance">
             <p class="title">Administraci&oacute;n de listas de espera</p>
@@ -39,6 +39,20 @@
                                 <asp:TextBox ID="txtLastName" CssClass="form-control" runat="server"></asp:TextBox>
                                 <span class="message-has-error">
                                     <asp:Label runat="server" ID="lblMessageLastName" ToolTip="Debe digitar el apellido correctamente sin números o caracteres especiales"></asp:Label></span>
+                            </section>
+                            <section class="form-group">
+                                <asp:Label ID="lblDiaConveniencia" Text="Día a conveniencia:" runat="server" ></asp:Label>
+                                <asp:DropDownList runat="server" cssclass="form-control" ID="cboDay">
+                                    <asp:ListItem Value="Lunes">Lunes</asp:ListItem>
+                                    <asp:ListItem Value="Martes">Martes</asp:ListItem>
+                                    <asp:ListItem Value="Miercoles">Miércoles</asp:ListItem>
+                                    <asp:ListItem Value="Jueves">Jueves</asp:ListItem>
+                                    <asp:ListItem Value="Viernes">Viernes</asp:ListItem>
+                                    <asp:ListItem Value="Sabado">Sábado</asp:ListItem>
+                                    <asp:ListItem Value="Domingo">Domingo</asp:ListItem>
+                                </asp:DropDownList>
+                                <span class="message-has-error">
+                                    <asp:Label runat="server" ID="lblCboDay" ToolTip="Debe digitar el seleccionar un día para el curso"></asp:Label></span>
                             </section>
                         </section>
                         <section class="col-md-6">
@@ -133,7 +147,7 @@
                         <section class="col-md-3"></section>
                         <section class="col-md-9 form-buttons buttonsWaiting">
                                 <asp:Button Text="Enviar" ToolTip="Agregar a lista de espera" ID="Save" runat="server" OnClick="btnSave" CssClass="btnWaitingList"  />
-                                <asp:Button  ToolTip="Cancelar" ID="Cancel" runat="server" Text="Cancelar" OnClick="btn_Cancel" CssClass="btnWaitingList" />    
+                                <%--<asp:Button  ToolTip="Cancelar" ID="Cancel" runat="server" Text="Cancelar" OnClick="btn_Cancel" CssClass="btnWaitingList" />    --%>
                         </section>
                        
                         <!-- End .form-buttons -->

@@ -25,15 +25,15 @@
                             <section class="table-responsive">
                                 <asp:GridView ID="gvCustomers" runat="server" AutoGenerateColumns="False">
                                     <Columns>
-                                        <asp:BoundField HeaderText="Código" ReadOnly="true" DataField="code" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
-                                        <asp:BoundField HeaderText="Identificación" ReadOnly="true" DataField="id" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
-                                        <asp:BoundField HeaderText="Nombre" ReadOnly="true" DataField="name" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
-                                        <asp:BoundField HeaderText="Teléfono Celular" ReadOnly="true" DataField="cellPhone" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
-                                        <asp:BoundField HeaderText="Teléfono Recidencial" ReadOnly="true" DataField="phone" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
-                                        <asp:BoundField HeaderText="Correo electrónico" ReadOnly="true" DataField="mail" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
-                                        <asp:BoundField HeaderText="Curso" ReadOnly="true" DataField="course" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
-                                        <asp:BoundField HeaderText="Días tentativos" ReadOnly="true" DataField="description" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
-                                        <asp:BoundField HeaderText="Horario" ReadOnly="true" DataField="schedule" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
+                                        <asp:BoundField HeaderText="Código"  ReadOnly="true" DataField="code" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
+                                        <asp:BoundField HeaderText="Cédula" ReadOnly="true" DataField="id" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
+                                        <asp:BoundField HeaderText="Nombre" ReadOnly="true" DataField="namec" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
+                                        <asp:BoundField HeaderText="Tel. Celular" ReadOnly="true" DataField="cellPhone" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
+                                        <asp:BoundField HeaderText="Tel. Res." ReadOnly="true" DataField="phone" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
+                                        <asp:BoundField HeaderText="E-mail" ReadOnly="true" DataField="mail" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
+                                        <asp:BoundField HeaderText="Periodo"  Visible="FALSE" ReadOnly="true" DataField="name" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
+                                        <asp:BoundField HeaderText="Curso" ReadOnly="true" DataField="description" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
+                                        <asp:BoundField HeaderText="Día" ReadOnly="true" DataField="day" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                         <asp:TemplateField HeaderText="Contactado">
                                             <ItemTemplate>
                                                 <asp:CheckBox ID="contacted" runat="server" Checked='<%# bool.Parse(Eval("contacted").ToString()) %>'  />
