@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 C:\Users\Rud\Desktop\siscape\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 C:\Users\Rud\Desktop\siscape\UI\bin\UI.dll.config
 C:\Users\Rud\Desktop\siscape\UI\bin\UI.dll
@@ -31,7 +31,7 @@ C:\Users\asala\Source\Repos\SISCAPE\UI\bin\DAL.pdb
 C:\Users\asala\Source\Repos\SISCAPE\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 C:\Users\asala\Source\Repos\SISCAPE\UI\obj\Debug\UI.dll
 C:\Users\asala\Source\Repos\SISCAPE\UI\obj\Debug\UI.pdb
-=======
+
 C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\UI\bin\UI.dll.config
 C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\UI\bin\UI.dll
 C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\UI\bin\UI.pdb
@@ -48,4 +48,3 @@ C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\UI\bin\DAL.pdb
 C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\UI\obj\Debug\UI.dll
 C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\UI\obj\Debug\UI.pdb
->>>>>>> fcd3008a6ffed83068e47a52fc9af0733a248776
