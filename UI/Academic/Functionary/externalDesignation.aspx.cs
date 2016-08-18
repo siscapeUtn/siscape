@@ -24,8 +24,6 @@ namespace UI.Academic.Functionary
         {
             if (!IsPostBack)
             {
-                
-               // Session.RemoveAll();
                 blockControls();
             }
             fillGvDesignation();
@@ -59,7 +57,7 @@ namespace UI.Academic.Functionary
             cboFunctionary.Items.Add(oItemS);
             foreach (Entities.Teacher oTeacher in listTeacher)
             {
-                ListItem oItem = new ListItem(oTeacher.name, oTeacher.code.ToString());
+                ListItem oItem = new ListItem(oTeacher.name + " " + oTeacher.lastName + " " + oTeacher.id, oTeacher.code.ToString());
                 cboFunctionary.Items.Add(oItem);
             }
             ListItem oItemS2 = new ListItem("---Seleccione---", "0");

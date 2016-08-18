@@ -63,8 +63,8 @@
                             </section>
                         </section>
                         <section class="modal-footer">
-                            <asp:Button CssClass="btn btn-confirm pull-right" OnClick="btnPeriod_Click" ID="btnDelete" Text="Aceptar" runat="server"></asp:Button>
                             <asp:Button CssClass="btn btn-confirm pull-right" OnClick="btnCancel_Click" ID="btnCancel" Text="Cancelar" runat="server"></asp:Button>
+                            <asp:Button CssClass="btn btn-confirm pull-right" OnClick="btnPeriod_Click" ID="btnDelete" Text="Aceptar" runat="server"></asp:Button>
                         </section>
                     </section>
                 </ContentTemplate>

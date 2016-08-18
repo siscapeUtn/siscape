@@ -51,12 +51,13 @@ namespace UI.Academic.AcademicOffer
         protected void btnNew_Click(object sender, ImageClickEventArgs e)
         {          
             unlockControls();
-            fillhours();
+            cboProgramAction(oUser.oProgram.code);
             txtCode.Text = BLL.AcademicOfferBLL.getInstance().getNextCode().ToString();
         }
 
         protected void btnSave_Click(object sender, ImageClickEventArgs e)
         {
+            Int32 records = 0;
             if (validateData())
             {
                 Entities.Period oPeriod = new Entities.Period();
@@ -77,17 +78,22 @@ namespace UI.Academic.AcademicOffer
                 Entities.AcademicOffer oAcademicOffer = new Entities.AcademicOffer(code, oPeriod, oProgram, oCourse, price, oClassRoom, oSchedule, oteacher, hour);
                 if (BLL.AcademicOfferBLL.getInstance().exists(code))
                 {
-                    BLL.AcademicOfferBLL.getInstance().modify(oAcademicOffer);
+                    lblMessage.Text = "Esta solicitud no puede ser procesada";
                 }
                 else
                 {
-                    BLL.AcademicOfferBLL.getInstance().insert(oAcademicOffer);
+                   records= BLL.AcademicOfferBLL.getInstance().insert(oAcademicOffer);
                     insertClasroomSchedule(oAcademicOffer);
                     insertTeacherSchedule(oAcademicOffer);
                 }
 
                 blockControls();
                 loadData();
+
+                if (records > 0)
+                {
+                    lblMessage.Text = "Datos almacenados correactamente";
+                }
             }
         }
         //this method insert the new schedule for the classrooms
@@ -199,7 +205,6 @@ namespace UI.Academic.AcademicOffer
         {
             getProgram();
             getPeriod();
-            fillhours();
             cboProgramValue();
         }
 
@@ -209,7 +214,6 @@ namespace UI.Academic.AcademicOffer
             {
                 cboProgram.SelectedValue = oUser.oProgram.code.ToString();
                 cboPeriod.SelectedValue = Session["period"].ToString();
-                cboProgramAction(oUser.oProgram.code);
             }
         }
 
@@ -228,6 +232,12 @@ namespace UI.Academic.AcademicOffer
             cboCourse.Items.Clear();
             getCourseProgram(cod);
             getScheduleProgram(cod);
+            if (cod != 0)
+            {
+                cboCourse.Enabled = true;
+                cboSchedule.Enabled = true;
+            }
+           
         }
 
         //when the user selected the schedule, the cmbRoom wil full with the parameters 
@@ -247,6 +257,22 @@ namespace UI.Academic.AcademicOffer
             else
             {
                 chkEspecial.Enabled = false;
+            }
+        }
+
+        protected void cboTeacher_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idTeacher = Convert.ToInt32(cboTeacher.SelectedValue);
+            if (idTeacher != 0)
+            {
+                cboHours.Items.Clear();
+                cboHours.Enabled = true;
+                fillhours();
+            }
+            else
+            {
+                cboHours.Items.Clear();
+                cboHours.Enabled = false;
             }
         }
 
@@ -364,10 +390,15 @@ namespace UI.Academic.AcademicOffer
         private void fillhours()
         {
 
-            ListItem oItemS = new ListItem("---- Seleccione ----", "0");
-            for (int i = 5; i <= 40; i = i + 5)
+            Int32 hours = 0;
+            cboHours.Items.Clear();
+            hours = ExternalDesignationBLL.getInstance().getHours(Int32.Parse(cboTeacher.SelectedValue));
+            ListItem oItemS = new ListItem("---Seleccione---", "0");
+            cboHours.Items.Add(oItemS);
+            int i = hours / 5;
+            for (int j = 5; j <= hours; j = j + 5)
             {
-                ListItem oItem = new ListItem(i.ToString(), i.ToString());
+                ListItem oItem = new ListItem(j.ToString() + " horas", j.ToString());
                 cboHours.Items.Add(oItem);
             }
 
@@ -516,8 +547,7 @@ namespace UI.Academic.AcademicOffer
         {
             clearControls();
             txtPrice.Enabled = true;
-            cboHours.Enabled = true;
-            cboCourse.Enabled = true;
+            cboHours.Enabled = false;
             if (oUser.oProgram.code == 1)
             {
                 cboPeriod.Enabled = true;
@@ -527,6 +557,8 @@ namespace UI.Academic.AcademicOffer
             {
                 cboProgramValue();
             }
+            cboCourse.Enabled = false;
+            cboSchedule.Enabled = false;
             btnNew.Enabled = false;
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
