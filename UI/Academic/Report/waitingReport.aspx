@@ -13,8 +13,9 @@
                             <section class="form-group">
                                 <asp:Label runat="server" ID="lblSelect" Text="Seleccione la opción"></asp:Label>
                                 <asp:DropDownList runat="server" CssClass="form-control" ID="cboOptions">
-                                    <asp:ListItem Value="0">Sin contactar</asp:ListItem>
+                                    <asp:ListItem Value="0">No contactar</asp:ListItem>
                                     <asp:ListItem Value="1">Contactado</asp:ListItem>
+                                    <asp:ListItem Value="2">Todos</asp:ListItem>
                                 </asp:DropDownList>
                             </section>
                         </section>
