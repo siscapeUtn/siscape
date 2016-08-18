@@ -35,7 +35,7 @@
                             </section> 
                             <section class="form-group">
                                 <asp:Label runat="server" ID="lblTeacher" Text="Profesor:"></asp:Label>
-                                <asp:DropDownList ID="cboTeacher" CssClass="form-control"  runat="server"  AutoPostBack="true" OnSelectedIndexChanged="cboTeacher_SelectedIndexChanged"></asp:DropDownList>
+                                <asp:DropDownList ID="cboTeacher" CssClass="form-control"  runat="server" AutoPostBack="true"  OnSelectedIndexChanged="cboTeacher_SelectedIndexChanged"></asp:DropDownList>
                                 <span class="message-has-error"><asp:Label runat="server" ID="lblMessageTeacher"></asp:Label></span>
                             </section> 
                         </section>

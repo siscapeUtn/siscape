@@ -1,31 +1,13 @@
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\BLL\bin\BLL.dll.config
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\BLL\bin\BLL.dll
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\BLL\bin\BLL.pdb
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\BLL\bin\DAL.dll
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\BLL\bin\Entities.dll
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\BLL\bin\itextsharp.dll
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\BLL\bin\DAL.pdb
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\BLL\bin\Entities.pdb
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\BLL\bin\itextsharp.xml
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\BLL\bin\System.Net.Http.Formatting.xml
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\BLL\bin\System.Web.Http.xml
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\BLL\bin\System.Web.Http.WebHost.xml
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\BLL\bin\es\System.Net.Http.Formatting.resources.dll
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\BLL\bin\es\System.Web.Http.resources.dll
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\BLL\bin\es\System.Web.Http.WebHost.resources.dll
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\BLL\obj\Debug\BLL.dll
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\BLL\obj\Debug\BLL.pdb
-C:\Users\asala\Source\Repos\siscape 02\siscape\BLL\bin\BLL.dll.config
-C:\Users\asala\Source\Repos\siscape 02\siscape\BLL\bin\BLL.dll
-C:\Users\asala\Source\Repos\siscape 02\siscape\BLL\bin\BLL.pdb
-C:\Users\asala\Source\Repos\siscape 02\siscape\BLL\bin\DAL.dll
-C:\Users\asala\Source\Repos\siscape 02\siscape\BLL\bin\Entities.dll
-C:\Users\asala\Source\Repos\siscape 02\siscape\BLL\bin\itextsharp.dll
-C:\Users\asala\Source\Repos\siscape 02\siscape\BLL\bin\Newtonsoft.Json.dll
-C:\Users\asala\Source\Repos\siscape 02\siscape\BLL\bin\DAL.pdb
-C:\Users\asala\Source\Repos\siscape 02\siscape\BLL\bin\Entities.pdb
-C:\Users\asala\Source\Repos\siscape 02\siscape\BLL\bin\itextsharp.xml
-C:\Users\asala\Source\Repos\siscape 02\siscape\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
-C:\Users\asala\Source\Repos\siscape 02\siscape\BLL\obj\Debug\BLL.dll
-C:\Users\asala\Source\Repos\siscape 02\siscape\BLL\obj\Debug\BLL.pdb
+C:\Users\Rud\Desktop\siscape\BLL\bin\BLL.dll.config
+C:\Users\Rud\Desktop\siscape\BLL\bin\BLL.dll
+C:\Users\Rud\Desktop\siscape\BLL\bin\BLL.pdb
+C:\Users\Rud\Desktop\siscape\BLL\bin\DAL.dll
+C:\Users\Rud\Desktop\siscape\BLL\bin\Entities.dll
+C:\Users\Rud\Desktop\siscape\BLL\bin\itextsharp.dll
+C:\Users\Rud\Desktop\siscape\BLL\bin\Newtonsoft.Json.dll
+C:\Users\Rud\Desktop\siscape\BLL\bin\DAL.pdb
+C:\Users\Rud\Desktop\siscape\BLL\bin\Entities.pdb
+C:\Users\Rud\Desktop\siscape\BLL\bin\itextsharp.xml
+C:\Users\Rud\Desktop\siscape\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Rud\Desktop\siscape\BLL\obj\Debug\BLL.dll
+C:\Users\Rud\Desktop\siscape\BLL\obj\Debug\BLL.pdb
