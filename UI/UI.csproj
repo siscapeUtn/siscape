@@ -241,6 +241,7 @@
     <Content Include="fonts\fontawesome-webfont1.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="packages.config" />
+    <Content Include="guide\Manual de usuario.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

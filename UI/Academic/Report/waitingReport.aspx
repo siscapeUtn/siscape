@@ -12,18 +12,21 @@
                         <section class="col-md-6">
                             <section class="form-group">
                                 <asp:Label runat="server" ID="lblSelect" Text="Seleccione la opción"></asp:Label>
-                                <asp:DropDownList runat="server" CssClass="form-control" ID="cboOptions"></asp:DropDownList>
+                                <asp:DropDownList runat="server" CssClass="form-control" ID="cboOptions">
+                                    <asp:ListItem Value="0">Sin contactar</asp:ListItem>
+                                    <asp:ListItem Value="1">Contactado</asp:ListItem>
+                                </asp:DropDownList>
                             </section>
                         </section>
                          <section class="col-md-6">
                             <section class="form-group">
-                                <asp:Label runat="server" ID="lblPeriod" CssClass="form-control" Text="Seleccione el período"></asp:Label>
-                                <asp:DropDownList runat="server" ID="cboPeriod"></asp:DropDownList>
+                                <asp:Label runat="server" ID="lblPeriod"  Text="Seleccione el período:"></asp:Label>
+                                <asp:DropDownList runat="server" ID="cboPeriod" CssClass="form-control"></asp:DropDownList>
                             </section>
                         </section>
                         <section class="col-md-12">
                             <section class="form-group">
-                               <asp:ImageButton runat="server" ID="btnReport" ToolTip="Generar reporte" ImageUrl="~/images/maintenance/report.png" />
+                               <asp:ImageButton runat="server" ID="btnReport" CssClass="reportBtnCenter" ToolTip="Generar reporte" ImageUrl="~/images/maintenance/report.png" OnClick="btnReport_Click" />
                             </section>
                         </section>
                     </section>

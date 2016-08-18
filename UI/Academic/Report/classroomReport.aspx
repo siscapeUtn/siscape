@@ -17,7 +17,7 @@
                         </section>
                         <section class="col-md-6">
                             <section class="form-group">
-                               <asp:ImageButton runat="server" ID="btnReport" ToolTip="Generar reporte" ImageUrl="~/images/maintenance/report.png" />
+                               <asp:ImageButton runat="server" ID="btnReport" CssClass="reportBtn" ToolTip="Generar reporte" ImageUrl="~/images/maintenance/report.png" OnClick="btnReport_Click" />
                             </section>
                         </section>
                     </section>

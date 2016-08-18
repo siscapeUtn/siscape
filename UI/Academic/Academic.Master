@@ -91,7 +91,7 @@
                     <%--<span class="facebook_icon"></span>--%>
                 </section>
                 <section class="copyright-col">
-                    <span class="info">Ayuda</span>
+                    <span class="info"><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/guide/Manual de usuario.pdf" Target="_blank">Ayuda</asp:HyperLink></span>
                     <span class="info"><% showSessionFooter(); %></span>
                 </section>
             </section>
