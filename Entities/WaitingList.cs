@@ -15,6 +15,8 @@ namespace Entities
         public String cellPhone { get; set; }
         public String email { get; set; }
         public Int32 period { get; set; }
+        public Int32 course { get; set; }
+        public String day { get; set; }
         public Int32 contacted { get; set; }
     }
 }

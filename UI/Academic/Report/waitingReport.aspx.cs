@@ -41,9 +41,9 @@ namespace UI.Academic.Report
             DataTable oDatatable;
 
             if( isContact == 0 ){
-                oDatatable = WaitingListBLL.getInstance().getAllCostumers();
+                //oDatatable = WaitingListBLL.getInstance().getAllCostumers();
             } else {
-                oDatatable = WaitingListBLL.getInstance().getAllCostumersContacted();      
+                //oDatatable = WaitingListBLL.getInstance().getAllCostumersContacted();      
             }
 
         }

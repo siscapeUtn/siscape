@@ -12,8 +12,8 @@ namespace UI.Services
     
     public partial class Waiting_list : System.Web.UI.Page
     {
-        public String course_id;
-        public String description;
+        public static String course_id;
+        public static String description;
 
         DataTable oDataTable = new DataTable();
         public bool service { get; set; }
@@ -42,6 +42,37 @@ namespace UI.Services
                 Response.Redirect("../../index.aspx");
             }
         }
+        protected void btn_Cancel(object sender, EventArgs e)
+        {
+            Response.Redirect("../../index.aspx");
+        }
+
+        protected void btnSave(object sender, EventArgs e)
+        {
+            if (validateData())
+            {
+                Int32 periodo = Convert.ToInt32(Session["period"]);
+                Entities.WaitingList oWaitingList = new Entities.WaitingList();
+                oWaitingList.code = BLL.WaitingListBLL.getInstance().getNextCodeWaitingList();
+                oWaitingList.id = txtId.Text;
+                oWaitingList.name = txtName.Text;
+                oWaitingList.lastName = txtLastName.Text;
+                oWaitingList.homePhone = txtHomePhone.Text;
+                oWaitingList.cellPhone = txtCellPhone.Text;
+                oWaitingList.email = txtEmail.Text;
+                oWaitingList.period = periodo;
+                oWaitingList.course = Convert.ToInt32(course_id);
+                oWaitingList.day = cboDay.SelectedItem.Value;
+                //List<Tentative_Schedule> listTentative_Schedule = new List<Tentative_Schedule>();
+                //List<Course> listCourse = new List<Course>();
+                //listCourse = (List<Entities.Course>)Session["listCourse"];
+
+                BLL.WaitingListBLL.getInstance().insertWaitingList(oWaitingList);
+                clearControls();
+                Response.Redirect("../../index.aspx");
+            }
+
+        }
 
         private bool validateData()
         {
@@ -56,14 +87,14 @@ namespace UI.Services
             catch (Exception)
             {
                 ind = false;
-                lblMessageId.Text = "*";
+                lblMessageId.Text = "Debe digitar una identificación";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorId", "$('#ContentPlaceHolder1_txtId').addClass('has-error');", true);
             }
 
             if (txtName.Text.Trim() == "")
             {
                 ind = false;
-                lblMessageName.Text = "*";
+                lblMessageName.Text = "Debe digitar un nombre";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorName", "$('#ContentPlaceHolder1_txtName').addClass('has-error');", true);
             }
             else
@@ -75,7 +106,7 @@ namespace UI.Services
             if (txtLastName.Text.Trim() == "")
             {
                 ind = false;
-                lblMessageLastName.Text = "*";
+                lblMessageLastName.Text = "Debe digitar un apellido";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorLastName", "$('#ContentPlaceHolder1_txtLastName').addClass('has-error');", true);
             }
             else
@@ -93,7 +124,7 @@ namespace UI.Services
             catch (Exception)
             {
                 ind = false;
-                lblMessageHomePhone.Text = "*";
+                lblMessageHomePhone.Text = "Debe digitar un teléfono de recidencia";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorHomePhone", "$('#ContentPlaceHolder1_txtHomePhone').addClass('has-error');", true);
             }
 
@@ -106,14 +137,14 @@ namespace UI.Services
             catch (Exception)
             {
                 ind = false;
-                lblMessageCellPhone.Text = "*";
+                lblMessageCellPhone.Text = "Debe digitar un teléfono celular";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorCellPhone", "$('#ContentPlaceHolder1_txtCellPhone').addClass('has-error');", true);
             }
 
             if (txtEmail.Text.Trim() == "" || !txtEmail.Text.Contains("@"))
             {
                 ind = false;
-                lblMessageEmail.Text = "*";
+                lblMessageEmail.Text = "Debe digitar un correo válido";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorEmail", "$('#ContentPlaceHolder1_txtEmail').addClass('has-error');", true);
             }
             else
@@ -123,43 +154,6 @@ namespace UI.Services
             }
 
             return ind;
-        }
-
-        public void btnCancel_Click(object sender, ImageClickEventArgs e)
-        {
-
-        }
-
-        protected void btn_Cancel(object sender, EventArgs e)
-        {
-            Response.Redirect("../../index.aspx");
-        }
-
-        protected void btnSave(object sender, EventArgs e)
-        {
-            if (validateData())
-            {
-
-                Entities.WaitingList oWaitingList = new Entities.WaitingList();
-                oWaitingList.code = BLL.WaitingListBLL.getInstance().getNextCodeWaitingList();
-                oWaitingList.id = txtId.Text;
-                oWaitingList.name = txtName.Text;
-                oWaitingList.lastName = txtLastName.Text;
-                oWaitingList.homePhone = txtHomePhone.Text;
-                oWaitingList.cellPhone = txtCellPhone.Text;
-                oWaitingList.email = txtEmail.Text;
-                oWaitingList.period = 0;
-
-                List<Tentative_Schedule> listTentative_Schedule = new List<Tentative_Schedule>();
-                List<Course> listCourse = new List<Course>();
-                listCourse = (List<Entities.Course>)Session["listCourse"];
-
-                BLL.WaitingListBLL.getInstance().insertWaitingList(listCourse, oWaitingList);
-                clearControls();
-                Session.RemoveAll();
-                Response.Redirect("Waiting_list.aspx");
-            }
-
         }
         protected void clearControls()
         {

@@ -42,24 +42,27 @@ namespace UI.Services
 
         private void fillGridView()
         {
+            Int32 period = Convert.ToInt32(Session["period"]);
             DataTable oDataTable = new DataTable();
-            oDataTable = BLL.WaitingListBLL.getInstance().getAllCostumers();
+            oDataTable = BLL.WaitingListBLL.getInstance().getAllCostumers(period);
             gvCustomers.DataSource = oDataTable;
             gvCustomers.DataBind();
         }
 
         private void fillGridViewContacted()
         {
+            Int32 period = Convert.ToInt32(Session["period"]);
             DataTable oDataTable = new DataTable();
-            oDataTable = BLL.WaitingListBLL.getInstance().getAllCostumersContacted();
+            oDataTable = BLL.WaitingListBLL.getInstance().getAllCostumersContacted(period);
             gvCustomers.DataSource = oDataTable;
             gvCustomers.DataBind();
         }
 
         private void fillGridViewByCourse()
         {
+            Int32 period = Convert.ToInt32(Session["period"]);
             DataTable oDataTable = new DataTable();
-            oDataTable = BLL.WaitingListBLL.getInstance().getAllCostumersByCourse();
+            oDataTable = BLL.WaitingListBLL.getInstance().getAllCostumersByCourse(period);
             gvCustomers.DataSource = oDataTable;
             gvCustomers.DataBind();
         }

@@ -23,7 +23,7 @@
                 {
                     Response.Write(
                     "<section class='course'>"+
-                    "<form  method='POST' action='Waiting_list.aspx'>" +
+                    "</form><form  method='POST' action='Waiting_list.aspx'>" +
                     "<div class='name'>" + course.description + "</div>" +
                     "<input type='hidden' name='idCourse' value='" + course.id + "' runat='server' />" +
                     "<input type='hidden' name='nameCourse' value='" + course.description + "' runat='server' />" +
