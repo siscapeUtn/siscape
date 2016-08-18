@@ -213,6 +213,7 @@ namespace UI.Academic.AcademicOffer
             cboTypeSchedule.SelectedValue = oSchedule.typeSchedule;
             txtStart.Text = String.Format("{0:t}", oSchedule.startTime);
             txtEndHour.Text = String.Format("{0:t}", oSchedule.endTime);
+            cboprogram.SelectedValue = oSchedule.oProgram.code.ToString();
             cboState.SelectedValue = oSchedule.state.ToString();
             SelectchkDays(oSchedule.codday);
             ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "$('html, body').animate({ scrollTop: $('body').offset().top });", true);
@@ -258,6 +259,7 @@ namespace UI.Academic.AcademicOffer
 
         protected void unlockControls()
         {
+            clearControls();
             txtCode.Enabled = false;
             chkld.Enabled = true;
             if (oUser.oProgram.code == 1)
@@ -276,7 +278,6 @@ namespace UI.Academic.AcademicOffer
             btnNew.Enabled = false;
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
-            clearControls();
         }
 
         protected void clearControls()
@@ -394,7 +395,7 @@ namespace UI.Academic.AcademicOffer
                 title.Add("\n\n Reporte de Horarios\n\n");
                 pdfDoc.Add(title);
                 
-                PdfPTable oPTable = new PdfPTable(5);
+                PdfPTable oPTable = new PdfPTable(6);
                 oPTable.TotalWidth = 100;
                 oPTable.SpacingBefore = 20f;
                 oPTable.SpacingAfter = 30f;

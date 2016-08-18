@@ -91,7 +91,7 @@ namespace BLL
                 oCommand.CommandType = CommandType.StoredProcedure;
                 oCommand.Parameters.AddWithValue("@ID", oSchedule.code);
                 oCommand.Parameters[0].Direction = ParameterDirection.Input;
-                oCommand.Parameters.AddWithValue("@PROGRAM_ID", /*oSchedule.oProgram.code*/1);
+                oCommand.Parameters.AddWithValue("@PROGRAM_ID", oSchedule.oProgram.code);
                 oCommand.Parameters[1].Direction = ParameterDirection.Input;
                 oCommand.Parameters.AddWithValue("@DESCRIPTION", oSchedule.name);
                 oCommand.Parameters[2].Direction = ParameterDirection.Input;
@@ -127,7 +127,7 @@ namespace BLL
                 oCommand.CommandType = CommandType.StoredProcedure;
                 oCommand.Parameters.AddWithValue("@ID", oSchedule.code);
                 oCommand.Parameters[0].Direction = ParameterDirection.Input;
-                oCommand.Parameters.AddWithValue("@PROGRAM_ID", /*oSchedule.oProgram.code*/1);
+                oCommand.Parameters.AddWithValue("@PROGRAM_ID", oSchedule.oProgram.code);
                 oCommand.Parameters[1].Direction = ParameterDirection.Input;
                 oCommand.Parameters.AddWithValue("@DESCRIPTION", oSchedule.name);
                 oCommand.Parameters[2].Direction = ParameterDirection.Input;
