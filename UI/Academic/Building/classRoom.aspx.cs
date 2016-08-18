@@ -214,7 +214,7 @@ namespace UI.Academic
                 lblMessageSize.Text = "";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorSize", "$('#ContentPlaceHolder1_txtSize').removeClass('has-error');", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ind = false;
                 lblMessageSize.Text = "Debe digitar una capacidad correcta.";

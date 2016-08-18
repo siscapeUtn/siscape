@@ -75,7 +75,7 @@
                 <span class="title-footer">Cat&aacute;logo</span>
                 <ul>
                     <li><a href="../../index.aspx">Inicio</a></li>
-                    <li><a href="../../Services.aspx">Oferta de Cursos</a></li>
+                    <li><a href="../../Services/Services/service.aspx">Oferta de Cursos</a></li>
                     <li><a href="../../about.aspx">Acerca de</a></li>
                     <li><a href="../../contactUs.aspx">Cont&aacute;ctenos</a></li>
                 </ul>
@@ -93,7 +93,7 @@
                     <%--<span class="facebook_icon"></span>--%>
                 </section>
                 <section class="copyright-col">
-                    <span class="info">Ayuda</span>
+                    <span class="info"><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/guide/Manual de usuario.pdf" Target="_blank">Ayuda</asp:HyperLink></span>
                     <span class="info"><% showSessionFooter(); %></span>
                 </section>
             </section>

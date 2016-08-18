@@ -16,6 +16,21 @@ namespace UI.Academic
         {
            
         }
+        protected void showOAcademic()
+        {
+            try
+            {
+                this.Academics = Convert.ToBoolean(Session["Academic"].ToString());
+            }
+            catch
+            {
+                this.Academics = false;
+            }
+            if (this.Academics == false)
+            {
+                Response.Redirect("../../index.aspx");
+            }
+        }
 
         protected void showOfferAcademic()
         {

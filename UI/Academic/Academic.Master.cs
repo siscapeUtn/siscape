@@ -19,10 +19,11 @@ namespace UI.Academic
         {
 
         }
+
         protected void validationUserExternal()
         {
             string header = "<li><div class='option'>";
-            string offer = "<div><a href = '../../Services/Services/service.aspx' class='anchor'>Oferta de Cursos</a></div>";
+            string offer = "<div><a href = '../../Services/Services/Services.aspx' class='anchor'>Oferta de Cursos</a></div>";
             string footer = "</div></li>";
             try
             {
@@ -87,7 +88,9 @@ namespace UI.Academic
             }
             else if (this.offerAcademic == true)
             {
-                Response.Write(head + offerBody + footer);
+                Response.Write("<li><div class='option'>" +
+                        "<div><a href='../AcademicGroups/gAcademicOffer.aspx' id='academic' class='anchor'>Oferta Acad&eacute;mica</a></div>" +
+                        "</div><ul class='sub-menu'>"+ footer);
             }
             else
             {

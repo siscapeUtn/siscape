@@ -84,7 +84,7 @@ namespace UI.Services
                 lblMessageId.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorId", "$('#ContentPlaceHolder1_txtId').removeClass('has-error');", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ind = false;
                 lblMessageId.Text = "Debe digitar una identificación";
@@ -121,7 +121,7 @@ namespace UI.Services
                 lblMessageHomePhone.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorHomePhone", "$('#ContentPlaceHolder1_txtHomePhone').removeClass('has-error');", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ind = false;
                 lblMessageHomePhone.Text = "Debe digitar un teléfono de recidencia";
@@ -134,7 +134,7 @@ namespace UI.Services
                 lblMessageCellPhone.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorCellPhone", "$('#ContentPlaceHolder1_txtCellPhone').removeClass('has-error');", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ind = false;
                 lblMessageCellPhone.Text = "Debe digitar un teléfono celular";

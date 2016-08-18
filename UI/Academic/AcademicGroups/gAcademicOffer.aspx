@@ -24,24 +24,18 @@
                     <p>Oferta académica</p></a>
                 </section>
             </section>
-            <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
+            <%--<section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
                 <section class="accesses">
                     <a href="../AcademicOffer/OpeningJustification.aspx"><img alt="Justificacion de Apertura" src="../../images/academic/opening.svg" />
                     <p>Just. Apertura</p></a>
                 </section>
-            </section>
+            </section>--%>
             <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
                 <section class="accesses">
                     <a href="../AcademicGroups/academic.aspx"><img alt="Regresar" src="../../images/page-icons/return.svg" />
                     <p>Regresar</p></a>
                 </section>
             </section>
-            <%--<section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
-                <section class="accesses">
-                    <a href="../../index.aspx"><img alt="Inicio" src="../../images/page-icons/home.svg" />
-                    <p>Inicio</p></a>
-                </section>
-            </section>--%>
         </section>
     </section>
     <script type="text/javascript">

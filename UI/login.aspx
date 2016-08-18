@@ -27,10 +27,7 @@
                         <a id="forgotPassword" onclick="showResetPassword();">
                             <asp:Label Text="¿Has olvidado tu contraseña?" runat="server"></asp:Label></a>
                     </section>
-                    <section class="col-md-4">
-                        <a id="changePassword" onclick="showChangePassword();">
-                            <asp:Label Text="¿Cambiar tú contraseña?" runat="server"></asp:Label></a>
-                    </section>
+                    <section class="col-md-4"></section>
                     <section class="col-md-4">
                         <section class="form-group">
                             <asp:Button CssClass="pull-right" Text="Ingresar" runat="server" OnClick="login_Click" />
@@ -63,8 +60,8 @@
                             </section>
                         </section>
                         <section class="modal-footer">
-                            <asp:Button CssClass="btn btn-confirm pull-right" OnClick="btnPeriod_Click" ID="btnDelete" Text="Aceptar" runat="server"></asp:Button>
                             <asp:Button CssClass="btn btn-confirm pull-right" OnClick="btnCancel_Click" ID="btnCancel" Text="Cancelar" runat="server"></asp:Button>
+                            <asp:Button CssClass="btn btn-confirm pull-right" OnClick="btnPeriod_Click" ID="btnDelete" Text="Aceptar" runat="server"></asp:Button>
                         </section>
                     </section>
                 </ContentTemplate>
@@ -72,7 +69,7 @@
         </section>
     </section>
 
-    <section class="modal fade" id="changePasswordModal" role="dialog" aria-labelledby="changePasswordLabel" aria-hidden="true">
+    <section class="modal fade" id="changePasswordModal" role="dialog"  aria-labelledby="changePasswordLabel"  data-keyboard="false" data-backdrop="static" aria-hidden="true">
         <section class="modal-dialog changePassword">
             <asp:UpdatePanel ID="UpdatePanel2" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
                 <ContentTemplate>
@@ -83,29 +80,29 @@
                         <section  class="modal-body">
                                 <section class="col-md-12">
                                     <section class="form-group">
+                                        <asp:Label runat="server" ID="lblLastPassword" Text="Contraseña Actual:"></asp:Label>
+                                        <asp:TextBox ID="txtLastPassword" runat="server" TextMode="Password" ></asp:TextBox>
+                                         <span class="message-has-error"><asp:Label runat="server" ID="lblMessageLastPassword"></asp:Label></span>
+                                    </section>
+                                </section>
+                                <section class="col-md-12">
+                                    <section class="form-group">
                                         <asp:Label runat="server" ID="lblNewPassword" Text="Nueva Contraseña:"></asp:Label>
                                         <asp:TextBox ID="txtNewPassword" TextMode="Password" runat="server"></asp:TextBox>
-                                        <span class="help-block"></span>
+                                        <span class="message-has-error"><asp:Label runat="server" ID="lblMessageNewPassword"></asp:Label></span>
                                     </section>
                                 </section>
                                 <section class="col-md-12">
                                     <section class="form-group">
                                         <asp:Label runat="server" ID="lblConfirmPassword" Text="Confirmar contraseña:"></asp:Label>
                                         <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" ></asp:TextBox>
-                                        <span class="help-block"></span>
-                                    </section>
-                                </section>
-                                <section class="col-md-12">
-                                    <section class="form-group">
-                                        <asp:Label runat="server" ID="lblLastPassword" Text="Antiguo contraseña:"></asp:Label>
-                                        <asp:TextBox ID="txtLastPassword" runat="server" TextMode="Password" ></asp:TextBox>
-                                        <span class="help-block"></span>
+                                         <span class="message-has-error"><asp:Label runat="server" ID="lblMessageConfirmPassword"></asp:Label></span>
                                     </section>
                                 </section>
                          </section>
                         <section class="modal-footer">
+                            <asp:Button CssClass="btn btn-confirm pull-right" OnClick="btnCancel_Click" ID="Button1" Text="Cancelar" runat="server"></asp:Button>
                             <asp:Button CssClass="btn btn-confirm"  ID="btnChange" Text="Cambiar" OnClick="btnChange_Click1" runat="server"></asp:Button>
-                            <button class="btn btn-confirm" data-dismiss="modal" aria-hidden="true">Cancelar</button>
                         </section>
                     </section>
                 </ContentTemplate>

@@ -1,6 +1,6 @@
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\Entities\bin\Entities.dll.config
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\Entities\bin\Entities.dll
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\Entities\bin\Entities.pdb
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\Entities\obj\Debug\Entities.dll
-C:\Users\rsanchez\Desktop\a\sis\nuevoHermes\siscape\Entities\obj\Debug\Entities.pdb
+C:\Users\Rud\Desktop\siscape\Entities\bin\Entities.dll.config
+C:\Users\Rud\Desktop\siscape\Entities\bin\Entities.dll
+C:\Users\Rud\Desktop\siscape\Entities\bin\Entities.pdb
+C:\Users\Rud\Desktop\siscape\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+C:\Users\Rud\Desktop\siscape\Entities\obj\Debug\Entities.dll
+C:\Users\Rud\Desktop\siscape\Entities\obj\Debug\Entities.pdb

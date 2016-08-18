@@ -149,6 +149,8 @@ namespace BLL
                     Teacher oTeacher = new Teacher();
                     Schedule oSchedule = new Schedule();
                     ClassRoom oClassRoom = new ClassRoom();
+                    Program oProgram = new Program();
+                    Period oPeriod = new Period();
 
                     oAcademic.code = Convert.ToInt32(oDataRow[0].ToString());
                     oCourse.description = oDataRow[1].ToString();
@@ -158,6 +160,12 @@ namespace BLL
                     oSchedule.typeSchedule = oDataRow[5].ToString();
                     oClassRoom.num_room = oDataRow[6].ToString();
                     oAcademic.price = Convert.ToDecimal(oDataRow[7].ToString());
+                    oProgram.code = Convert.ToInt32(oDataRow[8].ToString());
+                    oProgram.name = oDataRow[9].ToString();
+                    oPeriod.code = Convert.ToInt32(oDataRow[10].ToString());
+                    oPeriod.name = oDataRow[11].ToString();
+                    oAcademic.oProgram = oProgram;
+                    oAcademic.oPeriod = oPeriod;
                     oAcademic.oCourse = oCourse;
                     oAcademic.oteacher = oTeacher;
                     oAcademic.oSchedule = oSchedule;
@@ -174,7 +182,7 @@ namespace BLL
         }
 
         //to select all academics offer by program
-        public List<Entities.AcademicOffer> getGridViewProgram(int code)
+        public List<Entities.AcademicOffer> getGridViewProgram(int code,int period)
         {
             String sql = "SP_SELECTPROGRAMGRIDVIEW";
 
@@ -183,6 +191,7 @@ namespace BLL
                 SqlCommand oCommand = new SqlCommand(sql);
                 oCommand.CommandType = System.Data.CommandType.StoredProcedure;
                 oCommand.Parameters.AddWithValue("@ID", code);
+                oCommand.Parameters.AddWithValue("@PERIOD", period);
                 DataTable oDataTable = DAO.getInstance().executeQuery(oCommand);
                 List<AcademicOffer> listAcademicOffer = new List<AcademicOffer>();
                 foreach (DataRow oDataRow in oDataTable.Rows)
@@ -192,6 +201,8 @@ namespace BLL
                     Teacher oTeacher = new Teacher();
                     Schedule oSchedule = new Schedule();
                     ClassRoom oClassRoom = new ClassRoom();
+                    Program oProgram = new Program();
+                    Period oPeriod = new Period();
 
                     oAcademic.code = Convert.ToInt32(oDataRow[0].ToString());
                     oCourse.description = oDataRow[1].ToString();
@@ -201,6 +212,12 @@ namespace BLL
                     oSchedule.typeSchedule = oDataRow[5].ToString();
                     oClassRoom.num_room = oDataRow[6].ToString();
                     oAcademic.price = Convert.ToDecimal(oDataRow[7].ToString());
+                    oProgram.code = Convert.ToInt32(oDataRow[8].ToString());
+                    oProgram.name = oDataRow[9].ToString();
+                    oPeriod.code = Convert.ToInt32(oDataRow[10].ToString());
+                    oPeriod.name = oDataRow[11].ToString();
+                    oAcademic.oProgram = oProgram;
+                    oAcademic.oPeriod = oPeriod;
                     oAcademic.oCourse = oCourse;
                     oAcademic.oteacher = oTeacher;
                     oAcademic.oSchedule = oSchedule;

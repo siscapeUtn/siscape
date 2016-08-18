@@ -338,6 +338,6 @@ namespace UI.Academic.AcademicOffer
             {
                 Response.Write(ex.ToString());
             }
-        }//End clearControls()
+        }//End report()
     } //End periodType
     }

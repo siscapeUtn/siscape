@@ -24,8 +24,6 @@ namespace UI.Academic.Functionary
         {
             if (!IsPostBack)
             {
-                
-               // Session.RemoveAll();
                 blockControls();
             }
             fillGvDesignation();
@@ -59,7 +57,7 @@ namespace UI.Academic.Functionary
             cboFunctionary.Items.Add(oItemS);
             foreach (Entities.Teacher oTeacher in listTeacher)
             {
-                ListItem oItem = new ListItem(oTeacher.name, oTeacher.code.ToString());
+                ListItem oItem = new ListItem(oTeacher.name + " " + oTeacher.lastName + " " + oTeacher.id, oTeacher.code.ToString());
                 cboFunctionary.Items.Add(oItem);
             }
             ListItem oItemS2 = new ListItem("---Seleccione---", "0");
@@ -315,7 +313,7 @@ namespace UI.Academic.Functionary
                 //lblMessageSalary.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorStartDesignation", "$('#ContentPlaceHolder1_txtStartDesignation').removeClass('has-error');", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ind = false;
                 //lblMessageSalary.Text = "Debe digitar un salario correcto.";
@@ -331,7 +329,7 @@ namespace UI.Academic.Functionary
                 //lblMessageSalary.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorEndDesignation", "$('#ContentPlaceHolder1_txtEndDesignation').removeClass('has-error');", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ind = false;
                 //lblMessageSalary.Text = "Debe digitar un salario correcto.";
@@ -344,7 +342,7 @@ namespace UI.Academic.Functionary
                 //lblMessageAnnuality.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorHoursDisignation", "$('#ContentPlaceHolder1_txtHoursDisignation').removeClass('has-error');", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ind = false;
                 //lblMessageAnnuality.Text = "Debe digitar una anualidad correcta.";

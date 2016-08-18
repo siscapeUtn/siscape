@@ -9,6 +9,7 @@ using text = iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
 using System.IO;
+using Entities;
 
 namespace UI.Academic.AcademicOffer
 {
@@ -16,14 +17,26 @@ namespace UI.Academic.AcademicOffer
     {
         public bool offerAcademic { get; set; } 
         static Int32 AcademicOffer_id = -1;
-      
+        static UserSystem oUser = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 blockControls();
+                loadUser();
+                startCombos();
             }
             loadData();
+        }
+
+        private void loadUser()
+        {
+            oUser = (UserSystem)Session["User"];
+            if (oUser == null)
+            {
+                Response.Redirect("../../index.aspx");
+            }
         }
 
         protected void showOfferAcademic()
@@ -36,14 +49,15 @@ namespace UI.Academic.AcademicOffer
         }
 
         protected void btnNew_Click(object sender, ImageClickEventArgs e)
-        {
+        {          
             unlockControls();
-            startCombos();
+            cboProgramAction(oUser.oProgram.code);
             txtCode.Text = BLL.AcademicOfferBLL.getInstance().getNextCode().ToString();
         }
 
         protected void btnSave_Click(object sender, ImageClickEventArgs e)
         {
+            Int32 records = 0;
             if (validateData())
             {
                 Entities.Period oPeriod = new Entities.Period();
@@ -64,17 +78,22 @@ namespace UI.Academic.AcademicOffer
                 Entities.AcademicOffer oAcademicOffer = new Entities.AcademicOffer(code, oPeriod, oProgram, oCourse, price, oClassRoom, oSchedule, oteacher, hour);
                 if (BLL.AcademicOfferBLL.getInstance().exists(code))
                 {
-                    BLL.AcademicOfferBLL.getInstance().modify(oAcademicOffer);
+                    lblMessage.Text = "Esta solicitud no puede ser procesada";
                 }
                 else
                 {
-                    BLL.AcademicOfferBLL.getInstance().insert(oAcademicOffer);
+                   records= BLL.AcademicOfferBLL.getInstance().insert(oAcademicOffer);
                     insertClasroomSchedule(oAcademicOffer);
                     insertTeacherSchedule(oAcademicOffer);
                 }
 
                 blockControls();
                 loadData();
+
+                if (records > 0)
+                {
+                    lblMessage.Text = "Datos almacenados correactamente";
+                }
             }
         }
         //this method insert the new schedule for the classrooms
@@ -149,7 +168,18 @@ namespace UI.Academic.AcademicOffer
        */
         protected void loadData()
         {
-            gvAcademicOffer.DataSource = BLL.AcademicOfferBLL.getInstance().getGridView();
+            int code = oUser.oProgram.code;
+            
+            if (code == 1)
+            {
+                gvAcademicOffer.DataSource = BLL.AcademicOfferBLL.getInstance().getGridView();
+            }
+            else
+            {
+                int period = Convert.ToInt32(Session["period"].ToString());
+                gvAcademicOffer.DataSource = BLL.AcademicOfferBLL.getInstance().getGridViewProgram(code, period);
+            }
+            
             gvAcademicOffer.DataBind();
         } //End loadData()
 
@@ -186,24 +216,39 @@ namespace UI.Academic.AcademicOffer
         {
             getProgram();
             getPeriod();
-            fillhours();
+            cboProgramValue();
         }
 
+        protected void cboProgramValue()
+        {
+            if (oUser.oProgram.code != 1)
+            {
+                cboProgram.SelectedValue = oUser.oProgram.code.ToString();
+                cboPeriod.SelectedValue = Session["period"].ToString();
+            }
+        }
 
 
         //its when the cmboProgram Changed, the course have to changed
         protected void cboProgram_SelectedIndexChanged(object sender, EventArgs e)
         {
             int cod = Convert.ToInt32(cboProgram.SelectedValue);
+            cboProgramAction(cod);
+        }
 
+        protected void cboProgramAction(int cod)
+        {
             cboRoom.Items.Clear();
             cboSchedule.Items.Clear();
-            if (chkEspecial.Checked == false)
-            {
-                cboCourse.Items.Clear();
-                getCourseProgram(cod);
-            }
+            cboCourse.Items.Clear();
+            getCourseProgram(cod);
             getScheduleProgram(cod);
+            if (cod != 0)
+            {
+                cboCourse.Enabled = true;
+                cboSchedule.Enabled = true;
+            }
+           
         }
 
         //when the user selected the schedule, the cmbRoom wil full with the parameters 
@@ -212,7 +257,9 @@ namespace UI.Academic.AcademicOffer
             int idSchedule = Convert.ToInt32(cboSchedule.SelectedValue);
             if (idSchedule != 0)
             {
+                cboRoom.Enabled = true;
                 chkEspecial.Enabled = true;
+                cboTeacher.Enabled = true;
                 cboRoom.Items.Clear();
                 cboTeacher.Items.Clear();
                 getRoombySchedule(idSchedule);
@@ -221,6 +268,22 @@ namespace UI.Academic.AcademicOffer
             else
             {
                 chkEspecial.Enabled = false;
+            }
+        }
+
+        protected void cboTeacher_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idTeacher = Convert.ToInt32(cboTeacher.SelectedValue);
+            if (idTeacher != 0)
+            {
+                cboHours.Items.Clear();
+                cboHours.Enabled = true;
+                fillhours();
+            }
+            else
+            {
+                cboHours.Items.Clear();
+                cboHours.Enabled = false;
             }
         }
 
@@ -338,10 +401,15 @@ namespace UI.Academic.AcademicOffer
         private void fillhours()
         {
 
-            ListItem oItemS = new ListItem("---- Seleccione ----", "0");
-            for (int i = 5; i <= 40; i = i + 5)
+            Int32 hours = 0;
+            cboHours.Items.Clear();
+            hours = ExternalDesignationBLL.getInstance().getHours(Int32.Parse(cboTeacher.SelectedValue));
+            ListItem oItemS = new ListItem("---Seleccione---", "0");
+            cboHours.Items.Add(oItemS);
+            int i = hours / 5;
+            for (int j = 5; j <= hours; j = j + 5)
             {
-                ListItem oItem = new ListItem(i.ToString(), i.ToString());
+                ListItem oItem = new ListItem(j.ToString() + " horas", j.ToString());
                 cboHours.Items.Add(oItem);
             }
 
@@ -379,22 +447,12 @@ namespace UI.Academic.AcademicOffer
                 lblMessagePrice.Text = "Debe digitar el precio del curso";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorPrice", "$('#ContentPlaceHolder1_txtPrice').addClass('has-error');", true);
             }
-            else
-            {
-                lblMessagePrice.Text = "";
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorPrice", "$('#ContentPlaceHolder1_txtPrice').removeClass('has-error');", true);
-            }
             //validate period 
             if (Convert.ToInt32(cboPeriod.SelectedValue) == 0)
             {
                 ind = false;
                 lblMessagePeriod.Text = "Debe seleccionar un periodo";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorPeriod", "$('#ContentPlaceHolder1_cboPeriod').addClass('has-error');", true);
-            }
-            else
-            {
-                lblMessagePeriod.Text = "";
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorPeriod", "$('#ContentPlaceHolder1_cboPeriod').removeClass('has-error');", true);
             }
             //validate program
             if (Convert.ToInt32(cboProgram.SelectedValue) == 0)
@@ -403,11 +461,6 @@ namespace UI.Academic.AcademicOffer
                 lblMessageProgram.Text = "Debe seleccionar un programa";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorProgram", "$('#ContentPlaceHolder1_cboProgram').addClass('has-error');", true);
             }
-            else
-            {
-                lblMessageProgram.Text = "";
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorProgram", "$('#ContentPlaceHolder1_cboProgram').removeClass('has-error');", true);
-            }
             //validate course
             if (Convert.ToInt32(cboCourse.SelectedValue) == 0)
             {
@@ -415,26 +468,15 @@ namespace UI.Academic.AcademicOffer
                 lblMessageCourse.Text = "Debe seleccionar un curso";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorCourse", "$('#ContentPlaceHolder1_cboCourse').addClass('has-error');", true);
             }
-            else
-            {
-                lblMessageCourse.Text = "";
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorCourse", "$('#ContentPlaceHolder1_cboCourse').removeClass('has-error');", true);
-            }
             //validate ClassRoom
             try
             {
-                if (Convert.ToInt32(cboRoom.SelectedValue) != 0)
-                {
-                    lblMessageRoom.Text = "";
-                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorRoom", "$('#ContentPlaceHolder1_cboRoom').removeClass('has-error');", true);
-                }
-                else
+                if (Convert.ToInt32(cboRoom.SelectedValue) == 0)
                 {
                     ind = false;
                     lblMessageRoom.Text = "Debe seleccionar un aula";
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorRoom", "$('#ContentPlaceHolder1_cboRoom').addClass('has-error');", true);
                 }
-
             }
             catch (Exception)
             {
@@ -516,13 +558,18 @@ namespace UI.Academic.AcademicOffer
         {
             clearControls();
             txtPrice.Enabled = true;
-            cboHours.Enabled = true;
-            cboCourse.Enabled = true;
-            cboPeriod.Enabled = true;
-            cboProgram.Enabled = true;
-            cboRoom.Enabled = true;
-            cboSchedule.Enabled = true;
-            cboTeacher.Enabled = true;
+            cboHours.Enabled = false;
+            if (oUser.oProgram.code == 1)
+            {
+                cboPeriod.Enabled = true;
+                cboProgram.Enabled = true;
+            }
+            else
+            {
+                cboProgramValue();
+            }
+            cboCourse.Enabled = false;
+            cboSchedule.Enabled = false;
             btnNew.Enabled = false;
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
@@ -533,8 +580,8 @@ namespace UI.Academic.AcademicOffer
         */
         protected void clearControls()
         {
-            cboProgram.Items.Clear();
-            cboPeriod.Items.Clear();
+            cboProgram.SelectedValue = "0";
+            cboPeriod.SelectedValue = "0";
             cboHours.Items.Clear();
             cboCourse.Items.Clear();
             cboRoom.Items.Clear();
@@ -564,8 +611,96 @@ namespace UI.Academic.AcademicOffer
 
         protected void btnReport_Click(object sender, EventArgs e)
         {
-            
-        }//End clearControls()
+            try
+            {
+                int code = oUser.oProgram.code;
+                List<Entities.AcademicOffer> lisOffer;
+
+                if (code == 1)
+                {
+                    lisOffer = BLL.AcademicOfferBLL.getInstance().getGridView();
+                }
+                else
+                {
+                    int period = Convert.ToInt32(Session["period"].ToString());
+                    lisOffer = BLL.AcademicOfferBLL.getInstance().getGridViewProgram(code, period);
+                }
+
+                System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
+                text::Document pdfDoc = new text::Document(text::PageSize.A4, 10, 10, 10, 10);
+                pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());
+                PdfWriter.GetInstance(pdfDoc, memoryStream);
+                pdfDoc.Open();
+
+                String imagepath = Server.MapPath("../../images/page-icons");
+                iTextSharp.text.Image deas = iTextSharp.text.Image.GetInstance(imagepath + "/DEAS-logo.jpg");
+                deas.ScaleToFit(140f, 120f);
+                //Give space before image
+                deas.SpacingBefore = 10f;
+                //Give some space after the image
+                deas.SpacingAfter = 1f;
+                deas.Alignment = text::Element.ALIGN_LEFT;
+                pdfDoc.Add(deas);
+
+                text::Paragraph title = new text::Paragraph();
+                title.Font = text::FontFactory.GetFont("dax-black", 32, new text::BaseColor(0, 51, 102));
+                title.Alignment = text::Element.ALIGN_CENTER;
+                title.Add("\n\n Reporte de ofertas academicas\n\n");
+                pdfDoc.Add(title);
+
+                PdfPTable oPTable = new PdfPTable(7);
+                oPTable.TotalWidth = 100;
+                oPTable.SpacingBefore = 20f;
+                oPTable.SpacingAfter = 30f;
+                oPTable.AddCell("Periodo");
+                oPTable.AddCell("Programa");
+                oPTable.AddCell("Profesor");
+                oPTable.AddCell("Curso");
+                oPTable.AddCell("Aula");
+                oPTable.AddCell("Horario");
+                oPTable.AddCell("Precio");
+
+                if (lisOffer.Count > 0)
+                {
+                    foreach (Entities.AcademicOffer pAcademicOffer in lisOffer)
+                    {
+                        oPTable.AddCell(pAcademicOffer.oPeriod.name);
+                        oPTable.AddCell(pAcademicOffer.oProgram.name);
+                        oPTable.AddCell(pAcademicOffer.oteacher.name + " " + pAcademicOffer.oteacher.lastName);
+                        oPTable.AddCell(pAcademicOffer.oCourse.description +" " + pAcademicOffer.oCourse.schedule);
+                        oPTable.AddCell(pAcademicOffer.oClassRoom.num_room);
+                        oPTable.AddCell(pAcademicOffer.oSchedule.name);
+                        oPTable.AddCell(pAcademicOffer.price.ToString());
+                    }
+                }
+                else
+                {
+                    PdfPCell cell = new PdfPCell(new text::Phrase("No existen ofertas académicas  registrados."));
+                    cell.Colspan = 2;
+                    cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+                    oPTable.AddCell(cell);
+                }
+
+                pdfDoc.Add(oPTable);
+                pdfDoc.Close();
+
+                byte[] bytes = memoryStream.ToArray();
+                memoryStream.Close();
+                Response.Clear();
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("Content-Disposition", "attachment; filename=Oferta_academica.pdf");
+                Response.ContentType = "application/pdf";
+                Response.Buffer = true;
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                Response.BinaryWrite(bytes);
+                Response.End();
+                Response.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.ToString());
+            }
+        }//End report()
 
 
     }

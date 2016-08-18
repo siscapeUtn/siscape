@@ -3,6 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="group-container">
+         <% showOAcademic(); %>
         <p class="title">Académico</p>
         <section class="row">
             <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
@@ -17,13 +18,13 @@
                     <p>Funcionarios</p></a>
                 </section>
             </section>
-            <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
+             <% showOfferAcademic(); %>
+            <%--<section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
                 <section class="accesses">
-                    <a href="gReport.aspx"><img alt="Reportws" src="../../images/academic/report-academic.svg" />
+                    <a href="gReport.aspx"><img alt="Reportes" src="../../images/academic/report-academic.svg" />
                     <p>Reportes</p></a>
                 </section>
-            </section>
-             <% showOfferAcademic(); %>
+            </section>--%>
             <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
                 <section class="accesses">
                     <a href="../../index.aspx"><img alt="Inicio" src="../../images/page-icons/home.svg" />
