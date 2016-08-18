@@ -10,11 +10,15 @@
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
-                    <section class="form row">
                         <section class="col-md-12">
                             <section class="form-group">
                                 <asp:Label runat="server" Visible="false" ID="lblCode" Text="Código"></asp:Label>
                                 <asp:TextBox runat="server" Visible="false" ID="txtCode"></asp:TextBox>
+                            </section>
+                        </section>
+                        <section class="col-md-12">
+                            <section class="form-group">
+                                <asp:Label runat="server" Visible="true" ID="lblCourse" ></asp:Label>
                             </section>
                         </section>
                         <section class="col-md-6">

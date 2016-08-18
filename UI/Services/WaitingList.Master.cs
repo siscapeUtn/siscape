@@ -24,7 +24,7 @@ namespace UI.Services
         protected void validationUserExternal()
         {
             string header = "<li><div class='option'>";
-            string offer = "<div><a href = '../Services/service.aspx' class='anchor'>Oferta de Cursos</a></div>";
+            string offer = "<div><a href = '../Services/Services.aspx' class='anchor'>Oferta de Cursos</a></div>";
             string footer = "</div></li>";
             try
             {
@@ -43,7 +43,7 @@ namespace UI.Services
             {
                 Response.Write("<li><div class='option'><div><a href='../ServicesGroups/ServicesGroups.aspx' class='anchor'>Servicios</a></div>" +
                    "</div><ul class='sub-menu'>" +
-                   "<li><div><a href='../Services/service.aspx'>Oferta de Cursos</a></div></li>" +
+                   "<li><div><a href='../Services/Services.aspx'>Oferta de Cursos</a></div></li>" +
                    "<li><div><a href='../Services/Waiting_list.aspx'>Lista de espera</a></div></li>" +
                    "<li><div><a href='../Services/Report_waiting_list.aspx'>Reporte</a></div></li>" +
                    "</ul></li>");

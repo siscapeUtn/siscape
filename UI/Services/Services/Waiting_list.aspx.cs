@@ -9,9 +9,12 @@ using System.Web.UI.WebControls;
 
 namespace UI.Services
 {
-
+    
     public partial class Waiting_list : System.Web.UI.Page
     {
+        public String course_id;
+        public String description;
+
         DataTable oDataTable = new DataTable();
         public bool service { get; set; }
 
@@ -19,7 +22,9 @@ namespace UI.Services
         {
             if (!IsPostBack)
             {
-                
+                course_id = Request.Form["idCourse"];
+                description = Request.Form["nameCourse"];
+                lblCourse.Text = "Curso de "+ description;
             }
         }
 

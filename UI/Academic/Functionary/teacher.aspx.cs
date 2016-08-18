@@ -201,7 +201,7 @@ namespace UI.Academic
                 lblMessageHomePhone.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorHomePhone", "$('#ContentPlaceHolder1_txtHomePhone').removeClass('has-error');", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ind = false;
                 lblMessageHomePhone.Text = "Debe digitar un número de teléfono residencial correcto.";
@@ -214,7 +214,7 @@ namespace UI.Academic
                 lblMessageCellPhone.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorCellPhone", "$('#ContentPlaceHolder1_txtCellPhone').removeClass('has-error');", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ind = false;
                 lblMessageCellPhone.Text = "Debe digitar un número de teléfono celular correcto.";

@@ -145,7 +145,7 @@ namespace UI.Administration
                 lblUnitMessage.Text = "";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorUnit", "$('#ContentPlaceHolder1_txtUnit').removeClass('has-error');", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ind = false;
                 lblUnitMessage.Text = "Debe digitar una unidad ejecutora correcta.";

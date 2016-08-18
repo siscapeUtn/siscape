@@ -269,7 +269,7 @@ namespace UI.Administration.Security
                 lblMessageHomePhone.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorHomePhone", "$('#ContentPlaceHolder1_txtHomePhone').removeClass('has-error');", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ind = false;
                 lblMessageHomePhone.Text = "Debe digitar un número de teléfono residencial correcto.";

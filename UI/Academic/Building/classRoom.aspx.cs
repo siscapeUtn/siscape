@@ -155,7 +155,16 @@ namespace UI.Academic
 
         protected void loadData()
         {
-            gvClassRoom.DataSource = ClassRoomBLL.getInstance().getAll();
+            int code = oUser.oProgram.code;
+            if (code == 1)
+            {
+                gvClassRoom.DataSource = ClassRoomBLL.getInstance().getAll();
+            }
+            else
+            {
+                gvClassRoom.DataSource = ClassRoomBLL.getInstance().getAllByProgram(code);
+            }
+            
             gvClassRoom.DataBind();
         }
 
@@ -205,7 +214,7 @@ namespace UI.Academic
                 lblMessageSize.Text = "";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorSize", "$('#ContentPlaceHolder1_txtSize').removeClass('has-error');", true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ind = false;
                 lblMessageSize.Text = "Debe digitar una capacidad correcta.";
@@ -291,6 +300,7 @@ namespace UI.Academic
 
         protected void unlockControls()
         {
+            clearControls();
             txtCode.Enabled = true;
             txtDescription.Enabled = true;
             cboClassRoomType.Enabled = true;
@@ -306,8 +316,7 @@ namespace UI.Academic
             cboState.Enabled = true;
             btnNew.Enabled = false;
             btnSave.Enabled = true;
-            btnCancel.Enabled = true;
-            clearControls();
+            btnCancel.Enabled = true;        
         }
 
         protected void clearControls()
@@ -342,7 +351,16 @@ namespace UI.Academic
         {
             try
             {
-                List<Entities.ClassRoom> listRoom = ClassRoomBLL.getInstance().getAll();
+                int code = oUser.oProgram.code;
+                List<Entities.ClassRoom> listRoom;
+                if (code == 1)
+                {
+                    listRoom = ClassRoomBLL.getInstance().getAll();
+                }
+                else
+                {
+                    listRoom = ClassRoomBLL.getInstance().getAllByProgram(code);
+                }
                 System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
                 text::Document pdfDoc = new text::Document(text::PageSize.A4, 10, 10, 10, 10);
                 pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());
