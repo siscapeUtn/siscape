@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <% showOService(); %>
     <section class="content_2">
-        <section class="maintanance">
+        <section class="maintanance row">
             <p class="title">Administraci&oacute;n de listas de espera</p>
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
