@@ -193,7 +193,7 @@ namespace BLL
                     oExternalDesignation.hours = Convert.ToInt32(oDataRow[5].ToString());
                     oExternalDesignation.initial_day = Convert.ToDateTime(oDataRow[6].ToString());
                     oExternalDesignation.final_day = Convert.ToDateTime(oDataRow[7].ToString());
-                    
+                    oExternalDesignation.journeys = get_listJourney(Convert.ToInt32(oDataRow[0].ToString()));
                     listInternalDesignation.Add(oExternalDesignation);
                 }
                 return listInternalDesignation;
@@ -347,9 +347,6 @@ namespace BLL
                 {
                     throw;
                 }
-
-
-
                 return oExternalDesignation;
             }
             catch (Exception)
@@ -357,6 +354,38 @@ namespace BLL
                 throw;
             }
             finally { }
+        }
+
+
+        public List<Journey> get_listJourney(int code)
+        {
+            String sql2 = "SP_EXTERNAL_DESIGNATION_BY_CODE_JOURNEY";
+            SqlCommand oCommand2 = new SqlCommand(sql2);
+            oCommand2.CommandType = System.Data.CommandType.StoredProcedure;
+            oCommand2.Parameters.AddWithValue("@ID", code);
+
+            try
+            {
+                DataTable oDataTable1 = DAO.getInstance().executeQuery(oCommand2);
+                List<Journey> listJourney = new List<Journey>();
+                foreach (DataRow oDataRow in oDataTable1.Rows)
+                {
+                    Journey oJourney = new Journey();
+                    Day oday = new Day();
+                    oJourney.code = Convert.ToInt32(oDataRow[0].ToString());
+                    oday.code = Convert.ToInt32(oDataRow[1].ToString());
+                    oday.description = oDataRow[2].ToString();
+                    oJourney.start = oDataRow[3].ToString();
+                    oJourney.finish = oDataRow[4].ToString();
+                    oJourney.day = oday;
+                    listJourney.Add(oJourney);
+                }
+                return listJourney;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         /*Este metodo trae las horas restantes del profesor*/
