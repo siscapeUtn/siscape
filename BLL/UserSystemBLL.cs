@@ -160,9 +160,32 @@ namespace BLL
         }//end Modify
 
 
-        public Int32 resetPasswordSecurity(int code)
+        public Int32 modifyPassword(UserSystem oUser, string password)
         {
+            Encrypt en = new Encrypt();
+            String oSql = "SP_MODIFYUSERPASSWORDSYSTEM";
 
+            try
+            {
+                SqlCommand oCommand = new SqlCommand(oSql);
+                oCommand.CommandType = CommandType.StoredProcedure;
+                oCommand.Parameters.AddWithValue("@USERSYSTEM_ID", oUser.code);
+                oCommand.Parameters[0].Direction = ParameterDirection.Input;
+                oCommand.Parameters.AddWithValue("@NEWPASSWORD",en.Encriptar(password));
+                oCommand.Parameters[1].Direction = ParameterDirection.Input;
+                return DAO.getInstance().executeSQL(oCommand);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { }
+        }//end Modify
+
+
+        public Int32 resetPasswordSecurity(int code, string pass)
+        {
+            Encrypt en = new Encrypt();
             String oSql = "RESETPASSWORDSECURITY";
 
             try
@@ -171,6 +194,8 @@ namespace BLL
                 oCommand.CommandType = CommandType.StoredProcedure;
                 oCommand.Parameters.AddWithValue("@USERSYSTEM_ID", code);
                 oCommand.Parameters[0].Direction = ParameterDirection.Input;
+                oCommand.Parameters.AddWithValue("@PASSWORD",en.Encriptar(pass));
+                oCommand.Parameters[1].Direction = ParameterDirection.Input;
                 return DAO.getInstance().executeSQL(oCommand);
             }
             catch (Exception ex)
@@ -318,6 +343,8 @@ namespace BLL
                             oRole.Role_Id = Convert.ToInt32(oDataRow[9].ToString());
                             oRole.Description = oDataRow[10].ToString();
                             oUserSystem.state = Convert.ToInt16(oDataRow[11].ToString());
+                            oUserSystem.setPassword = oDataRow[12].ToString();
+                            oUserSystem.Password = en.Desencriptar(oDataRow[13].ToString());
                             oUserSystem.oProgram = oProgram;
                             oUserSystem.oRole = oRole;
                         }

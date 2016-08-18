@@ -168,7 +168,18 @@ namespace UI.Academic.AcademicOffer
        */
         protected void loadData()
         {
-            gvAcademicOffer.DataSource = BLL.AcademicOfferBLL.getInstance().getGridView();
+            int code = oUser.oProgram.code;
+            
+            if (code == 1)
+            {
+                gvAcademicOffer.DataSource = BLL.AcademicOfferBLL.getInstance().getGridView();
+            }
+            else
+            {
+                int period = Convert.ToInt32(Session["period"].ToString());
+                gvAcademicOffer.DataSource = BLL.AcademicOfferBLL.getInstance().getGridViewProgram(code, period);
+            }
+            
             gvAcademicOffer.DataBind();
         } //End loadData()
 
@@ -600,8 +611,96 @@ namespace UI.Academic.AcademicOffer
 
         protected void btnReport_Click(object sender, EventArgs e)
         {
-            
-        }//End clearControls()
+            try
+            {
+                int code = oUser.oProgram.code;
+                List<Entities.AcademicOffer> lisOffer;
+
+                if (code == 1)
+                {
+                    lisOffer = BLL.AcademicOfferBLL.getInstance().getGridView();
+                }
+                else
+                {
+                    int period = Convert.ToInt32(Session["period"].ToString());
+                    lisOffer = BLL.AcademicOfferBLL.getInstance().getGridViewProgram(code, period);
+                }
+
+                System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
+                text::Document pdfDoc = new text::Document(text::PageSize.A4, 10, 10, 10, 10);
+                pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());
+                PdfWriter.GetInstance(pdfDoc, memoryStream);
+                pdfDoc.Open();
+
+                String imagepath = Server.MapPath("../../images/page-icons");
+                iTextSharp.text.Image deas = iTextSharp.text.Image.GetInstance(imagepath + "/DEAS-logo.jpg");
+                deas.ScaleToFit(140f, 120f);
+                //Give space before image
+                deas.SpacingBefore = 10f;
+                //Give some space after the image
+                deas.SpacingAfter = 1f;
+                deas.Alignment = text::Element.ALIGN_LEFT;
+                pdfDoc.Add(deas);
+
+                text::Paragraph title = new text::Paragraph();
+                title.Font = text::FontFactory.GetFont("dax-black", 32, new text::BaseColor(0, 51, 102));
+                title.Alignment = text::Element.ALIGN_CENTER;
+                title.Add("\n\n Reporte de ofertas academicas\n\n");
+                pdfDoc.Add(title);
+
+                PdfPTable oPTable = new PdfPTable(7);
+                oPTable.TotalWidth = 100;
+                oPTable.SpacingBefore = 20f;
+                oPTable.SpacingAfter = 30f;
+                oPTable.AddCell("Periodo");
+                oPTable.AddCell("Programa");
+                oPTable.AddCell("Profesor");
+                oPTable.AddCell("Curso");
+                oPTable.AddCell("Aula");
+                oPTable.AddCell("Horario");
+                oPTable.AddCell("Precio");
+
+                if (lisOffer.Count > 0)
+                {
+                    foreach (Entities.AcademicOffer pAcademicOffer in lisOffer)
+                    {
+                        oPTable.AddCell(pAcademicOffer.oPeriod.name);
+                        oPTable.AddCell(pAcademicOffer.oProgram.name);
+                        oPTable.AddCell(pAcademicOffer.oteacher.name + " " + pAcademicOffer.oteacher.lastName);
+                        oPTable.AddCell(pAcademicOffer.oCourse.description +" " + pAcademicOffer.oCourse.schedule);
+                        oPTable.AddCell(pAcademicOffer.oClassRoom.num_room);
+                        oPTable.AddCell(pAcademicOffer.oSchedule.name);
+                        oPTable.AddCell(pAcademicOffer.price.ToString());
+                    }
+                }
+                else
+                {
+                    PdfPCell cell = new PdfPCell(new text::Phrase("No existen ofertas académicas  registrados."));
+                    cell.Colspan = 2;
+                    cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+                    oPTable.AddCell(cell);
+                }
+
+                pdfDoc.Add(oPTable);
+                pdfDoc.Close();
+
+                byte[] bytes = memoryStream.ToArray();
+                memoryStream.Close();
+                Response.Clear();
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("Content-Disposition", "attachment; filename=Oferta_academica.pdf");
+                Response.ContentType = "application/pdf";
+                Response.Buffer = true;
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                Response.BinaryWrite(bytes);
+                Response.End();
+                Response.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.ToString());
+            }
+        }//End report()
 
 
     }

@@ -10,6 +10,7 @@ namespace UI
 {
     public partial class login : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -23,6 +24,7 @@ namespace UI
 
         protected void login_Click(object sender, EventArgs e)
         {
+
             if (Verify())
             {
                Entities.UserSystem oUser = (Entities.UserSystem)BLL.UserSystemBLL.getInstance().verify_User(txtUser.Text, txtPassword.Text);
@@ -39,6 +41,9 @@ namespace UI
                     {
                         getPeriod();
                         modalperiod();
+                        if(oUser.setPassword=="0"){
+                            modalPassword();
+                        }
                     }
                     else { 
                     Response.Redirect("index.aspx");
@@ -50,6 +55,12 @@ namespace UI
                 lblMessage.Text = "Debe agregar la información correctamente";
             }
             
+        }
+
+        private void modalPassword()
+        {
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "changePasswordModal", "$('#changePasswordModal').modal();", true);
+            confirmModal.Update();
         }
 
         private void modalperiod()
@@ -158,42 +169,62 @@ namespace UI
 
         protected void btnChange_Click1(object sender, EventArgs e)
         {
-            String newPassword = txtNewPassword.Text;
-            String confirmPassword = txtConfirmPassword.Text;
-            String lastPassword = txtLastPassword.Text;
+            Int32 records = -1;
+            UserSystem oUser = (UserSystem)Session["User"];
+            if (validatePassword(oUser.Password))
+            {
+
+                records = BLL.UserSystemBLL.getInstance().modifyPassword(oUser, txtNewPassword.Text);
+                if (records > 0)
+                {
+                    oUser = (Entities.UserSystem)BLL.UserSystemBLL.getInstance().verify_User(oUser.email, txtNewPassword.Text);
+                    Session["User"]=oUser;
+                }
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "confirmMessage", "$('#changePasswordModal').modal('toggle');", true);
+            }
         }
 
-        private Boolean validatePassword()
+        protected void cleanRestPassword()
         {
+            lblMessageNewPassword.Text = "";
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorId", "$('#ContentPlaceHolder1_txtNewPassword').removeClass('has-error');", true);
+            lblMessageConfirmPassword.Text = "";
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorId", "$('#ContentPlaceHolder1_txtConfirmPassword').removeClass('has-error');", true);
+            lblMessageLastPassword.Text = "";
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorId", "$('#ContentPlaceHolder1_txtLastPassword').removeClass('has-error');", true);
+        }
+
+        private Boolean validatePassword(string lastpass)
+        {
+            cleanRestPassword();
             var ind = true;
 
             if (txtNewPassword.Text.Trim() == "")
             {
                 ind = false;
+                lblMessageNewPassword.Text = "Debe digitar un Nuevo Password.";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorName", "$('#ContentPlaceHolder1_txtNewPassword').addClass('has-error');", true);
             }
-            else
-            {
-
+            else { 
+                if (txtNewPassword.Text.Trim().Length < 8)
+                {
+                    ind = false;
+                    lblMessageNewPassword.Text = "Debe tener minimo 8 caracteres.";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorName", "$('#ContentPlaceHolder1_txtNewPassword').addClass('has-error');", true);
+                }
             }
-
-            if (txtConfirmPassword.Text.Trim() == "")
+            if (txtConfirmPassword.Text.Trim() == "" || txtConfirmPassword.Text != txtNewPassword.Text)
             {
+                lblMessageConfirmPassword.Text = "Revise este campo.";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorName", "$('#ContentPlaceHolder1_txtConfirmPassword').addClass('has-error');", true);
                 ind = false;
             }
-            else
+            if (txtLastPassword.Text.Trim() == "" || txtLastPassword.Text != lastpass)
             {
-
-            }
-
-            if (txtLastPassword.Text.Trim() == "")
-            {
+                lblMessageLastPassword.Text = "Debe digitar su password actual correctamente.";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorName", "$('#ContentPlaceHolder1_txtLastPassword').addClass('has-error');", true);
                 ind = false;
             }
-            else
-            {
-
-            }
-
             return ind;
         }
 

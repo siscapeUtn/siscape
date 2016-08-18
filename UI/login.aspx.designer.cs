@@ -130,6 +130,33 @@ namespace UI {
         protected global::System.Web.UI.WebControls.Label lblChangePassword;
         
         /// <summary>
+        /// Control lblLastPassword.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLastPassword;
+        
+        /// <summary>
+        /// Control txtLastPassword.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLastPassword;
+        
+        /// <summary>
+        /// Control lblMessageLastPassword.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessageLastPassword;
+        
+        /// <summary>
         /// Control lblNewPassword.
         /// </summary>
         /// <remarks>
@@ -146,6 +173,15 @@ namespace UI {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNewPassword;
+        
+        /// <summary>
+        /// Control lblMessageNewPassword.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessageNewPassword;
         
         /// <summary>
         /// Control lblConfirmPassword.
@@ -166,22 +202,22 @@ namespace UI {
         protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
         
         /// <summary>
-        /// Control lblLastPassword.
+        /// Control lblMessageConfirmPassword.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLastPassword;
+        protected global::System.Web.UI.WebControls.Label lblMessageConfirmPassword;
         
         /// <summary>
-        /// Control txtLastPassword.
+        /// Control Button1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLastPassword;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// Control btnChange.

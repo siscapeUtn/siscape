@@ -15,6 +15,7 @@ namespace UI.Administration.Security
     public partial class User : System.Web.UI.Page
     {
         static Int32 resetUserSystem_id = -1;
+        static string resetUserSystemid_id = "";
         static Int32 userSystem_id = -1;
         static Int32 userAttempts = 0;
         protected void Page_Load(object sender, EventArgs e)
@@ -179,6 +180,7 @@ namespace UI.Administration.Security
         {
             String UserName = gvUserSystem.Rows[e.RowIndex].Cells[1].Text;
             resetUserSystem_id = Convert.ToInt32(gvUserSystem.Rows[e.RowIndex].Cells[0].Text);
+            resetUserSystemid_id = gvUserSystem.Rows[e.RowIndex].Cells[1].Text;
             lblUserName.Text = UserName;
             ScriptManager.RegisterStartupScript(this, this.GetType(), "ResetPassword", "$('#ResetPassword').modal();", true);
             confirmModal.Update();
@@ -186,11 +188,12 @@ namespace UI.Administration.Security
 
         protected void btnReset_Click(object sender, EventArgs e)
         {
+
             Entities.UserSystem oUser = (Entities.UserSystem)Session["User"];
 
             if(txtModalUser.Text == oUser.email && txtModalPassword.Text == oUser.Password)
             {
-                Int32 records = UserSystemBLL.getInstance().resetPasswordSecurity(userSystem_id);
+                Int32 records = UserSystemBLL.getInstance().resetPasswordSecurity(resetUserSystem_id, resetUserSystemid_id);
                 userAttempts = 0;
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "closeResetPassword", "$('#ResetPassword').modal('toggle');", true);
                 loadData();

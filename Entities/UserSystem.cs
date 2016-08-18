@@ -16,6 +16,7 @@ namespace Entities
         public String email { get; set; }
         public Program oProgram { get; set; }
         public String Password { get; set; }
+        public String setPassword { get; set; }
         public Role oRole { get; set; }
         public Int16 state { set; get; }
 
