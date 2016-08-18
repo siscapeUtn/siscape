@@ -91,6 +91,11 @@
     <Content Include="Academic\Building\location.aspx" />
     <Content Include="Academic\Functionary\teacher.aspx" />
     <Content Include="Academic\js\menu.js" />
+    <Content Include="Academic\Report\academicOfferReport.aspx" />
+    <Content Include="Academic\Report\classroomReport.aspx" />
+    <Content Include="Academic\Report\externalDesignationReport.aspx" />
+    <Content Include="Academic\Report\teacherReport.aspx" />
+    <Content Include="Academic\Report\waitingReport.aspx" />
     <Content Include="Administration\AdministrationGroups\administration.aspx" />
     <Content Include="Administration\AdministrationGroups\gPeriod.aspx" />
     <Content Include="Administration\AdministrationGroups\gProgram.aspx" />
@@ -395,6 +400,41 @@
     <Compile Include="Academic\Functionary\teacher.aspx.designer.cs">
       <DependentUpon>teacher.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Academic\Report\academicOfferReport.aspx.cs">
+      <DependentUpon>academicOfferReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academic\Report\academicOfferReport.aspx.designer.cs">
+      <DependentUpon>academicOfferReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academic\Report\classroomReport.aspx.cs">
+      <DependentUpon>classroomReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academic\Report\classroomReport.aspx.designer.cs">
+      <DependentUpon>classroomReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academic\Report\externalDesignationReport.aspx.cs">
+      <DependentUpon>externalDesignationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academic\Report\externalDesignationReport.aspx.designer.cs">
+      <DependentUpon>externalDesignationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academic\Report\teacherReport.aspx.cs">
+      <DependentUpon>teacherReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academic\Report\teacherReport.aspx.designer.cs">
+      <DependentUpon>teacherReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academic\Report\waitingReport.aspx.cs">
+      <DependentUpon>waitingReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academic\Report\waitingReport.aspx.designer.cs">
+      <DependentUpon>waitingReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Administration\AdministrationGroups\administration.aspx.cs">
       <DependentUpon>administration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -561,9 +601,7 @@
       <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Academic\Report\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
