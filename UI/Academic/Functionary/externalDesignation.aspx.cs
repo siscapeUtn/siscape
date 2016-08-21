@@ -25,6 +25,7 @@ namespace UI.Academic.Functionary
             if (!IsPostBack)
             {
                 blockControls();
+                Session["listDesignation"] = null;
             }
             fillGvDesignation();
         }
@@ -132,9 +133,8 @@ namespace UI.Academic.Functionary
                 }
 
                 blockControls();
+                Session["listDesignation"] = null;
                 fillGvDesignation();
-                Session.RemoveAll();
-                Response.Redirect("externalDesignation.aspx");
                 if (records > 0)
                 {
                     lblMessage.Text = "Datos almacenados correctamente.";

@@ -42,7 +42,7 @@
 						        </div>
 					        </li>--%>
                             <% validationUserExternal();%>
-					        <li>
+					        <li> 
 						        <div class="option">
 							        <div><a href="../../about.aspx" class="anchor">Acerca de</a></div>
 						        </div>

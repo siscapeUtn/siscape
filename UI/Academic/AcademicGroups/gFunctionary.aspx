@@ -26,7 +26,7 @@
             <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
                 <section class="accesses">
                     <a href="../Functionary/externalDesignation.aspx"><img alt="Nomb. Externo" src="../../images/academic/externalDesignation.svg" />
-                    <p>Nombr. externo</p></a>
+                    <p>Nombr. Externo</p></a>
                 </section>
             </section>
             <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">

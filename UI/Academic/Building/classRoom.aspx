@@ -17,7 +17,7 @@
                         </section>
                         <section class="col-md-6">
                             <section class="form-group">
-                                <asp:label runat="server" id="lblprogram" text="programa:"></asp:label>
+                                <asp:label runat="server" id="lblprogram" text="Programa:"></asp:label>
                                 <asp:dropdownlist id="cboprogram" cssclass="form-control"  runat="server"></asp:dropdownlist>
                                 <span class="message-has-error"><asp:label runat="server" id="lblmessageprogram" ></asp:label></span>
                             </section>

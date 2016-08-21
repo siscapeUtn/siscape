@@ -24,10 +24,10 @@
                                <asp:CheckBoxList ID="chkld" runat="server" AutoPostBack="True" CssClass="listDaysCheckbox" RepeatDirection="Horizontal" OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged">
                                     <asp:ListItem Value="1"> Lunes</asp:ListItem>
                                     <asp:ListItem Value="2"> Martes</asp:ListItem>
-                                    <asp:ListItem Value="3"> Miercoles</asp:ListItem>
+                                    <asp:ListItem Value="3"> Miércoles</asp:ListItem>
                                     <asp:ListItem Value="4"> Jueves</asp:ListItem>
                                     <asp:ListItem Value="5"> Viernes</asp:ListItem>
-                                    <asp:ListItem Value="6"> Sabado</asp:ListItem>
+                                    <asp:ListItem Value="6"> Sábado</asp:ListItem>
                                     <asp:ListItem Value="7"> Domingo</asp:ListItem>
                                </asp:CheckBoxList>
                             </section> <!-- End .form-group -->

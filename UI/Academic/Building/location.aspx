@@ -29,7 +29,7 @@
                         </section>
                         <section class="col-md-6">
                             <section class="form-group">
-                                <asp:Label runat="server" ID="lblModule" Text="Modulo:"></asp:Label>
+                                <asp:Label runat="server" ID="lblModule" Text="Módulo:"></asp:Label>
                                 <asp:TextBox runat="server" ID="txtModule" CssClass="form-control"></asp:TextBox>
                                 <span class="message-has-error" ><asp:Label runat="server" ID="lblMessageModule"></asp:Label></span>
                             </section>

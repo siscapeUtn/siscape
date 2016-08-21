@@ -64,7 +64,7 @@
                                 <asp:Label ID="lblMessage" CssClass="message-has-error help-block" runat="server"></asp:Label>
                             </section>
                             <section class="form-group">
-                                <asp:Label ID="lblStart" Text="Hora de Inicio:" runat="server"></asp:Label>
+                                <asp:Label ID="lblStart" Text="Hora de inicio:" runat="server"></asp:Label>
                                 <asp:TextBox ID="txtStart" CssClass="form-control" runat="server"></asp:TextBox>
                                 <asp:Label CssClass="message-has-error" runat="server"></asp:Label>
                             </section>
@@ -88,7 +88,7 @@
                                         <asp:BoundField HeaderText="Dia" DataField="day"></asp:BoundField>
                                         <asp:BoundField HeaderText="Hora inicial" DataField="startHour" DataFormatString="{0:t}"></asp:BoundField>
                                         <asp:BoundField HeaderText="Hora final" DataField="FinishHour" DataFormatString="{0:t}"></asp:BoundField>
-                                        <asp:ButtonField CommandName="Delete" ImageUrl="~/images/maintenances/delete.png" Text="Eliminar" ButtonType="Image" HeaderText="Eliminar" ControlStyle-ForeColor="Red"></asp:ButtonField>
+                                        <asp:ButtonField CommandName="Delete" ImageUrl="~/images/maintenance/delete.png" Text="Eliminar" ButtonType="Image" HeaderText="Eliminar" ControlStyle-ForeColor="Red"></asp:ButtonField>
                                     </Columns>
                                 </asp:GridView>
                           </section>
