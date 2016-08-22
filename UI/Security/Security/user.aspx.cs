@@ -95,7 +95,8 @@ namespace UI.Administration.Security
         {
             String body = "Bienvenido a SISCAPE. \n";
             body += "Se ha creado una cuenta en el sistema SISCAPE. \n";
-            body += "Su correo electrónico para accessar: " + email;
+            body += "Su correo electrónico para accessar: " + email + "\n";
+            body += "Su contraseña para ingresar por primera vez es el su número de cédula.";
             return body;
         }
 

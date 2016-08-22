@@ -343,8 +343,8 @@ namespace BLL
                             oRole.Role_Id = Convert.ToInt32(oDataRow[9].ToString());
                             oRole.Description = oDataRow[10].ToString();
                             oUserSystem.state = Convert.ToInt16(oDataRow[11].ToString());
-                            //oUserSystem.setPassword = oDataRow[12].ToString();
-                            //oUserSystem.Password = en.Desencriptar(oDataRow[13].ToString());
+                            oUserSystem.setPassword = oDataRow[12].ToString();
+                            oUserSystem.Password = en.Desencriptar(oDataRow[13].ToString());
                             oUserSystem.oProgram = oProgram;
                             oUserSystem.oRole = oRole;
                         }

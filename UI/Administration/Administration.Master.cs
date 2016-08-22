@@ -40,10 +40,9 @@ namespace UI.Administration
             }
             else if (this.services == true)
             {
-                Response.Write("<li><div class='option'><div><a href='../../Services/ServicesGroups/ServicesGroups.aspx' class='anchor'>Servicios</a></div>" +
+                Response.Write("<li><div class='option'><div><a href='../../Services/ServicesGroups/ServicesGroups.aspx' id='service' class='anchor'>Servicios</a></div>" +
                    "</div><ul class='sub-menu'>" +
                    "<li><div><a href='../../Services/Services/Services.aspx'>Oferta de Cursos</a></div></li>" +
-                   "<li><div><a href='../../Services/Services/Waiting_list.aspx'>Lista de espera</a></div></li>" +
                    "<li><div><a href='../../Services/Services/Report_waiting_list.aspx'>Reporte</a></div></li>" +
                    "</ul></li>");
             }

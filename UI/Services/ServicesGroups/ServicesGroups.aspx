@@ -7,19 +7,13 @@
         <section class="row">
             <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
                 <section class="accesses">
-                    <a href="../Services/service.aspx" ><img alt="Programa" src="../../images/security/user_rol.svg" />
+                    <a href="../Services/Services.aspx" ><img alt="Servicios" src="../../images/administration/offer.svg" />
                     <p>Oferta de Cursos</p></a>
                 </section>
             </section>
             <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
                 <section class="accesses">
-                    <a href="../Services/Waiting_list.aspx" ><img alt="Programa" src="../../images/security/users.svg" />
-                    <p>Lista de Espera</p></a>
-                </section>
-            </section>
-            <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
-                <section class="accesses">
-                    <a href="../Services/Report_waiting_list.aspx" ><img alt="Programa" src="../../images/security/users.svg" />
+                    <a href="../Services/Report_waiting_list.aspx" ><img alt="Programa" src="../../images/academic/report-academic.svg" />
                     <p>Reportes</p></a>
                 </section>
             </section>
@@ -33,6 +27,6 @@
     </section>
     <script type="text/javascript">
         $('li').removeClass('isSelected');
-        $('#security').addClass('isSelected');
+        $('#service').addClass('isSelected');
     </script>
 </asp:Content>

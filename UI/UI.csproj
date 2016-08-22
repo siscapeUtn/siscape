@@ -136,6 +136,7 @@
     <Content Include="images\academic\teacher.svg" />
     <Content Include="images\academic\typeClassRoom.png" />
     <Content Include="images\academic\typeClassRoom.svg" />
+    <Content Include="images\administration\offer.svg" />
     <Content Include="images\administration\period.svg" />
     <Content Include="images\administration\period_2.svg" />
     <Content Include="images\administration\period_type.svg" />

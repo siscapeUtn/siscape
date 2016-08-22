@@ -202,7 +202,7 @@ namespace UI
             if (txtNewPassword.Text.Trim() == "")
             {
                 ind = false;
-                lblMessageNewPassword.Text = "Debe digitar un Nuevo Password.";
+                lblMessageNewPassword.Text = "Debe digitar una nueva contraseña.";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorName", "$('#ContentPlaceHolder1_txtNewPassword').addClass('has-error');", true);
             }
             else { 
@@ -213,15 +213,17 @@ namespace UI
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorName", "$('#ContentPlaceHolder1_txtNewPassword').addClass('has-error');", true);
                 }
             }
+
             if (txtConfirmPassword.Text.Trim() == "" || txtConfirmPassword.Text != txtNewPassword.Text)
             {
-                lblMessageConfirmPassword.Text = "Revise este campo.";
+                lblMessageConfirmPassword.Text = "Las contraseñas no concuerdan.";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorName", "$('#ContentPlaceHolder1_txtConfirmPassword').addClass('has-error');", true);
                 ind = false;
             }
+
             if (txtLastPassword.Text.Trim() == "" || txtLastPassword.Text != lastpass)
             {
-                lblMessageLastPassword.Text = "Debe digitar su password actual correctamente.";
+                lblMessageLastPassword.Text = "Debe digitar su contraseña actual correctamente.";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorName", "$('#ContentPlaceHolder1_txtLastPassword').addClass('has-error');", true);
                 ind = false;
             }
