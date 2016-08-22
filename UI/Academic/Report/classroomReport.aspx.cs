@@ -44,7 +44,6 @@ namespace UI.Academic.Report
             try
             {
                 List<Entities.ClassRoom> listRoom = listClassRoom;
-            
                 System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
                 text::Document pdfDoc = new text::Document(text::PageSize.A4, 10, 10, 10, 10);
                 pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());
@@ -64,9 +63,9 @@ namespace UI.Academic.Report
                 text::Paragraph title = new text::Paragraph();
                 title.Font = text::FontFactory.GetFont("dax-black", 32, new text::BaseColor(0, 51, 102));
                 title.Alignment = text::Element.ALIGN_CENTER;
-                title.Add("\n\n Reporte de Aulas\n\n");
+                title.Add("\n\n Reporte de Aulas\n\n\n\n");
                 pdfDoc.Add(title);
-
+                
                 PdfPTable oPTable = new PdfPTable(6);
                 oPTable.TotalWidth = 100;
                 oPTable.SpacingBefore = 20f;
@@ -100,7 +99,7 @@ namespace UI.Academic.Report
 
                 pdfDoc.Add(oPTable);
                 pdfDoc.Close();
-
+                
                 byte[] bytes = memoryStream.ToArray();
                 memoryStream.Close();
                 Response.Clear();

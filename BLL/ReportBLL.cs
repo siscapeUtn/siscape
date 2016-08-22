@@ -62,7 +62,7 @@ namespace BLL
         }
 
 
-        public List<ClassRoom> reportClassRoom(Int32 pPeriod_id)
+        public List<ClassRoom> reportClassRoom(Int32 pPeriod_id) //Listo
         {
             String sql = "SP_REPORT_CLASSROOM";
 
@@ -133,6 +133,8 @@ namespace BLL
                     oTeacher.lastName = oDataRow[3].ToString();
                     oSchedule.name = oDataRow[4].ToString();
                     oSchedule.typeSchedule = oDataRow[5].ToString();
+                    oSchedule.startTime = DateTime.Parse(oDataRow[9].ToString());
+                    oSchedule.endTime = DateTime.Parse(oDataRow[10].ToString());
                     oClassRoom.num_room = oDataRow[6].ToString();
                     oAcademic.price = Convert.ToDecimal(oDataRow[7].ToString());
                     oAcademic.oCourse = oCourse;

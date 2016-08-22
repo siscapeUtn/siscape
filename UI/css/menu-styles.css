@@ -1050,6 +1050,11 @@ input:focus ~ .highlight {
     border-color: #E80000;
 }
 
+.message-has-error {
+    color: #E80000;
+    padding: 10px;
+}
+
 .maintanance .message-has-error {
     color: #E80000;
     padding: 10px;

@@ -11,3 +11,16 @@ C:\Users\Rud\Desktop\siscape\BLL\bin\itextsharp.xml
 C:\Users\Rud\Desktop\siscape\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 C:\Users\Rud\Desktop\siscape\BLL\obj\Debug\BLL.dll
 C:\Users\Rud\Desktop\siscape\BLL\obj\Debug\BLL.pdb
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\BLL\bin\BLL.dll.config
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\BLL\bin\BLL.dll
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\BLL\bin\BLL.pdb
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\BLL\bin\DAL.dll
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\BLL\bin\Entities.dll
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\BLL\bin\itextsharp.dll
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\BLL\bin\Newtonsoft.Json.dll
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\BLL\bin\DAL.pdb
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\BLL\bin\Entities.pdb
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\BLL\bin\itextsharp.xml
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\BLL\obj\Debug\BLL.dll
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\BLL\obj\Debug\BLL.pdb

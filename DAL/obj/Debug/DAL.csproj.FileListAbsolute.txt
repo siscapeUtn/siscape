@@ -4,3 +4,9 @@ C:\Users\Rud\Desktop\siscape\DAL\bin\DAL.pdb
 C:\Users\Rud\Desktop\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Rud\Desktop\siscape\DAL\obj\Debug\DAL.dll
 C:\Users\Rud\Desktop\siscape\DAL\obj\Debug\DAL.pdb
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\DAL\bin\DAL.dll.config
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\DAL\bin\DAL.dll
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\DAL\bin\DAL.pdb
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\DAL\obj\Debug\DAL.dll
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\DAL\obj\Debug\DAL.pdb

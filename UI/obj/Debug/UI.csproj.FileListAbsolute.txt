@@ -14,3 +14,19 @@ C:\Users\Rud\Desktop\siscape\UI\bin\DAL.pdb
 C:\Users\Rud\Desktop\siscape\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 C:\Users\Rud\Desktop\siscape\UI\obj\Debug\UI.dll
 C:\Users\Rud\Desktop\siscape\UI\obj\Debug\UI.pdb
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\UI\bin\UI.dll.config
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\UI\bin\UI.dll
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\UI\bin\UI.pdb
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\UI\bin\BLL.dll
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\UI\bin\Entities.dll
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\UI\bin\itextsharp.dll
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\UI\bin\itextsharp.xmlworker.dll
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\UI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\UI\bin\DAL.dll
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\UI\bin\BLL.pdb
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\UI\bin\Entities.pdb
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\UI\bin\itextsharp.xml
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\UI\bin\DAL.pdb
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\UI\obj\Debug\UI.dll
+C:\Users\asala\Source\Repos\SISCAPE 04\siscape\UI\obj\Debug\UI.pdb

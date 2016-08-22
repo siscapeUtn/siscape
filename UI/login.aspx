@@ -51,11 +51,7 @@
                                 <section class="form-group">
                                     <asp:Label runat="server" ID="lblSelectPeriod" Text="Seleccione el período:"></asp:Label>
                                     <asp:DropDownList ID="cboPeriod" CssClass="form-control" runat="server"></asp:DropDownList>
-                                    <span class="help-block"></span>
-                                </section>
-                                <section class="form-group">
-                                    <asp:Label ID="lblMsj" runat="server"></asp:Label>
-                                    <span class="help-block"></span>
+                                    <span class="message-has-error"><asp:Label ID="lblMsj" runat="server"></asp:Label></span>
                                 </section>
                             </section>
                         </section>
@@ -65,6 +61,9 @@
                         </section>
                     </section>
                 </ContentTemplate>
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="btnDelete" />
+                </Triggers>
             </asp:UpdatePanel>
         </section>
     </section>
@@ -106,6 +105,9 @@
                         </section>
                     </section>
                 </ContentTemplate>
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="btnChange" />
+                </Triggers>
             </asp:UpdatePanel>
         </section>
     </section><!--end modal reset password-->
