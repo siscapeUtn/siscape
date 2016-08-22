@@ -6,7 +6,7 @@
     <section class="content_2">
         <% showOfferAcademic(); %>
         <section class="maintanance">
-            <p class="title">Administraci&oacute;n de Oferta Academica</p>
+            <p class="title">Administraci&oacute;n de Oferta Académica</p>
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>

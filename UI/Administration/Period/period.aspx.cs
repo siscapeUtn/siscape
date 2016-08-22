@@ -136,19 +136,19 @@ namespace UI.Administration
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorStartDate", "$('#ContentPlaceHolder1_txtStartDate').addClass('has-error');", true);
             }
 
-            try 
-	        {
+            try
+            {
                 DateTime finishDate = Convert.ToDateTime(txtFinishDate.Text);
                 lblMessageFinalDate.Text = "";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasFinishDate", "$('#ContentPlaceHolder1_txtFinishDate').removeClass('has-error');", true);
-	        }
-	        catch (Exception)
-	        {
+            }
+            catch (Exception)
+            {
                 ind = false;
                 indDates = true;
                 lblMessageFinalDate.Text = "Debe seleccionar una fecha correcta.";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorFinishDate", "$('#ContentPlaceHolder1_txtFinishDate').addClass('has-error');", true);
-	        }
+            }
 
             if ( indDates )
             {

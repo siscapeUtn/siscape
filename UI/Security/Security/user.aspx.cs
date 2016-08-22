@@ -304,6 +304,19 @@ namespace UI.Administration.Security
                 lblMessageEmail.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorEmail", "$('#ContentPlaceHolder1_txtEmail').removeClass('has-error');", true);
             }
+
+            if (cboRole.SelectedValue == "0")
+            {
+                ind = false;
+                lblMessageRole.Text = "Debe seleccionar un rol.";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorRole", "$('#ContentPlaceHolder1_cboRole').addClass('has-error');", true);
+            }
+            else
+            {
+                lblMessageRole.Text = "";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorRole", "$('#ContentPlaceHolder1_cboRole').removeClass('has-error');", true);
+            }
+
             return ind;
         }
 
@@ -406,6 +419,8 @@ namespace UI.Administration.Security
             lblMessageRole.Text = "";
             ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorEmail", "$('#ContentPlaceHolder1_cboRole').removeClass('has-error');", true);
             cboState.SelectedValue = "1";
+            lblMessageRole.Text = "";
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorRole", "$('#ContentPlaceHolder1_cboRole').removeClass('has-error');", true);
         }
 
         protected void gvUserSystem_PageIndexChanging(object sender, GridViewPageEventArgs e)

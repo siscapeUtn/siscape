@@ -1,5 +1,5 @@
-﻿<%@ Page Title="Periodo - DEAS" Language="C#" MasterPageFile="~/Administration/Administration.Master" AutoEventWireup="true" CodeBehind="period.aspx.cs" Inherits="UI.Administration.period" %>
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit" %>
+﻿<%@ Page Title="Periodo - DEAS" Language="C#" MasterPageFile="~/Administration/Administration.Master" AutoEventWireup="true" Culture="Auto" UICulture="Auto" CodeBehind="period.aspx.cs" Inherits="UI.Administration.period" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit"  %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- Bootstrap Combobox --->
     <link rel="stylesheet" type="text/css" media="screen" href="../libraries/bootstrap-combobox-master/css/bootstrap-combobox.css" />
@@ -7,7 +7,7 @@
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"></asp:ScriptManager>
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True" EnableScriptLocalization="true"></asp:ScriptManager>
     <section class="content_2">
         <section class="maintanance">
             <p class="title">Administraci&oacute;n de Periodos</p>

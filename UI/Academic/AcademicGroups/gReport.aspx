@@ -25,7 +25,7 @@
             </section>
             <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
                 <section class="accesses">
-                    <a href="../Report/externalDesignationReport.aspx"><img alt="Reportws" src="../../images/academic/report-academic.svg" />
+                    <a href="../Report/externalDesignationReport.aspx"><img alt="Reporses" src="../../images/academic/report-academic.svg" />
                     <p>Nomb. Externo</p></a>
                 </section>
             </section>

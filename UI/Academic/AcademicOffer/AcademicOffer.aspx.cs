@@ -526,6 +526,25 @@ namespace UI.Academic.AcademicOffer
                 lblMesageSchedule.Text = "Debe seleccionar un horario";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorSchedule", "$('#ContentPlaceHolder1_cboSchedule').addClass('has-error');", true);
             }
+
+            try
+            {
+                if (Convert.ToInt32(cboHours.SelectedValue) == 0)
+                {
+                    ind = false;
+                    lblMessageHours.Text = "Debe seleccionar la cantidad de horas";
+                }
+                else
+                {
+                    lblMessageHours.Text = "";
+                }
+
+            } catch(Exception ex ){
+                ind = false;
+                lblMessageHours.Text = "Debe seleccionar la cantidad de horas";
+            }
+
+            
             return ind;
         }
 

@@ -249,6 +249,18 @@ namespace UI.Academic
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorEmail", "$('#ContentPlaceHolder1_txtEmail').removeClass('has-error');", true);
             }
 
+            if ( Convert.ToInt32( cboprogram.SelectedValue) == 0 )
+            {
+                ind = false;
+                lblmessageprogram.Text = "Debe seleccionar el programa.";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorProgram", "$('#ContentPlaceHolder1_cboprogram').addClass('has-error');", true);
+            }
+            else
+            {
+                lblmessageprogram.Text = "";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorProgram", "$('#ContentPlaceHolder1_cboprogram').removeClass('has-error');", true);
+            }
+
             return ind;
         }
 
@@ -318,6 +330,8 @@ namespace UI.Academic
             cboprogram.SelectedValue = "0";
             lblmessageprogram.Text = "";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorProgram", "$('#ContentPlaceHolder1_cboProgram').removeClass('has-error');", true);
+            lblmessageprogram.Text = "";
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorProgram", "$('#ContentPlaceHolder1_cboprogram').removeClass('has-error');", true);
         }
 
         protected void gvFunctionary_PageIndexChanging(object sender, GridViewPageEventArgs e)
