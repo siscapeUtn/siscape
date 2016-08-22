@@ -51,7 +51,16 @@ namespace UI.Services
         {
             if (validateData())
             {
-                Int32 periodo = Convert.ToInt32(Session["period"]);
+                Int32 periodo;
+                if (Session["period"] == null)
+                {
+                    periodo = BLL.PeriodBLL.getInstance().getLasPeriod();
+                }
+                else
+                {
+                    periodo = Convert.ToInt32(Session["period"]);
+                }
+                
                 Entities.WaitingList oWaitingList = new Entities.WaitingList();
                 oWaitingList.code = BLL.WaitingListBLL.getInstance().getNextCodeWaitingList();
                 oWaitingList.id = txtId.Text;

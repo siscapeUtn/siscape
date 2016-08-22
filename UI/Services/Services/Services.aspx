@@ -3,12 +3,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script runat="server">
+    //this method doesn´t work in codeBehind
         protected void programs()
         {
             List<Entities.Program> listProgram = new List<Entities.Program>();
 
             List<Entities.Course> listCourse = new List<Entities.Course>();
-            
+
             //This line brings the list of programs to show them.
             listProgram = BLL.ProgramBLL.getInstance().getAll();
 
@@ -22,7 +23,7 @@
                 foreach (Entities.Course course in listCourse)
                 {
                     Response.Write(
-                    "<section class='course'>"+
+                    "<section class='course'>" +
                     "</form><form  method='POST' action='Waiting_list.aspx'>" +
                     "<div class='name'>" + course.description + "</div>" +
                     "<input type='hidden' name='idCourse' value='" + course.id + "' runat='server' />" +
@@ -34,7 +35,6 @@
                 Response.Write("</div>");
             }
         }
-
     </script>
     <div class="listCourse">
         <div class="programAccordion">
