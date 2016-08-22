@@ -148,13 +148,11 @@ namespace UI
             bool bandera = true;
             if (txtUser.Text == "")
             {
-                txtUser.Text = "siscape.utn@gmail.com";
-                //bandera = false;
+                bandera = false;
             }
             if (txtPassword.Text == "")
             {
-               txtPassword.Text = "Siscape2016";
-               //bandera = false;
+               bandera = false;
             }
 
             return bandera;
