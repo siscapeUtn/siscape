@@ -33,7 +33,7 @@ namespace UI.Administration.Security
             startCombos();
             txtCode.Text = BLL.UserSystemBLL.getInstance().getNextCode().ToString();
         }
-
+        
         protected void btnSave_Click(object sender, ImageClickEventArgs e)
         {
             Int32 records = -1;
@@ -504,6 +504,22 @@ namespace UI.Administration.Security
             {
                 Response.Write(ex.ToString());
             }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            String id = txtId.Text;
+            Entities.Functionary oFunctionary = FunctionaryBLL.getInstance().getFunctionaryById(id);
+            
+            if( oFunctionary.name != null ){
+                txtName.Text = oFunctionary.name;
+                txtLastName.Text = oFunctionary.lastName;
+                txtHomePhone.Text = oFunctionary.homePhone;
+                txtCellPhone.Text = oFunctionary.cellPhone;
+                txtEmail.Text = oFunctionary.email;
+                cboProgram.SelectedValue = oFunctionary.oProgram.code.ToString();
+            }
+
         }
     }
 }
