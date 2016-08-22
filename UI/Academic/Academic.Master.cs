@@ -74,7 +74,7 @@ namespace UI.Academic
             string administartionBody = "<li><div><a href='../AcademicGroups/gBuilding.aspx'>Infraestructura</a></div></li>" +
                         "<li><div><a href='../AcademicGroups/gFunctionary.aspx'>Funcionarios</a></div></li>";
             string offerBody = "<li><div><a href='../AcademicGroups/gAcademicOffer.aspx'>Oferta Acad&eacute;mica</a></div></li>";
-            string reportBody = "<li><div><a href='../Academic/AcademicGroups/gReport.aspx'>Reportes</a></div></li>";
+            string reportBody = "<li><div><a href='../../Academic/AcademicGroups/gReport.aspx'>Reportes</a></div></li>";
             string footer = "</ul></li>";
 
 
