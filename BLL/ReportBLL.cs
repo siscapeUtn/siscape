@@ -156,5 +156,39 @@ namespace BLL
             finally { }
         }
 
+        public List<Entities.WaitingList> reportWaitingList(Int32 pPeriod_id, Int32 pIsContact)
+        {
+            String sql = "SP_REPORT_WAITING_LIST";
+
+            try
+            {
+                SqlCommand oCommand = new SqlCommand(sql);
+                oCommand.Parameters.AddWithValue("@PERIOD_ID", pPeriod_id);
+                oCommand.Parameters.AddWithValue("@IS_CONTACT", pIsContact);
+                oCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                DataTable oDataTable = DAO.getInstance().executeQuery(oCommand);
+                List<WaitingList> listWaitingList = new List<WaitingList>();
+                foreach (DataRow oDataRow in oDataTable.Rows)
+                {
+                    WaitingList oWaitingList = new WaitingList();
+
+                    oWaitingList.name = oDataRow[0].ToString();
+                    oWaitingList.lastName = oDataRow[1].ToString();
+                    oWaitingList.homePhone = oDataRow[2].ToString();
+                    oWaitingList.cellPhone = oDataRow[3].ToString();
+                    oWaitingList.email = oDataRow[4].ToString();
+                    oWaitingList.course_name = oDataRow[5].ToString();
+                    oWaitingList.day = oDataRow[6].ToString();
+                    listWaitingList.Add(oWaitingList);
+                }
+                return listWaitingList;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { }
+        }
+
     }
 }
