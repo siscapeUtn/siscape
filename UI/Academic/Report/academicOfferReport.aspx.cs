@@ -16,7 +16,12 @@ namespace UI.Academic.Report
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            getPeriod();
+
+            if (!IsPostBack)
+            {
+                getPeriod();
+                lblMessage.Text = "";
+            }
         }
 
         public void getPeriod()
@@ -36,8 +41,31 @@ namespace UI.Academic.Report
         {
             Int32 period_id     = Convert.ToInt32(cboPeriod.SelectedValue);
             String period_name = cboPeriod.SelectedItem.Text;
-            List<Entities.AcademicOffer> listAcademicOffer = ReportBLL.getInstance().reportOffer(period_id);
-            printReport(listAcademicOffer, period_name);
+
+            if (validate())
+            {
+                List<Entities.AcademicOffer> listAcademicOffer = ReportBLL.getInstance().reportOffer(period_id);
+                lblMessage.Text = "";
+                printReport(listAcademicOffer, period_name);
+            }
+
+        }
+
+        protected Boolean validate()
+        {
+            Boolean ind = true;
+
+            if (Convert.ToInt32(cboPeriod.SelectedValue) == 0)
+            {
+                ind = false;
+                lblMessage.Text = "Debe seleccionar el período.";
+            }
+            else
+            {
+                lblMessage.Text = "";
+            }
+
+            return ind;
         }
 
         protected void printReport(List<Entities.AcademicOffer> pListAcademicOffer, String pPeriodName)

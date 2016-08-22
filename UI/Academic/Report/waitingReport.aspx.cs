@@ -17,7 +17,28 @@ namespace UI.Academic.Report
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            getPeriod();
+            if (!IsPostBack)
+            {
+                getPeriod();
+                lblMessage.Text = "";
+            }
+        }
+
+        protected Boolean validate()
+        {
+            Boolean ind = true;
+
+            if (Convert.ToInt32(cboPeriod.SelectedValue) == 0)
+            {
+                ind = false;
+                lblMessage.Text = "Debe seleccionar el período.";
+            }
+            else
+            {
+                lblMessage.Text = "";
+            }
+
+            return ind;
         }
 
         public void getPeriod()
@@ -37,8 +58,13 @@ namespace UI.Academic.Report
         {
             Int32 period_id = Convert.ToInt32(cboPeriod.SelectedValue);
             Int32 isContact = Convert.ToInt32(cboOptions.SelectedValue);
-            List<Entities.WaitingList> listWaitingList = ReportBLL.getInstance().reportWaitingList(period_id, isContact);
-            getReport(listWaitingList);
+
+            if (validate())
+            {
+                List<Entities.WaitingList> listWaitingList = ReportBLL.getInstance().reportWaitingList(period_id, isContact);
+                getReport(listWaitingList);
+            }
+            
         }
 
         protected void getReport(List<Entities.WaitingList> pListWaitingList)

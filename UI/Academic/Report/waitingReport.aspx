@@ -22,6 +22,7 @@
                             <section class="form-group">
                                 <asp:Label runat="server" ID="lblPeriod"  Text="Seleccione el período:"></asp:Label>
                                 <asp:DropDownList runat="server" ID="cboPeriod" CssClass="form-control"></asp:DropDownList>
+                                <span class="message-has-error"><asp:Label ID="lblMessage" runat="server"></asp:Label></span>
                             </section>
                         </section>
                         <section class="col-md-12">
