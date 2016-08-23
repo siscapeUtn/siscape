@@ -10,6 +10,7 @@ using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
 using System.IO;
 using Entities;
+using System.Globalization;
 
 namespace UI.Academic.AcademicOffer
 {
@@ -141,45 +142,58 @@ namespace UI.Academic.AcademicOffer
         }
         protected Boolean validateData()
         {
+           
            Boolean ind = true;
-            /* 
-                        if (Convert.ToInt32(cboHeadquarters.SelectedValue) == 0)
-                        {
-                            ind = false;
-                            lblMessageHeadquarters.Text = "Debe seleccionar una sede.";
-                            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorHeadquarter", "$('#ContentPlaceHolder1_cboHeadquarters').addClass('has-error');", true);
-                        }
-                        else
-                        {
-                            lblMessageHeadquarters.Text = "";
-                            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorHeadquarter", "$('#ContentPlaceHolder1_cboHeadquarters').removeClass('has-error');", true);
-                        }
+           
+            if (Convert.ToInt32(cboprogram.SelectedValue) == 0)
+            {
+                ind = false;
+                lblmessageprogram.Text = "Debe seleccionar un programa.";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorprogram", "$('#ContentPlaceHolder1_cboprogram').addClass('has-error');", true);
+            }
+            else
+            {
+                lblmessageprogram.Text = "";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorprogram", "$('#ContentPlaceHolder1_cboprogram').removeClass('has-error');", true);
+            }
+            /*************************************/
+            if (txtStart.Text.Trim() == "")
+            {
+                ind = false;
+                lblMessageStartHour.Text = "Debe digitar una hora de inicio.";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorStart", "$('#ContentPlaceHolder1_txtStart').addClass('has-error');", true);
+            }
+            else
+            {
+                lblMessageStartHour.Text = "";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorStart", "$('#ContentPlaceHolder1_txtStart').removeClass('has-error');", true);
+            }
+            /*************************************/
+            if (txtEndHour.Text.Trim() == "")
+            {
+                ind = false;
+                lblMessageEndHour.Text = "Debe digitar una hora final.";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorEndHour", "$('#ContentPlaceHolder1_txtEndHour').addClass('has-error');", true);
+            }
+            else
+            {
+                lblMessageEndHour.Text = "";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorEndHour", "$('#ContentPlaceHolder1_txtEndHour').removeClass('has-error');", true);
+            }
+            /*************************************/
+            if (txtDescription.Text.Trim() == "")
+            {
+                ind = false;
+                lblMessageDescription.Text = "Debe marcar los días para el horario.";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorDescription", "$('#ContentPlaceHolder1_txtDescription').addClass('has-error');", true);
+            }
+            else
+            {
+                lblMessageDescription.Text = "";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorDescription", "$('#ContentPlaceHolder1_txtDescription').removeClass('has-error');", true);
+            }
 
-                        if (txtBuilding.Text.Trim() == "")
-                        {
-                            ind = false;
-                            lblMessageBuilding.Text = "Debe digitar un nombre de edificio.";
-                            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorBuilding", "$('#ContentPlaceHolder1_txtBuilding').addClass('has-error');", true);
-                        }
-                        else
-                        {
-                            lblMessageBuilding.Text = "";
-                            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorBuilding", "$('#ContentPlaceHolder1_txtBuilding').removeClass('has-error');", true);
-                        }
-
-                        if (txtModule.Text.Trim() == "")
-                        {
-                            ind = false;
-                            lblMessageModule.Text = "Debe digitar el nombre de un modulo.";
-                            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorModule", "$('#ContentPlaceHolder1_txtModule').addClass('has-error');", true);
-                        }
-                        else
-                        {
-                            lblMessageModule.Text = "";
-                            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "removeHasErrorModule", "$('#ContentPlaceHolder1_txtModule').removeClass('has-error');", true);
-                        }
-
-                      */
+                     
            return ind;
         }
 
