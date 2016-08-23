@@ -99,4 +99,12 @@ BEGIN
 END;
 GO
 
+--to get last period
+CREATE PROCEDURE SP_GET_LAST_PERIOD
+AS
+BEGIN
+	SELECT MAX(PERIOD_ID)
+	FROM PERIOD
+END
+
 --end period procedures

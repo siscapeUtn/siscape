@@ -94,6 +94,15 @@ namespace UI.Academic.Functionary {
         protected global::System.Web.UI.WebControls.TextBox txtPosition;
         
         /// <summary>
+        /// Control lblMessagePosition.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessagePosition;
+        
+        /// <summary>
         /// Control lblWorkPlace.
         /// </summary>
         /// <remarks>
@@ -110,6 +119,15 @@ namespace UI.Academic.Functionary {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtWorkPlace;
+        
+        /// <summary>
+        /// Control lblMessageWorkPlace.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessageWorkPlace;
         
         /// <summary>
         /// Control lblStartDesignation.
@@ -139,6 +157,15 @@ namespace UI.Academic.Functionary {
         protected global::AjaxControlToolkit.CalendarExtender txtStartDesignation_CalendarExtender;
         
         /// <summary>
+        /// Control lblMessageStartDesignation.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessageStartDesignation;
+        
+        /// <summary>
         /// Control lblEndDesignation.
         /// </summary>
         /// <remarks>
@@ -166,6 +193,15 @@ namespace UI.Academic.Functionary {
         protected global::AjaxControlToolkit.CalendarExtender txtEndDesignation_CalendarExtender;
         
         /// <summary>
+        /// Control lblMessageEndDesignation.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessageEndDesignation;
+        
+        /// <summary>
         /// Control lblHoursDisignation.
         /// </summary>
         /// <remarks>
@@ -182,6 +218,15 @@ namespace UI.Academic.Functionary {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cboHoursDisignation;
+        
+        /// <summary>
+        /// Control lblCboDisignation.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCboDisignation;
         
         /// <summary>
         /// Control lblDay.
@@ -202,13 +247,13 @@ namespace UI.Academic.Functionary {
         protected global::System.Web.UI.WebControls.DropDownList cboDay;
         
         /// <summary>
-        /// Control lblMessage.
+        /// Control lblMessageDay.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
+        protected global::System.Web.UI.WebControls.Label lblMessageDay;
         
         /// <summary>
         /// Control lblStart.
@@ -229,6 +274,24 @@ namespace UI.Academic.Functionary {
         protected global::System.Web.UI.WebControls.TextBox txtStart;
         
         /// <summary>
+        /// Control txtStart_MaskedEditExtender.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender txtStart_MaskedEditExtender;
+        
+        /// <summary>
+        /// Control lblMessageStart.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessageStart;
+        
+        /// <summary>
         /// Control lblEnd.
         /// </summary>
         /// <remarks>
@@ -245,6 +308,33 @@ namespace UI.Academic.Functionary {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEnd;
+        
+        /// <summary>
+        /// Control txtEnd_MaskedEditExtender.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender txtEnd_MaskedEditExtender;
+        
+        /// <summary>
+        /// Control lblMessageEnd.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessageEnd;
+        
+        /// <summary>
+        /// Control lblMessageList.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessageList;
         
         /// <summary>
         /// Control btnAdd.
@@ -319,13 +409,13 @@ namespace UI.Academic.Functionary {
         protected global::System.Web.UI.WebControls.ImageButton btnReturn;
         
         /// <summary>
-        /// Control Label1.
+        /// Control lblMessage.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
         /// Control gvExternalDesignation.

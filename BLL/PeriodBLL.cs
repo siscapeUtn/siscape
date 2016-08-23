@@ -253,5 +253,25 @@ namespace BLL
             }
             finally { }
         }
+        //brinsg last period code
+        public Int32 getLasPeriod()
+        {
+
+            String next;
+            String oSql = "SP_GET_LAST_PERIOD";
+
+            try
+            {
+                SqlCommand oCommand = new SqlCommand(oSql);
+                oCommand.CommandType = CommandType.StoredProcedure;
+                next = DAO.getInstance().executeQueryScalar(oCommand);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { }
+            return Convert.ToInt32(next);
+        } // getNextCode End
     }
 }

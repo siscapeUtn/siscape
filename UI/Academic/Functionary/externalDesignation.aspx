@@ -28,12 +28,12 @@
                             <section class="form-group">
                                 <asp:Label ID="lblPosition" Text="Cargo:" runat="server"></asp:Label>
                                 <asp:TextBox ID="txtPosition" CssClass="form-control" runat="server"></asp:TextBox>
-                                <asp:Label CssClass="message-has-error" runat="server"></asp:Label>
+                                <asp:Label CssClass="message-has-error" runat="server" ID="lblMessagePosition"></asp:Label>
                             </section>
                             <section class="form-group">
                                 <asp:Label ID="lblWorkPlace" Text="Lugar de trabajo:" runat="server"></asp:Label>
                                 <asp:TextBox ID="txtWorkPlace" CssClass="form-control" runat="server" ></asp:TextBox>
-                                <asp:Label CssClass="message-has-error help-block" runat="server"></asp:Label>
+                                <asp:Label CssClass="message-has-error help-block" runat="server" ID="lblMessageWorkPlace"></asp:Label>
                             </section>
                         </section>
                         <section class="col-md-6">
@@ -41,19 +41,19 @@
                                 <asp:Label ID="lblStartDesignation" Text="Inicio del nombramiento:" runat="server"></asp:Label>
                                 <asp:TextBox ID="txtStartDesignation" CssClass="form-control" runat="server"></asp:TextBox>
                                 <ajaxToolkit:CalendarExtender CssClass="calendar" ID="txtStartDesignation_CalendarExtender" runat="server" TargetControlID="txtStartDesignation" />
-                                <asp:Label CssClass="message-has-error" runat="server"></asp:Label>
+                                <asp:Label CssClass="message-has-error" runat="server" ID="lblMessageStartDesignation"></asp:Label>
                             </section>
                             <section class="form-group">
                                 <asp:Label ID="lblEndDesignation" Text="Fin del nombramiento:" runat="server"></asp:Label>
                                 <asp:TextBox ID="txtEndDesignation" CssClass="form-control" runat="server" ></asp:TextBox>
                                 <ajaxToolkit:CalendarExtender CssClass="calendar" ID="txtEndDesignation_CalendarExtender" runat="server" TargetControlID="txtEndDesignation" />
-                                <asp:Label CssClass="message-has-error" runat="server"></asp:Label>
+                                <asp:Label CssClass="message-has-error" runat="server" ID="lblMessageEndDesignation"></asp:Label>
                             </section>
                             <section class="form-group">
                                 <asp:Label ID="lblHoursDisignation" Text="Horas del nombramiento:" runat="server"></asp:Label>
                                 <asp:DropDownList ID="cboHoursDisignation" CssClass="form-control" runat="server">
                                 </asp:DropDownList>
-                                <asp:Label CssClass="message-has-error" runat="server"></asp:Label>
+                                <asp:Label CssClass="message-has-error" runat="server" ID="lblCboDisignation"></asp:Label>
                             </section>
                         </section>
                         <p class="special-label col-md-12"><strong>Detalle del nombramiento</strong></p>
@@ -61,17 +61,20 @@
                             <section class="form-group">
                                 <asp:Label ID="lblDay" Text="Día:" runat="server"></asp:Label>
                                 <asp:DropDownList ID="cboDay" CssClass="form-control" runat="server"></asp:DropDownList>
-                                <asp:Label ID="lblMessage" CssClass="message-has-error help-block" runat="server"></asp:Label>
+                                <asp:Label ID="lblMessageDay" CssClass="message-has-error help-block" runat="server"></asp:Label>
                             </section>
                             <section class="form-group">
                                 <asp:Label ID="lblStart" Text="Hora de inicio:" runat="server"></asp:Label>
                                 <asp:TextBox ID="txtStart" CssClass="form-control" runat="server"></asp:TextBox>
-                                <asp:Label CssClass="message-has-error" runat="server"></asp:Label>
+                                <ajaxToolkit:MaskedEditExtender ID="txtStart_MaskedEditExtender" AcceptAMPM="True" Mask="99:99" MaskType="Time" runat="server" TargetControlID="txtStart" /> 
+                                <asp:Label CssClass="message-has-error" runat="server" ID="lblMessageStart"></asp:Label>
                             </section>
                             <section class="form-group">
                                 <asp:Label ID="lblEnd" Text="Hora final:" runat="server"></asp:Label>
                                 <asp:TextBox ID="txtEnd" CssClass="form-control" runat="server"></asp:TextBox>
-                                <asp:Label CssClass="message-has-error" runat="server"></asp:Label>
+                                <ajaxToolkit:MaskedEditExtender ID="txtEnd_MaskedEditExtender" AcceptAMPM="True" Mask="99:99" MaskType="Time" runat="server" TargetControlID="txtEnd" /> 
+                                <asp:Label CssClass="message-has-error" runat="server" ID="lblMessageEnd"></asp:Label>
+                                <asp:Label CssClass="message-has-error" runat="server" ID="lblMessageList"></asp:Label>
                             </section>
                             <section class="form-group" style="text-align:left;">
                                 
@@ -101,7 +104,7 @@
                                 <asp:ImageButton ID="btnReturn" CssClass="image_align" ImageUrl="~/images/maintenance/return.png" ToolTip="Regresar" runat="server" OnClick="btnReturn_Click" />
                         </section> <!-- End .form-buttons -->
                         <section class="col-md-12 message">
-                            <asp:Label ID="Label1" runat="server" ></asp:Label>
+                            <asp:Label ID="lblMessage" runat="server" ></asp:Label>
                         </section> <!-- End .message -->
                     </section>
                     <section class="dataExists">

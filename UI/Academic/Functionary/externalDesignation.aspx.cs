@@ -135,11 +135,20 @@ namespace UI.Academic.Functionary
                 blockControls();
                 Session["listDesignation"] = null;
                 fillGvDesignation();
-                if (records > 0)
+                cleanGvDays();
+                if (records >= 0)
                 {
                     lblMessage.Text = "Datos almacenados correctamente.";
                 }
             }
+        }
+
+        private void cleanGvDays()
+        {
+            DataTable oDataTable = new DataTable();
+            grvDias.DataSource = oDataTable;
+            grvDias.DataBind();
+
         }
         /*Este metodo desbloque los controloes y obtiene el codigo siguiente del nombramiento externo*/
         protected void btnNew_Click(object sender, ImageClickEventArgs e)
@@ -181,6 +190,7 @@ namespace UI.Academic.Functionary
                 fillGv();
                 //cboDay.SelectedItem.Attributes.Remove(cboDay.SelectedValue.ToString());
                 lblMsjHours.Text = "";
+                lblMessageList.Text = "";   
             }
         }
 
@@ -281,42 +291,63 @@ namespace UI.Academic.Functionary
                          "M/d/yyyy hh:mm tt", "M/d/yyyy hh tt", 
                          "M/d/yyyy h:mm", "M/d/yyyy h:mm", 
                          "MM/dd/yyyy hh:mm", "M/dd/yyyy hh:mm"};
+
+            if (cboFunctionary.SelectedIndex == 0)
+            {
+                ind = false;
+                lblMessageFunctionary.Text = "Debe seleccionar un profesor de la lista.";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorFunctionary", "$('#ContentPlaceHolder1_cboFunctionary').addClass('has-error');", true);
+            }
+            else
+            {
+                lblMessageFunctionary.Text = "";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorFunctionary", "$('#ContentPlaceHolder1_cboFunctionary').removeClass('has-error');", true);
+            }
             if (txtPosition.Text.Trim() == "")
             {
                 ind = false;
-                //lblMessageDescription.Text = "Debe digitar una descripción correcta.";
+                lblMessagePosition.Text = "Debe digitar el cargo del profesor.";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorPosition", "$('#ContentPlaceHolder1_txtPosition').addClass('has-error');", true);
             }
             else
             {
-                //lblMessageDescription.Text = "";
+                lblMessagePosition.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorPosition", "$('#ContentPlaceHolder1_txtPosition').removeClass('has-error');", true);
             }
             /*************************************/
             if (txtWorkPlace.Text.Trim() == "")
             {
                 ind = false;
+                lblMessageWorkPlace.Text = "Debe digitar el lugar de trabajo del profesor.";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorWorkPlace", "$('#ContentPlaceHolder1_txtWorkPlace').addClass('has-error');", true);
             }
             else
             {
+                lblMessageWorkPlace.Text = "";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorWorkPlace", "$('#ContentPlaceHolder1_txtWorkPlace').removeClass('has-error');", true);
             }
             /*************************************/
             try
             {
-               
                 DateTime initial;
                 if (DateTime.TryParseExact(txtStartDesignation.Text + " 00:00:00", formats, new CultureInfo("es-ES"),
                                    DateTimeStyles.None, out initial))
-                {}
-                //lblMessageSalary.Text = "";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorStartDesignation", "$('#ContentPlaceHolder1_txtStartDesignation').removeClass('has-error');", true);
+                { }
+                if (txtStartDesignation.Text.Trim() == "")
+                {
+                    ind = false;
+                    lblMessageStartDesignation.Text = "Debe digitar una fecha de inicio de nombramiento válida.";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorStartDesignation", "$('#ContentPlaceHolder1_txtStartDesignation').addClass('has-error');", true);
+                }
+                else { 
+                    lblMessageStartDesignation.Text = "";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorStartDesignation", "$('#ContentPlaceHolder1_txtStartDesignation').removeClass('has-error');", true);
+                }
             }
             catch (Exception)
             {
                 ind = false;
-                //lblMessageSalary.Text = "Debe digitar un salario correcto.";
+                lblMessageStartDesignation.Text = "Debe digitar una fecha de inicio de nombramiento válida.";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorStartDesignation", "$('#ContentPlaceHolder1_txtStartDesignation').addClass('has-error');", true);
             }
             /*************************************/
@@ -326,33 +357,57 @@ namespace UI.Academic.Functionary
                 if (DateTime.TryParseExact(txtEndDesignation.Text + " 00:00:00", formats, new CultureInfo("es-ES"),
                                   DateTimeStyles.None, out final))
                 {}
-                //lblMessageSalary.Text = "";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorEndDesignation", "$('#ContentPlaceHolder1_txtEndDesignation').removeClass('has-error');", true);
+                if(txtEndDesignation.Text.Trim() ==""){
+                    ind = false;
+                    lblMessageEndDesignation.Text = "Debe digitar una fecha final de nombramiento válida.";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorEndDesignation", "$('#ContentPlaceHolder1_txtEndDesignation').addClass('has-error');", true);
+                }
+                else { 
+                    lblMessageEndDesignation.Text = "";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorEndDesignation", "$('#ContentPlaceHolder1_txtEndDesignation').removeClass('has-error');", true);
+                }
             }
             catch (Exception)
             {
                 ind = false;
-                //lblMessageSalary.Text = "Debe digitar un salario correcto.";
+                lblMessageEndDesignation.Text = "Debe digitar una fecha final de nombramiento válida.";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorEndDesignation", "$('#ContentPlaceHolder1_txtEndDesignation').addClass('has-error');", true);
+            }
+            /*************************************/
+            if (cboHoursDisignation.SelectedIndex == 0)
+            {
+                ind = false;
+                lblCboDisignation.Text = "Debe seleccionar las horas nombradas del profesor.";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorDisignation", "$('#ContentPlaceHolder1_cboHoursDisignation').addClass('has-error');", true);
+            }
+            else {
+                lblCboDisignation.Text = "";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorDisignation", "$('#ContentPlaceHolder1_cboHoursDisignation').removeClass('has-error');", true);
             }
             /*************************************/
             try
             {
                 Convert.ToInt32(cboHoursDisignation.SelectedValue);
                 //lblMessageAnnuality.Text = "";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorHoursDisignation", "$('#ContentPlaceHolder1_txtHoursDisignation').removeClass('has-error');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorDisignation", "$('#ContentPlaceHolder1_CboDisignation').removeClass('has-error');", true);
             }
             catch (Exception)
             {
                 ind = false;
                 //lblMessageAnnuality.Text = "Debe digitar una anualidad correcta.";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "addHasErrorHoursDisignation", "$('#ContentPlaceHolder1_txtHoursDisignation').addClass('has-error');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "removeHasErrorDisignation", "$('#ContentPlaceHolder1_CboDisignation').addClass('has-error');", true);
             }
             //List<Entities.Journey> list = new List<Entities.Journey>();
             if (Session["listDesignation"] == null)
             {
-                ind = false;  
+                ind = false;
+                lblMessageList.Text = "Debe seleccionar al menos un día para el nombramiento.";
 
+            }
+            else
+            {
+                
+                lblMessageList.Text = "";
             }
             return ind;
         }
@@ -391,9 +446,7 @@ namespace UI.Academic.Functionary
             cboDay.Enabled = false;
             txtStart.Enabled = false;
             txtEnd.Enabled = false;
-
             btnAdd.Enabled = false;
-
             btnNew.Enabled = true;
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
@@ -433,6 +486,7 @@ namespace UI.Academic.Functionary
             txtEndDesignation.Text = "";
             txtEnd.Text = "";
             txtStart.Text = "";
+            lblMessage.Text = "";
             cboHoursDisignation.SelectedIndex = -1;
         }
 
