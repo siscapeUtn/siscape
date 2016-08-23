@@ -17,7 +17,28 @@ namespace UI.Academic.Report
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            getPeriod();
+            if (!IsPostBack)
+            {
+                getPeriod();
+                lblMessage.Text = "";
+            }
+        }
+
+        protected Boolean validate()
+        {
+            Boolean ind = true;
+
+            if (Convert.ToInt32(cboPeriod.SelectedValue) == 0)
+            {
+                ind = false;
+                lblMessage.Text = "Debe seleccionar el período.";
+            }
+            else
+            {
+                lblMessage.Text = "";
+            }
+
+            return ind;
         }
 
         public void getPeriod()
@@ -36,23 +57,21 @@ namespace UI.Academic.Report
         protected void btnReport_Click(object sender, ImageClickEventArgs e)
         {
             Int32 period_id = Convert.ToInt32(cboPeriod.SelectedValue);
-            Int32 isContact = Convert.ToInt32(cboOptions.SelectedValue); 
-       
-            DataTable oDatatable;
+            Int32 isContact = Convert.ToInt32(cboOptions.SelectedValue);
 
-            if( isContact == 0 ){
-                //oDatatable = WaitingListBLL.getInstance().getAllCostumers();
-            } else {
-                //oDatatable = WaitingListBLL.getInstance().getAllCostumersContacted();      
+            if (validate())
+            {
+                List<Entities.WaitingList> listWaitingList = ReportBLL.getInstance().reportWaitingList(period_id, isContact);
+                getReport(listWaitingList);
             }
-
+            
         }
 
-        protected void getReport(List<Entities.ClassRoom> listClassRoom)
+        protected void getReport(List<Entities.WaitingList> pListWaitingList)
         {
             try
             {
-                List<Entities.ClassRoom> listRoom = listClassRoom;
+                List<Entities.WaitingList> listWaitingList = pListWaitingList;
 
                 System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
                 text::Document pdfDoc = new text::Document(text::PageSize.A4, 10, 10, 10, 10);
@@ -80,29 +99,29 @@ namespace UI.Academic.Report
                 oPTable.TotalWidth = 100;
                 oPTable.SpacingBefore = 20f;
                 oPTable.SpacingAfter = 30f;
-                oPTable.AddCell("Descripción");
-                oPTable.AddCell("Capacidad");
-                oPTable.AddCell("Programa");
-                oPTable.AddCell("Tipo de Aula");
-                oPTable.AddCell("Localizacion");
-                oPTable.AddCell("Estado");
+                oPTable.AddCell("Nombre completo");
+                oPTable.AddCell("# Residencial");
+                oPTable.AddCell("# Celular");
+                oPTable.AddCell("Correo electrónico");
+                oPTable.AddCell("Curso");
+                oPTable.AddCell("Día");
 
-                if (listRoom.Count > 0)
+                if (listWaitingList.Count > 0)
                 {
-                    foreach (Entities.ClassRoom pRoom in listRoom)
+                    foreach (Entities.WaitingList pWaitingList in listWaitingList)
                     {
-                        oPTable.AddCell(pRoom.num_room);
-                        oPTable.AddCell(pRoom.size.ToString());
-                        oPTable.AddCell(pRoom.oProgram.name);
-                        oPTable.AddCell(pRoom.oClassRoomsType.description);
-                        oPTable.AddCell(pRoom.oLocation.oHeadquarters.description + " - " + pRoom.oLocation.building + " - " + pRoom.oLocation.module);
-                        oPTable.AddCell((pRoom.state == 1 ? "Activo" : "Inactivo"));
+                        oPTable.AddCell(pWaitingList.name + " " + pWaitingList.lastName);
+                        oPTable.AddCell(pWaitingList.homePhone);
+                        oPTable.AddCell(pWaitingList.cellPhone);
+                        oPTable.AddCell(pWaitingList.email);
+                        oPTable.AddCell(pWaitingList.course_name);
+                        oPTable.AddCell(pWaitingList.day);
                     }
                 }
                 else
                 {
-                    PdfPCell cell = new PdfPCell(new text::Phrase("No existen clientes registrados."));
-                    cell.Colspan = 5;
+                    PdfPCell cell = new PdfPCell(new text::Phrase("No existen datos registrados."));
+                    cell.Colspan = 6;
                     cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
                     oPTable.AddCell(cell);
                 }

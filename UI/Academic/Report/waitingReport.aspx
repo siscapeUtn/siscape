@@ -13,9 +13,8 @@
                             <section class="form-group">
                                 <asp:Label runat="server" ID="lblSelect" Text="Seleccione la opción"></asp:Label>
                                 <asp:DropDownList runat="server" CssClass="form-control" ID="cboOptions">
-                                    <asp:ListItem Value="0">No contactar</asp:ListItem>
+                                    <asp:ListItem Value="0">No contactado</asp:ListItem>
                                     <asp:ListItem Value="1">Contactado</asp:ListItem>
-                                    <asp:ListItem Value="2">Todos</asp:ListItem>
                                 </asp:DropDownList>
                             </section>
                         </section>
@@ -23,6 +22,7 @@
                             <section class="form-group">
                                 <asp:Label runat="server" ID="lblPeriod"  Text="Seleccione el período:"></asp:Label>
                                 <asp:DropDownList runat="server" ID="cboPeriod" CssClass="form-control"></asp:DropDownList>
+                                <span class="message-has-error"><asp:Label ID="lblMessage" runat="server"></asp:Label></span>
                             </section>
                         </section>
                         <section class="col-md-12">

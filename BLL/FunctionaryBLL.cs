@@ -319,6 +319,40 @@ namespace BLL
         }
 
 
+        public Functionary getFunctionaryById(String pId)
+        {
+            String sql = "GET_FUNCTIONARY_INFO";
+
+            try
+            {
+                SqlCommand oCommand = new SqlCommand(sql);
+                oCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                oCommand.Parameters.AddWithValue("@ID", pId);
+                oCommand.Parameters[0].Direction = ParameterDirection.Input;
+                DataTable oDataTable = DAO.getInstance().executeQuery(oCommand);
+                Program oProgram = new Program();
+                Functionary oFunctionary = new Functionary();
+
+                foreach (DataRow oDataRow in oDataTable.Rows)
+                {
+                    oFunctionary.id = oDataRow[0].ToString();
+                    oFunctionary.name = oDataRow[1].ToString();
+                    oFunctionary.lastName = oDataRow[2].ToString();
+                    oFunctionary.homePhone = oDataRow[3].ToString();
+                    oFunctionary.cellPhone = oDataRow[4].ToString();
+                    oFunctionary.email = oDataRow[5].ToString();
+                    oProgram.code = Convert.ToInt32(oDataRow[6].ToString());
+                    oFunctionary.oProgram = oProgram;
+                }
+                return oFunctionary;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { }
+        }
+
 
     }
 }

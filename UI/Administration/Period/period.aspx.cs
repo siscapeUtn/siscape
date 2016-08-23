@@ -145,7 +145,7 @@ namespace UI.Administration
             catch (Exception)
             {
                 ind = false;
-                indDates = true;
+                indDates = false;
                 lblMessageFinalDate.Text = "Debe seleccionar una fecha correcta.";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorFinishDate", "$('#ContentPlaceHolder1_txtFinishDate').addClass('has-error');", true);
             }

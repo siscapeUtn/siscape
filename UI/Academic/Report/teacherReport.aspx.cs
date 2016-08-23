@@ -16,7 +16,11 @@ namespace UI.Academic.Report
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            getPeriod();
+            if (!IsPostBack)
+            {
+                getPeriod();
+                lblMessage.Text = "";
+            }
         }
 
         public void getPeriod()
@@ -32,17 +36,40 @@ namespace UI.Academic.Report
             }
         }
 
+        protected Boolean validate()
+        {
+            Boolean ind = true;
+
+            if (Convert.ToInt32(cboPeriod.SelectedValue) == 0)
+            {
+                ind = false;
+                lblMessage.Text = "Debe seleccionar el período.";
+            }
+            else
+            {
+                lblMessage.Text = "";
+            }
+
+            return ind;
+        }
+
         protected void btnReport_Click(object sender, ImageClickEventArgs e)
         {
             Int32 period_id = Convert.ToInt32(cboPeriod.SelectedValue);
-            List<Entities.Teacher> pListTeacher = ReportBLL.getInstance().reportTeacher();
+
+            if (validate())
+            {
+                List<Entities.AcademicOffer> pListAcademicOffer = ReportBLL.getInstance().reportTeacher(period_id);
+                printReport(pListAcademicOffer);
+            }
+            
         }
 
-        protected void printReport(List<Entities.Teacher> pListTeacher)
+        protected void printReport(List<Entities.AcademicOffer> pListAcademicOffer)
         {
             try
             {
-                List<Entities.Teacher> listTeacher = pListTeacher;
+                List<Entities.AcademicOffer> listAcademicOffer = pListAcademicOffer;
                 System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
                 text::Document pdfDoc = new text::Document(text::PageSize.A4, 10, 10, 10, 10);
                 pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());
@@ -69,21 +96,21 @@ namespace UI.Academic.Report
                 oPTable.TotalWidth = 100;
                 oPTable.SpacingBefore = 20f;
                 oPTable.SpacingAfter = 30f;
-                oPTable.AddCell("Identificación");
                 oPTable.AddCell("Nombre Completo");
-                oPTable.AddCell("Teléfono");
-                oPTable.AddCell("Correo Electrónico");
+                oPTable.AddCell("Días");
+                oPTable.AddCell("Hora de Inicio - Final");
+                oPTable.AddCell("Cant. Horas");
                 oPTable.AddCell("Estado");
 
-                if (listTeacher.Count > 0)
+                if (listAcademicOffer.Count > 0)
                 {
-                    foreach (Entities.Teacher pTeacher in listTeacher)
+                    foreach (Entities.AcademicOffer pAcademicOffer in listAcademicOffer)
                     {
-                        oPTable.AddCell(pTeacher.id);
-                        oPTable.AddCell(pTeacher.name + " " + pTeacher.lastName);
-                        oPTable.AddCell(pTeacher.cellPhone);
-                        oPTable.AddCell(pTeacher.email);
-                        oPTable.AddCell((pTeacher.state == 1 ? "Activo" : "Inactivo"));
+                        oPTable.AddCell(pAcademicOffer.oteacher.name + " " + pAcademicOffer.oteacher.lastName);
+                        oPTable.AddCell(pAcademicOffer.oSchedule.name);
+                        oPTable.AddCell(pAcademicOffer.oSchedule.startTime.ToShortTimeString() + " " + pAcademicOffer.oSchedule.endTime.ToShortTimeString() );
+                        oPTable.AddCell(pAcademicOffer.hours.ToString());
+                        oPTable.AddCell((pAcademicOffer.oteacher.state == 1 ? "Activo" : "Inactivo"));
                     }
                 }
                 else

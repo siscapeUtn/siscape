@@ -104,14 +104,15 @@ namespace UI.Security
             string administartionBody = "<li><div><a href='../../Academic/AcademicGroups/gBuilding.aspx'>Infraestructura</a></div></li>" +
                         "<li><div><a href='../../Academic/AcademicGroups/gFunctionary.aspx'>Funcionarios</a></div></li>";
             string offerBody = "<li><div><a href='../../Academic/AcademicGroups/gAcademicOffer.aspx'>Oferta Acad&eacute;mica</a></div></li>";
+            string reportBody = "<li><div><a href='../../Academic/AcademicGroups/gReport.aspx'>Reportes</a></div></li>";
             string footer = "</ul></li>";
             if (this.Academic == true && this.offerAcademic == true)
             {
-                Response.Write(head + administartionBody + offerBody + footer);
+                Response.Write(head + administartionBody + offerBody + reportBody + footer);
             }
             else if (this.Academic == true)
             {
-                Response.Write(head + administartionBody + footer);
+                Response.Write(head + administartionBody + reportBody + footer);
             }
             else if (this.offerAcademic == true)
             {

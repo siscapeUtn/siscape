@@ -166,6 +166,11 @@
     <Content Include="images\page-icons\sprite-links-hover.png" />
     <Content Include="images\page-icons\sprite-links.png" />
     <Content Include="images\page-icons\user-icon.png" />
+    <Content Include="images\report\classroom.svg" />
+    <Content Include="images\report\external.svg" />
+    <Content Include="images\report\offer.svg" />
+    <Content Include="images\report\teacher.svg" />
+    <Content Include="images\report\waiting.svg" />
     <Content Include="images\security\users.svg" />
     <Content Include="images\security\user_rol.svg" />
     <Content Include="js\bootstrap.min.js" />

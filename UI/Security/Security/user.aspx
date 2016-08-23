@@ -18,9 +18,12 @@
                         </section>
                         <section class="col-md-6">
                             <section class="form-group">
-                                <asp:Label ID="lblId"  Text="Identificación:" runat="server"></asp:Label>
-                                <asp:TextBox ID="txtId" CssClass="form-control" runat="server"></asp:TextBox>
-                                <span class="message-has-error"><asp:Label runat="server" ID="lblMessageId"></asp:Label></span>
+                                <asp:Panel runat="server" DefaultButton="Button2">
+                                    <asp:Label ID="lblId"  Text="Identificación:" runat="server"></asp:Label>
+                                    <asp:TextBox ID="txtId" CssClass="form-control" runat="server" ></asp:TextBox>
+                                    <asp:Button ID="Button2"  runat="server" style="display:none" OnClick="Button2_Click" Text="Button" />
+                                    <span class="message-has-error"><asp:Label runat="server" ID="lblMessageId"></asp:Label></span>
+                                </asp:Panel>
                             </section>
                             <section class="form-group">
                                 <asp:Label ID="lblName"  Text="Nombre:" runat="server"></asp:Label>

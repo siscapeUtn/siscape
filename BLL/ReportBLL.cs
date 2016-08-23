@@ -23,36 +23,40 @@ namespace BLL
             return instace;
         }
 
-        public List<Teacher> reportTeacher()
+        public List<AcademicOffer> reportTeacher(Int32 pPeriod_id)
         {
             String sql = "SP_REPORT_TEACHER";
             SqlCommand oCommand = new SqlCommand(sql);
+            oCommand.Parameters.AddWithValue("@PERIOD_ID", pPeriod_id);
             oCommand.CommandType = System.Data.CommandType.StoredProcedure;
 
             try
             {
                 DataTable oDataTable = DAO.getInstance().executeQuery(oCommand);
-                List<Teacher> listTeacher = new List<Teacher>();
+                List<AcademicOffer> listAcademicOffer = new List<AcademicOffer>();
 
                 foreach (DataRow oDataRow in oDataTable.Rows)
                 {
+                    AcademicOffer oAcademicOffer = new AcademicOffer();
                     Teacher oTeacher = new Teacher();
-                    InternalDesignation oInternalDesignation = new InternalDesignation();
-                    oTeacher.code = Convert.ToInt32(oDataRow[0].ToString());
-                    oTeacher.id = oDataRow[1].ToString();
-                    oTeacher.name = oDataRow[2].ToString();
-                    oTeacher.lastName = oDataRow[3].ToString();
-                    oTeacher.homePhone = oDataRow[4].ToString();
-                    oTeacher.cellPhone = oDataRow[5].ToString();
-                    oTeacher.email = oDataRow[6].ToString();
-                    oInternalDesignation.code = Convert.ToInt32(oDataRow[7].ToString());
-                    oInternalDesignation.description = oDataRow[8].ToString();
-                    oTeacher.state = Convert.ToInt16(oDataRow[9].ToString());
-                    oTeacher.Position = oInternalDesignation;
-                    listTeacher.Add(oTeacher);
+                    Course oCourse = new Course();
+                    Schedule oSchedule = new Schedule();
+
+                    oTeacher.name = oDataRow[0].ToString();
+                    oTeacher.lastName = oDataRow[1].ToString();
+                    oCourse.description = oDataRow[2].ToString();
+                    oSchedule.name = oDataRow[3].ToString();
+                    oSchedule.startTime = DateTime.Parse(oDataRow[4].ToString());
+                    oSchedule.endTime = DateTime.Parse(oDataRow[5].ToString());
+                    oAcademicOffer.hours = Convert.ToInt32(oDataRow[6].ToString());
+                    oTeacher.state = Convert.ToInt16(oDataRow[7].ToString());
+                    oAcademicOffer.oteacher = oTeacher;
+                    oAcademicOffer.oCourse = oCourse;
+                    oAcademicOffer.oSchedule = oSchedule;
+                    listAcademicOffer.Add(oAcademicOffer);
                 }
 
-                return listTeacher;
+                return listAcademicOffer;
             }
             catch (Exception)
             {
@@ -152,32 +156,32 @@ namespace BLL
             finally { }
         }
 
-        public List<ExternalDesignation> reportExternalDesignation(Int32 pPeriod_id)
+        public List<Entities.WaitingList> reportWaitingList(Int32 pPeriod_id, Int32 pIsContact)
         {
             String sql = "SP_REPORT_WAITING_LIST";
-            SqlCommand oCommand = new SqlCommand(sql);
-            oCommand.Parameters.AddWithValue("@PERIOD_ID", pPeriod_id);
-            oCommand.CommandType = System.Data.CommandType.StoredProcedure;
+
             try
             {
+                SqlCommand oCommand = new SqlCommand(sql);
+                oCommand.Parameters.AddWithValue("@PERIOD_ID", pPeriod_id);
+                oCommand.Parameters.AddWithValue("@IS_CONTACT", pIsContact);
+                oCommand.CommandType = System.Data.CommandType.StoredProcedure;
                 DataTable oDataTable = DAO.getInstance().executeQuery(oCommand);
-                List<ExternalDesignation> listInternalDesignation = new List<ExternalDesignation>();
+                List<WaitingList> listWaitingList = new List<WaitingList>();
                 foreach (DataRow oDataRow in oDataTable.Rows)
                 {
-                    ExternalDesignation oExternalDesignation = new ExternalDesignation();
-                    oExternalDesignation.code = Convert.ToInt32(oDataRow[0].ToString());
-                    oExternalDesignation.oTeacher = new Teacher();
-                    oExternalDesignation.oTeacher.name = oDataRow[1].ToString();
-                    oExternalDesignation.oTeacher.id = oDataRow[2].ToString();
-                    oExternalDesignation.position = oDataRow[3].ToString();
-                    oExternalDesignation.location = oDataRow[4].ToString();
-                    oExternalDesignation.hours = Convert.ToInt32(oDataRow[5].ToString());
-                    oExternalDesignation.initial_day = Convert.ToDateTime(oDataRow[6].ToString());
-                    oExternalDesignation.final_day = Convert.ToDateTime(oDataRow[7].ToString());
+                    WaitingList oWaitingList = new WaitingList();
 
-                    listInternalDesignation.Add(oExternalDesignation);
+                    oWaitingList.name = oDataRow[0].ToString();
+                    oWaitingList.lastName = oDataRow[1].ToString();
+                    oWaitingList.homePhone = oDataRow[2].ToString();
+                    oWaitingList.cellPhone = oDataRow[3].ToString();
+                    oWaitingList.email = oDataRow[4].ToString();
+                    oWaitingList.course_name = oDataRow[5].ToString();
+                    oWaitingList.day = oDataRow[6].ToString();
+                    listWaitingList.Add(oWaitingList);
                 }
-                return listInternalDesignation;
+                return listWaitingList;
             }
             catch (Exception)
             {
@@ -185,5 +189,6 @@ namespace BLL
             }
             finally { }
         }
+
     }
 }
