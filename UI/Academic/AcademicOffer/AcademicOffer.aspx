@@ -82,7 +82,7 @@
                     </section>
                     <section class="dataExists">
                         <section class="table-responsive">
-                            <asp:GridView ID="gvAcademicOffer" runat="server" AutoGenerateColumns="False" OnRowDeleting="gvAcademicOffer_RowDeleting" AllowPaging="True" >
+                            <asp:GridView ID="gvAcademicOffer" runat="server" AutoGenerateColumns="False" OnRowEditing="gvAcademicOffer_RowEditing" OnRowDeleting="gvAcademicOffer_RowDeleting" AllowPaging="True" >
                                 <Columns>
                                     <asp:BoundField HeaderText="C&#243;digo" DataField="code" ReadOnly="true" ></asp:BoundField>
                                     <asp:BoundField HeaderText="Curso" DataField="oCourse.description" ReadOnly="true"></asp:BoundField>
@@ -98,6 +98,7 @@
                                    </asp:TemplateField>
                                    <asp:BoundField HeaderText="Aula" DataField="oClassRoom.num_room" ReadOnly="true"></asp:BoundField>
                                    <asp:BoundField HeaderText="Precio" DataField="price"  DataFormatString="{0:C}" ReadOnly="true"></asp:BoundField>
+                                   <asp:ButtonField ButtonType="Image" HeaderText="Justificación" ImageUrl="~/images/maintenance/edit.png" Text="Justificación" CommandName="Edit" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs"  />
                                    <asp:ButtonField ImageUrl="~/images/maintenance/delete.png" Text="Eliminar" ButtonType="Image" HeaderText="Eliminar" CommandName="Delete"></asp:ButtonField>
                                 </Columns>
                             </asp:GridView>

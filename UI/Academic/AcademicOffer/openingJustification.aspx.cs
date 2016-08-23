@@ -14,14 +14,51 @@ namespace UI.Academic.AcademicOffer
 {
     public partial class OpeningJustification : System.Web.UI.Page
     {
+        public static int Aoffer =0;
         public bool offerAcademic { get; set; }
+        public static Entities.OpeningJustification oJustification;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                blockControls();
+                Verify();
+                fillInfomration();
+                btnReport.Enabled = false;
             }
 
+        }
+
+        private void fillInfomration()
+        {
+            oJustification = OpeningJustificationBLL.getInstance().getJustification(Aoffer);
+            lblTeacherDescription.Text = oJustification.oAcademic.oteacher.name + " " + oJustification.oAcademic.oteacher.lastName;
+            lblCourseDescription.Text = oJustification.oAcademic.oCourse.description;
+            lblPositionDescription.Text = oJustification.oInternal.description;
+            lblHoursDescription.Text = oJustification.oAcademic.hours.ToString();
+            oJustification.getSalary();
+            lblSalaryDescription.Text = oJustification.Salary.ToString("0.00");
+            oJustification.getCCSS();
+            lblCCSSDescription.Text = oJustification.CCSS.ToString("0.00");
+            lblPublicityDescription.Text=oJustification.publicity.ToString("0.00");
+            lblValueDescription.Text = oJustification.oAcademic.price.ToString("0.00");
+        }
+
+        private void Verify()
+        {
+            try
+            {
+                Aoffer = Convert.ToInt32(Session["Aoffer"].ToString());
+                if (Aoffer == 0)
+                {
+                    oJustification = null;
+                    Response.Redirect("../../index.aspx");
+                }
+            }
+            catch
+            {
+                oJustification = null;
+                Response.Redirect("../../index.aspx");
+            }
         }
 
         protected void showOfferAcademic()
@@ -29,116 +66,105 @@ namespace UI.Academic.AcademicOffer
             this.offerAcademic = Convert.ToBoolean(Session["OfferAcademic"].ToString());
             if (this.offerAcademic == false)
             {
+                oJustification = null;
+                Session["Aoffer"] = null;
                 Response.Redirect("../../index.aspx");
             }
         }
 
-        public void getFunctionary()
-        {
-            List<Entities.Teacher> listTeacher = new List<Entities.Teacher>();
-            listTeacher = TeacherBLL.getInstance().getAllActive();
-            ListItem oItemS = new ListItem("Seleccione", "0");
-            cboTeacher.Items.Add(oItemS);
-            foreach (Entities.Teacher oTeacher in listTeacher)
-            {
-                ListItem oItem = new ListItem(oTeacher.name + " " + oTeacher.lastName, oTeacher.code.ToString());
-                cboTeacher.Items.Add(oItem);
-            }
-        }
-
-        public void getCourse()
-        {
-            List<Entities.Course> listCourse = new List<Entities.Course>();
-            listCourse = CourseBLL.getInstance().getAllActived();
-            ListItem oItemS = new ListItem("Seleccione", "0");
-            cboCourse.Items.Add(oItemS);
-            foreach (Entities.Course oCourse in listCourse)
-            {
-                ListItem oItem = new ListItem(oCourse.description, oCourse.id.ToString());
-                cboCourse.Items.Add(oItem);
-            }
-        }
-
-        protected void btnNew_Click(object sender, ImageClickEventArgs e)
-        {
-            unlockControls();
-            getFunctionary();
-            getCourse();
-        }
-
-        protected void btnSave_Click(object sender, ImageClickEventArgs e)
-        {
-
-        }
-
-        protected void btnCancel_Click(object sender, ImageClickEventArgs e)
-        {
-            blockControls();
-        }
-
         protected void btnReturn_Click(object sender, ImageClickEventArgs e)
         {
+            oJustification = null;
+            Session["Aoffer"] = null;
+            Aoffer = 0;
             Response.Redirect("../AcademicGroups/gAcademicOffer.aspx");
         }
 
-        private void blockControls()
-        {
-            clearControls();
-            cboTeacher.Enabled = false;
-            cboCourse.Enabled = false;
-            txtDesignationHours.Enabled = false;
-            txtSalary.Enabled = false;
-            txtAnnuality.Enabled = false;
-            txtFifty.Enabled = false;
-            txtOther.Enabled = false;
-            txtTotalIncome.Enabled = false;
-            txtTotalIncomeMonth.Enabled = false;
-            txtIncome.Enabled = false;
-            txtValue.Enabled = false;
-            txtStudents.Enabled = false;
-            txtDifference.Enabled = false;
-            btnNew.Enabled = true;
-            btnSave.Enabled = false;
-            btnCancel.Enabled = false;
-        }
 
-        private void unlockControls()
+        protected void btnNew_Click(object sender, ImageClickEventArgs e)
         {
-            clearControls();
-            cboTeacher.Enabled = true;
-            cboCourse.Enabled = true;
-            txtDesignationHours.Enabled = true;
-            txtSalary.Enabled = true;
-            txtAnnuality.Enabled = true;
-            txtFifty.Enabled = true;
-            txtOther.Enabled = true;
-            txtTotalIncome.Enabled = true;
-            txtTotalIncomeMonth.Enabled = true;
-            txtIncome.Enabled = true;
-            txtValue.Enabled = true;
-            txtStudents.Enabled = true;
-            txtDifference.Enabled = true;
-            btnNew.Enabled = false;
-            btnSave.Enabled = true;
-            btnCancel.Enabled = true;
+            if (getValidates())
+            {
+                int anuality = Convert.ToInt32(txtAnnuality.Text); 
+                double others = Convert.ToDouble(txtOther.Text); ;
+                int students = Convert.ToInt32(txtStudents.Text); ;
+                oJustification.getCalc(anuality,others,students);
+                lblTotalAnualityDescription.Text = oJustification.Anuality.ToString("0.00");
+                txtOther.Text=oJustification.Others.ToString("0.00");
+                lblTotaTotalMouthDescription.Text=oJustification.TotalMensual.ToString("0.00");
+                lblTotalbimensualDescription.Text=oJustification.TotalBimensual.ToString("0.00");
+                lblIncomeDescription.Text=oJustification.TotalIncome.ToString("0.00");
+                lblDifferenceDescription.Text=oJustification.Diference.ToString("0.00");
+                btnReport.Enabled = true;
+            }
         }
 
         private void clearControls()
         {
-            cboCourse.Items.Clear();
-            cboTeacher.Items.Clear();
             txtAnnuality.Text = "";
-            txtCode.Text = "";
-            txtDesignationHours.Text = "";
-            txtDifference.Text = "";
-            txtFifty.Text = "";
-            txtIncome.Text = "";
             txtOther.Text = "";
-            txtSalary.Text = "";
             txtStudents.Text = "";
-            txtTotalIncome.Text = "";
-            txtTotalIncomeMonth.Text = "";
-            txtValue.Text = "";
+        }
+
+        private bool getValidates()
+        {
+            bool flag = true;
+            if (txtAnnuality.Text == "")
+            {
+                txtAnnuality.Text = "0";
+            }
+            else
+            {
+                try
+                {
+                    Convert.ToInt32(txtAnnuality.Text);
+                }
+                catch
+                {
+                    flag = false;
+                    lblMessageAnnuality.Text = "Debe digitar la cantidades de Anualidades";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorPrice", "$('#ContentPlaceHolder1_txtAnnuality').addClass('has-error');", true);
+                }
+            }
+
+            if (txtOther.Text == "")
+            {
+                txtOther.Text = "0";
+            }
+            else
+            {
+                try
+                {
+                    Convert.ToDouble(txtOther.Text);
+                }
+                catch
+                {
+                    flag = false;
+                    lblMessageOther.Text = "Debe digitar la cantidade en un formato correcto";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorPrice", "$('#ContentPlaceHolder1_txtOther').addClass('has-error');", true);
+                }
+            }
+
+            if (txtStudents.Text == "")
+            {
+                flag = false;
+                lblMessageStudents.Text = "Debe digitar la cantidades de estudiantes";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorPrice", "$('#ContentPlaceHolder1_txtStudents').addClass('has-error');", true);
+            }
+            else
+            {
+                try
+                {
+                    Convert.ToInt32(txtStudents.Text);
+                }
+                catch
+                {
+                    flag = false;
+                    lblMessageStudents.Text = "Debe digitar la cantidades de estudiantes";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "addHasErrorPrice", "$('#ContentPlaceHolder1_txtStudents').addClass('has-error');", true);
+                }
+            }
+            return flag;
         }
 
         protected void btnReport_Click(object sender, EventArgs e)
@@ -165,37 +191,29 @@ namespace UI.Academic.AcademicOffer
                 text::Paragraph title = new text::Paragraph();
                 title.Font = text::FontFactory.GetFont("dax-black", 32, new text::BaseColor(0, 51, 102));
                 title.Alignment = text::Element.ALIGN_CENTER;
-                title.Add("\n\n Reporte de Horarios\n\n");
+                title.Add("\n\n Justificación de Apertura\n\n");
                 pdfDoc.Add(title);
                 
-                PdfPTable oPTable = new PdfPTable(5);
+                PdfPTable oPTable = new PdfPTable(2);
                 oPTable.TotalWidth = 100;
                 oPTable.SpacingBefore = 20f;
                 oPTable.SpacingAfter = 30f;
-                oPTable.AddCell("Días");
-                oPTable.AddCell("Horarios");
-                oPTable.AddCell("Hora de Inicio");
-                oPTable.AddCell("Hora de Fin");
-                oPTable.AddCell("Estado");
-
-                if (listSchedule.Count > 0)
-                {
-                    foreach (Entities.Schedule pSchedule in listSchedule)
-                    {
-                        oPTable.AddCell(pSchedule.name);
-                        oPTable.AddCell(pSchedule.typeSchedule);
-                        oPTable.AddCell(pSchedule.startTime.ToShortTimeString());
-                        oPTable.AddCell(pSchedule.endTime.ToShortTimeString());
-                        oPTable.AddCell((pSchedule.state == 1 ? "Activo" : "Inactivo"));
-                    }
-                }
-                else
-                {
-                    PdfPCell cell = new PdfPCell(new text::Phrase("No existen horarios registrados."));
-                    cell.Colspan = 5;
-                    cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
-                    oPTable.AddCell(cell);
-                }
+                oPTable.AddCell("Profesor: "+ oJustification.oAcademic.oteacher.name +" "+ oJustification.oAcademic.oteacher.lastName);
+                oPTable.AddCell("Curso: "+ oJustification.oAcademic.oCourse.description);
+                oPTable.AddCell("Categoría: " + oJustification.oInternal.description);
+                oPTable.AddCell("Nombramiento: " + oJustification.oAcademic.hours.ToString());
+                oPTable.AddCell("Anualidade: " + oJustification.CauntAnualities);
+                oPTable.AddCell("Salario: "+ oJustification.Salary.ToString("0.00"));
+                oPTable.AddCell("Anualidades: "+ oJustification.Anuality.ToString("0.00"));
+                oPTable.AddCell("Cargos Sociales: "+ oJustification.CCSS.ToString("0.00"));
+                oPTable.AddCell("Publicidad: "+ oJustification.publicity.ToString("0.00"));
+                oPTable.AddCell("Otros: "+ oJustification.Others.ToString("0.00"));
+                oPTable.AddCell("Total Mensual: "+ oJustification.TotalMensual.ToString("0.00"));
+                oPTable.AddCell("Tatal Bimensual: " + oJustification.TotalBimensual.ToString("0.00"));
+                oPTable.AddCell("Valor del curso: "+ oJustification.oAcademic.price.ToString("0.00"));
+                oPTable.AddCell("Estudiantes: "+ oJustification.Students);
+                oPTable.AddCell("Ingresos: "+ oJustification.TotalIncome.ToString("0.00"));
+                oPTable.AddCell("Diferencia: "+ oJustification.Diference.ToString("0.00"));
 
                 pdfDoc.Add(oPTable);
                 pdfDoc.Close();
@@ -204,7 +222,7 @@ namespace UI.Academic.AcademicOffer
                 memoryStream.Close();
                 Response.Clear();
                 Response.ContentType = "application/pdf";
-                Response.AddHeader("Content-Disposition", "attachment; filename=Horarios.pdf");
+                Response.AddHeader("Content-Disposition", "attachment; filename=JustificaciónApertura.pdf");
                 Response.ContentType = "application/pdf";
                 Response.Buffer = true;
                 Response.Cache.SetCacheability(HttpCacheability.NoCache);

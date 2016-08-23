@@ -11,32 +11,22 @@
                 <ContentTemplate>
                     <section class="form row">
                         <fieldset>
-                            <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <section class="form-group">
-                                    <asp:Label runat="server" Visible="false" ID="lblCode" Text="Código"></asp:Label>
-                                    <asp:TextBox runat="server" Visible="false" ID="txtCode"></asp:TextBox>
-                                </section>
-                            </section>
                             <section class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <section class="form-group">
-                                    <asp:Label runat="server" ID="lblTeacher" Text="Profesor:"></asp:Label>
-                                    <asp:DropDownList ID="cboTeacher" CssClass="form-control" runat="server"></asp:DropDownList>
-                                    <span class="message-has-error"><asp:Label runat="server" ID="lblMessageTeacher"></asp:Label></span>
+                                    <asp:Label runat="server" ID="lblTeacher" Text="Profesor: "></asp:Label>
+                                    <asp:Label runat="server" ID="lblTeacherDescription" Text=""></asp:Label>
                                 </section>
                                 <section class="form-group">
-                                    <asp:Label runat="server" ID="lblCourse" Text="Curso:"></asp:Label>
-                                    <asp:DropDownList ID="cboCourse" CssClass="form-control" runat="server"></asp:DropDownList>
-                                    <span class="message-has-error"><asp:Label runat="server" ID="lblMessageCourse"></asp:Label></span>
+                                    <asp:Label runat="server" ID="lblCourse" Text="Curso: "></asp:Label>
+                                    <asp:Label runat="server" ID="lblCourseDescription" Text=""></asp:Label>
                                 </section>
                                 <section class="form-group">
-                                    <asp:Label runat="server" ID="lblDesignationHours" Text="Nombramiento:"></asp:Label>
-                                    <asp:TextBox ID="txtDesignationHours" CssClass="form-control" runat="server"></asp:TextBox>
-                                    <span class="message-has-error"><asp:Label runat="server" ID="lblMessageDesignationHours"></asp:Label></span>
+                                    <asp:Label runat="server" ID="lblDesignationHours" Text="Categoria: "></asp:Label>
+                                    <asp:Label runat="server" ID="lblPositionDescription" Text=""></asp:Label>
                                 </section>
                                 <section class="form-group">
-                                    <asp:Label runat="server" ID="lblSalary" Text="Salario:"></asp:Label>
-                                    <asp:TextBox ID="txtSalary" CssClass="form-control" runat="server"></asp:TextBox>
-                                    <span class="message-has-error"><asp:Label runat="server" ID="lblMessageSalary"></asp:Label></span>
+                                    <asp:Label runat="server" ID="lblHours" Text="Nombramiento: "></asp:Label>
+                                    <asp:Label runat="server" ID="lblHoursDescription" Text=""></asp:Label>
                                 </section>
                                 <section class="form-group">
                                     <asp:Label runat="server" ID="lblAnuality" Text="Anualidades:"></asp:Label>
@@ -44,34 +34,43 @@
                                     <span class="message-has-error"><asp:Label runat="server" ID="lblMessageAnnuality"></asp:Label></span>
                                 </section>
                                 <section class="form-group">
-                                    <asp:Label runat="server" ID="lblFifty" Text="Cuales 50%:"></asp:Label>
-                                    <asp:TextBox ID="txtFifty" CssClass="form-control" runat="server"></asp:TextBox>
-                                    <span class="message-has-error"><asp:Label runat="server" ID="Label2"></asp:Label></span>
+                                    <asp:Label runat="server" ID="lblSalary" Text="Salario: "></asp:Label>
+                                    <asp:Label runat="server" ID="lblSalaryDescription" Text=""></asp:Label>
+                                </section>
+                                <section class="form-group">
+                                    <asp:Label runat="server" ID="lblTotalAnuality" Text="Anualidades: "></asp:Label>
+                                    <asp:Label runat="server" ID="lblTotalAnualityDescription" Text=""></asp:Label>
+                                </section>
+                                <section class="form-group">
+                                    <asp:Label runat="server" ID="lblCCSS" Text="Cargos Sociales: "></asp:Label>
+                                    <asp:Label runat="server" ID="lblCCSSDescription" Text=""></asp:Label>
+                                </section>
+                                <section class="form-group">
+                                    <asp:Label runat="server" ID="lblPublicity" Text="Publicidad: "></asp:Label>
+                                    <asp:Label runat="server" ID="lblPublicityDescription" Text=""></asp:Label>
                                 </section>
                                 <section class="form-group">
                                     <asp:Label runat="server" ID="lblOther" Text="Otros:"></asp:Label>
                                     <asp:TextBox ID="txtOther" CssClass="form-control" runat="server"></asp:TextBox>
-                                    <span class="message-has-error"><asp:Label runat="server" ID="Label4"></asp:Label></span>
+                                    <span class="message-has-error"><asp:Label runat="server" ID="lblMessageOther"></asp:Label></span>
+                                </section>
+                                <section class="form-group">
+                                    <asp:Label runat="server" ID="lblTotaTotalMouth" Text="Total mensual: "></asp:Label>
+                                    <asp:Label runat="server" ID="lblTotaTotalMouthDescription" Text=""></asp:Label>
+                                </section>
+                                <section class="form-group">
+                                    <asp:Label runat="server" ID="lblTotalbimensual" Text="Total bimensual: "></asp:Label>
+                                    <asp:Label runat="server" ID="lblTotalbimensualDescription" Text=""></asp:Label>
                                 </section>
                             </section>
                             <section class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <section class="form-group">
-                                    <asp:Label runat="server" ID="lblTotalIncomeMouth" Text="Total ingresos mensuales:"></asp:Label>
-                                    <asp:TextBox ID="txtTotalIncomeMonth" CssClass="form-control" runat="server"></asp:TextBox>
-                                    <span class="message-has-error"><asp:Label runat="server" ID="Label5"></asp:Label></span>
-                                </section>
-                                <section class="form-group">
-                                    <asp:Label runat="server" ID="lblTotalIncome" Text="Total ingresos:"></asp:Label>
-                                    <asp:TextBox ID="txtTotalIncome" CssClass="form-control" runat="server"></asp:TextBox>
-                                    <span class="message-has-error"><asp:Label runat="server" ID="Label7"></asp:Label></span>
-                                </section>
+
                                 <section class="form-group subtitle-income">
                                     <asp:Label runat="server" ID="lblSubIncomes" Text="Ingresos"></asp:Label>
                                 </section>
                                 <section class="form-group">
-                                    <asp:Label runat="server" ID="lblValue" Text="Valor:"></asp:Label>
-                                    <asp:TextBox ID="txtValue" CssClass="form-control" runat="server"></asp:TextBox>
-                                    <span class="message-has-error"><asp:Label runat="server" ID="lblMessageValue"></asp:Label></span>
+                                    <asp:Label runat="server" ID="lblValue" Text="Valor del Curso:"></asp:Label>
+                                    <asp:Label runat="server" ID="lblValueDescription" Text=""></asp:Label>
                                 </section>
                                 <section class="form-group">
                                     <asp:Label runat="server" ID="lblStudents" Text="Estudiantes:"></asp:Label>
@@ -79,20 +78,16 @@
                                     <span class="message-has-error"><asp:Label runat="server" ID="lblMessageStudents"></asp:Label></span>
                                 </section>
                                 <section class="form-group">
-                                    <asp:Label runat="server" ID="lblIncome" Text="Ingresos:"></asp:Label>
-                                    <asp:TextBox ID="txtIncome" CssClass="form-control" runat="server"></asp:TextBox>
-                                    <span class="message-has-error"><asp:Label runat="server" ID="lblMessageIncome"></asp:Label></span>
+                                    <asp:Label runat="server" ID="lblIncome" Text="Ingresos: "></asp:Label>
+                                    <asp:Label runat="server" ID="lblIncomeDescription" Text=""></asp:Label>
                                 </section>
                                 <section class="form-group">
-                                    <asp:Label runat="server" ID="lblDifference" Text="Diferencia:"></asp:Label>
-                                    <asp:TextBox ID="txtDifference" CssClass="form-control" runat="server"></asp:TextBox>
-                                    <span class="message-has-error"><asp:Label runat="server" ID="lblMessageDifference"></asp:Label></span>
+                                    <asp:Label runat="server" ID="lblDifference" Text="Diferencia: "></asp:Label>
+                                    <asp:Label runat="server" ID="lblDifferenceDescription" Text=""></asp:Label>
                                 </section>
                             </section>
                             <section class="col-md-12 form-buttons">
-                                <asp:ImageButton ID="btnNew" CssClass="image_align" ImageUrl="~/images/maintenance/add.png" ToolTip="Nuevo" runat="server" OnClick="btnNew_Click" />
-                                <asp:ImageButton ID="btnSave" CssClass="image_align" ImageUrl="~/images/maintenance/save.png" ToolTip="Guardar" runat="server" OnClick="btnSave_Click" />
-                                <asp:ImageButton ID="btnCancel" CssClass="image_align" ImageUrl="~/images/maintenance/cancel.png" ToolTip="Cancelar" runat="server" OnClick="btnCancel_Click" />
+                                 <asp:ImageButton ID="btnNew" CssClass="image_align" ImageUrl="~/images/maintenance/add.png" ToolTip="Calcular" runat="server" OnClick="btnNew_Click" />
                                 <asp:ImageButton ID="btnReport" CssClass="image_align" ImageUrl="~/images/maintenance/report.png" ToolTip="Reporte" runat="server" OnClick="btnReport_Click" />
                                 <asp:ImageButton ID="btnReturn" CssClass="image_align" ImageUrl="~/images/maintenance/return.png" ToolTip="Regresar" runat="server" OnClick="btnReturn_Click" />
                             </section> <!-- End .form-buttons -->

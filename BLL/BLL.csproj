@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -89,6 +90,7 @@
     <Compile Include="InternalDesignationBLL.cs" />
     <Compile Include="JourneyBLL.cs" />
     <Compile Include="LocationBLL.cs" />
+    <Compile Include="OpeningJustificationBLL.cs" />
     <Compile Include="PDF.cs" />
     <Compile Include="PeriodBLL.cs" />
     <Compile Include="PeriodTypeBLL.cs" />

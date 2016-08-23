@@ -151,6 +151,14 @@ namespace UI.Academic.AcademicOffer
             confirmModal.Update();
         }
 
+        protected void gvAcademicOffer_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            unlockControls();
+            Int32 code = Convert.ToInt32(gvAcademicOffer.Rows[e.NewEditIndex].Cells[0].Text);
+            Session["Aoffer"] = code;
+            Response.Redirect("OpeningJustification.aspx");
+        }
+
         protected void btnDelete_Click(object sender, EventArgs e)
         {
             Int32 records = BLL.AcademicOfferBLL.getInstance().delete(AcademicOffer_id);
@@ -539,7 +547,7 @@ namespace UI.Academic.AcademicOffer
                     lblMessageHours.Text = "";
                 }
 
-            } catch(Exception ex ){
+            } catch(Exception){
                 ind = false;
                 lblMessageHours.Text = "Debe seleccionar la cantidad de horas";
             }
