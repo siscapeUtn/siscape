@@ -151,5 +151,10 @@ namespace UI.Academic.Report
                 Response.Write(ex.ToString());
             }
         }
+
+        protected void btnReturn_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("../AcademicGroups/gReport.aspx");
+        }
     }
 }
