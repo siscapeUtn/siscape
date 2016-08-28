@@ -98,7 +98,7 @@
                                    </asp:TemplateField>
                                    <asp:BoundField HeaderText="Aula" DataField="oClassRoom.num_room" ReadOnly="true"></asp:BoundField>
                                    <asp:BoundField HeaderText="Precio" DataField="price"  DataFormatString="{0:C}" ReadOnly="true"></asp:BoundField>
-                                   <asp:ButtonField ButtonType="Image" HeaderText="Justificación" ImageUrl="~/images/maintenance/calculator.png" Text="Justificación" CommandName="Edit" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs"  />
+                                   <asp:ButtonField ButtonType="Image" HeaderText="Justificación" ImageUrl="~/images/maintenance/money.png" Text="Justificación" CommandName="Edit" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs"  />
                                    <asp:ButtonField ImageUrl="~/images/maintenance/delete.png" Text="Eliminar" ButtonType="Image" HeaderText="Eliminar" CommandName="Delete"></asp:ButtonField>
                                 </Columns>
                             </asp:GridView>
