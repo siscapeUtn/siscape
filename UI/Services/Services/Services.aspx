@@ -8,7 +8,7 @@
         {
             List<Entities.Program> listProgram = new List<Entities.Program>();
 
-            List<Entities.Course> listCourse = new List<Entities.Course>();
+            List<Entities.AcademicOffer> listAcademicOffer = new List<Entities.AcademicOffer>();
 
             //This line brings the list of programs to show them.
             listProgram = BLL.ProgramBLL.getInstance().getAll();
@@ -17,17 +17,21 @@
             {
                 Response.Write("<h3 class='subtitle'>" + program.name + "</h3><div class='listCourse'>");
 
-                //This line brings the list of courses by program to show them.
-                listCourse = BLL.CourseBLL.getInstance().getAllActivedCourseProgram(program.code);
+                //This line brings the list of courses by program to show them
+                listAcademicOffer = BLL.AcademicOfferBLL.getInstance().getAcademicOfferByProgram(program.code);
+                string format = "0.00";
 
-                foreach (Entities.Course course in listCourse)
+                foreach (Entities.AcademicOffer offer in listAcademicOffer)
                 {
+                    string price = offer.price.ToString(format, System.Globalization.CultureInfo.InvariantCulture);
                     Response.Write(
                     "<section class='course'>" +
                     "</form><form  method='POST' action='Waiting_list.aspx'>" +
-                    "<div class='name'>" + course.description + "</div>" +
-                    "<input type='hidden' name='idCourse' value='" + course.id + "' runat='server' />" +
-                    "<input type='hidden' name='nameCourse' value='" + course.description + "' runat='server' />" +
+                    "<div class='name'>" + offer.oCourse.description + "</div><br/>" +
+                    "<div class='days'>Días: " + offer.oSchedule.name.TrimEnd(',') + "</div>" +
+                    "<div class='price'>Precio: " + price + "</div>" +
+                    "<input type='hidden' name='idOffer' value='" + offer.code + "' runat='server' />" +
+                    "<input type='hidden' name='nameCourse' value='" + offer.oCourse.description + "' runat='server' />" +
                     "<input type='submit' class='btnService' value='Estoy interesado' runat='server'/>" +
                     "</form>" +
                     "</section>");

@@ -31,9 +31,7 @@
                                         <asp:BoundField HeaderText="Tel. Celular" ReadOnly="true" DataField="cellPhone" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                         <asp:BoundField HeaderText="Tel. Res." ReadOnly="true" DataField="phone" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                         <asp:BoundField HeaderText="E-mail" ReadOnly="true" DataField="mail" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
-                                        <asp:BoundField HeaderText="Periodo"  Visible="FALSE" ReadOnly="true" DataField="name" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                         <asp:BoundField HeaderText="Curso" ReadOnly="true" DataField="description" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
-                                        <asp:BoundField HeaderText="Día" ReadOnly="true" DataField="day" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                         <asp:TemplateField HeaderText="Contactado">
                                             <ItemTemplate>
                                                 <asp:CheckBox ID="contacted" runat="server" Checked='<%# bool.Parse(Eval("contacted").ToString()) %>'  />

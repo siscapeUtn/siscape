@@ -12,7 +12,7 @@ namespace UI.Services
     
     public partial class Waiting_list : System.Web.UI.Page
     {
-        public static String course_id;
+        public static String offer_id;
         public static String description;
 
         DataTable oDataTable = new DataTable();
@@ -22,7 +22,7 @@ namespace UI.Services
         {
             if (!IsPostBack)
             {
-                course_id = Request.Form["idCourse"];
+                offer_id = Request.Form["idOffer"];
                 description = Request.Form["nameCourse"];
                 lblCourse.Text = "Curso de "+ description;
             }
@@ -69,9 +69,8 @@ namespace UI.Services
                 oWaitingList.homePhone = txtHomePhone.Text;
                 oWaitingList.cellPhone = txtCellPhone.Text;
                 oWaitingList.email = txtEmail.Text;
-                oWaitingList.period = periodo;
-                oWaitingList.course = Convert.ToInt32(course_id);
-                oWaitingList.day = cboDay.SelectedItem.Value;
+                oWaitingList.academicOffer = Convert.ToInt32(offer_id);
+                //oWaitingList.period = periodo;
                 //List<Tentative_Schedule> listTentative_Schedule = new List<Tentative_Schedule>();
                 //List<Course> listCourse = new List<Course>();
                 //listCourse = (List<Entities.Course>)Session["listCourse"];
