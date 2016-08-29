@@ -232,6 +232,54 @@ namespace BLL
             }
             finally { }
         }
+        public List<Entities.AcademicOffer> getAcademicOfferByProgram(Int32 program)
+        {
+            String sql = "SP_GETACADEMICOFFERBYPROGRAM";
 
+            try
+            {
+                SqlCommand oCommand = new SqlCommand(sql);
+                oCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                oCommand.Parameters.AddWithValue("@PROGRAM", program);
+                DataTable oDataTable = DAO.getInstance().executeQuery(oCommand);
+                List<AcademicOffer> listAcademicOffer = new List<AcademicOffer>();
+                foreach (DataRow oDataRow in oDataTable.Rows)
+                {
+                    AcademicOffer oAcademic = new AcademicOffer();
+                    Course oCourse = new Course();
+                    Teacher oTeacher = new Teacher();
+                    Schedule oSchedule = new Schedule();
+                    ClassRoom oClassRoom = new ClassRoom();
+                    Program oProgram = new Program();
+                    Period oPeriod = new Period();
+
+                    oAcademic.code = Convert.ToInt32(oDataRow[0].ToString());
+                    oCourse.description = oDataRow[1].ToString();
+                    oTeacher.name = oDataRow[2].ToString();
+                    oTeacher.lastName = oDataRow[3].ToString();
+                    oSchedule.name = oDataRow[4].ToString();
+                    oSchedule.typeSchedule = oDataRow[5].ToString();
+                    oClassRoom.num_room = oDataRow[6].ToString();
+                    oAcademic.price = Convert.ToDecimal(oDataRow[7].ToString());
+                    oProgram.code = Convert.ToInt32(oDataRow[8].ToString());
+                    oProgram.name = oDataRow[9].ToString();
+                    oPeriod.code = Convert.ToInt32(oDataRow[10].ToString());
+                    oPeriod.name = oDataRow[11].ToString();
+                    oAcademic.oProgram = oProgram;
+                    oAcademic.oPeriod = oPeriod;
+                    oAcademic.oCourse = oCourse;
+                    oAcademic.oteacher = oTeacher;
+                    oAcademic.oSchedule = oSchedule;
+                    oAcademic.oClassRoom = oClassRoom;
+                    listAcademicOffer.Add(oAcademic);
+                }
+                return listAcademicOffer;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { }
+        }
     }
 }
