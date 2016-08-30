@@ -77,7 +77,7 @@ namespace UI.Services
 
                 BLL.WaitingListBLL.getInstance().insertWaitingList(oWaitingList);
                 clearControls();
-                Response.Redirect("../../index.aspx");
+                Response.Redirect("Services.aspx");
             }
 
         }

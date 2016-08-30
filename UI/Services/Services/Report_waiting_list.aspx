@@ -13,7 +13,7 @@
                     <span class="span-report-waiting-list">
                         <section class="col-md-12 controls-report-list">
                             <section class="form-group">
-                                <asp:Label ID="lblFilter" CssClass="control-label col-sm-4 filterUser" Text="Filtrar estudientes:" runat="server"></asp:Label>
+                                <asp:Label ID="lblFilter" CssClass="control-label col-sm-4 filterUser" Text="Ordenar por:" runat="server"></asp:Label>
                                 <div class="col-sm-6">
                                     <asp:DropDownList ID="cboFilter" CssClass="form-control col-sm-6" runat="server" OnSelectedIndexChanged="cboFilter_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                 </div>

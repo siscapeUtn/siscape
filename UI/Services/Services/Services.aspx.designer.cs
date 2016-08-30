@@ -9,5 +9,6 @@
 
 
 
-public partial class  Services{
+public partial class Services
+{
 }
