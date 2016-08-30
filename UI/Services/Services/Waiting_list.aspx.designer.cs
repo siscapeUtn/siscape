@@ -139,33 +139,6 @@ namespace UI.Services {
         protected global::System.Web.UI.WebControls.Label lblMessageLastName;
         
         /// <summary>
-        /// Control lblDiaConveniencia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDiaConveniencia;
-        
-        /// <summary>
-        /// Control cboDay.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cboDay;
-        
-        /// <summary>
-        /// Control lblCboDay.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCboDay;
-        
-        /// <summary>
         /// Control lblHomePhone.
         /// </summary>
         /// <remarks>

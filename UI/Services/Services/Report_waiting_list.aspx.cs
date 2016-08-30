@@ -42,29 +42,67 @@ namespace UI.Services
 
         private void fillGridView()
         {
-            Int32 period = Convert.ToInt32(Session["period"]);
             DataTable oDataTable = new DataTable();
-            oDataTable = BLL.WaitingListBLL.getInstance().getAllCostumers(period);
             gvCustomers.DataSource = oDataTable;
             gvCustomers.DataBind();
+
+            if (Session["period"] == null)
+            {
+                oDataTable = BLL.WaitingListBLL.getInstance().getAllCostumerWT();
+                gvCustomers.DataSource = oDataTable;
+                gvCustomers.DataBind();
+            }
+            else
+            {
+                Int32 period = Convert.ToInt32(Session["period"]);
+                oDataTable = BLL.WaitingListBLL.getInstance().getAllCostumers(period);
+                gvCustomers.DataSource = oDataTable;
+                gvCustomers.DataBind();
+            }
+            
         }
 
         private void fillGridViewContacted()
         {
-            Int32 period = Convert.ToInt32(Session["period"]);
             DataTable oDataTable = new DataTable();
-            oDataTable = BLL.WaitingListBLL.getInstance().getAllCostumersContacted(period);
             gvCustomers.DataSource = oDataTable;
             gvCustomers.DataBind();
+
+            if (Session["period"] != null)
+            {
+                Int32 period = Convert.ToInt32(Session["period"]);
+                oDataTable = BLL.WaitingListBLL.getInstance().getAllCostumersContacted(period);
+                gvCustomers.DataSource = oDataTable;
+                gvCustomers.DataBind();
+            }
+            else
+            {
+                oDataTable = BLL.WaitingListBLL.getInstance().getAllCostumerUncontacted();
+                gvCustomers.DataSource = oDataTable;
+                gvCustomers.DataBind();
+            }
         }
 
         private void fillGridViewByCourse()
         {
-            Int32 period = Convert.ToInt32(Session["period"]);
             DataTable oDataTable = new DataTable();
-            oDataTable = BLL.WaitingListBLL.getInstance().getAllCostumersByCourse(period);
             gvCustomers.DataSource = oDataTable;
             gvCustomers.DataBind();
+
+            if (Session["period"] != null)
+            {
+                Int32 period = Convert.ToInt32(Session["period"]);
+                oDataTable = BLL.WaitingListBLL.getInstance().getAllCostumersByCourse(period);
+                gvCustomers.DataSource = oDataTable;
+                gvCustomers.DataBind();
+            }
+            else
+            {
+                oDataTable = BLL.WaitingListBLL.getInstance().getAllCostumerWTByCourse();
+                gvCustomers.DataSource = oDataTable;
+                gvCustomers.DataBind();
+            }
+            
         }
 
         protected void fillFilter()

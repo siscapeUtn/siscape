@@ -26,8 +26,9 @@
                             </section>
                         </section>
                         <section class="col-md-12">
-                            <section class="form-group">
-                               <asp:ImageButton runat="server" ID="btnReport" CssClass="reportBtnCenter" ToolTip="Generar reporte" ImageUrl="~/images/maintenance/report.png" OnClick="btnReport_Click" />
+                            <section class="form-group form-buttons">
+                               <asp:ImageButton runat="server" ID="btnReport" CssClass="image_align" ToolTip="Generar reporte" ImageUrl="~/images/maintenance/report.png" OnClick="btnReport_Click" />
+                                <asp:ImageButton ID="btnReturn" CssClass="image_align" ImageUrl="~/images/maintenance/return.png" ToolTip="Regresar" runat="server" OnClick="btnReturn_Click" />
                             </section>
                         </section>
                     </section>

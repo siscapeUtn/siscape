@@ -19,6 +19,7 @@
                         <section class="col-md-6">
                             <section class="form-group">
                                <asp:ImageButton runat="server" ID="btnReport" CssClass="reportBtn" ToolTip="Generar reporte" ImageUrl="~/images/maintenance/report.png" OnClick="btnReport_Click" />
+                                <asp:ImageButton ID="btnReturn" CssClass="reportBtn" ImageUrl="~/images/maintenance/return.png" ToolTip="Regresar" runat="server" OnClick="btnReturn_Click" />
                             </section>
                         </section>
                     </section>

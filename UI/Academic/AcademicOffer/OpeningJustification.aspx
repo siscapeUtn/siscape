@@ -87,7 +87,7 @@
                                 </section>
                             </section>
                             <section class="col-md-12 form-buttons">
-                                 <asp:ImageButton ID="btnNew" CssClass="image_align" ImageUrl="~/images/maintenance/money.png" ToolTip="Calcular" runat="server" OnClick="btnNew_Click" />
+                                 <asp:ImageButton ID="btnNew" CssClass="image_align" ImageUrl="~/images/maintenance/calculator.png" ToolTip="Calcular" runat="server" OnClick="btnNew_Click" />
                                 <asp:ImageButton ID="btnReport" CssClass="image_align" ImageUrl="~/images/maintenance/report.png" ToolTip="Reporte" runat="server" OnClick="btnReport_Click" />
                                 <asp:ImageButton ID="btnReturn" CssClass="image_align" ImageUrl="~/images/maintenance/return.png" ToolTip="Regresar" runat="server" OnClick="btnReturn_Click" />
                             </section> <!-- End .form-buttons -->
