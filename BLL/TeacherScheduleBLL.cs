@@ -81,8 +81,8 @@ namespace BLL
             SqlCommand oCommand = new SqlCommand(sql);
             oCommand.CommandType = System.Data.CommandType.StoredProcedure;
             oCommand.Parameters.AddWithValue("@period", periodId);
-            oCommand.Parameters.AddWithValue("@inicialHour", oSchedule.endTime);
-            oCommand.Parameters.AddWithValue("@finalhour", oSchedule.startTime);
+            oCommand.Parameters.AddWithValue("@inicialHour", oSchedule.startTime);
+            oCommand.Parameters.AddWithValue("@finalhour", oSchedule.endTime);
             oCommand.Parameters.AddWithValue("@day1", Convert.ToInt32(days[0]));
             oCommand.Parameters.AddWithValue("@day2", Convert.ToInt32(days[1]));
             oCommand.Parameters.AddWithValue("@day3", Convert.ToInt32(days[2]));

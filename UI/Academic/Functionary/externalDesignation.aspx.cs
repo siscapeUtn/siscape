@@ -176,8 +176,8 @@ namespace UI.Academic.Functionary
             {
                 Int32 code = Convert.ToInt32(cboDay.SelectedValue.ToString());
                 String day = cboDay.SelectedItem.Text;
-                String hourStart = txtStart.Text.ToString();
-                String hourFinish = txtEnd.Text.ToString();
+                DateTime hourStart =Convert.ToDateTime(txtStart.Text.ToString());
+                DateTime hourFinish =Convert.ToDateTime(txtEnd.Text.ToString());
                 List<Entities.Journey> list = new List<Entities.Journey>();
                 Entities.Journey designation = new Entities.Journey(code, day, hourStart, hourFinish);
 

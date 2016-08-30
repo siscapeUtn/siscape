@@ -336,8 +336,8 @@ namespace BLL
                         oJourney.code = Convert.ToInt32(oDataRow[0].ToString());
                         oday.code = Convert.ToInt32(oDataRow[1].ToString());
                         oday.description = oDataRow[2].ToString();
-                        oJourney.start = oDataRow[3].ToString();
-                        oJourney.finish = oDataRow[4].ToString();
+                        oJourney.start =Convert.ToDateTime(oDataRow[3].ToString());
+                        oJourney.finish =Convert.ToDateTime(oDataRow[4].ToString());
                         oJourney.day = oday;
                         listJourney.Add(oJourney);
                     }
@@ -375,8 +375,8 @@ namespace BLL
                     oJourney.code = Convert.ToInt32(oDataRow[0].ToString());
                     oday.code = Convert.ToInt32(oDataRow[1].ToString());
                     oday.description = oDataRow[2].ToString();
-                    oJourney.start = oDataRow[3].ToString();
-                    oJourney.finish = oDataRow[4].ToString();
+                    oJourney.start =Convert.ToDateTime(oDataRow[3].ToString());
+                    oJourney.finish =Convert.ToDateTime(oDataRow[4].ToString());
                     oJourney.day = oday;
                     listJourney.Add(oJourney);
                 }
