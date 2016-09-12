@@ -58,9 +58,9 @@
                                 <Columns>
                                     <asp:BoundField HeaderText="Código" ReadOnly="true" DataField="code" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                     <asp:BoundField HeaderText="Descripción" ReadOnly="true" DataField="description" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
-                                    <asp:BoundField HeaderText="Salario Base" ReadOnly="true" DataField="baseSalary" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
-                                    <asp:BoundField HeaderText="Anualidad" ReadOnly="true" DataField="annuity" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
-                                    <asp:ButtonField ButtonType="Image" HeaderText="Editar" ImageUrl="~/images/maintenance/edit.png" Text="Editar" CommandName="Edit" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
+                                    <asp:BoundField HeaderText="Salario Base" ReadOnly="true"  DataFormatString="{0:N}" DataField="baseSalary" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
+                                    <asp:BoundField HeaderText="Anualidad" ReadOnly="true"  DataFormatString="{0:N}" DataField="annuity" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
+                                    <asp:ButtonField ButtonType="Image" HeaderText="Editar"  ImageUrl="~/images/maintenance/edit.png" Text="Editar" CommandName="Edit" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                     <asp:ButtonField ButtonType="Image" HeaderText="Eliminar" ImageUrl="~/images/maintenance/delete.png" Text="Eliminar" CommandName="Delete" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                 </Columns>
                             </asp:GridView>

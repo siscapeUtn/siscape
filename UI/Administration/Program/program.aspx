@@ -63,7 +63,7 @@
                                 <Columns>
                                     <asp:BoundField HeaderText="Código" ReadOnly="true" DataField="code" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                     <asp:BoundField HeaderText="Descripción" ReadOnly="true" DataField="name" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
-                                    <asp:BoundField HeaderText="Unidad ejecutora" ReadOnly="true" DataFormatString="{0:N}" DataField="unit" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
+                                    <asp:BoundField HeaderText="Unidad ejecutora" ReadOnly="true" DataField="unit" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                     <asp:ButtonField ButtonType="Image" HeaderText="Editar" ImageUrl="~/images/maintenance/edit.png" Text="Editar" DataTextField="code" CommandName="Edit" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                     <asp:ButtonField HeaderText="Eliminar" ImageUrl="~/images/maintenance/delete.png" Text="Eliminar" DataTextField="code" CommandName="Delete" ButtonType="Image" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" />
                                 </Columns>

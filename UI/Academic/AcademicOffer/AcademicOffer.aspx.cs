@@ -350,7 +350,7 @@ namespace UI.Academic.AcademicOffer
             cboRoom.Items.Add(oItemS);
             foreach (Entities.ClassRoom olistClassRoom in listClassRoom)
             {
-                ListItem oItem = new ListItem(olistClassRoom.num_room + " Sede " + olistClassRoom.oLocation.oHeadquarters.description + " " + olistClassRoom.oLocation.module + " " + olistClassRoom.oClassRoomsType.description, olistClassRoom.code.ToString());
+                ListItem oItem = new ListItem(olistClassRoom.num_room + " (" + olistClassRoom.oLocation.oHeadquarters.description + " " + olistClassRoom.oLocation.building + " " + olistClassRoom.oLocation.module + ") ", olistClassRoom.code.ToString());
                 cboRoom.Items.Add(oItem);
             }
 
@@ -383,7 +383,7 @@ namespace UI.Academic.AcademicOffer
             cboRoom.Items.Add(oItemS);
             foreach (Entities.ClassRoom olistClassRoom in listClassRoom)
             {
-                ListItem oItem = new ListItem(olistClassRoom.num_room + " Sede " + olistClassRoom.oLocation.oHeadquarters.description + " " + olistClassRoom.oLocation.module + " " + olistClassRoom.oClassRoomsType.description, olistClassRoom.code.ToString());
+                ListItem oItem = new ListItem(olistClassRoom.num_room + " (" + olistClassRoom.oLocation.oHeadquarters.description + " "+ olistClassRoom.oLocation.building + " " + olistClassRoom.oLocation.module + ") ", olistClassRoom.code.ToString());
                 cboRoom.Items.Add(oItem);
             }
         }
