@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcademicOffer.cs" />
+    <Compile Include="Actives .cs" />
     <Compile Include="ClassRoom.cs" />
     <Compile Include="ClassRoomsType.cs" />
     <Compile Include="Day.cs" />

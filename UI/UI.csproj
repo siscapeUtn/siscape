@@ -80,6 +80,7 @@
     <Content Include="Academic\AcademicOffer\Course.aspx" />
     <Content Include="Academic\AcademicOffer\OpeningJustification.aspx" />
     <Content Include="Academic\AcademicOffer\schedule.aspx" />
+    <Content Include="Academic\Building\Actives.aspx" />
     <Content Include="Academic\Building\classRoom.aspx" />
     <Content Include="Academic\Building\classRoomType.aspx" />
     <Content Include="Academic\Functionary\externalDesignation.aspx" />
@@ -336,6 +337,13 @@
     </Compile>
     <Compile Include="Academic\AcademicOffer\schedule.aspx.designer.cs">
       <DependentUpon>schedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academic\Building\Actives.aspx.cs">
+      <DependentUpon>Actives.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academic\Building\Actives.aspx.designer.cs">
+      <DependentUpon>Actives.aspx</DependentUpon>
     </Compile>
     <Compile Include="Academic\Building\classRoom.aspx.cs">
       <DependentUpon>classRoom.aspx</DependentUpon>

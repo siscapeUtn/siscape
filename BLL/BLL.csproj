@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcademicOfferBLL.cs" />
+    <Compile Include="ActivesBLL.cs" />
     <Compile Include="ClassRoomBLL.cs" />
     <Compile Include="ClassRoomScheduleBLL.cs" />
     <Compile Include="ClassRoomsTypeBLL.cs" />
