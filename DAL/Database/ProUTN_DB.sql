@@ -482,3 +482,35 @@ IMAGE				TEXT NOT NULL,
 PRIMARY KEY(SLIDER_ID));
 GO
 
+-------------------------------------
+-- Table structure for ActivesStatus
+--------------------------------------
+IF OBJECT_ID('ActivesStatus','U') IS NOT NULL
+DROP TABLE ActivesStatus;
+GO
+CREATE TABLE ActivesStatus
+(
+ActivesSatus_ID  NUMERIC NOT NULL,
+DESCRIPTION		 VARCHAR(50) NOT NULL,
+PRIMARY KEY(ActivesSatus_ID)
+);
+GO
+
+
+-------------------------------------
+-- Table structure for Actives
+--------------------------------------
+IF OBJECT_ID('Actives','U') IS NOT NULL
+DROP TABLE Actives;
+GO
+CREATE TABLE Actives
+(
+Actives_ID 		 NUMERIC NOT NULL,
+ActivesSatus_ID  NUMERIC NOT NULL,
+CODEAPLHANUMERIC VARCHAR(50) NOT NULL,
+DESCRIPTION 	 VARCHAR(50) NOT NULL,
+CLASSROOM_ID	 NUMERIC NOT NULL,
+PRIMARY KEY (Actives_ID),
+FOREIGN KEY(CLASSROOM_ID)REFERENCES CLASSROOM(CLASSROOM_ID),
+FOREIGN KEY(ActivesSatus_ID)REFERENCES ActivesStatus(ActivesSatus_ID));
+GO
