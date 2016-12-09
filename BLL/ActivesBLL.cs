@@ -75,6 +75,34 @@ namespace BLL
             return existe;
         }// end get next code
 
+
+        public Boolean existsCodeAlphanumeric(string pCodeAlphanumeric)
+        {
+            Boolean existe;
+            String oSql = "SP_EXISTACTIVESALPHANUMERIC";
+            try
+            {
+                SqlCommand oCommand = new SqlCommand(oSql);
+                oCommand.CommandType = CommandType.StoredProcedure;
+                oCommand.Parameters.AddWithValue("@ID", pCodeAlphanumeric);
+                Int32 existencia = Convert.ToInt32(DAO.getInstance().executeQueryScalar(oCommand));
+                if (existencia == 0)
+                {
+                    existe = false;
+                }
+                else
+                {
+                    existe = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { }
+            return existe;
+        }// end get next code
+
         public Int32 insert(Actives oActives)
         {
             String oSql = "SP_INSERTACTIVES";
@@ -85,9 +113,10 @@ namespace BLL
                 oCommand.Parameters.AddWithValue("@ID", oActives.code);
                 oCommand.Parameters.AddWithValue("@CODEALPHANUMERIC", oActives.codeAlphaNumeric);
                 oCommand.Parameters.AddWithValue("@DESCRIPTION", oActives.description);
-                oCommand.Parameters.AddWithValue("@STATEACTIVE", oActives.state);
+                oCommand.Parameters.AddWithValue("@STATEACTIVE", oActives.status.activesSatus_ID);
                 oCommand.Parameters.AddWithValue("@CLASSROOM_ID", oActives.oClassRoom.code);
-                
+                oCommand.Parameters.AddWithValue("@PROGRAM_ID", oActives.oProgram.code);
+
                 return DAO.getInstance().executeSQL(oCommand);
             }
             catch (Exception)
@@ -106,10 +135,10 @@ namespace BLL
                 SqlCommand oCommand = new SqlCommand(oSql);
                 oCommand.CommandType = CommandType.StoredProcedure;
                 oCommand.Parameters.AddWithValue("@ID", oActives.code);
-                oCommand.Parameters.AddWithValue("@CODEALPHANUMERIC", oActives.codeAlphaNumeric);
                 oCommand.Parameters.AddWithValue("@DESCRIPTION", oActives.description);
-                oCommand.Parameters.AddWithValue("@STATEACTIVE", oActives.state);
+                oCommand.Parameters.AddWithValue("@STATEACTIVE", oActives.status.activesSatus_ID);
                 oCommand.Parameters.AddWithValue("@CLASSROOM_ID", oActives.oClassRoom.code);
+                oCommand.Parameters.AddWithValue("@PROGRAM_ID", oActives.oProgram.code);
 
                 return DAO.getInstance().executeSQL(oCommand);
             }
@@ -153,14 +182,21 @@ namespace BLL
                 {
                     Actives oActivites = new Actives();
                     ClassRoom oClassRoom = new ClassRoom();
+                    Program oProgram = new Program();
+                    ActivesStatus oStatus = new ActivesStatus();
 
                     oActivites.code = Convert.ToInt32(oDataRow[0].ToString());
-                    oActivites.codeAlphaNumeric = oDataRow[1].ToString();
-                    oActivites.description = oDataRow[2].ToString();
-                    oActivites.state = oDataRow[3].ToString();
-                    oClassRoom.code = Convert.ToInt32(oDataRow[4].ToString());
-                    oClassRoom.num_room = oDataRow[5].ToString();
+                    oStatus.activesSatus_ID = Convert.ToInt32(oDataRow[1].ToString());
+                    oStatus.description = oDataRow[2].ToString();
+                    oActivites.codeAlphaNumeric = oDataRow[3].ToString();
+                    oActivites.description = oDataRow[4].ToString();
+                    oClassRoom.code = Convert.ToInt32(oDataRow[5].ToString());
+                    oClassRoom.num_room = oDataRow[6].ToString();
+                    oProgram.code = Convert.ToInt32(oDataRow[7].ToString());
+                    oProgram.name = oDataRow[8].ToString();
                     oActivites.oClassRoom = oClassRoom;
+                    oActivites.oProgram = oProgram;
+                    oActivites.status = oStatus;
 
                     listActives.Add(oActivites);
                 }
@@ -172,6 +208,49 @@ namespace BLL
             }
             finally { }
         }
+
+        public List<Actives> getAllByProgram(Int32 pCode)
+        {
+            String sql = "SP_GETALLACTIVESBYPROGRAM";
+
+            try
+            {
+                SqlCommand oCommand = new SqlCommand(sql);
+                oCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                oCommand.Parameters.AddWithValue("@PROGRAM_ID", pCode);
+                DataTable oDataTable = DAO.getInstance().executeQuery(oCommand);
+                List<Actives> listActives = new List<Actives>();
+                foreach (DataRow oDataRow in oDataTable.Rows)
+                {
+                    Actives oActivites = new Actives();
+                    ClassRoom oClassRoom = new ClassRoom();
+                    Program oProgram = new Program();
+                    ActivesStatus oStatus = new ActivesStatus();
+
+                    oActivites.code = Convert.ToInt32(oDataRow[0].ToString());
+                    oStatus.activesSatus_ID = Convert.ToInt32(oDataRow[1].ToString());
+                    oStatus.description = oDataRow[2].ToString();
+                    oActivites.codeAlphaNumeric = oDataRow[3].ToString();
+                    oActivites.description = oDataRow[4].ToString();
+                    oClassRoom.code = Convert.ToInt32(oDataRow[5].ToString());
+                    oClassRoom.num_room = oDataRow[6].ToString();
+                    oProgram.code = Convert.ToInt32(oDataRow[7].ToString());
+                    oProgram.name = oDataRow[8].ToString();
+                    oActivites.oClassRoom = oClassRoom;
+                    oActivites.oProgram = oProgram;
+                    oActivites.status = oStatus;
+
+                    listActives.Add(oActivites);
+                }
+                return listActives;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { }
+        }
+
 
         public Actives getActive(Int32 pCode)
         {
@@ -185,54 +264,25 @@ namespace BLL
                 DataTable oDataTable = DAO.getInstance().executeQuery(oCommand);
                 Actives oActivites = new Actives();
                 ClassRoom oClassRoom = new ClassRoom();
+                Program oProgram = new Program();
+                ActivesStatus oStatus = new ActivesStatus();
 
                 foreach (DataRow oDataRow in oDataTable.Rows)
                 {
                     oActivites.code = Convert.ToInt32(oDataRow[0].ToString());
-                    oActivites.codeAlphaNumeric = oDataRow[1].ToString();
-                    oActivites.description = oDataRow[2].ToString();
-                    oActivites.state = oDataRow[3].ToString();
-                    oClassRoom.code = Convert.ToInt32(oDataRow[4].ToString());
-                    oClassRoom.num_room = oDataRow[5].ToString();
+                    oStatus.activesSatus_ID = Convert.ToInt32(oDataRow[1].ToString());
+                    oStatus.description = oDataRow[2].ToString();
+                    oActivites.codeAlphaNumeric = oDataRow[3].ToString();
+                    oActivites.description = oDataRow[4].ToString();
+                    oClassRoom.code = Convert.ToInt32(oDataRow[5].ToString());
+                    oClassRoom.num_room = oDataRow[6].ToString();
+                    oProgram.code = Convert.ToInt32(oDataRow[7].ToString());
+                    oProgram.name = oDataRow[8].ToString();
                     oActivites.oClassRoom = oClassRoom;
+                    oActivites.oProgram = oProgram;
+                    oActivites.status = oStatus;
                 }
                 return oActivites;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally { }
-        }
-
-
-        public List<Actives> getAllByClassroom(Int32 pCode)
-        {
-            String sql = "SP_GETALLACTIVESBYCLASSROOM";
-
-            try
-            {
-                SqlCommand oCommand = new SqlCommand(sql);
-                oCommand.CommandType = System.Data.CommandType.StoredProcedure;
-                oCommand.Parameters.AddWithValue("@PROGRAM_ID", pCode);
-                DataTable oDataTable = DAO.getInstance().executeQuery(oCommand);
-                List<Actives> listActives = new List<Actives>();
-                foreach (DataRow oDataRow in oDataTable.Rows)
-                {
-                    Actives oActivites = new Actives();
-                    ClassRoom oClassRoom = new ClassRoom();
-
-                    oActivites.code = Convert.ToInt32(oDataRow[0].ToString());
-                    oActivites.codeAlphaNumeric = oDataRow[1].ToString();
-                    oActivites.description = oDataRow[2].ToString();
-                    oActivites.state = oDataRow[3].ToString();
-                    oClassRoom.code = Convert.ToInt32(oDataRow[4].ToString());
-                    oClassRoom.num_room = oDataRow[5].ToString();
-                    oActivites.oClassRoom = oClassRoom;
-
-                    listActives.Add(oActivites);
-                }
-                return listActives;
             }
             catch (Exception ex)
             {

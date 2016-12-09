@@ -10,8 +10,9 @@ namespace Entities
         public Int32 code { set; get; }
         public string codeAlphaNumeric { get; set; }
         public string description { get; set; }
-        public string state { get; set; }
+        public ActivesStatus status { get; set; }
         public ClassRoom oClassRoom { get; set; }
+        public Program oProgram { get; set; }
 
         public Actives() { }
     }

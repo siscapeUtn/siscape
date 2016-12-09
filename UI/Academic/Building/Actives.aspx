@@ -19,8 +19,8 @@
 
                         <section class="col-md-6">
                             <section class="form-group">
-                                <asp:label runat="server" id="lblprogram" text="Programa:"></asp:label>
-                                <asp:dropdownlist id="cboprogram" cssclass="form-control"  runat="server"></asp:dropdownlist>
+                                <asp:label runat="server" id="lblprogram" text="Progr&#225ma:"></asp:label>
+                                <asp:dropdownlist id="cboprogram" cssclass="form-control"  runat="server" AutoPostBack="true" OnSelectedIndexChanged="cboprogram_SelectedIndexChanged"></asp:dropdownlist>
                                 <span class="message-has-error"><asp:label runat="server" id="lblmessageprogram" ></asp:label></span>
                             </section>
                             <section class="form-group">
@@ -38,7 +38,7 @@
                                 <span class="message-has-error"><asp:Label runat="server" ID="lblMesageClassroom"></asp:Label></span>
                             </section>
                              <section class="form-group">
-                                <asp:Label runat="server" ID="lblDescription" Text="Descripción:"></asp:Label>
+                                <asp:Label runat="server" ID="lblDescription" Text="Descripción del Activo:"></asp:Label>
                                 <asp:TextBox runat="server" ID="txtDescription" CssClass="form-control"></asp:TextBox>
                                 <span class="message-has-error"><asp:Label runat="server" ID="lblMessageDescription"></asp:Label></span>
                             </section>
@@ -49,10 +49,8 @@
                             <section class="form-group">
                                 <asp:Label ID="lblState" Text="Estado:" CssClass="control-label col-sm-2" runat="server"></asp:Label>
                                 <section class="col-sm-10">
-                                    <asp:DropDownList ID="cboState" CssClass="form-control col-sm-10" runat="server">
-                                    <asp:ListItem Value="0">Inactivo</asp:ListItem>
-                                    <asp:ListItem Selected="True" Value="1">Activo</asp:ListItem>
-                                </asp:DropDownList>
+                                    <asp:DropDownList ID="cboStatus" CssClass="form-control" runat="server"></asp:DropDownList>
+                                    <span class="message-has-error"><asp:Label runat="server" ID="lblMessageStatus"></asp:Label></span>
                                 </section>
                             </section>
                         </section>
@@ -70,19 +68,21 @@
                         </section>
                     </section>
                     <section class="dataExists">
-<%--                        <section class="table-responsive">
-                            <asp:GridView ID="gvClassRoom" runat="server" AutoGenerateColumns="False" AllowPaging="true" OnPageIndexChanging="gvClassRoom_PageIndexChanging" PageSize="12" OnRowEditing="gvClassRoom_RowEditing" OnRowDeleting="gvClassRoom_RowDeleting" >
+                        <section class="table-responsive">
+                            <%--<asp:GridView ID="gvClassRoom" runat="server" AutoGenerateColumns="False" AllowPaging="true" OnPageIndexChanging="gvClassRoom_PageIndexChanging" PageSize="12" OnRowEditing="gvClassRoom_RowEditing" OnRowDeleting="gvClassRoom_RowDeleting" >--%>
+                             <asp:GridView ID="gvActives" runat="server" AutoGenerateColumns="False" AllowPaging="true" PageSize="12" OnRowEditing="gvActives_RowEditing" OnRowDeleting="gvActives_RowDeleting">
                                 <Columns>
-                                    <asp:BoundField HeaderText="C&#243;digo" DataField="code" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" ></asp:BoundField>
-                                    <asp:BoundField HeaderText="N&#176; Aula" DataField="num_room" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs"></asp:BoundField>
-                                    <asp:BoundField HeaderText="Capacidad" DataField="size" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs"></asp:BoundField>
-                                    <asp:BoundField HeaderText="Tipo de Aula" DataField="oClassRoomsType.description" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs"></asp:BoundField>
-                                    <asp:BoundField HeaderText="Programa" DataField="oProgram.name" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs"></asp:BoundField>
+                                    <asp:BoundField HeaderText="Id" DataField="code" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs" ></asp:BoundField>
+                                    <asp:BoundField HeaderText="C&#243;digo" DataField="codeAlphaNumeric" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs"></asp:BoundField>
+                                    <asp:BoundField HeaderText="Detalle" DataField="description" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs"></asp:BoundField>
+                                    <asp:BoundField HeaderText="Aula" DataField="oClassRoom.num_room" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs"></asp:BoundField>
+                                    <asp:BoundField HeaderText="Prográma" DataField="oProgram.name" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs"></asp:BoundField>
+                                    <asp:BoundField HeaderText="Estado" DataField="status.description" ReadOnly="true" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs"></asp:BoundField>
                                     <asp:ButtonField ImageUrl="~/images/maintenance/edit.png" Text="Editar" ButtonType="Image" HeaderText="Editar" CommandName="Edit" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs"></asp:ButtonField>
                                     <asp:ButtonField ImageUrl="~/images/maintenance/delete.png" Text="Eliminar" ButtonType="Image" HeaderText="Eliminar" CommandName="Delete" ItemStyle-CssClass="visible-lg visible-md visible-sm visible-xs"></asp:ButtonField>
                                 </Columns>
                             </asp:GridView>
-                        </section>--%>
+                        </section>
                     </section>
                 </ContentTemplate>
                 <Triggers>
@@ -91,27 +91,27 @@
             </asp:UpdatePanel>
         </section>
     </section>
-    <!-- Delete modal -->
-<%--    <section class="modal fade" id="confirmMessage" role="dialog" aria-labelledby="confirmMessageLabel" aria-hidden="true">
+    <!-- delete modal -->
+       <section class="modal fade" id="confirmmessage" role="dialog" aria-labelledby="confirmmessagelabel" aria-hidden="true">
         <section class="modal-dialog">
-            <asp:UpdatePanel ID="confirmModal" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
-                <ContentTemplate>
+            <asp:updatepanel id="confirmmodal" runat="server" childrenastriggers="false" updatemode="conditional">
+                <contenttemplate>
                     <section class="modal-content">
                         <section class="modal-header">
-                            <asp:Label ID="modalHeader" Text="Mensaje de confirmación" runat="server"></asp:Label>
+                            <asp:label id="modalheader" text="mensaje de confirmación" runat="server"></asp:label>
                         </section>
                         <section class="modal-body">
-                            <p>¿Esta seguro de eliminar el Aula <strong><asp:Label ID="lblClassRoomDescription" Text="" runat="server"></asp:Label></strong>?</p>
+                            <p>¿esta seguro de eliminar el Activo <strong><asp:label id="lblActivesdescription" text="" runat="server"></asp:label></strong>?</p>
                         </section>
                         <section class="modal-footer">
-                            <asp:Button CssClass="btn btn-confirm" OnClick="btnDelete_Click"  ID="btnDelete" Text="Eliminar" runat="server"></asp:Button>
-                            <button class="btn btn-confirm" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+                            <asp:button cssclass="btn btn-confirm" onclick="btndelete_click"  id="btndelete" text="eliminar" runat="server"></asp:button>
+                            <button class="btn btn-confirm" data-dismiss="modal" aria-hidden="true">cancelar</button>
                         </section>
                     </section>
-                </ContentTemplate>
-            </asp:UpdatePanel>
+                </contenttemplate>
+            </asp:updatepanel>
         </section>
-    </section>--%>
+    </section>
     <script type="text/javascript">
         $('li').removeClass('isSelected');
         $('#academic').addClass('isSelected');
