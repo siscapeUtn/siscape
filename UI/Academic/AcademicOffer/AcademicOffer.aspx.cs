@@ -729,6 +729,11 @@ namespace UI.Academic.AcademicOffer
             }
         }//End report()
 
+        protected void gvAcademicOffer_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvAcademicOffer.PageIndex = e.NewPageIndex;
+            loadData();
+        }
 
     }
 }

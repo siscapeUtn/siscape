@@ -25,6 +25,11 @@ namespace UI.Academic.Building
             loadData();
         }
 
+        protected void gvActives_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvActives.PageIndex = e.NewPageIndex;
+            loadData();
+        }
 
         private void loadUser()
         {

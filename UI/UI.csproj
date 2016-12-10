@@ -81,6 +81,7 @@
     <Content Include="Academic\AcademicOffer\OpeningJustification.aspx" />
     <Content Include="Academic\AcademicOffer\schedule.aspx" />
     <Content Include="Academic\Building\Actives.aspx" />
+    <Content Include="Academic\Building\ActivesStatus.aspx" />
     <Content Include="Academic\Building\classRoom.aspx" />
     <Content Include="Academic\Building\classRoomType.aspx" />
     <Content Include="Academic\Functionary\externalDesignation.aspx" />
@@ -109,6 +110,7 @@
     <Content Include="css\menu-styles.css" />
     <Content Include="images\academic\academicOffer.png" />
     <Content Include="images\academic\academicOffer.svg" />
+    <Content Include="images\academic\Actives.svg" />
     <Content Include="images\academic\building.svg" />
     <Content Include="images\academic\classRoom.png" />
     <Content Include="images\academic\classRoom.svg" />
@@ -133,6 +135,7 @@
     <Content Include="images\academic\report-academic.svg" />
     <Content Include="images\academic\schedule.png" />
     <Content Include="images\academic\schedule.svg" />
+    <Content Include="images\academic\statusActive.svg" />
     <Content Include="images\academic\teacher.png" />
     <Content Include="images\academic\teacher.svg" />
     <Content Include="images\academic\typeClassRoom.png" />
@@ -344,6 +347,13 @@
     </Compile>
     <Compile Include="Academic\Building\Actives.aspx.designer.cs">
       <DependentUpon>Actives.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Academic\Building\ActivesStatus.aspx.cs">
+      <DependentUpon>ActivesStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Academic\Building\ActivesStatus.aspx.designer.cs">
+      <DependentUpon>ActivesStatus.aspx</DependentUpon>
     </Compile>
     <Compile Include="Academic\Building\classRoom.aspx.cs">
       <DependentUpon>classRoom.aspx</DependentUpon>

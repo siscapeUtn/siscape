@@ -82,7 +82,7 @@
                     </section>
                     <section class="dataExists">
                         <section class="table-responsive">
-                            <asp:GridView ID="gvAcademicOffer" runat="server" AutoGenerateColumns="False" OnRowEditing="gvAcademicOffer_RowEditing" OnRowDeleting="gvAcademicOffer_RowDeleting" AllowPaging="True" >
+                            <asp:GridView ID="gvAcademicOffer" runat="server" AutoGenerateColumns="False" OnRowEditing="gvAcademicOffer_RowEditing" OnRowDeleting="gvAcademicOffer_RowDeleting" OnPageIndexChanging="gvAcademicOffer_PageIndexChanging" PageSize="12" AllowPaging="True" >
                                 <Columns>
                                     <asp:BoundField HeaderText="C&#243;digo" DataField="code" ReadOnly="true" ></asp:BoundField>
                                     <asp:BoundField HeaderText="Curso" DataField="oCourse.description" ReadOnly="true"></asp:BoundField>

@@ -2,16 +2,82 @@
 USE ProUTN;
 GO
 
+/* ---- Store Procedures Status Actives ---- */
+--to get last code
+CREATE PROCEDURE SP_GETNEXTCODEACTIVESSTATUS
+AS
+BEGIN
+	SELECT MAX(ActivesSatus_ID)
+	FROM ActivesStatus;
+END;
+GO
+
+--to check that a  Status Actives exists
+CREATE PROCEDURE SP_EXISTACTIVESSTATUS
+@ID NUMERIC
+AS
+BEGIN
+	SELECT COUNT(ActivesSatus_ID)
+	FROM ActivesStatus
+	WHERE ActivesSatus_ID = @ID;
+END;
+GO
+
+--to check that a  Status Actives exists
+CREATE PROCEDURE SP_EXISTNAMEACTIVESSTATUS
+@DESCRIPTION VARCHAR(50)
+AS
+BEGIN
+	SELECT COUNT(ActivesSatus_ID)
+	FROM ActivesStatus
+	WHERE DESCRIPTION=@DESCRIPTION;
+END;
+GO
+
+--insert the status active
+CREATE PROCEDURE SP_INSERTSTATUSACTIVE
+@ID NUMERIC,
+@DESCRIPTION VARCHAR(50)
+AS
+BEGIN
+	INSERT INTO ActivesStatus (ActivesSatus_ID, DESCRIPTION)
+	VALUES (@ID, @DESCRIPTION);
+END;
+GO
+
+--to modify Actives Status
+CREATE PROCEDURE SP_MODIFYSTATUSACTIVE
+@ID NUMERIC,
+@DESCRIPTION VARCHAR(50)
+AS
+BEGIN
+	UPDATE ActivesStatus
+	SET DESCRIPTION = @DESCRIPTION
+	WHERE ActivesSatus_ID = @ID;
+END;
+GO 
+
+--get active status by code
+CREATE PROCEDURE SP_GETACTIVESTATUSBYCODE
+@ID NUMERIC
+AS
+BEGIN
+	SELECT ActivesSatus_ID, DESCRIPTION
+	FROM ActivesStatus
+	WHERE ActivesSatus_ID = @ID;
+END;
+GO
+--get all status acrive
 CREATE PROCEDURE SP_GETALLACTIVESSTATUS
 AS
 BEGIN
-
 	SELECT ActivesSatus_ID,DESCRIPTION
 	FROM ActivesStatus;
-
 END;
 GO
 
 INSERT INTO ActivesStatus (ActivesSatus_ID, DESCRIPTION) VALUES (1	, 'Funciona');
 INSERT INTO ActivesStatus (ActivesSatus_ID, DESCRIPTION) VALUES (2	, 'No Funciona');
 INSERT INTO ActivesStatus (ActivesSatus_ID, DESCRIPTION) VALUES (3	, 'Obsoleto');
+
+

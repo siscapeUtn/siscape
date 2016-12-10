@@ -31,7 +31,13 @@
             </section>
             <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
                 <section class="accesses">
-                    <a href="../Building/Actives.aspx"><img alt="Inicio" src="../../images/page-icons/home.svg" />
+                    <a href="../Building/ActivesStatus.aspx"><img alt="Administración de Status" src="../../images/academic/statusActive.svg" />
+                    <p>Estado de Activos </p></a>
+                </section>
+            </section>
+            <section class="col-md-4 col-sm-4 col-xs-12 accesses-container">
+                <section class="accesses">
+                    <a href="../Building/Actives.aspx"><img alt="Administración de Activos" src="../../images/academic/Actives.svg" />
                     <p>Activos</p></a>
                 </section>
             </section>
